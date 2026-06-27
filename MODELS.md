@@ -158,7 +158,7 @@
 | Model | SEAL Score | Vendor-Reported | Inflation |
 |---|---|---|---|
 | GPT-5.4 xHigh | 59.1% | 84.1% | ~25pt |
-| Claude Opus 4.6 thinking | 51.9% | ~88% | ~36pt |
+| Claude Opus 4.6 thinking | 51.9% | ≈88% | ≈36pt |
 | Claude Haiku 4.5 | 39.5% | 74.8% | ~35pt |
 
 ---
@@ -208,7 +208,7 @@
 
 > ⚠️ Subscription proxies are reverse-engineered — ToS/account-ban risk. `iFlow`, `Qwen`, and `Gemini CLI` free tiers were **discontinued in 2026**; use Kiro / OpenCode-Free / Vertex instead.
 
-**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ~70% → DeepSeek V4 Flash ($0.28/M) · Tier 2 ~25% → Kimi K2.6 / GLM-5.1 (~$1/M) · Tier 3 ~5% → Opus 4.8. Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
+**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ≈70% → DeepSeek V4 Flash ($0.28/M) · Tier 2 ≈25% → Kimi K2.6 / GLM-5.1 (≈$1/M) · Tier 3 ≈5% → Opus 4.8. Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
 
 ---
 
