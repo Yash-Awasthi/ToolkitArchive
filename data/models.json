@@ -22,6 +22,7 @@
     {"name": "Qwen 3.7 Plus",      "company": "Alibaba",   "in": 0.50, "out": 2.0,  "ctx_k": 1000, "swe": 78.0, "src": "open"},
     {"name": "Qwen3-Coder 480B",   "company": "Alibaba",   "in": 0.22, "out": 1.8,  "ctx_k": 1000, "swe": 78.0, "src": "open"},
     {"name": "Kimi K2.6",          "company": "Moonshot",  "in": 0.95, "out": 1.5,  "ctx_k": 262,  "swe": 80.2, "src": "open"},
+    {"name": "Kimi K2.7-Code",     "company": "Moonshot",  "in": 0.95, "out": 4.0,  "ctx_k": 262,  "swe": 80.0, "src": "est"},
     {"name": "MiniMax M3",         "company": "MiniMax",   "in": 0.30, "out": 1.2,  "ctx_k": 1000, "swe": 80.5, "src": "open"},
     {"name": "Devstral 2",         "company": "Mistral",   "in": 0.40, "out": 0.9,  "ctx_k": 256,  "swe": 72.2, "src": "open"},
     {"name": "DeepSeek V4 Pro",    "company": "DeepSeek",  "in": 0.44, "out": 0.87, "ctx_k": 1000, "swe": 80.6, "src": "open"},
@@ -35,7 +36,10 @@
   ],
   "upcoming": [
     {"name": "Gemini 3.5 Pro","company": "Google",    "ctx_k": 2000, "swe_est": null, "status": "Announced Google I/O (May 19 2026), GA imminent. ~$15/$60 expected, 2M ctx, Deep Think mode"},
-    {"name": "Fable 5",       "company": "Mythic",    "ctx_k": null, "swe_est": 95, "status": "SWE-bench record holder. Export-suspended Jun 12 (US controls). Not publicly usable"},
+    {"name": "Fable 5",       "company": "Anthropic", "ctx_k": 1000, "swe_est": 95, "status": "Mythos-class ($10/$50, 1M ctx). GA Jun 9 -> export-suspended Jun 12 (US controls). SWE-bench Pro 80.3%"},
+    {"name": "Mythos 5",      "company": "Anthropic", "ctx_k": 1000, "swe_est": 95.5, "status": "Same base as Fable 5, safety classifiers removed. World's strongest cyber model (ExploitBench 78%). Project-Glasswing-only. Not GA"},
+    {"name": "MAI-Thinking-1","company": "Microsoft", "ctx_k": 256,  "swe_est": null, "status": "Flagship reasoning, private preview via Foundry (Build 2026). 35B MoE, 97% AIME 2025, 53% SWE-bench Pro, preferred over Sonnet 4.6"},
+    {"name": "Gemini Omni Pro","company": "Google",   "ctx_k": null, "swe_est": null, "status": "Full any-in/any-out follow-up to Omni Flash (I/O May 19). Dev API coming weeks, no pricing yet"},
     {"name": "DeepSeek V5",   "company": "DeepSeek",  "ctx_k": null, "swe_est": null, "status": "Rumored Q2-Q3 2026. Expected to push Tier-1 capability + cheaper"},
     {"name": "Kimi K3",       "company": "Moonshot",  "ctx_k": null, "swe_est": null, "status": "Rumored Q3 2026"}
   ],

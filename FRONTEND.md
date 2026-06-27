@@ -10,6 +10,7 @@
 | Tool | What | Free tier | Paid entry | Model / BYOK | Link |
 |---|---|---|---|---|---|
 | **Bolt.new** | Browser IDE, full-stack in WebContainers | **1M tokens/mo** (no card) — most generous of the majors, ~2–5 small apps | Pro $25/mo (~13M tokens) | Claude (no BYOK) | bolt.new |
+| **Blink.new** (YC W25) | Prompt → production web/Next.js app, auto-provisions Turso + Firebase + Deno Deploy | Free tier | Credits | Managed | blink.new |
 | **Lovable** | Prompt → React + Supabase SaaS, cleanest code | 5 credits/day, ~30/mo cap | Pro from $25/mo (100 credits) | Managed | lovable.dev |
 | **Replit Agent** (Agent 4) | Cloud IDE + DB + deploy, 50+ langs, real-browser testing | Starter: daily Agent trial, 1 published app | Core $20–25/mo ($25 credits) · Pro $100/mo | Managed | replit.com |
 | **v0** (Vercel) | Polished React/Next UI, auto-deploy to Vercel | Limited free credits | Premium $20/mo (Mini/Pro/Max tiers) | Managed (no model choice) | v0.dev |
@@ -21,12 +22,30 @@
 
 > **Credit-burn rule (all of them):** vague prompts, long chats, and error loops eat the free allowance. Plan before prompting. Bolt's 1M tokens/mo is the most usable free runway.
 
+> Also emerging (lighter coverage, verify before relying): **Lumi.new**, **Rocket.new**, **NxCode** — newer prompt→full-stack builders. **Cloudflare VibeSDK** is open-source and self-hostable → see Part 5.
+
+---
+
+## Part 1.5 — Native Mobile App Builders (prompt → real React Native / iOS)
+
+> The web builders above output web apps. These produce actual native mobile — real `.tsx` React Native (Expo), not a no-code wrapper — with store submission.
+
+| Tool | What | Free | Paid entry | Output | Link |
+|---|---|---|---|---|---|
+| **a0.dev** (YC W25) | Prompt → React Native (Expo). Browser iOS simulator, 1-click App Store + Play submit, built-in payments/analytics/OTA, 2-way GitHub sync. Convex/Supabase backend | 1 app project | Pro $20/mo (100 msg/day) → up to $800/mo | Real RN `.tsx` | a0.dev |
+| **Rork** | Prompt → production mobile app, Expo on-device preview (Expo Go) | Trial | Credits | React Native | rork.com |
+| **Rork Max** | Rork's top tier — **native Swift** for the full Apple ecosystem: iPhone/iPad/Watch/Vision Pro/TV (only tool doing this) | — | Higher tier | RN + native Swift | rork.com |
+
 ---
 
 ## Part 2 — UI Component / Design Generators (prompt or screenshot → components)
 
 | Tool | What | Free | Code export | Stack | Link |
 |---|---|---|---|---|---|
+| **Claude Design** (Anthropic Labs) | Prompt → designs/prototypes/slides. **Codebase-aware** — links a repo, reads real React components to apply your design system. Canva export. Opus 4.7 vision. Research preview (Apr 17 2026) | Free on Pro/Max/Team/Enterprise (no separate SKU) | — (exports to Claude Code) | claude.ai/design |
+| **Banani** | Text/PRD/image-ref → editable multi-screen UI + linked prototype. Canvas bird's-eye view, clarifying-question agent. 1-click Figma export, HTML/CSS, **MCP server** for IDE integration | Free tier | Credits | React/HTML, Figma | banani.co |
+| **UXPilot** (Nodey) | Prompt → wireframes + hi-fi screens + screen flows, predictive heatmaps, Figma plugin. PRD → UI. 300K+ users | Free (non-commercial) | $15/mo | React/HTML/Tailwind | uxpilot.ai |
+| **Shadcn Studio** | shadcn/ui components, blocks, templates + AI theme designer. **MCP server** for shadcn/ui in Cursor/Claude Code; Figma → shadcn code plugin | Free + paid | Credits | shadcn/ui (React) | shadcnstudio.com |
 | **Subframe** | AI-native visual canvas, real design controls, 1:1 React/Tailwind export (YC, ex-Vercel/Stripe) | Free plan (export/page limits) | React + Tailwind | React/Tailwind only | subframe.com |
 | **Magic Patterns** | Screenshot/prompt → React, Figma + MCP import/export (YC S23, a16z) | Free tier | React + Tailwind | React | magicpatterns.com |
 | **Polymet** | Component-driven; builds a design system from prompts | Free trial (export = paid) | Yes (paid) | React | polymet.ai |
@@ -78,6 +97,8 @@
 | **Refine** | Data-rich React apps framework | MIT | ~35K | Free | refine.dev |
 | **Silex** | Open visual website builder | AGPL 3.0 | ~2.9K | Free | silex.me |
 | **Pythagora** | AI full-stack app dev (GPT Pilot lineage) | — | high | Free (BYOK) | pythagora.ai |
+| **Cloudflare VibeSDK** | Deploy your *own* vibe-coding platform in 1 click — per-user sandboxes, live preview, Workers deploy. React/TS/Tailwind output, Gemini default via AI Gateway | MIT | rising | Free (self-host on Cloudflare) | github.com/cloudflare/vibesdk |
+| **SuperDesign** | UI design agent inside your IDE — only OSS IDE-native option, 10+ variants locally, BYO model | MIT | rising | Free (BYOK) | superdesign.dev |
 
 > **Cheapest path to "Lovable but free":** Dyad or bolt.diy + a free LLM key (Google AI Studio / Groq) or local Ollama → unlimited builds at $0. See [FREE-ACCESS.md](./FREE-ACCESS.md).
 
@@ -95,4 +116,7 @@
 | Designer who wants real controls | Subframe |
 | Screenshot → code | Magic Patterns |
 | Marketing/portfolio site | Framer (design) / Webflow (content+SEO) |
+| Native mobile (real RN, store submit) | a0.dev / Rork (Rork Max for Apple-wide native Swift) |
+| Design system from your codebase | Claude Design |
+| Run your own AI app-builder platform | Cloudflare VibeSDK (self-host) |
 | Zero cost, self-host | Dyad / bolt.diy + free key |

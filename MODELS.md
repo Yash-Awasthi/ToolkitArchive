@@ -27,7 +27,8 @@
 
 | Model | Company | SWE-bench | Src | In $/1M | Out $/1M | Context | Notes |
 |---|---|---|---|---|---|---|---|
-| **Fable 5** | Mythic | **95.0%** | [C] | — | — | — | SWE-bench record. Export-suspended Jun 12 (US controls). Not publicly usable |
+| **Fable 5** | Anthropic | **95.0%** | [V] | $10 | $50 | 1M | Mythos-class (tier above Opus). GA Jun 9 → pulled from subs Jun 23, export-suspended Jun 12 (US controls). SWE-bench Pro 80.3%. 30-day forced retention |
+| **Mythos 5** | Anthropic | **95.5%** | [C] | $10 | $50 | 1M | Same base as Fable 5, safety classifiers removed. "World's strongest cyber model" (ExploitBench 78%). Restricted to Project Glasswing cyber-defenders. Not GA |
 | **GPT-5.6 Sol** | OpenAI | ~91%[est] | [V] | $5 | $30 | 1.5M | Preview Jun 26. Flagship. TB 2.1 **88.8%** (Sol Ultra 91.9%). Max + Ultra (parallel subagents). Cerebras 750 tok/s in July |
 | **GPT-5.6 Terra** | OpenAI | ~88%[est] | [V] | $2.50 | $15 | 1M | Preview Jun 26. GPT-5.5-class at half price |
 | **GPT-5.6 Luna** | OpenAI | ~84%[est] | [V] | $1 | $6 | 1M | Preview Jun 26. Fast/high-volume tier |
@@ -43,13 +44,16 @@
 | Qwen 3.7 Max | Alibaba | 80.4% | open | $1.25 | $3.75 | 1M | Promo; list $2.50/$7.50 |
 | Qwen 3.7 Plus | Alibaba | ~78% | open | $0.50 | $2.00 | 1M | Reasoning model, 1M ctx |
 | Kimi K2.6 | Moonshot | 80.2% | open | $0.95 | **$1.50** | 262K | 4,000+ tool calls/session. Sweet spot |
+| **Kimi K2.7-Code** | Moonshot | ~80%[est] | open | $0.95 | **$4** | 262K | Jun 12. 1T MoE/32B active, forced thinking. +21.8% Kimi Code Bench v2 vs K2.6, -30% reasoning tokens. Modified MIT. Vendor benches only |
 | Grok 4.3 | xAI | ~78% | [C] | $3 | $15 | 128K | Closed eval |
 | Gemini 3.5 Flash | Google | 78.8% | open | $1.50 | $9 | 1M | |
 | Qwen3-Coder 480B | Alibaba | 78.0% | open | $0.22 | $1.80 | 1M | Apache 2.0, MoE 35B active. Free on OpenRouter |
 | Mistral Medium 3.5 | Mistral | 77.6% | open | $1.50 | $7.50 | 256K | EU-hosted, GDPR |
+| **Meta Muse Spark** | Meta (MSL) | 77.4% | [V] | — | — | — | Apr 8. First Meta Superintelligence Labs model (not Llama). Free on meta.ai, API private-preview only. Strong multimodal/health, weak agentic (TB 2.0 59%). Closed |
 | Laguna M.1 | Poolside | ~78% | [C] | $4 | $8 | 256K | Coding specialist |
 | MiMo V2.5 Pro | Xiaomi | 75.0% | open | $0.44 | **$0.87** | 1M | 40-60% fewer tokens/trajectory. Sweet spot |
 | Claude Haiku 4.5 | Anthropic | 74.8% | [V] | $1 | $5 | 200K | Fast, cheap Claude |
+| **MAI-Code-1-Flash** | Microsoft | ~74%[est] | [V] | — | — | — | 137B MoE/5B active. "Haiku-class but cheaper." Bundled into all Copilot plans + VS Code. Weights tunable. OpenRouter/Fireworks/Baseten |
 | Llama 4 Maverick | Meta | 74.0% | open | $0.20 | $0.39 | 1M | Apache 2.0 via third-party |
 | Gemini 3.1 Flash | Google | 74.0% | open | $0.30 | $2.50 | 1M | Cheapest Google |
 | Devstral 2 | Mistral | 72.2% | open | $0.40 | $0.90 | 256K | Best-value Mistral open-weight |
@@ -138,7 +142,7 @@
 | Context | Models |
 |---|---|
 | 1M | GPT-5.5, GPT-5.4, GPT-5.3, Opus 4.8, Sonnet 4.6, DeepSeek V4 Pro/Flash, MiniMax M3, Qwen 3.7 Max, Qwen3-Coder 480B, Llama 4 Mav, Gemini 3.x, MiMo V2.5 Pro, Nemotron 3, GLM-5.2 |
-| 262K | Kimi K2.6 |
+| 262K | Kimi K2.6, Kimi K2.7-Code |
 | 256K | Mistral Medium 3.5, Devstral 2, Laguna M.1, Step 3.7 Flash |
 | 200K | GLM-5.1, Claude Haiku 4.5 |
 | 128K | Grok 4.3, Grok Build 0.1 |
@@ -163,9 +167,24 @@
 | Model | Company | Status |
 |---|---|---|
 | **Gemini 3.5 Pro** | Google | Announced Google I/O (May 19), GA imminent. ~$15/$60 expected, **2M ctx**, Deep Think mode |
-| **Fable 5** | Mythic | SWE-bench record (95%). **Export-suspended Jun 12** (US controls) — not publicly usable |
+| **Fable 5** | Anthropic | Mythos-class (95%), GA Jun 9 → **export-suspended Jun 12** (US controls). Now in Table 1 |
 | **DeepSeek V5** | DeepSeek | Rumored Q2–Q3 2026 — expected to push Tier-1 capability + drop cost further |
 | **Kimi K3** | Moonshot | Rumored Q3 2026 |
+| **MAI-Thinking-1** | Microsoft | Flagship reasoning, private preview via Foundry (Build 2026, Jun 2). 35B MoE, 97% AIME 2025, 53% SWE-bench Pro, 256K ctx. Trained no-distillation, preferred over Sonnet 4.6 in blind evals |
+| **Mythos 5** | Anthropic | Mythos-class cyber model (95.5%). Project-Glasswing-only with US gov — never GA |
+| **Gemini Omni Pro** | Google | Full any-in/any-out follow-up to Omni Flash (I/O May 19). Dev API "coming weeks", no pricing yet |
+
+---
+
+## Consumer / On-Device (not API-accessible)
+
+> Frontier-adjacent models you can't call from code — listed so the archive stays complete.
+
+| Model | Company | What it is |
+|---|---|---|
+| **Apple AFM 3** | Apple | WWDC Jun 8 family powering new Siri AI. On-device: Core (3B dense), Core Advanced (20B sparse, ~1–4B active via Instruction-Following Pruning). Cloud: AFM 3 Cloud, ADM 3 Cloud (image), Cloud Pro (Nvidia GPUs in Google Cloud under Private Cloud Compute). Gemini used as distillation *teacher*, not runtime. No EU/China at launch |
+| **Gemini Omni Flash** | Google | First "any-to-any" Google model (I/O May 19). Any input → ~10s video+audio out, conversational editing, personal avatars (number-handshake anti-deepfake), SynthID + C2PA baked in. AI Plus/Pro/Ultra + free in YouTube Shorts. No dev API yet |
+| **Meta Muse Spark** | Meta | Free on meta.ai (also in Table 1) — listed here as the consumer entry point; API is partner-only |
 
 **How to find early access:** search `"<model> early access" / "<model> preview" / "<model> waitlist"`, the vendor's Discord/X, and `r/LocalLLaMA` + `r/singularity`. Open-weight Chinese models (GLM/DeepSeek/Kimi/Qwen/MiniMax) usually ship **directly as MIT/Apache weights** — no waitlist; grab them on HuggingFace/ModelScope day one.
 
@@ -196,12 +215,17 @@
 |---|---|
 | Mar 18 | MiniMax M2.7 — "self-evolution" agentic training |
 | Apr 7 | GLM-5.1 (Z.AI) — 744B MoE, 200K ctx, MIT |
+| Apr 8 | Meta Muse Spark — first Meta Superintelligence Labs model (77.4%), free on meta.ai |
 | Apr 16 | Claude Opus 4.7 |
 | Apr 21 | Kimi K2.6 — briefly tops open SWE-bench Pro (58.6%) |
 | Apr 23 | GPT-5.5 |
 | Apr 24 | DeepSeek V4 Pro (1.6T/49B) + V4 Flash (284B/13B), MIT, 1M ctx |
+| May 19 | Gemini Omni Flash — Google's first any-to-any multimodal (I/O) |
 | May 28 | Claude Opus 4.8 — 1M ctx, hybrid reasoning |
-| Jun 12 | Fable 5 (95%) export-suspended |
+| Jun 2 | Microsoft MAI models (Build 2026) — MAI-Thinking-1, MAI-Code-1-Flash, +image/voice/transcribe |
+| Jun 8 | Apple AFM 3 family — new Siri AI (WWDC), Gemini-distilled |
+| Jun 9 | Claude Fable 5 + Mythos 5 GA — Mythos-class tier above Opus, $10/$50 |
+| Jun 12 | Fable 5 export-suspended (US controls); Kimi K2.7-Code released |
 | Jun 13 | GLM-5.2 — 1M ctx, MIT |
 | Jun 16 | MiniMax M3 tops open SWE-bench Pro (59.0%) |
 | Jun 26 | GPT-5.6 Sol/Terra/Luna preview — gated to ~20 orgs pending US-gov 30-day cyber review (EO Jun 2); GA "coming weeks" |
