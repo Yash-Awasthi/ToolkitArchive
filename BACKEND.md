@@ -18,6 +18,7 @@
 | **Firebase** | NoSQL + auth + functions | Spark plan free (Google) | No | Google ecosystem, mobile | firebase.google.com |
 | **Encore** | TS/Go backend framework + infra | Free OSS, cloud free tier | Yes | Type-safe backend + IaC | encore.dev |
 | **Wasp** | Full-stack React/Node DSL | Free OSS | Yes | Opinionated full-stack | wasp.sh |
+| **Microsoft Rayfin** | Fabric/OneLake BaaS (TS code → SQL DB + Entra ID auth + GraphQL API + hosting) | Preview, perpetual free tier | No (deploys to Fabric tenant) | Agent-first; data lands in OneLake (no ETL). Replit launch partner. ⚠️ Entra-ID-only auth | microsoft.com/microsoft-fabric |
 
 ---
 
@@ -54,7 +55,9 @@
 | **Deno Deploy** | TS/JS edge | Generous free | Deno runtime | deno.com/deploy |
 | **Coolify** | Self-host PaaS (Heroku alt) | Free OSS — bring a $5 VPS | You run the server | coolify.io |
 | **Dokku** | Git-push PaaS on your VPS | Free OSS | CLI-driven | dokku.com |
-| **Zeabur / Sevalla / Northflank / Koyeb** | Modern PaaS | Various free trials | — | — |
+| **Northflank** | GPU PaaS + true BYOC (AWS/Azure/GCP/Oracle/bare-metal) | Always-on free sandbox (2 services, 2 DBs) | Full data plane in *your* VPC, infra billed at list (no markup). NVIDIA B200→A100, MIG/time-slicing. SOC 2 Type 2 | northflank.com |
+| **SnapDeploy** | Minimal container hosting | 10 deploys/day free · $12/mo always-on | Lightweight; verify specs on vendor page | snapdeploy.io |
+| **Zeabur / Sevalla / Koyeb** | Modern PaaS | Various free trials | — | — |
 
 ---
 
@@ -70,6 +73,8 @@
 | **Supabase Auth** | Bundled w/ Supabase (50K MAU) | Free w/ the BaaS | Yes | supabase.com |
 | **Logto** | Free tier (OSS) | OIDC, multi-tenant | Yes | logto.io |
 | **SuperTokens** | Free self-host, 5K MAU cloud | OSS, full control | Yes | supertokens.com |
+| **ZITADEL** | 25K MAU free cloud | Enterprise CIAM, Go single-binary, event-sourced, first-class multi-tenant (B2B SaaS). OIDC/SAML/LDAP. ~13.5K★ | Yes | zitadel.com |
+| **Authentik** | Free (OSS) | **Proxy/forward-auth mode** — enforce MFA/SSO in front of ANY app (incl. legacy, no OIDC) with zero code changes. Also IdP + LDAP. ~21K★ | Yes | goauthentik.io |
 | **Ory / Hanko / Stack Auth** | OSS free | Passkeys, modern | Yes | ory.sh · hanko.io · stack-auth.com |
 
 > **Most free MAU:** WorkOS (1M). **Best DX:** Clerk. **Zero-cost full control:** Better-Auth / SuperTokens.
@@ -86,6 +91,9 @@
 | **Weaviate** | 14-day sandbox / OSS self-host | Hybrid search | weaviate.io |
 | **Chroma** | Free OSS (embedded) | Easiest local RAG | trychroma.com |
 | **Milvus / Zilliz** | OSS + free cloud tier | Scale | milvus.io |
+| **Zilliz Vector Lakebase** | Public preview, $100 credits | Milvus-based — unifies real-time search + batch analytics + external data-lake search on one zero-copy data plane. 3 serving tiers, BYOC, 30+ regions (Jun 2026) | zilliz.com |
+| **ScyllaDB Vector Search** | In ScyllaDB Cloud | Native vector in the NoSQL DB (GA Jan 2026) — embeddings beside operational data, CQL `ANN OF`. Rust/USearch, HNSW, 1B+ vectors, ~1.7ms P99 | scylladb.com |
+| **Actian VectorAI DB** | Free community (5K vectors) | Edge/air-gapped/on-prem — embeds in-app, runs on Jetson/Pi. ~22x faster vs Milvus/Qdrant (10M-vec VDBBench). HIPAA/GDPR/SOC2. Paid from $417/mo | actian.com |
 | **LanceDB** | Free OSS (embedded) | Serverless, multimodal | lancedb.com |
 | **Upstash Vector** | 10K vectors free | Serverless | upstash.com |
 | **Turbopuffer** | Usage-based, cheap | Object-storage-backed | turbopuffer.com |

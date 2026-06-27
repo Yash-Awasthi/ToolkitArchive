@@ -260,6 +260,7 @@ brew install aionui
 
 | Agent | By | Type | Price | Capability |
 |---|---|---|---|---|
+| **OpenClaw** | OpenClaw Foundation | Self-hosted personal agent | Free (MIT, BYO LLM key) | **380K+ stars — most-starred self-hosted agent.** Long-running Node service routing 23+ chat channels (WhatsApp/Telegram/Discord/Signal/Slack) to an agent that reads files, runs commands, persists memory. ClawHub skill registry. Founder Peter Steinberger joined OpenAI; foundation now stewards it. ⚠️ Broad system access + untrusted 3rd-party skills = real RCE/malware risk |
 | **Manus AI** | Manus (ex-Monica.im) | Autonomous VM agent | Free 300cr/day · Pro $20 · Extended $200/mo | Sandboxed VM. Web browse, code, files, slides. 20 concurrent tasks on Pro |
 | **Genspark** | Genspark | All-in-one "Super Agent" | Free ~100–200cr/day (no card) · Plus $24.99 ($19.99/yr, 10K cr) · Pro $249.99 (125K cr) | Orchestrates many frontier models + 80+ tools. AI Slides/Sheets, image+video gen, AI Developer, real phone calls. Chat+image = 0 credits on paid through Dec 31 2026 |
 | **Devin** | Cognition | Autonomous SWE | $20/mo + $2.25/ACU | Full tickets end-to-end, PR creation |
@@ -299,7 +300,8 @@ brew install aionui
 | **pi-builder** | Wrapper | Wraps any installed CLI agent (Claude Code, Codex, OpenCode, Aider, Goose, Plandex, SWE-agent, Crush) behind single interface with capability routing, health caching, fallback chains, SQLite |
 | **LiteLLM** | Router | OpenAI-compatible proxy for 100+ providers. Used internally by OpenHands |
 | **OpenRouter** | Router | 200+ models via single API key. `:free` suffix for free models |
-| **MCP** | Protocol | Model Context Protocol — standard for agent↔tool integration. 36,000+ servers |
+| **MCP** | Protocol | Model Context Protocol — standard for agent↔tool integration. 72,500+ servers (cross-registry, Jun 2026) |
+| **A2A (Agent2Agent)** | Protocol | Google's open spec for agent↔agent interop — the companion to MCP (tool access). Native in Google ADK, OpenAgents, VoltAgent |
 | **ACP (Zed)** | Protocol | Agent Client Protocol — run any agent natively in Zed editor |
 | **CLIProxyAPI** | Proxy | Wraps Claude Code / Codex / Antigravity / Grok Build OAuth sessions → OpenAI-compatible API. Multi-account round-robin load balancing. 38.5K stars. [github.com/router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) |
 
@@ -402,6 +404,14 @@ Each MCP server exposes **Tools** (callable actions), **Resources** (readable da
 | **Docker MCP** | 4K+ | Container management — build, run, inspect |
 | **Kubernetes MCP** | 3K+ | Pod management, deployments, logs |
 
+**Creative / Design**
+
+| Server | Stars/Scale | What It Does |
+|---|---|---|
+| **Anthropic Creative Connectors** | 9 official | Claude for Creative Work (Apr 28 2026) — Blender, Adobe CC (50+ tools), Ableton, Autodesk Fusion, SketchUp, Affinity, Resolume, Splice. MCP-based → work in any MCP client, free on all plans |
+| **Figma Dev Mode MCP** | official | Figma's own Dev Mode server — pull design context (frames, variables, components) straight into the IDE/agent |
+| **Docker Hub MCP** | official | Docker's MCP catalog — discover/run containerized MCP servers in a sandbox |
+
 ### MCP Apps (January 26, 2026)
 
 Anthropic launched **MCP Apps** — MCP servers can now render interactive UIs directly inside Claude's chat window. Not just text responses — actual interactive interfaces.
@@ -422,8 +432,9 @@ Remote MCP runs as hosted endpoints — no local server needed, connect via URL 
 | Atlassian | mcp.atlassian.com | OAuth |
 | Linear | mcp.linear.app | API key |
 | Sentry | mcp.sentry.io | API key |
+| Cloudflare | 13 hosted servers (~2,500 API endpoints) | OAuth |
 
-Remote MCP grew from 16 servers (Jan 2026) → 25+ (Apr 2026). All major dev platforms now have remote endpoints.
+Remote MCP grew from 16 servers (Jan 2026) → 25+ (Apr 2026). All major dev platforms now have remote endpoints. **Cloudflare** ships the widest first-party set — 13 remote servers spanning ~2,500 API endpoints (Workers, R2, KV, DNS, Radar, etc.).
 
 ### Build Your Own MCP Server
 
@@ -789,6 +800,8 @@ Visual platforms for building AI workflows, RAG pipelines, and multi-agent syste
 | **Activepieces** | activepieces.com | 18K+ | Zapier-like + AI agents | Yes | Yes | $99+ |
 | **Stack AI** | stack-ai.com | — | Enterprise no-code AI builder | No | No | $199+ |
 | **Zapier AI** | zapier.com | — | AI actions on 7,000+ integrations | No | Yes (limited) | $20+ |
+| **Gumloop** | gumloop.com | — | No-code AI agents for non-devs, 130+ integrations | No | Yes | $97+ |
+| **Lindy** | lindy.ai | — | No-code AI agents/assistants for non-devs (email, meetings, CRM) | No | Yes (limited) | $49+ |
 
 **n8n** — default for enterprise workflow automation. Visual + code mode. Built-in AI agents, human-in-the-loop steps, TypeScript extensibility. 150K+ stars, most mature.
 
@@ -797,6 +810,8 @@ Visual platforms for building AI workflows, RAG pipelines, and multi-agent syste
 **Langflow** — Python-first, developer-friendly. Best for RAG pipelines and complex agent graphs. Drag-and-drop + code hybrid.
 
 **Flowise** — LangChain visual. Wire vector store + model + tools in one screen. Perfect for local model setups via Ollama.
+
+**Gumloop** — fastest-rising no-code agent builder. $50M Series B led by Benchmark (Mar 2026, ~$70M total), YC-backed. Customers: Shopify, Ramp, Gusto, Instacart, Opendoor, Samsara. Model-agnostic — the pitch vs n8n is hosted speed + non-technical UX.
 
 **2026 enterprise pattern**: n8n as orchestration layer → Langflow/Flowise as AI reasoning layer.
 
@@ -816,8 +831,10 @@ Visual platforms for building AI workflows, RAG pipelines, and multi-agent syste
 | **Mastra** | mastra.ai | 22K+ | TypeScript | **TS leader** — workflows, HITL, Next.js (YC W25, v1.0 Jan 2026) |
 | **OpenAI Agents SDK** | openai.github.io/openai-agents-python | — | Python/JS | OpenAI-native handoffs (Swarm successor, model-locked) |
 | **Google ADK** | google.github.io/adk-docs | — | Python | Gemini-optimized, A2A interop (can call LangGraph/CrewAI agents) |
-| **Microsoft Agent Framework** | — | — | Python/.NET | Unified AutoGen + Semantic Kernel successor (1.0 GA) |
-| **Agno** (Phidata) | agno.com | — | Python | High-throughput agent swarms |
+| **Microsoft Agent Framework (MAF)** | github.com/microsoft/agent-framework | — | Python/.NET | Unified AutoGen + Semantic Kernel successor. **1.0 GA Apr 2026** — both predecessors now maintenance-only |
+| **Agno** (ex-Phidata) | agno.com | 39K+ | Python | High-throughput agent swarms. Most-starred pure-agent framework |
+| **VoltAgent** | voltagent.dev | ~2K | TypeScript | Observability-first TS framework — typed tools, MCP + A2A, VoltOps console (addthis claims 26K — unverified, sourced count ~1.5K Apr 2026) |
+| **OpenAgents** | github.com/openagents-org/openagents | — | Python | Multi-agent *network* platform — native MCP + A2A, shared browser/workspace, Launcher daemon |
 | **Vercel AI SDK** | sdk.vercel.ai | — | TypeScript | Full-stack TS agents, streaming UI |
 
 **Decision guide (2026):** complex stateful Python graphs → **LangGraph** (enterprise default: Klarna, Uber, JPMorgan) · fast multi-agent prototype → **CrewAI** (teams often graduate to LangGraph for checkpointing) · TypeScript → **Mastra** · type-safe Python → **Pydantic AI** · RAG-heavy → **LlamaIndex** · Microsoft/.NET → Microsoft Agent Framework. Pair any with an observability stack (LangSmith / Langfuse / Pydantic Logfire / AgentOps).

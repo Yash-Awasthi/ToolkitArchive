@@ -48,3 +48,23 @@ Content from these awesome-lists has been folded into the topic files; originals
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [AGENTS.md](./AGENTS.md) Part 5A |
 | [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) · [caramaschiHG/awesome-ai-agents-2026](https://github.com/caramaschiHG/awesome-ai-agents-2026) | [AGENTS.md](./AGENTS.md) Part 9 |
 | [DmitryScaletta/free-database-services](https://github.com/DmitryScaletta/free-database-services) | [BACKEND.md](./BACKEND.md) |
+
+---
+
+## Primary Sources — June 2026 Additions
+
+> Web-verified (June 27, 2026) for the latest batch of models/tools added across the archive.
+
+**Models** — [Claude Fable 5 / Mythos 5 (Anthropic)](https://www.anthropic.com/news/claude-fable-5-mythos-5) · [Microsoft MAI models (Build 2026)](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) · [Kimi K2.7-Code (Moonshot)](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) · [Meta Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-msl/) · [Apple AFM 3 (WWDC)](https://www.apple.com/newsroom/) · [Gemini Omni (I/O)](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)
+
+**Agents / MCP** — [OpenClaw](https://github.com/openclaw/openclaw) · [Gumloop $50M Series B](https://techcrunch.com/2026/03/12/gumloop-lands-50m-from-benchmark-to-turn-every-employee-into-an-ai-agent-builder/) · [VoltAgent](https://github.com/VoltAgent/voltagent) · [OpenAgents](https://github.com/openagents-org/openagents) · [Anthropic Creative Connectors](https://www.anthropic.com/news/claude-for-creative-work)
+
+**Frontend** — [Claude Design (Anthropic Labs)](https://www.anthropic.com/news/claude-design-anthropic-labs) · [a0.dev (YC W25)](https://news.ycombinator.com/item?id=43015267) · [Cloudflare VibeSDK](https://github.com/cloudflare/vibesdk) · [Blink.new (YC)](https://www.ycombinator.com/companies/blink-new)
+
+**Backend** — [Microsoft Rayfin](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) · [Zilliz Vector Lakebase](https://www.businesswire.com/news/home/20260621822926/en/) · [ScyllaDB Vector Search](https://www.scylladb.com/vector-search/) · [Actian VectorAI DB](https://www.actian.com/databases/vectorai-db/) · [Northflank BYOC](https://northflank.com/features/bring-your-own-cloud)
+
+**Media** — [FLUX.2 Pro pricing](https://bfl.ai/pricing) · [OpenAI gpt-image-2](https://openai.com/index/introducing-chatgpt-images-2-0/) · [Mistral Voxtral TTS](https://mistral.ai/news/voxtral-tts/) · [Hume TADA](https://www.hume.ai/blog/opensource-tada) · [Kyutai Pocket TTS](https://kyutai.org/blog/2026-01-13-pocket-tts) · [Fun-Realtime-TTS #1 Arena](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) · [GPT-Realtime-2](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/) · [ClickHouse acquires Langfuse](https://siliconangle.com/2026/01/16/database-maker-clickhouse-raises-400m-acquires-ai-observability-startup-langfuse/) · [Braintrust $80M Series B](https://bayelsawatch.com/braintrust-raises-80m-series-b/)
+
+**Free access** — [BazaarLink](https://bazaarlink.ai/free) · [freellm.net](https://freellm.net/) · [OpenCode Zen](https://opencode.ai/zen) · [xAI free credits](https://www.getaiperks.com/en/blogs/22-xai-grok-free-credits) · [Vercel AI Gateway](https://vercel.com/ai-gateway)
+
+> ⚠️ **Not added (research caught these):** *Kluster.ai* was shut down (acquired by MITO, sunset Jun 9 2026) — excluded as a dead free provider. *VoltAgent* star count listed as ~2K (sourced), not the 26K in the source notes (unverified).

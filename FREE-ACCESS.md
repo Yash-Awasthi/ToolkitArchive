@@ -39,6 +39,9 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Aion Labs** | Aion 2.5, Aion 2.0, Aion-RP 1.0 | 15 | — | 20K | Roleplay/storytelling specialist. IL-based |
 | **AIMLAPI** | 400+ models (GPT, Claude, Gemini, DeepSeek free tier) | — | — | — | One key, 400+ models |
 | **TokenLB** | Claude Opus 4.8, GPT-5.5, DeepSeek, Qwen, 40+ providers | — | — | — | Lower-cost reseller. OSS dev credit program |
+| **BazaarLink** | `auto:free` → best available free model (Llama/Gemma/Qwen/DeepSeek) | 10 | 150 | — | **No card, no trial expiry.** OpenAI-compatible (`sk-bl-`). Agent self-registration endpoint. TW-based |
+| **Pollinations.AI** | Text + image + audio + video, one API | — | — | — | **Zero-auth, no signup.** Server keys unmetered (client keys 1 req/hr/IP). Also in Table 1B |
+| **NLP Cloud** | Open + proprietary models (gen, NER, classification, embeddings) | limited | — | — | Free dev tier; production-NLP focus |
 
 ---
 
@@ -64,6 +67,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Jina AI** | 10M tokens free | Embeddings, reranker, reader | Good for RAG testing; reader API turns URLs→LLM text | jina.ai |
 | **Pollinations.ai** | Free, server keys unmetered | Text + image + audio + video, single API | Client keys 1 req/hr/IP; server-side keys no rate limit | pollinations.ai |
 | **Sarvam AI** | ₹1000 signup credit | Indic-language LLMs + STT/TTS + doc digitization | Indian startup; best for Indian-language tasks | sarvam.ai |
+| **OpenCode Zen** | Mostly PAYG; **free stealth/experimental models** for limited periods | Curated coding-agent models (validated/benchmarked) | ⚠️ Free models may train on your data — avoid sensitive code. No lock-in. `opencode/<id>` | opencode.ai/zen |
 
 ### Aggregators (route across many free tiers with one key)
 
@@ -73,6 +77,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **MrFadiAi/free-llm-gateway** | OpenAI-compatible gateway aggregating **24+ providers, 260+ free models** auto-discovered, auto-fallback, rate-limit tracking, dashboard | github.com/MrFadiAi/free-llm-gateway |
 | **FreeLLMAPI** | OSS BYOK proxy (~9.8K★). Stacks the free tiers of **16 providers (~1.7B tokens/mo, 110+ models)** behind one `/v1`. Smart routing, auto-failover, per-key rate tracking (avoids 429s), AES-256 key encryption. Live catalog = $19/yr; router free forever | freellmapi.co · github.com/tashfeenahmed/freellmapi |
 | **gaca-core** (G.A.C.A.) | OSS "Universal AI Bus" — **87+ free models from 11 providers**, OpenAI-compatible (`/v1/chat/completions`), auto-failover + ranking + rate limiting. Drop-in fallback for any OpenAI client | github.com/gacabartosz/gaca-core |
+| **freellm.net** | Directory of **224+ free models / 25 providers**, daily live-verified (real API calls). One-click config for Claude Code / Codex / Gemini CLI / OpenClaw | freellm.net |
 | **LiteLLM / OpenRouter** | Route + fall back across providers to multiply free quotas | litellm.ai · openrouter.ai |
 
 > Combine the multi-provider free tiers (Groq + Cerebras + Google AI Studio + Chutes + Nineteen + OpenRouter `:free`) behind LiteLLM/free-llm-gateway → effectively continuous free inference.
@@ -91,6 +96,13 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Azure AI Foundry** | $200 | 30 days | GPT-5.5, Claude, Llama | New Azure account |
 | **OpenRouter** | $1 | — | Any model | Signup bonus |
 | **Moonshot (Kimi)** | Varies | — | Kimi K2.6 (80.2%) | moonshot.cn new account |
+| **xAI (Grok)** | $25 signup + **$150/mo** | recurring | Grok 4.3, Grok Code Fast | console.x.ai. ⚠️ $150/mo needs data-sharing opt-in (irreversible) + $5 prior spend. Don't use for sensitive data |
+| **Vercel AI Gateway** | $5 / 30 days | refreshes | 40+ providers, one key, no markup | vercel.com/ai-gateway. Free ends after first payment |
+| **Fireworks AI** | Signup credits | — | Open models (Llama/Qwen/DeepSeek), fast serving | fireworks.ai |
+| **Upstage** | Signup credits | — | Solar Pro 2 (102B MoE) | upstage.ai |
+| **AI21 Labs** | Signup credits | — | Jamba (SSM-Transformer hybrid, long ctx) | ai21.com |
+| **Scaleway** | EU free trial | — | Open models; **Batch API has no rate limit** | scaleway.com |
+| **Nebius** | Signup credits | — | Open models (EU); OpenRouter partner | nebius.com |
 
 > **Stack strategy:** AWS ($300) + GCP ($300) + Azure ($200) = **$800+** in cloud AI credits.
 > Run Opus 4.8 ($25/M out) or GPT-5.5 ($30/M out) for months at zero cost.
