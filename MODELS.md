@@ -37,6 +37,7 @@
 | GPT-5.3 Codex | OpenAI | 85.0% | [C] | $1.75 | $14 | 1M | Codex API, agentic coding focus |
 | GPT-5.4 | OpenAI | 84.1% | open | $2.50 | $15 | 1M | Scale SEAL 59.1% (xHigh) |
 | Claude Sonnet 4.6 | Anthropic | 82.8% | [V] | $3 | $15 | 1M | Best-value Anthropic flagship |
+| **Ornith-1.0-397B** | DeepReinforce | 82.4% | open | — | — | — | Jun 25, MIT weights (HF, self-host). 397B MoE flagship; family also 9B/31B/35B. Self-scaffolding RL — writes own agent scaffold before solving. TB 2.1 77.5%. Beats Opus 4.7, not 4.8. Vendor benches |
 | GLM-5.1 | Z.AI | 81.0% | [V] | $1.40 | $4.40 | 200K | First open model to top SWE-bench Pro |
 | DeepSeek V4 Pro | DeepSeek | 80.6% | open | $0.44 | **$0.87** | 1M | MIT license. Cache hits $0.001/M. Sweet spot |
 | Gemini 3.1 Pro | Google | 80.6% | open | $2 | $12 | 1M | Price doubles >200K ctx |
@@ -63,6 +64,8 @@
 | Nemotron 3 Ultra | NVIDIA | ~67% | [C] | $0.20 | $0.50 | 1M | Open-weight, 30% fewer tokens |
 | Step 3.7 Flash | StepFun | ~69% | [C] | $0.30 | $0.60 | 256K | Interpolated |
 | GPT-oss-20b | OpenAI | 57.0% | open | $0.07 | $0.14 | 64K | OpenAI open-weight |
+
+> **Sakana Fugu** (Jun 22) — not a model row but an *orchestration meta-model*: one API endpoint that routes each request across a swappable pool of frontier LLMs (recursively including itself). Hosted = proprietary; the repo + ICLR papers (TRINITY, Conductor) are open, and [OpenFugu](https://github.com/trotsky1997/OpenFugu) reimplements it Apache-2.0. Same idea as the multi-tier routing below, sold as a single model. [SakanaAI/fugu](https://github.com/SakanaAI/fugu)
 
 ---
 
@@ -228,4 +231,6 @@
 | Jun 12 | Fable 5 export-suspended (US controls); Kimi K2.7-Code released |
 | Jun 13 | GLM-5.2 — 1M ctx, MIT |
 | Jun 16 | MiniMax M3 tops open SWE-bench Pro (59.0%) |
+| Jun 22 | Sakana Fugu — LLM-orchestration meta-model (routes a pool of frontier LLMs behind one endpoint) |
+| Jun 25 | Ornith-1.0 (DeepReinforce) — open MIT coding models (9B/31B/35B/397B), self-scaffolding RL, 82.4% SWE-bench |
 | Jun 26 | GPT-5.6 Sol/Terra/Luna preview — gated to ~20 orgs pending US-gov 30-day cyber review (EO Jun 2); GA "coming weeks" |
