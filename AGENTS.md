@@ -198,7 +198,7 @@ These aren't IDEs — they're GUI desktops that orchestrate multiple AI agents i
 
 > *"The best free alternative to proprietary enterprise cowork platforms"*
 
-**GitHub:** github.com/AionUI/AionUI · **Stars:** 28K+ · **License:** Apache 2.0 · **Stack:** Electron + React
+**GitHub:** github.com/iOfficeAI/AionUi · **Stars:** 28K+ · **License:** Apache 2.0 · **Stack:** Electron + React
 
 **What it does:**
 - Auto-detects and integrates 20+ installed CLI tools (Claude Code, OpenCode, Codex, Gemini CLI, Aider, etc.) into one dashboard
@@ -220,7 +220,7 @@ These aren't IDEs — they're GUI desktops that orchestrate multiple AI agents i
 brew install aionui
 
 # Or download binary from GitHub Releases (.dmg / .exe / Linux AppImage)
-# https://github.com/AionUI/AionUI/releases
+# https://github.com/iOfficeAI/AionUi/releases
 ```
 
 **Common issues:**
