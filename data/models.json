@@ -1,0 +1,47 @@
+{
+  "_comment": "Single source of truth for ToolkitArchive model data (June 2026). API-accessible models only (no local-only runners). Charts (charts/gen_charts.py) and MODELS.md derive from this. in/out = $ per 1M tokens. ctx_k = context window in K tokens. swe = SWE-bench Verified %. src: open|V(vendor)|C(closed)|est.",
+  "models": [
+    {"name": "GPT-5.6 Sol",        "company": "OpenAI",    "in": 5.00, "out": 30.0, "ctx_k": 1500, "swe": 91.0, "src": "est"},
+    {"name": "GPT-5.6 Terra",      "company": "OpenAI",    "in": 2.50, "out": 15.0, "ctx_k": 1000, "swe": 88.0, "src": "est"},
+    {"name": "GPT-5.6 Luna",       "company": "OpenAI",    "in": 1.00, "out": 6.0,  "ctx_k": 1000, "swe": 84.0, "src": "est"},
+    {"name": "GPT-5.5",            "company": "OpenAI",    "in": 5.00, "out": 30.0, "ctx_k": 1000, "swe": 88.7, "src": "open"},
+    {"name": "Claude Opus 4.8",    "company": "Anthropic", "in": 5.00, "out": 25.0, "ctx_k": 1000, "swe": 88.6, "src": "V"},
+    {"name": "Grok Build 0.1",     "company": "xAI",       "in": 5.00, "out": 25.0, "ctx_k": 128,  "swe": 76.0, "src": "C"},
+    {"name": "GPT-5.4",            "company": "OpenAI",    "in": 2.50, "out": 15.0, "ctx_k": 1000, "swe": 84.1, "src": "open"},
+    {"name": "Claude Sonnet 4.6",  "company": "Anthropic", "in": 3.00, "out": 15.0, "ctx_k": 1000, "swe": 82.8, "src": "V"},
+    {"name": "Grok 4.3",           "company": "xAI",       "in": 3.00, "out": 15.0, "ctx_k": 128,  "swe": 78.0, "src": "C"},
+    {"name": "GPT-5.3 Codex",      "company": "OpenAI",    "in": 1.75, "out": 14.0, "ctx_k": 1000, "swe": 85.0, "src": "C"},
+    {"name": "Gemini 3.1 Pro",     "company": "Google",    "in": 2.00, "out": 12.0, "ctx_k": 1000, "swe": 80.6, "src": "open"},
+    {"name": "Gemini 3.5 Flash",   "company": "Google",    "in": 1.50, "out": 9.0,  "ctx_k": 1000, "swe": 78.8, "src": "open"},
+    {"name": "Laguna M.1",         "company": "Poolside",  "in": 4.00, "out": 8.0,  "ctx_k": 256,  "swe": 78.0, "src": "C"},
+    {"name": "Mistral Medium 3.5", "company": "Mistral",   "in": 1.50, "out": 7.5,  "ctx_k": 256,  "swe": 77.6, "src": "open"},
+    {"name": "Claude Haiku 4.5",   "company": "Anthropic", "in": 1.00, "out": 5.0,  "ctx_k": 200,  "swe": 74.8, "src": "V"},
+    {"name": "GLM-5.1",            "company": "Z.AI",      "in": 1.40, "out": 4.4,  "ctx_k": 200,  "swe": 81.0, "src": "V"},
+    {"name": "Qwen 3.7 Max",       "company": "Alibaba",   "in": 1.25, "out": 3.75, "ctx_k": 1000, "swe": 80.4, "src": "open"},
+    {"name": "Gemini 3.1 Flash",   "company": "Google",    "in": 0.30, "out": 2.5,  "ctx_k": 1000, "swe": 74.0, "src": "open"},
+    {"name": "Qwen 3.7 Plus",      "company": "Alibaba",   "in": 0.50, "out": 2.0,  "ctx_k": 1000, "swe": 78.0, "src": "open"},
+    {"name": "Qwen3-Coder 480B",   "company": "Alibaba",   "in": 0.22, "out": 1.8,  "ctx_k": 1000, "swe": 78.0, "src": "open"},
+    {"name": "Kimi K2.6",          "company": "Moonshot",  "in": 0.95, "out": 1.5,  "ctx_k": 262,  "swe": 80.2, "src": "open"},
+    {"name": "MiniMax M3",         "company": "MiniMax",   "in": 0.30, "out": 1.2,  "ctx_k": 1000, "swe": 80.5, "src": "open"},
+    {"name": "Devstral 2",         "company": "Mistral",   "in": 0.40, "out": 0.9,  "ctx_k": 256,  "swe": 72.2, "src": "open"},
+    {"name": "DeepSeek V4 Pro",    "company": "DeepSeek",  "in": 0.44, "out": 0.87, "ctx_k": 1000, "swe": 80.6, "src": "open"},
+    {"name": "MiMo V2.5 Pro",      "company": "Xiaomi",    "in": 0.44, "out": 0.87, "ctx_k": 1000, "swe": 75.0, "src": "open"},
+    {"name": "Step 3.7 Flash",     "company": "StepFun",   "in": 0.30, "out": 0.6,  "ctx_k": 256,  "swe": 69.0, "src": "C"},
+    {"name": "Nemotron 3 Ultra",   "company": "NVIDIA",    "in": 0.20, "out": 0.5,  "ctx_k": 1000, "swe": 67.0, "src": "C"},
+    {"name": "Llama 4 Maverick",   "company": "Meta",      "in": 0.20, "out": 0.39, "ctx_k": 1000, "swe": 74.0, "src": "open"},
+    {"name": "DeepSeek V4 Flash",  "company": "DeepSeek",  "in": 0.14, "out": 0.28, "ctx_k": 1000, "swe": 72.0, "src": "open"},
+    {"name": "GLM-5.2",            "company": "Z.AI",      "in": 0.14, "out": 0.28, "ctx_k": 1000, "swe": 72.0, "src": "V"},
+    {"name": "GPT-oss-20b",        "company": "OpenAI",    "in": 0.07, "out": 0.14, "ctx_k": 64,   "swe": 57.0, "src": "open"}
+  ],
+  "upcoming": [
+    {"name": "Gemini 3.5 Pro","company": "Google",    "ctx_k": 2000, "swe_est": null, "status": "Announced Google I/O (May 19 2026), GA imminent. ~$15/$60 expected, 2M ctx, Deep Think mode"},
+    {"name": "Fable 5",       "company": "Mythic",    "ctx_k": null, "swe_est": 95, "status": "SWE-bench record holder. Export-suspended Jun 12 (US controls). Not publicly usable"},
+    {"name": "DeepSeek V5",   "company": "DeepSeek",  "ctx_k": null, "swe_est": null, "status": "Rumored Q2-Q3 2026. Expected to push Tier-1 capability + cheaper"},
+    {"name": "Kimi K3",       "company": "Moonshot",  "ctx_k": null, "swe_est": null, "status": "Rumored Q3 2026"}
+  ],
+  "claude_effort": {
+    "_note": "Claude reasoning effort tiers. Budgets illustrative (relative extended-thinking token budget).",
+    "tiers": ["low", "medium", "high", "xhigh", "max"],
+    "budget_k": [4, 16, 32, 64, 128]
+  }
+}
