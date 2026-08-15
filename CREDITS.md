@@ -129,3 +129,39 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 6. **Need GPU?** → Kaggle 30 hrs/week + Colab + Modal $30/mo.
 
 > **Privacy note:** free tiers are often funded by your prompts (your data may train models). Keep customer/production data on paid, no-train tiers. Groq/Cerebras generally don't train on your data — read each provider's terms.
+
+---
+
+## Part 6 — Provider Trust Status
+
+> Sign-off from a domain-by-domain check, June 2026. Rule for this archive: a provider only gets a plain, unqualified entry once it is confirmed both real and doing what it claims. A provider with a real product but a rough edge gets the entry plus one caveat sentence, never a plain entry. A provider that could not be confirmed stays in its own "not stable" section below — never mixed into the tables above, so nobody mistakes a young domain or a pooled-login trick for a real free tier.
+
+### Clean — confirmed real, does what it says
+
+Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Moda.app (a design tool — don't confuse with the unrelated modaai.app), Kimi K2, GLM 5.3, Gemini 3.7, DeepSeek Harness, Blaxel, E2B, Modal, Daytona, CodeSandbox, Vercel, Fly.io, Northflank, Lightning.ai, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
+
+### Use with a caveat — real, but read the note before you rely on it
+
+| Provider | Caveat |
+|---|---|
+| **Relume.ai** | Not a standalone builder — it only outputs sitemaps/wireframes into Webflow or Figma, needs one of those underneath it |
+| **Runable.com** | Its published numbers are all vendor-supplied marketing claims, not third-party benchmarks — treat them as such |
+| **Draftly.space** | Real cinematic 3D-site builder. Don't confuse with draftly.live or draftly.so — different domains, not verified as the same operator |
+| **Oxaam.com** | Access works, but it runs on pooled/shared logins — ToS risk for you and the account owner. Not a clean free tier; it's a sketchy-method workaround, label it that way |
+| **Resourify.com** | Domain is spelled without a "c" — resourify.com, not resourcify.com |
+
+### Unverified — flagged, not a confirmed free tier, use at own risk, not stable
+
+> These have not been independently confirmed. Do not give them a plain entry anywhere else in this archive.
+
+- **Aerolink.lat**
+- **Agentrouter.org** (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
+- **Bluesminds** / api.bluesminds.com (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
+- **Tokenrouter.com**
+- **api.hcnsec.cn**
+- **Cto.new** — the company itself is real, but its "free unlimited" claim is a promotion that will expire or change; mark it promotional, not a standing free tier
+
+### Kept out entirely
+
+- **Lumosel.vip** — confirmed scam. Keep it in this archive only as a warning, never as a usable entry.
+- **Verdant.ai** — the name is shared by four unrelated companies. Whoever writes an entry for it must first identify which company they mean; until then, leave it out.
