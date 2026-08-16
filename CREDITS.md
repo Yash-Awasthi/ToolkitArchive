@@ -151,7 +151,7 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 | **Relume.ai** | Not a standalone builder — it only outputs sitemaps/wireframes into Webflow or Figma, needs one of those underneath it |
 | **Runable.com** | Its published numbers are all vendor-supplied marketing claims, not third-party benchmarks — treat them as such |
 | **Draftly.space** | Real cinematic 3D-site builder. Don't confuse with draftly.live or draftly.so — different domains, not verified as the same operator |
-| **Oxaam.com** | Access works, but it runs on pooled/shared logins — ToS risk for you and the account owner. Not a clean free tier; it's a sketchy-method workaround, label it that way |
+| **Oxaam.com** | Re-checked 17 Aug 2026 — **multiple Reddit communities flag it as a scam** (r/Scams Dec 2025 "may steal your login details"; r/isthisascam "( Scam )"; r/AI_Agents "Oxaam is a scam guys"). It's a pooled/shared-login subscription farm (claims 100+ premium subs free: ChatGPT, streaming, storage, design tools). Trustpilot shows 4.2/1195 but includes company-written reviews and the owner identity is hidden (ScamAdviser). **Treat as Kept-out-level risk, not a clean free tier** — never put a real password/bank-linked login into it |
 | **Resourify.com** | Domain is spelled without a "c" — resourify.com, not resourcify.com |
 | **CodeSandbox** | Moved out of Clean this pass. Its pricing page sits behind a bot-wall — the credit numbers we have (400 credits/mo, $0.015/credit, Pro $9/mo) came from a search index, not a live fetch |
 | **Lightning.ai** | Moved out of Clean this pass. The free CPU studio and no-card signup are confirmed, but the monthly free-credit amount is disputed across sources (15 vs. 30) — don't quote either number as settled |
