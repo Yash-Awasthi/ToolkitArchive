@@ -260,6 +260,12 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **MCP 2.0 / 2026-07-28 spec noted** (AGENTS.md Part 5A): stateless/cacheable/routable transports, Sampling deprecated, new TS/Python/Go SDKs — verified via Cloudflare blog (Aug 6) + Simon Willison (Jul 31).
 - README: Aug 5 timeline row + digest bullet. No chart changes.
 
+## Web-sweep pass 4 (final) — 17 Aug 2026
+
+- **AMD AI Developer Program added** (CREDITS.md Part 5): free AMD GPU cloud credits for training/fine-tuning/inference — verified via AMD's official how-to-claim guide (Jun 22, 2026).
+- **Thunder Compute added** (CREDITS.md Part 5, ⚠️): free monthly GPU credits + student program — community-reported (Medium/Spheron lists), not directly verified.
+- Model-release check for Aug 14-17: only GLM-5.3 (added) and Gemini 3.7 Flash (added) — no other frontier releases this week; Writer shipped a low-cost GLM-5.2-based model (TechCrunch Aug 13) — noted, not a new entry.
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)
