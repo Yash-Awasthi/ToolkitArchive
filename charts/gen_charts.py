@@ -30,7 +30,10 @@ COLORS = {
     "Mistral": "#fa520f", "DeepSeek": "#4d6bfe", "Xiaomi": "#b8860b", "Meta": "#0668e1",
     "NVIDIA": "#76b900", "StepFun": "#7f8c8d", "Poolside": "#9b59b6",
 }
-def c(co): return COLORS.get(co, "#999999")
+def c(co):
+    if co not in COLORS:
+        raise KeyError(f"no color mapped for company {co!r} — add it to COLORS in charts/gen_charts.py")
+    return COLORS[co]
 def money(x, _): return f"${x:g}"
 def save(fig, name): fig.tight_layout(); fig.savefig(os.path.join(HERE, name)); plt.close(fig)
 

@@ -1,15 +1,15 @@
 {
-  "_comment": "Single source of truth for ToolkitArchive model data (June 2026). API-accessible models only (no local-only runners). Charts (charts/gen_charts.py) and MODELS.md derive from this. in/out = $ per 1M tokens. ctx_k = context window in K tokens. swe = SWE-bench Verified %. src: open|V(vendor)|C(closed)|est.",
+  "_comment": "Single source of truth for ToolkitArchive model data (June 2026, last re-checked Aug 2026). API-accessible models only (no local-only runners), and only models with a primary-sourced price and SWE-bench number, since charts plot both. Models confirmed real but missing one of those two numbers (e.g. Claude Opus 5, Sonnet 5, Grok 4.6/4.5) live as text-only rows in MODELS.md Table 1, not here. Charts (charts/gen_charts.py) and MODELS.md derive from this. in/out = $ per 1M tokens. ctx_k = context window in K tokens. swe = SWE-bench Verified %. src: open|V(vendor)|C(closed)|est. Some ctx_k values carry an unverified-context caveat noted in MODELS.md prose, not reflected here.",
   "models": [
-    {"name": "GPT-5.6 Sol",        "company": "OpenAI",    "in": 5.00, "out": 30.0, "ctx_k": 1500, "swe": 91.0, "src": "est"},
+    {"name": "GPT-5.6 Sol",        "company": "OpenAI",    "in": 5.00, "out": 30.0, "ctx_k": 1050, "swe": 91.0, "src": "est"},
     {"name": "GPT-5.6 Terra",      "company": "OpenAI",    "in": 2.50, "out": 15.0, "ctx_k": 1000, "swe": 88.0, "src": "est"},
     {"name": "GPT-5.6 Luna",       "company": "OpenAI",    "in": 1.00, "out": 6.0,  "ctx_k": 1000, "swe": 84.0, "src": "est"},
     {"name": "GPT-5.5",            "company": "OpenAI",    "in": 5.00, "out": 30.0, "ctx_k": 1000, "swe": 88.7, "src": "open"},
     {"name": "Claude Opus 4.8",    "company": "Anthropic", "in": 5.00, "out": 25.0, "ctx_k": 1000, "swe": 88.6, "src": "V"},
-    {"name": "Grok Build 0.1",     "company": "xAI",       "in": 5.00, "out": 25.0, "ctx_k": 128,  "swe": 76.0, "src": "C"},
+    {"name": "Grok Build 0.1",     "company": "xAI",       "in": 5.00, "out": 25.0, "ctx_k": 256,  "swe": 76.0, "src": "C"},
     {"name": "GPT-5.4",            "company": "OpenAI",    "in": 2.50, "out": 15.0, "ctx_k": 1000, "swe": 84.1, "src": "open"},
     {"name": "Claude Sonnet 4.6",  "company": "Anthropic", "in": 3.00, "out": 15.0, "ctx_k": 1000, "swe": 82.8, "src": "V"},
-    {"name": "Grok 4.3",           "company": "xAI",       "in": 3.00, "out": 15.0, "ctx_k": 128,  "swe": 78.0, "src": "C"},
+    {"name": "Grok 4.3",           "company": "xAI",       "in": 3.00, "out": 15.0, "ctx_k": 1000, "swe": 78.0, "src": "C"},
     {"name": "GPT-5.3 Codex",      "company": "OpenAI",    "in": 1.75, "out": 14.0, "ctx_k": 1000, "swe": 85.0, "src": "C"},
     {"name": "Gemini 3.1 Pro",     "company": "Google",    "in": 2.00, "out": 12.0, "ctx_k": 1000, "swe": 80.6, "src": "open"},
     {"name": "Gemini 3.5 Flash",   "company": "Google",    "in": 1.50, "out": 9.0,  "ctx_k": 1000, "swe": 78.8, "src": "open"},
@@ -31,17 +31,16 @@
     {"name": "Nemotron 3 Ultra",   "company": "NVIDIA",    "in": 0.20, "out": 0.5,  "ctx_k": 1000, "swe": 67.0, "src": "C"},
     {"name": "Llama 4 Maverick",   "company": "Meta",      "in": 0.20, "out": 0.39, "ctx_k": 1000, "swe": 74.0, "src": "open"},
     {"name": "DeepSeek V4 Flash",  "company": "DeepSeek",  "in": 0.14, "out": 0.28, "ctx_k": 1000, "swe": 72.0, "src": "open"},
-    {"name": "GLM-5.2",            "company": "Z.AI",      "in": 0.14, "out": 0.28, "ctx_k": 1000, "swe": 72.0, "src": "V"},
+    {"name": "GLM-5.2",            "company": "Z.AI",      "in": 1.40, "out": 4.40, "ctx_k": 1000, "swe": 72.0, "src": "V"},
     {"name": "GPT-oss-20b",        "company": "OpenAI",    "in": 0.07, "out": 0.14, "ctx_k": 64,   "swe": 57.0, "src": "open"}
   ],
   "upcoming": [
-    {"name": "Gemini 3.5 Pro","company": "Google",    "ctx_k": 2000, "swe_est": null, "status": "Announced Google I/O (May 19 2026), GA imminent. ~$15/$60 expected, 2M ctx, Deep Think mode"},
-    {"name": "Fable 5",       "company": "Anthropic", "ctx_k": 1000, "swe_est": 95, "status": "Mythos-class ($10/$50, 1M ctx). GA Jun 9 -> export-suspended Jun 12 (US controls). SWE-bench Pro 80.3%"},
-    {"name": "Mythos 5",      "company": "Anthropic", "ctx_k": 1000, "swe_est": 95.5, "status": "Same base as Fable 5, safety classifiers removed. World's strongest cyber model (ExploitBench 78%). Project-Glasswing-only. Not GA"},
+    {"name": "Gemini 3.5 Pro","company": "Google",    "ctx_k": 2000, "swe_est": null, "status": "Announced Google I/O (May 19 2026), GA imminent. ~$15/$60 expected, 2M ctx, Deep Think mode. Not re-checked this pass"},
+    {"name": "Fable 5",       "company": "Anthropic", "ctx_k": 1000, "swe_est": 95, "status": "Mythos-class ($10/$50, 1M ctx). GA Jun 9 -> export-suspended Jun 12 (US controls). SWE-bench Pro 80.3%. Ctx re-confirmed this pass; price, SWE-bench, and the export-suspend story are from the prior pass and not re-checked now"},
+    {"name": "Mythos 5",      "company": "Anthropic", "ctx_k": 1000, "swe_est": 95.5, "status": "Invite-only twin of Fable 5, safety classifiers removed. World's strongest cyber model claim (ExploitBench 78%, vendor-reported). Project-Glasswing-only, not GA. Price and SWE-bench number not re-verified this pass -- treat as unconfirmed, not fact"},
     {"name": "MAI-Thinking-1","company": "Microsoft", "ctx_k": 256,  "swe_est": null, "status": "Flagship reasoning, private preview via Foundry (Build 2026). 35B MoE, 97% AIME 2025, 53% SWE-bench Pro, preferred over Sonnet 4.6"},
     {"name": "Gemini Omni Pro","company": "Google",   "ctx_k": null, "swe_est": null, "status": "Full any-in/any-out follow-up to Omni Flash (I/O May 19). Dev API coming weeks, no pricing yet"},
-    {"name": "DeepSeek V5",   "company": "DeepSeek",  "ctx_k": null, "swe_est": null, "status": "Rumored Q2-Q3 2026. Expected to push Tier-1 capability + cheaper"},
-    {"name": "Kimi K3",       "company": "Moonshot",  "ctx_k": null, "swe_est": null, "status": "Rumored Q3 2026"}
+    {"name": "DeepSeek V5",   "company": "DeepSeek",  "ctx_k": null, "swe_est": null, "status": "Rumored Q2-Q3 2026. Expected to push Tier-1 capability + cheaper"}
   ],
   "claude_effort": {
     "_note": "Claude reasoning effort tiers. Budgets illustrative (relative extended-thinking token budget).",
