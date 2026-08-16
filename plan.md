@@ -237,6 +237,16 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
   the README digest for visibility.
 - **Charts regenerated** after adding ZCode to `data/extra_charts.json` (ide_pricing).
 
+## Instagram/Reddit sweep pass — 17 Aug 2026 (user: "find more; oxaam?; student acc; Cursor/Devin/Cline; Cline in AgentRouter")
+
+- **OrcaRouter verified + added** (FREE-ACCESS.md aggregators): MIT OpenRouter alternative, zero-markup, 100+ models; free credits no card (PRNewswire May 8), free BYOK (Jul 24), voucher drops + student credits + hackathon grants (live offers page, Aug 17). Credit amounts are promo-based — caveated ⚠️.
+- **findaicredits.com added** (FREE-ACCESS.md Useful Repos): directory of free AI credits/deals/coupons, surfaced via Instagram Aug 2026 reels (Claude/Cursor/Codex sub credits claimed) — labelled as leads, not facts.
+- **oxaam.com — already mentioned, warning upgraded.** Was a caveat row in CREDITS.md Part 6; this pass added the scam flags: r/Scams (Dec 2025 "may steal your login details"), r/isthisascam, r/AI_Agents ("Oxaam is a scam guys"). Trustpilot 4.2/1195 but company-written reviews + hidden owner. Now reads as Kept-out-level risk; never a real login.
+- **Student accounts — confirmed already covered:** CREDITS.md Part 2 has GitHub Student Pack (+Azure for Students $100, DigitalOcean $200, MongoDB $50…), Cursor for Students (1yr Pro), Zed Education ($10/mo credit), Cloudflare Workers for Students, Notion Edu, JetBrains/Figma/Linear. OrcaRouter's student credits added via its aggregator row.
+- **Cursor / Devin (ex-Windsurf) / Cline — confirmed already covered:** AGENTS.md Part 2 (Cursor, Devin Desktop/Windsurf rebrand note) + Part 1 Tier 2 (Cline) + MCP table (Cline VS Code extension row) + CREDITS.md (Cursor for Students, Lenny's Devin codes).
+- **Cline-in-AgentRouter made explicit:** FREE-ACCESS.md AgentRouter row now says to add the AgentRouter key as a custom OpenAI-compatible provider in the **Cline VS Code extension** (Settings → API Provider → OpenAI Compatible) for free Claude/GPT in the IDE.
+- README digest bullet added; no chart changes (no model-price/SWE rows affected).
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)
