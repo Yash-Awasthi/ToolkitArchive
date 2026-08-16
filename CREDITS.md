@@ -140,7 +140,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 
 ### Clean — confirmed real, does what it says
 
-Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Kimi K2, GLM 5.3, DeepSeek Harness, Blaxel, E2B, Modal, Daytona, Vercel, Fly.io, Northflank, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
+Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Kimi K2, GLM 5.3, DeepSeek Harness, Blaxel, E2B, Modal, Vercel, Northflank, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
 
 ### Use with a caveat — real, but read the note before you rely on it
 
@@ -154,6 +154,8 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 | **Gemini 3.7 (Flash)** | Moved out of Clean this pass. One scan of this archive's own research found a primary pricing page for it; a second scan of the same research called the model name a likely hallucination. That's our own sources disagreeing with each other, not a clean confirmation — recheck ai.google.dev before relying on this name or its $0.75/$3.75 price |
 | **CodeSandbox** | Moved out of Clean this pass. Its pricing page sits behind a bot-wall — the credit numbers we have (400 credits/mo, $0.015/credit, Pro $9/mo) came from a search index, not a live fetch |
 | **Lightning.ai** | Moved out of Clean this pass. The free CPU studio and no-card signup are confirmed, but the monthly free-credit amount is disputed across sources (15 vs. 30) — don't quote either number as settled |
+| **Daytona** | Moved out of Clean this pass. The "sub-90ms boot" headline claim is vendor marketing, not something this archive measured — confirm before relying on it |
+| **Fly.io** | Moved out of Clean this pass. The new-account trial credit is disputed across sources ($5 vs. a 2hr/7-day trial), and BACKEND.md's second Fly.io row (production hosting) says there is no free tier for new users at all — check the dashboard rather than trusting either number |
 
 ### Unverified — flagged, not a confirmed free tier, use at own risk, not stable
 
