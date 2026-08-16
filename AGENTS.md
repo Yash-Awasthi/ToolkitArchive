@@ -5,8 +5,8 @@
 > isolation. The official TB 2.1 leaderboard was checked on 17 August; it uses five trials and
 > forbids submissions from changing timeouts or resources.
 > ℹ️ **What was refreshed on 17 Aug 2026:** Parts 1 (CLI agents — added Grok Build, corrected
-> DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder), 4 (chat interfaces — current flagship
-> models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note), 11 (social
+> DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder, ZCode), 4 (chat interfaces — current
+> flagship models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note), 11 (social
 > discovery — August wave usage). **Parts 6–14 (builders, deploy, quality, no-code, local
 > runners, video/music/UI) remain June-2026 content** and were not re-verified this pass.
 
@@ -230,6 +230,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 | **Gemini CLI** | Google | Free (60 req/min, 1,000 req/day) | Terminal agent | Google | ~106K★, Apache 2.0. A prior retirement claim in this archive was unverified and has been removed |
 | **Trae** | ByteDance | Free · Lite $3 · Pro $10 · Ultra $100/mo | SOLO mode, MCP | **5-yr retention, no opt-out** | VS Code fork |
 | **Qoder** | Alibaba | **Free** (agent platform; ∞ model access per router dashboards) | Agent Autonomous Development platform, Quest mode, context-engineered editor, MCP | Cloud (Aliyun) | Launched Sep 2025 as free AI IDE; **Qoder 1.0 May 15, 2026** upgraded it to an agentic coding platform (Win/macOS/Linux). Pricing details on qoder.com |
+| **ZCode** | Z.AI / Zhipu | **Free** (GLM coding plan; paid plans exist) | Agentic desktop coding env — plan/code/review/deploy, GLM-5.2/5.3 | Cloud (Z.AI) | Launched Jul 2, 2026 as Z.AI's free coding agent vs Cursor/Claude Code/Copilot (VentureBeat). **GLM-5.3 (Aug 14) is free on ZCode right now** — it's the only place GLM-5.3 runs (API + open weights in ~2 weeks); GLM-5.2 was the launch model. zcode.z.ai |
 | **Void** | Void | Free | Agent Mode (multi-file, terminal) | **No telemetry, fully local** | Open-source VS Code fork |
 | **PearAI** | PearAI | Free BYOK | Full agentic, Continue-based | BYOK = local keys | Open-source VS Code fork |
 | **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |

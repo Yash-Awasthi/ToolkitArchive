@@ -1,7 +1,7 @@
 # Free API Access & Model Access — re-checked 17 August 2026
 
 > Permanent free API tiers below. For **trial-credit stacking, student/startup programs, free GPU, and subscription-as-API tricks** → [CREDITS.md](./CREDITS.md).
-> ✅ **Re-checked Aug 17, 2026** (prior pass: June 27, 2026; first Aug pass: Aug 16) — free tiers change weekly; confirm before relying. This pass added the August wave of free-AI offers surfaced on Reddit/Instagram and verified against live pages (OmniRoute, aerolink.lat, NaraRouter, LongCat-2.0, GoRouter, Tokeness, OpenRouter Fusion) and upgraded the AgentRouter/Bluesminds rows from "unverified" to caveated. Not every row was independently re-fetched this pass; where a number wasn't re-confirmed, the row says so.
+> ✅ **Re-checked Aug 17, 2026** (prior pass: June 27, 2026; first Aug pass: Aug 16) — free tiers change weekly; confirm before relying. This pass added the August wave of free-AI offers surfaced on Reddit/Instagram and verified against live pages (OmniRoute, aerolink.lat, NaraRouter, LongCat-2.0, GoRouter, Tokeness, OpenRouter Fusion), upgraded the AgentRouter/Bluesminds rows from "unverified" to caveated, and added **ZCode** (GLM-5.3 free on it since Aug 16-17). Not every row was independently re-fetched this pass; where a number wasn't re-confirmed, the row says so.
 
 ---
 
@@ -24,6 +24,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | ★ **NVIDIA NIM** | Nemotron 3 Super, Nemotron 3 Ultra, DeepSeek-R1, Llama 405B, MiniMax M2.7, 100+ | ~40 | — | — | build.nvidia.com. NVIDIA Dev Program |
 | ★ **GitHub Models** | gpt-5, gpt-4.1, gpt-4o, o4-mini, Llama 4 Scout, DeepSeek-R1, 45+ | 10–15 | 50–150 | — | GitHub account only. 8K in / 4K out per req |
 | ★ **Z.AI** | GLM-4.7-Flash, GLM-4.6V-Flash (vision) | 1 concurrent | — | — | open.bigmodel.cn. Permanent free |
+| ★ **ZCode (Z.ai)** | **GLM-5.3 free right now**, GLM-5.2 | — | — | — | Free desktop coding agent (not an API) from Z.AI, launched Jul 2, 2026 — plan/code/review/deploy workflow around the GLM line. GLM-5.3 (released Aug 14) is currently **only** available through ZCode / the GLM Coding Plan, and it's free on ZCode as of Aug 16-17 (community-confirmed; API + open weights coming in ~2 weeks). Desktop app (Win/macOS/Linux) · zcode.z.ai |
 | ★ **Mistral** | Mistral Medium 3.5 (128B), Mistral Small 4, Codestral | ~1 RPS | — | 500K | Non-commercial, EU-hosted. The "~1B tokens/month" Experiment-tier figure is unverified — only partially confirmed by a primary source (the free chat plan with $10/mo API credit is real; the exact monthly token ceiling is not), don't treat it as a fixed number |
 | ★ **SambaNova** | DeepSeek-V3.1/V3.2, Llama 3.3 70B, gpt-oss-120b, MiniMax M2.7, Gemma 4 31B | 20 | 20 | 200K | RDU hardware. Ultra-fast. No card required |
 | ★ **HuggingFace Inference Providers** | 200+ open models via Fireworks/Together/Hyperbolic/DeepInfra — DeepSeek V4 (incl. DSpark), Qwen, Llama, Kimi, Gemma | Credit-metered | — | **$0.10/mo free credits** (free users; PRO $2/mo; Team/Enterprise $2/seat) | Corrected this pass: the prior "100K credits/mo" was stale — current official pricing is $0.10 monthly credits for free users (huggingface.co/docs/inference-providers/en/pricing). No markup, routes to best provider automatically; pay-as-you-go past the credits. **DeepSeek DSpark** (V4-Pro/V4-Flash-DSpark) is also served — same model + speculative-decoding module, 50-600% faster |
@@ -205,6 +206,7 @@ print(r.choices[0].message.content)
 | Best free trial quality | Kimi K2.6 | Moonshot trial | 80.2% SWE-bench |
 | Fastest inference | Llama 3.3 70B | Groq | ~60%, 320 tok/sec |
 | Fast trial for open models | Cerebras-hosted models | Cerebras | $5 signup credit; current sustained-free quota not published |
+| Free frontier coding (new) | **GLM-5.3** | **ZCode (free, since Aug 16-17)** | Vendor claims top Kimi K3 / near Fable 5 — free only via the coding plan for now |
 | Free 1M ctx chat | GLM-5.2 | chat.z.ai | ~72% SWE-bench |
 | Cheapest paid production | DeepSeek V4 Flash | DeepSeek API | 72%, **$0.66/M out off-peak** ($1.32 peak, since Aug 16) |
 | Google ecosystem | Gemini 3.1 Flash (or the new 3.7 Flash, free on AI Studio) | Google AI Studio | 74% SWE-bench |

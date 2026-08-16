@@ -217,6 +217,26 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
   `Yash-Awasthi/Claude-skill` remained (in SKILLS.md's removal note); the note was reworded to
   drop the dead URL. The gist "404" is a grep artifact (gist.github.com host) — real URL works.
 
+## ZCode / GLM-5.3 / Zed pass — 17 Aug 2026 (user: "Zed $10 student plan; ZCode gives GLM free; GLM-5.3 free on 17 Aug")
+
+- **GLM-5.3 (Aug 14, 2026) verified from primary sources** (z.ai blog + Interconnects, Aug 14):
+  same GLM-5.2 base, gains entirely from extended post-training (~750B, a third of Kimi K3).
+  Currently available ONLY through ZCode / the GLM Coding Plan — no public API price; API and
+  open weights (HF) expected in ~2 weeks. Staged security release (cyber-defense capabilities,
+  dual-use) — selected partners first, then API, then full weights. Vendor claims: tops Kimi K3
+  on many benchmarks, some scores above Fable 5 / GPT-5.6-Sol — treated as claims, not
+  independently reproduced.
+- **ZCode added** (FREE-ACCESS.md Table 1 + use-case table, AGENTS.md Part 2, README quick-ref +
+  digest, ide-pricing chart at $0): Z.AI's free desktop coding agent, launched Jul 2, 2026
+  (VentureBeat). GLM-5.3 free on it since Aug 16-17 (community-confirmed — "GLM 5.3 Is Now FREE
+  On ZCode" walkthroughs). MODELS.md Z.AI row updated from "no price published" to the release
+  + free-access facts.
+- **Zed student plan — already present, confirmed**: CREDITS.md Part 2 already carries "Zed
+  Education — Zed Pro free 12 months + $10/mo AI credit (GitHub 30+ days, edu email)", which
+  matches zed.dev/blog/student-plan + zed.dev/education (Mar 9, 2026). No edit needed; noted in
+  the README digest for visibility.
+- **Charts regenerated** after adding ZCode to `data/extra_charts.json` (ide_pricing).
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)

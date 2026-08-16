@@ -147,6 +147,7 @@
 | Full autonomous tasks | Manus AI | Free / $20/mo |
 | Enterprise multi-agent | Relevance AI | Free / $19/mo |
 | Free GLM-5 chat | chat.z.ai | Free |
+| **Free GLM-5.3 coding (new)** | **ZCode** (free since Aug 16–17; only place GLM-5.3 runs) | Free |
 | Code + UI + deploy | Bolt.new / Lovable | Free / $20/mo |
 
 ### Best website builders
@@ -215,6 +216,7 @@
 | Aug 2 | Qwen 3.8-Max — 2.4T MoE, $2/$6, 1M ctx |
 | Aug 12 | Qwen 3.8 open weights (text-only); Grok 4.6 ($2/$6); xAI → SpaceXAI |
 | Aug 13 | **DeepSeek V4 Pro GA** (TB 2.1 87.9, own harness); **Gemini 3.7 Flash** ($0.75/$3.75 thru 2026) |
+| Aug 14 | **GLM-5.3** (Z.AI) — same GLM-5.2 base, post-training only, ~750B; free on ZCode since Aug 16–17; open weights ~2 weeks |
 | Aug 16 | DeepSeek peak/off-peak API pricing takes effect (off-peak = half) |
 | Aug 2026 | Free-AI wave: OmniRoute (29K★, ~1.5B tok/mo), NaraRouter (5-7M tok/day), aerolink ($35/wk), LongCat-2.0 free quotas — see [FREE-ACCESS.md](./FREE-ACCESS.md) |
 | Watch | Gemini 3.5 Pro — still not GA as of Aug 12 (missed June, Jul 17, and a rumored Aug 12 date) |
@@ -246,7 +248,8 @@
 
 Quick, intuition-first digest. Details + sources live in the file each row points to.
 
-- **A new frontier model every ~3 days.** This week alone: Grok 4.6 (Aug 12), DeepSeek V4 Pro GA (Aug 13), Gemini 3.7 Flash (Aug 13). The archive's [MODELS.md](./MODELS.md) now reflects all of them — Gemini 3.7 Flash is the new free-tier workhorse on Google AI Studio, and DeepSeek V4 Pro's GA pricing (peak/off-peak, Aug 16) is roughly 3-4x the old preview price but still the cheapest way to get near-frontier quality. [MODELS.md](./MODELS.md)
+- **A new frontier model every ~3 days.** This week alone: Grok 4.6 (Aug 12), DeepSeek V4 Pro GA (Aug 13), Gemini 3.7 Flash (Aug 13), GLM-5.3 (Aug 14). The archive's [MODELS.md](./MODELS.md) now reflects all of them — Gemini 3.7 Flash is the new free-tier workhorse on Google AI Studio, and DeepSeek V4 Pro's GA pricing (peak/off-peak, Aug 16) is roughly 3-4x the old preview price but still the cheapest way to get near-frontier quality. [MODELS.md](./MODELS.md)
+- **GLM-5.3 is the free coding deal of the week.** Z.AI shipped it Aug 14 as the same GLM-5.2 base with post-training only (~750B — a third of Kimi K3), and it's free right now on **ZCode**, Z.AI's desktop coding agent (the only place it runs until the API and open weights land in ~2 weeks). Vendors claim it tops Kimi K3 and approaches Fable 5 on coding benchmarks — treat as a claim until independent runs. Also: **Zed gives students Zed Pro free for 12 months with $10/mo AI credit** (zed.dev/education, GitHub 30+ days + edu email) — already in [CREDITS.md](./CREDITS.md) Part 2.
 - **"Free AI" now means a router, not a single model.** The August wave — OmniRoute (~1.5B free tokens/mo pooled), NaraRouter (5-7M tokens/day), aerolink ($35/wk credits), LongCat-2.0 free quotas — is one gateway in front of many free tiers. Stack two or three and you effectively never pay for hobby coding. Caveats included; read the rows. [FREE-ACCESS.md](./FREE-ACCESS.md)
 - **DeepSeek's "thinking" is now tunable + faster.** V4 Pro/Flash GA adds low/high/max thinking effort (pick max only for the hard stuff) and native Responses-API/Codex support. DSpark (speculative decoding, Jun 27) makes the same model 50-600% faster to serve — grab the weights on HuggingFace. [MODELS.md](./MODELS.md)
 - **Two watch items:** Gemini 3.5 Pro still hasn't shipped (missed June, Jul 17, and a rumored Aug 12 date) — Google is shipping Flash iterations instead. And most "free credits" gateways (AgentRouter, Bluesminds, aerolink) are un-audited resellers: great for testing, not production. [MODELS.md](./MODELS.md) · [FREE-ACCESS.md](./FREE-ACCESS.md)

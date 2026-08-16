@@ -44,6 +44,7 @@
       {"label": "Zed", "from_usd": 10, "color": "OpenAI"},
       {"label": "Trae", "from_usd": 3, "color": "Alibaba"},
       {"label": "Qoder", "from_usd": 0, "color": "Alibaba"},
+      {"label": "ZCode", "from_usd": 0, "color": "Z.AI"},
       {"label": "Void", "from_usd": 0, "color": "OpenAI"},
       {"label": "PearAI", "from_usd": 0, "color": "OpenAI"},
       {"label": "AionUI", "from_usd": 0, "color": "OpenAI"},
