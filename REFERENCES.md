@@ -10,10 +10,11 @@
 | Repo | Stars | What it is |
 |---|---|---|
 | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 82K+ | Gold-standard local LLM inference engine (C++). Repo moved from `ggerganov/llama.cpp` to the `ggml-org` organization — updated this pass |
-| [Mozilla-Ocho/llamafile](https://github.com/Mozilla-Ocho/llamafile) | 24K+ | Ship any model as one executable file. This link redirects elsewhere as of this pass; the exact new org wasn't confirmed, so the URL is left as-is rather than guessed |
+| [mozilla-ai/llamafile](https://github.com/mozilla-ai/llamafile) | 24K+ | Ship any model as one executable file. **Org confirmed this pass:** the old `Mozilla-Ocho/llamafile` URL redirects to `mozilla-ai/llamafile` (verified by the link checker, twice) — updated here and in [AGENTS.md](./AGENTS.md) Part 10 |
 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 20K+ | Official MCP server for browser automation |
 | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) | 25K+ | AI orchestration SDK (C# / Python / Java) |
 | [browserbase/stagehand](https://github.com/browserbase/stagehand) | 12K+ | Natural-language browser control (act/extract/observe/agent) |
+| [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | rising | **DeepSeek Harness (`dsh`)** — MIT agent harness, open-sourced Aug 14 2026, "everything is a plugin" (models/tools/skills/UI), Cordis meta-framework. The harness behind DeepSeek's TB 2.1 runs |
 
 ---
 
@@ -32,6 +33,7 @@
 | [Rishurajgautam24/free-claude-code](https://github.com/Rishurajgautam24/free-claude-code) | Local FastAPI proxy → NVIDIA NIM / OpenRouter / DeepSeek / Ollama / LM Studio; intercepts trivial requests to save quota |
 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | ~9.8K★ — OpenAI-compatible BYOK proxy stacking 16 providers' free tiers (~1.7B tok/mo) behind one `/v1`; smart routing, failover, encrypted keys |
 | [gacabartosz/gaca-core](https://github.com/gacabartosz/gaca-core) | "Universal AI Bus" — 87+ free models from 11 providers, OpenAI-compatible, auto-failover + ranking + rate limiting |
+| [TokenRouter](https://www.tokenrouter.com/docs/) | Hosted 300+ model gateway with OpenAI-, Claude-, and Gemini-compatible integration. This is a commercial routing service, not a way to obtain paid models free; model usage is billed from balance. |
 
 > ⚠️ Avoid any repo advertising "keygen / activator / unlimited Pro without payment" — classic malware/scam pattern.
 
@@ -51,9 +53,12 @@ Content from these awesome-lists has been folded into the topic files; originals
 
 ---
 
-## Primary Sources — June 2026 Additions
+## Primary Sources — recent additions
 
-> Web-verified (June 27, 2026) for the latest batch of models/tools added across the archive.
+> Earlier entries were web-verified on June 27, 2026. The additions below record later targeted
+> checks; they do not silently refresh unrelated numbers in the archive.
+
+**17 Aug 2026 refresh** — [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Terminal-Bench 2.1 release and methodology](https://www.tbench.ai/news/terminal-bench-2-1) · [TokenRouter product and documentation](https://www.tokenrouter.com/docs/) · [OpenAI GPT-5.6 model catalog](https://developers.openai.com/api/docs/models) · [DeepSeek V4 pricing](https://api-docs.deepseek.com/quick_start/pricing) · [Groq free-plan limits](https://console.groq.com/docs/rate-limits) · [Cerebras pricing](https://www.cerebras.ai/pricing).
 
 **Models** — [Claude Fable 5 / Mythos 5 (Anthropic)](https://www.anthropic.com/news/claude-fable-5-mythos-5) · [Microsoft MAI models (Build 2026)](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) · [Kimi K2.7-Code (Moonshot)](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) · [Meta Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-msl/) · [Apple AFM 3 (WWDC)](https://www.apple.com/newsroom/) · [Gemini Omni (I/O)](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)
 

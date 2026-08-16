@@ -2,6 +2,7 @@
 
 > Vibe-coding tools that turn a prompt (or a screenshot, or a Figma file) into a running frontend.
 > Free tiers move fast — every major builder is now **credit/token metered**. Numbers verified ~June 2026; confirm on vendor pages before relying on them.
+> ℹ️ **17 Aug 2026:** this file was **not** re-verified this pass — it is now the oldest unverified content in the archive along with MEDIA.md. Treat every free tier and credit count below as June-era until re-checked (Bolt/Lovable/v0/Replit credit plans especially).
 
 ---
 

@@ -136,11 +136,13 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 
 ## Part 6 — Provider Trust Status
 
-> Sign-off from a domain-by-domain check, June 2026. Rule for this archive: a provider only gets a plain, unqualified entry once it is confirmed both real and doing what it claims. A provider with a real product but a rough edge gets the entry plus one caveat sentence, never a plain entry. A provider that could not be confirmed stays in its own "not stable" section below — never mixed into the tables above, so nobody mistakes a young domain or a pooled-login trick for a real free tier.
+> Re-checked 17 August 2026. Rule for this archive: a provider only gets a plain, unqualified entry once it is confirmed both real and doing what it claims. A provider with a real product but a rough edge gets the entry plus one caveat sentence, never a plain entry. A provider that could not be confirmed stays in its own "not stable" section below — never mixed into the tables above, so nobody mistakes a young domain or a pooled-login trick for a real free tier.
 
 ### Clean — confirmed real, does what it says
 
 Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Kimi K2, GLM 5.3, DeepSeek Harness, Blaxel, E2B, Modal, Vercel, Northflank, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
+
+> **Gemini 3.7 Flash** was still caveated here on Aug 16 as a possible hallucination (the archive's own research disagreed with itself). **Re-verified 17 Aug 2026 from primary sources** — blog.google announcement, the DeepMind model card, and the ai.google.dev pricing page: it is real, GA Aug 13, 2026, $0.75/$3.75 through 2026, and on the free AI Studio tier. It belongs in Clean; the old caveat row has been removed.
 
 ### Use with a caveat — real, but read the note before you rely on it
 
@@ -151,20 +153,19 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 | **Draftly.space** | Real cinematic 3D-site builder. Don't confuse with draftly.live or draftly.so — different domains, not verified as the same operator |
 | **Oxaam.com** | Access works, but it runs on pooled/shared logins — ToS risk for you and the account owner. Not a clean free tier; it's a sketchy-method workaround, label it that way |
 | **Resourify.com** | Domain is spelled without a "c" — resourify.com, not resourcify.com |
-| **Gemini 3.7 (Flash)** | Moved out of Clean this pass. One scan of this archive's own research found a primary pricing page for it; a second scan of the same research called the model name a likely hallucination. That's our own sources disagreeing with each other, not a clean confirmation — recheck ai.google.dev before relying on this name or its $0.75/$3.75 price |
 | **CodeSandbox** | Moved out of Clean this pass. Its pricing page sits behind a bot-wall — the credit numbers we have (400 credits/mo, $0.015/credit, Pro $9/mo) came from a search index, not a live fetch |
 | **Lightning.ai** | Moved out of Clean this pass. The free CPU studio and no-card signup are confirmed, but the monthly free-credit amount is disputed across sources (15 vs. 30) — don't quote either number as settled |
 | **Daytona** | Moved out of Clean this pass. The "sub-90ms boot" headline claim is vendor marketing, not something this archive measured — confirm before relying on it |
 | **Fly.io** | Moved out of Clean this pass. The new-account trial credit is disputed across sources ($5 vs. a 2hr/7-day trial), and BACKEND.md's second Fly.io row (production hosting) says there is no free tier for new users at all — check the dashboard rather than trusting either number |
+| **TokenRouter.com** | Confirmed live as a 300+ model gateway with compatible APIs and account-balance billing. “No platform fee” does **not** mean free inference; a public free-credit amount was not found. Check the live model catalog, price, and privacy terms before sending data or funding an account |
 
 ### Unverified — flagged, not a confirmed free tier, use at own risk, not stable
 
 > These have not been independently confirmed. Do not give them a plain entry anywhere else in this archive.
 
-- **Aerolink.lat**
+- **Aerolink.lat** — ⚠️ user-reported: multi-account signups from the same device risk a ban and losing balances; use one account per device/emulator, don't spam (see the Table 1B row)
 - **Agentrouter.org** (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
 - **Bluesminds** / api.bluesminds.com (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
-- **Tokenrouter.com**
 - **api.hcnsec.cn**
 - **Cto.new** — the company itself is real, but its "free unlimited" claim is a promotion that will expire or change; mark it promotional, not a standing free tier
 - **Moda.app** — moved here from Clean this pass. Nothing in this pass re-verified it as a working design tool with the claimed features; until it is re-checked, treat it as unconfirmed rather than real. Keep the standing disambiguation note attached wherever it's mentioned: this is a design tool, not the unrelated modaai.app
