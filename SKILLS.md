@@ -2,6 +2,7 @@
 
 > Skills extend Claude agents with reusable, callable capabilities. Each skill is a discrete unit of functionality — invoked by name, loaded lazily into context.
 > ✅ **Verified June 27, 2026** — repo star counts drift; confirm on GitHub.
+> ℹ️ **17 Aug 2026:** a dead `Claude-skill` link was removed (see below) and a redirecting skills URL was updated, but the *content* of this file was **not** re-verified this pass — treat skill counts, star counts, and builder-setup numbers as June-era unless you re-check them.
 
 ---
 
@@ -68,7 +69,7 @@ cp -r skills/* ~/.claude/skills/
 # restart Claude Code → skills trigger automatically on relevant tasks
 ```
 
-> A previous version of this file pointed readers at `github.com/Yash-Awasthi/Claude-skill` as a 1,374-skill starting point. That repo now returns a 404 — removed from this archive this pass.
+> A previous version of this file pointed readers at a personal 1,374-skill bundle repo as a starting point. That repo now returns a 404 — the reference was removed from this archive (17 Aug 2026).
 
 > Skills load **progressively**: at session start the agent sees only each skill's name + description (~100 tokens each); the full `SKILL.md` (<5K tokens) loads only when relevant. That's how one agent hosts hundreds of skills without context bloat.
 
