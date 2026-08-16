@@ -149,7 +149,7 @@
 ### Z.AI (Zhipu)
 | Model | SWE-bench | In/Out $/1M | Context | Access |
 |---|---|---|---|---|
-| GLM-5.3 | — | — | — | Id confirmed live on docs.z.ai llms.txt this pass; no price or SWE-bench number published there |
+| GLM-5.3 | — | — | — | **Released Aug 14, 2026** — same GLM-5.2 base, gains entirely from extended post-training (~750B, a third of Kimi K3's size). "Built to Code. Ready for Cyber Defense" — Z.AI reports it tops Kimi K3 on many benchmarks and some scores above Claude Fable 5 / GPT-5.6-Sol (vendor claims, not independently reproduced). **Currently free via ZCode / GLM Coding Plan** (the only availability — no public API price yet); API + open weights on HF coming (~2 weeks per Interconnects). Staged security release: selected partners first, then API, then full weights (cyber-defense capabilities, dual-use). Id confirmed live on docs.z.ai llms.txt |
 | GLM-5.2 | ~72% [V] | $1.40/$4.40 | 1M (unverified) | Corrected from a prior $0.14/$0.28 (10x error). API is paid — chat.z.ai and Puter.js are free front-ends, not a free API tier |
 | GLM-5.1 | 81.0% [V] | $1.40/$4.40 | 200K (unverified) | API paid. Context not on the official pricing doc |
 | GLM-5 | — | — | — | Id + price ($1.00/$3.20) confirmed on docs.z.ai llms.txt; no SWE-bench or context published there |
