@@ -121,6 +121,8 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 | **HuggingFace Spaces** | Free CPU; ZeroGPU (A100) for PRO/community | Demos | huggingface.co/spaces |
 | **Modal** | $30/mo free compute | Serverless GPU functions | modal.com |
 | **Paperspace / Gradient** | Free GPU tiers (queue) | — | paperspace.com |
+| **AMD AI Developer Program** 🆕 | **Free AMD GPU cloud credits** for AI training, fine-tuning, inference | AMD official (how-to-claim guide Jun 22, 2026) | amd.com/en/developer |
+| **Thunder Compute** ⚠️ | Free monthly GPU credits; also has a student program | Community-reported (Medium/Spheron lists) — not directly verified this pass | thundercompute.com |
 | **SaladCloud / Vast.ai** | Cheap community GPU (not free, near-free) | Marketplace | — |
 
 ---
