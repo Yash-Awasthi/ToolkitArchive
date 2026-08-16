@@ -14,6 +14,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 with open(os.path.join(ROOT, "data", "models.json")) as f:
     DATA = json.load(f)
+with open(os.path.join(ROOT, "data", "extra_charts.json")) as f:
+    EXTRA = json.load(f)
 M = DATA["models"]
 
 plt.rcParams.update({
@@ -43,7 +45,7 @@ fig, ax = plt.subplots(figsize=(13, 10)); y = range(len(d))
 ax.barh(list(y), [r["swe"] for r in d], color=[c(r["company"]) for r in d])
 ax.set_yticks(list(y)); ax.set_yticklabels([r["name"] for r in d]); ax.invert_yaxis()
 ax.set_xlabel("SWE-bench Verified (%)"); ax.set_xlim(50, 92)
-ax.set_title("SWE-bench Verified — API Models (June 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.set_title("SWE-bench Verified — API Models (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
 for i, r in enumerate(d): ax.text(r["swe"]+0.3, i, f'{r["swe"]:g}%', va="center", fontsize=9)
 save(fig, "swe-bench.png")
 
@@ -53,7 +55,7 @@ fig, ax = plt.subplots(figsize=(13, 10)); y = range(len(d))
 ax.barh(list(y), [r["out"] for r in d], color=[c(r["company"]) for r in d])
 ax.set_yticks(list(y)); ax.set_yticklabels([r["name"] for r in d]); ax.invert_yaxis()
 ax.set_xlabel("Output price ($ / 1M tokens)")
-ax.set_title("Output Cost — Every API Model (June 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.set_title("Output Cost — Every API Model (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
 ax.xaxis.set_major_formatter(FuncFormatter(money))
 for i, r in enumerate(d): ax.text(r["out"]+0.3, i, f'${r["out"]:g}', va="center", fontsize=9)
 ax.margins(x=0.08)
@@ -66,7 +68,7 @@ ax.barh(yy-h/2, [r["in"] for r in d], height=h, color="#b0b4ba", label="Input $/
 ax.barh(yy+h/2, [r["out"] for r in d], height=h, color=[c(r["company"]) for r in d], label="Output $/1M")
 ax.set_yticks(yy); ax.set_yticklabels([r["name"] for r in d]); ax.invert_yaxis()
 ax.set_xscale("log"); ax.set_xlabel("$ / 1M tokens (log scale)")
-ax.set_title("Input vs Output Pricing — API Models (June 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.set_title("Input vs Output Pricing — API Models (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
 ax.xaxis.set_major_formatter(FuncFormatter(money)); ax.legend(loc="lower right")
 save(fig, "cost-input-output.png")
 
@@ -76,7 +78,7 @@ fig, ax = plt.subplots(figsize=(13, 10)); y = range(len(d))
 ax.barh(list(y), [r["ctx_k"] for r in d], color=[c(r["company"]) for r in d])
 ax.set_yticks(list(y)); ax.set_yticklabels([r["name"] for r in d])
 ax.set_xscale("log"); ax.set_xlabel("Context window (K tokens, log scale)")
-ax.set_title("Context Windows — API Models (June 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.set_title("Context Windows — API Models (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
 for i, r in enumerate(d):
     lbl = f'{r["ctx_k"]/1000:g}M' if r["ctx_k"] >= 1000 else f'{r["ctx_k"]}K'
     ax.text(r["ctx_k"]*1.05, i, lbl, va="center", fontsize=9)
@@ -97,7 +99,7 @@ for r in M:
                 textcoords="offset points", zorder=4)
 ax.set_xscale("log"); ax.set_xlabel("Output price ($ / 1M tokens, log scale)")
 ax.set_ylabel("SWE-bench Verified (%)"); ax.set_ylim(55, 92)
-ax.set_title("Price vs Performance — Every API Model (June 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.set_title("Price vs Performance — Every API Model (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
 ax.xaxis.set_major_formatter(FuncFormatter(money))
 # legend ordered by company name, colors match dots exactly
 handles, labels = ax.get_legend_handles_labels()
@@ -122,6 +124,60 @@ ax.text(0.5, -0.18,
 ax.margins(y=0.18)
 save(fig, "claude-effort.png")
 
-print("charts written from data/models.json:",
+# ---------- 7. Terminal-Bench 2.1 (official leaderboard rows) ----------
+tb = EXTRA["terminal_bench"]["rows"]
+d = sorted(tb, key=lambda r: r["score"], reverse=True)
+fig, ax = plt.subplots(figsize=(13, 7)); y = range(len(d))
+ax.barh(list(y), [r["score"] for r in d], color=[c(r["color"]) for r in d])
+ax.set_yticks(list(y)); ax.set_yticklabels([r["label"] for r in d]); ax.invert_yaxis()
+ax.set_xlabel("Accuracy (%)"); ax.set_xlim(70, 88)
+ax.set_title("Terminal-Bench 2.1 — Official Leaderboard (Aug 2026)", fontweight="bold", fontsize=15, pad=14)
+for i, r in enumerate(d): ax.text(r["score"]+0.2, i, f'{r["score"]}%', va="center", fontsize=9)
+ax.text(0.5, -0.16,
+        "Agent + model + effort configurations, five trials. Vendor-reported scores (DeepSeek V4 Pro 0813 = 87.9, own harness) are excluded — see AGENTS.md.",
+        transform=ax.transAxes, ha="center", fontsize=9, color="#555")
+save(fig, "terminal-bench.png")
+
+# ---------- 8. GitHub stars (CLI agent popularity) ----------
+d = sorted(EXTRA["github_stars"]["rows"], key=lambda r: r["stars_k"], reverse=True)
+fig, ax = plt.subplots(figsize=(13, 9)); y = range(len(d))
+ax.barh(list(y), [r["stars_k"] for r in d], color=[c(r["color"]) for r in d])
+ax.set_yticks(list(y)); ax.set_yticklabels([r["label"] for r in d]); ax.invert_yaxis()
+ax.set_xlabel("GitHub stars (thousands, approximate)")
+ax.set_title("CLI Agent Popularity — GitHub Stars (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
+for i, r in enumerate(d): ax.text(r["stars_k"]+1, i, f'{r["stars_k"]:g}K', va="center", fontsize=9)
+ax.margins(x=0.08)
+save(fig, "github-stars.png")
+
+# ---------- 9. IDE pricing (paid-entry $/mo; 0 = free) ----------
+d = sorted(EXTRA["ide_pricing"]["rows"], key=lambda r: r["from_usd"])
+fig, ax = plt.subplots(figsize=(13, 9)); y = range(len(d))
+ax.barh(list(y), [r["from_usd"] for r in d], color=[c(r["color"]) for r in d])
+ax.set_yticks(list(y)); ax.set_yticklabels([r["label"] for r in d])
+ax.set_xlabel("Paid entry price ($/mo) — 0 = free tool")
+ax.set_title("Agentic IDE Pricing — Entry Price (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
+ax.xaxis.set_major_formatter(FuncFormatter(money))
+for i, r in enumerate(d):
+    if r["from_usd"] > 0: ax.text(r["from_usd"]+0.3, i, f'${r["from_usd"]:g}', va="center", fontsize=9)
+    else: ax.text(0.3, i, "free", va="center", fontsize=9, color="#2ecc71")
+ax.margins(x=0.1)
+save(fig, "ide-pricing.png")
+
+# ---------- 10. Free API daily budget (comparable rows only) ----------
+d = sorted(EXTRA["free_api_daily"]["rows"], key=lambda r: r["daily_k"])
+fig, ax = plt.subplots(figsize=(13, 7)); y = range(len(d))
+ax.barh(list(y), [r["daily_k"] for r in d], color=[c(r["color"]) for r in d])
+ax.set_yticks(list(y)); ax.set_yticklabels([r["label"] for r in d])
+ax.set_xlabel("Free daily budget (K units — see labels)")
+ax.set_title("Free API Daily Budget (Aug 2026)", fontweight="bold", fontsize=16, pad=14)
+for i, r in enumerate(d): ax.text(r["daily_k"]+3, i, f'{r["daily_k"]:g}K', va="center", fontsize=9)
+ax.text(0.5, -0.16,
+        "Units differ per provider (tokens/day unless labelled): SiliconFlow = tokens/min, Cloudflare = neurons/day. See FREE-ACCESS.md Table 1.",
+        transform=ax.transAxes, ha="center", fontsize=9, color="#555")
+ax.margins(x=0.1)
+save(fig, "free-api-tiers.png")
+
+print("charts written from data/models.json + data/extra_charts.json:",
       "swe-bench, all-models-cost, cost-input-output, context-windows,",
-      "all-models-scatter, claude-effort")
+      "all-models-scatter, claude-effort, terminal-bench, github-stars,",
+      "ide-pricing, free-api-tiers")
