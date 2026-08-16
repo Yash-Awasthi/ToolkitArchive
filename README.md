@@ -15,7 +15,7 @@
 | 🎨 **Build the frontend** | [FRONTEND.md](./FRONTEND.md) | AI app/UI builders, design-to-code, no-code sites, OSS self-hostable — free tiers | ⏳ June-era (oldest) |
 | 🗄️ **Build the backend** | [BACKEND.md](./BACKEND.md) | BaaS, serverless DBs, hosting/deploy, auth, vector DBs, glue — **free-tier limits** | ⏳ June-era (1A + a few rows Aug 16) |
 | 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | 32 API models (incl. GPT-5.6 Sol/Terra/Luna) + upcoming, pricing, context, proxy routes (data-driven) | ✅ 17 Aug 2026 |
-| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | 27 no-card tiers + 23 hidden gems + aggregators · credit-stacking, student/startup, sub-as-API, free GPU | ✅ 17 Aug 2026 (CREDITS Parts 1–5 ⏳ June-era) |
+| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | 28 no-card tiers + 23 hidden gems + aggregators · credit-stacking, student/startup, sub-as-API, free GPU | ✅ 17 Aug 2026 (CREDITS Parts 1–5 ⏳ June-era) |
 | 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality | ✅ 17 Aug 2026 (Parts 6–14 ⏳ June-era) |
 | 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | Image/voice gen, LLMOps (observability/eval/gateways), docs | ⏳ June-era (Part 1 image-gen ✅ 17 Aug) |
 | ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | What MCP is, how to use Skills per IDE/CLI, skill repos (start at [anthropics/skills](https://github.com/anthropics/skills)) | ⏳ June-era (link fixes only) |
