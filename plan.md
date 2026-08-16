@@ -278,6 +278,11 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **Banners standardized**: REFERENCES got a date (was undated); CREDITS title now says "June-2026 content · re-checked 17 Aug"; MEDIA's note now says Part 1 image-gen was re-checked (Imagen shutdown) while Parts 2–4 stay June-era; SKILLS/FRONTEND/BACKEND keep their honest June-era labels.
 - No file moves, no content moves — link stability preserved; anchors follow GitHub's auto-generated slug rules.
 
+## Enhancement pass — 17 Aug 2026 (user: "if possible enhance")
+
+- **FRONTEND.md Part 1 re-verified** (17 Aug): Bolt.new 1M tokens/mo + 300K/day cap (no card), Lovable 5 credits/day capped 30/mo + 20 Cloud credits/mo grant (primary: lovable.dev/pricing + docs.lovable.dev), v0 $5/mo credits + 200 projects (reset monthly, no rollover). Banner updated: Part 1 fresh, Parts 1.5–5 remain June-era; README Map freshness cell updated to match.
+- No chart changes.
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)
