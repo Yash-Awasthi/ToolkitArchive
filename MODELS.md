@@ -10,6 +10,15 @@
 
 ---
 
+**Contents:** [SWE-bench leaderboard](#swe-bench-leaderboard) · [Charts](#price-vs-performance-scatter) ·
+[Table 1 premium API models](#table-1--premium--paid-api-models) · [Sweet spot](#sweet-spot-analysis) ·
+[Table 2 free/near-free](#table-2--free-tier--near-free-models) · [Provider breakdown](#provider-breakdown) ·
+[Context windows](#context-window-reference) · [Scale SEAL vs vendor](#scale-seal-vs-vendor-reported) ·
+[Upcoming models](#upcoming--early-stage-models) · [On-device models](#consumer--on-device-not-api-accessible) ·
+[Access routes](#access-routes--get-frontier-models-free--cheap) · [Release timeline](#release-timeline-2026)
+
+---
+
 ## SWE-bench Leaderboard
 
 ![SWE-bench](./charts/swe-bench.png)

@@ -271,6 +271,13 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **Imagen shutdown fixed in MEDIA.md (timely — it happened TODAY):** all Google Imagen models deprecated and shut down as early as Aug 17, 2026 (verified via Firebase imagen-models-migration guide + ai.google.dev deprecations page). Imagen 4 row marked ⛔ shut down; new **Gemini 3.1 Flash Image** ("Nano Banana", May 28, 2026) row added as the replacement (free in AI Studio); summary line updated (Imagen 4 Fast no longer "cheapest at scale").
 - Supabase free-tier numbers cross-checked against Jun 2026 pricing sources (2 projects/500MB/5GB/50K MAU) — BACKEND.md already correct, no edit.
 
+## Reorganisation pass — 17 Aug 2026 (user: "reorganise all things properly")
+
+- **TOCs added to every content file**: AGENTS (all 14 parts + BYOK + deprecated + charts), MODELS, FREE-ACCESS, CREDITS, BACKEND, FRONTEND, MEDIA, SKILLS, REFERENCES — one-line anchor link rows right under each file's banner. AGENTS.md (1,180 lines, 14 parts) was the biggest gap.
+- **README Map → freshness ledger**: added a Freshness column (✅ 17 Aug / ⏳ June-era) per file + a legend explaining the two states; updated the "22+ free API tiers" count to the real 27 no-card + 23 hidden-gem providers.
+- **Banners standardized**: REFERENCES got a date (was undated); CREDITS title now says "June-2026 content · re-checked 17 Aug"; MEDIA's note now says Part 1 image-gen was re-checked (Imagen shutdown) while Parts 2–4 stay June-era; SKILLS/FRONTEND/BACKEND keep their honest June-era labels.
+- No file moves, no content moves — link stability preserved; anchors follow GitHub's auto-generated slug rules.
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)

@@ -5,6 +5,15 @@
 
 ---
 
+**Contents:** [Daily budget chart](#free-api-daily-token-budget) · [Table 1 no-card API tiers](#table-1--no-card-api-access-ongoing-free-tiers-and-clearly-labelled-trials) ·
+[Table 1B hidden gems](#table-1b--hidden-gems--decentralized--obscure-free-providers) ·
+[Aggregators](#aggregators-route-across-many-free-tiers-with-one-key) · [Chinese routers](#chinese-credit-routers--gateways-community-reported--all-unverified) ·
+[Table 2 trial credits](#table-2--trial-credits-stack-these) · [Claude Opus 5 free](#how-to-access-claude-opus-5-for-free) ·
+[TokenLB caveat](#tokenlb--api-marketplace--developer-credits-caveat-demoted-this-pass) ·
+[Best model by use case](#best-free-model-by-use-case) · [Quick start code](#quick-start-code) · [Useful repos](#useful-repos)
+
+---
+
 ## Free API Daily Token Budget
 
 ![Free API Tiers](./charts/free-api-tiers.png)

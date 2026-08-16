@@ -1,7 +1,11 @@
-# References — Runnable Repos & Source Tools
+# References — Runnable Repos & Source Tools (re-checked 17 August 2026)
 
 > Actual runnable tools, libraries, SDKs, and the proxy/router projects this archive relies on.
 > (Replaces the old `references/` directory — clone any repo directly from its link.)
+> ✅ **Re-checked Aug 17, 2026** (dead-link pass + DeepSeek Harness / llamafile-org moves added).
+
+**Contents:** [Core runnable tools](#core-runnable-tools) · [Sub-as-API / proxies](#subscription-as-api--proxy--router-projects) ·
+[Curated lists](#curated-lists-merged-into-this-archive) · [Primary sources](#primary-sources--recent-additions)
 
 ---
 

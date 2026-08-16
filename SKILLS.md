@@ -4,6 +4,12 @@
 > ✅ **Verified June 27, 2026** — repo star counts drift; confirm on GitHub.
 > ℹ️ **17 Aug 2026:** a dead `Claude-skill` link was removed (see below) and a redirecting skills URL was updated, but the *content* of this file was **not** re-verified this pass — treat skill counts, star counts, and builder-setup numbers as June-era unless you re-check them.
 
+**Contents:** [Overview](#overview) · [What is MCP?](#what-is-mcp-60-second-primer) · [How to use skills](#how-to-use-skills-by-platform) ·
+[Skill categories](#skill-categories) · [Notable deep dives](#notable-skills-deep-dive) · [Skill access](#skill-access) ·
+[Creating skills](#creating-custom-skills) · [Builders' setups](#notable-builders-setups-skills--workflows) ·
+[Security bundles](#security--red-team-skill-bundles) · [Dev packs](#dev--engineering-skill-packs) ·
+[Skill repos](#skill-repositories) · [Counts](#skill-count-by-category-june-2026)
+
 ---
 
 ## Overview

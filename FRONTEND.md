@@ -6,6 +6,15 @@
 
 ---
 
+**Contents:** [Part 1 full-stack builders](#part-1--full-stack-ai-app-builders-prompt--deployed-app) ·
+[Part 1.5 mobile](#part-15--native-mobile-app-builders-prompt--real-react-native--ios) ·
+[Part 2 UI generators](#part-2--ui-component--design-generators-prompt-or-screenshot--components) ·
+[Part 3 design-to-code](#part-3--design-to-code-figma--mockup--production-code) ·
+[Part 4 no-code sites](#part-4--no-code-ai-site-builders-marketing--portfolio--cms) ·
+[Part 5 OSS self-host](#part-5--open-source--self-hostable-zero-vendor-lock-in-byok-or-local-model) · [Pick-by-need](#pick-by-need)
+
+---
+
 ## Part 1 — Full-Stack AI App Builders (prompt → deployed app)
 
 | Tool | What | Free tier | Paid entry | Model / BYOK | Link |
