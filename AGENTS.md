@@ -185,7 +185,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 | **Void** | Void | Free | Agent Mode (multi-file, terminal) | **No telemetry, fully local** | Open-source VS Code fork |
 | **PearAI** | PearAI | Free BYOK | Full agentic, Continue-based | BYOK = local keys | Open-source VS Code fork |
 | **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |
-| **Claude Code** | Anthropic | Pro $17 · Max 5x $100 · Max 20x $200 | Terminal + VS Code, MCP, parallel subagents | Anthropic cloud | Best MCP + tool-use |
+| **Claude Code** | Anthropic | Pro $17 · Max 5x $100 · a higher usage tier exists above Max 5x, but this pass found no confirmed price for it — the $200 figure previously here was not re-verified | Terminal + VS Code, MCP, parallel subagents | Anthropic cloud | Best MCP + tool-use |
 | **AionUI** | AionUI OSS | Free (Apache 2.0) | Unified desktop dashboard for 20+ CLI agents, built-in agent, Cron scheduler, office editing | 100% local SQLite | 28K+ stars. GUI wrapper for terminal agents |
 | **Eigent** | Eigent AI | Free (OSS) · Pro $? | Multi-agent workforce (Browser/Terminal/Document/Multimodal), CAMEL-based, scheduled tasks | Local-first | 14.4K stars. "Open Source Cowork Desktop" |
 
