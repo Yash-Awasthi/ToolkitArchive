@@ -112,7 +112,7 @@ fig, ax = plt.subplots(figsize=(11, 6))
 shades = ["#f3d6c9", "#eab39a", "#e08e6b", "#d97757", "#b85a3c"]
 bars = ax.bar(ce["tiers"], ce["budget_k"], color=shades)
 ax.set_ylabel("Relative thinking budget (K tokens, illustrative)")
-ax.set_title("Claude Reasoning Effort Tiers (Opus 4.8 hybrid reasoning)", fontweight="bold", fontsize=15, pad=14)
+ax.set_title("Claude Reasoning Effort Tiers (Opus 5 hybrid reasoning)", fontweight="bold", fontsize=15, pad=14)
 for b, v in zip(bars, ce["budget_k"]):
     ax.text(b.get_x()+b.get_width()/2, v+2, f"~{v}K", ha="center", fontsize=10)
 ax.text(0.5, -0.18,

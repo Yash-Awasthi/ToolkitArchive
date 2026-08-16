@@ -117,7 +117,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 | Provider | Credits | Expiry | Models | How |
 |---|---|---|---|---|
-| **Anthropic** | $5 | 90 days | All Claude incl. Opus 4.8 | console.anthropic.com |
+| **Anthropic** | $5 | 90 days | All Claude incl. Opus 5 | console.anthropic.com |
 | **OpenAI** | $5 | 90 days | All GPT incl. GPT-5.5 | platform.openai.com |
 | **DeepSeek** | $5 | 30 days | V4 Pro / V4 Flash | platform.deepseek.com |
 | **AWS Bedrock** | $300 | 90 days | Claude, Llama, Titan | New AWS account |
@@ -135,18 +135,20 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Nebius** | Signup credits | — | Open models (EU); OpenRouter partner | nebius.com |
 
 > **Stack strategy:** AWS ($300) + GCP ($300) + Azure ($200) = **$800+** in cloud AI credits.
-> Run Opus 4.8 ($25/M out) or GPT-5.5 ($30/M out) for months at zero cost.
+> Run Opus 5 ($25/M out) or GPT-5.6 ($30/M out) for months at zero cost.
 
 ---
 
-## How to Access Claude Opus 4.8 For Free
+## How to Access Claude Opus 5 For Free
+
+> **Corrected 17 Aug 2026:** Opus is **not** on the Claude.ai free plan — the free tier is Sonnet 5 (daily-capped) plus Haiku. Opus 5 (current flagship, Jul 24, $5/$25) needs Pro/Max, an API trial, or cloud credits. The old "Opus 4.8 on the free plan" claim was wrong and has been removed; 4.8 is superseded history (still scored 88.6% SWE-bench).
 
 ### Ongoing Access
 
 | Method | Limits | How |
 |---|---|---|
-| **Claude.ai free plan** | Daily message cap | claude.ai |
-| **Puter.js** | None listed | developer.puter.com — free unlimited |
+| **Claude.ai free plan** | Sonnet 5 (daily message cap) — **not Opus** | claude.ai |
+| **Puter.js** | None listed | developer.puter.com — free unlimited (GLM/Qwen/etc.; Claude availability is the user-pays model — check the catalog) |
 | **Anthropic Open Source** | 6 months Claude Max ($200/mo value) | Open-source maintainers — anthropic.com/open-source |
 
 ### Trial / Limited
@@ -155,8 +157,8 @@ All endpoints are OpenAI SDK-compatible unless noted.
 |---|---|---|---|
 | **Anthropic API trial** | $5 credits | 90 days | console.anthropic.com |
 | **Notion Business Trial** | Unlimited Opus (strong claim, not re-verified this pass — Notion's tiering changed recently, confirm before relying on it) | 30 days | notion.so → start Business trial |
-| **AWS Bedrock** | $300 credits | 90 days | Model ID: `anthropic.claude-opus-4-8` |
-| **Google Vertex AI** | $300 credits | 90 days | Model: `claude-opus-4-8@anthropic` |
+| **AWS Bedrock** | $300 credits | 90 days | Model ID: `anthropic.claude-opus-5` |
+| **Google Vertex AI** | $300 credits | 90 days | Model: `claude-opus-5@anthropic` |
 | **Azure AI Foundry** | $200 credits | 30 days | Azure AI Studio → Anthropic models |
 
 ---

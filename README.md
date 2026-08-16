@@ -104,7 +104,7 @@
 | GPT-5.5 | 88.7% | $30 | 1M |
 | Claude Opus 4.8 | 88.6% | $25 | 1M |
 
-> GPT-5.6 (Sol/Terra/Luna) went GA on **Jul 9, 2026** across ChatGPT, Codex, and the API. SWE-bench figures are estimates; OpenAI published Terminal-Bench for the family.
+> Claude **Opus 5** (current flagship, Jul 24, $5/$25, 1M ctx) has no public SWE-bench yet — the 88.6% above is Opus 4.8's published score, closest available. GPT-5.6 (Sol/Terra/Luna) went GA on **Jul 9, 2026** across ChatGPT, Codex, and the API. SWE-bench figures are estimates; OpenAI published Terminal-Bench for the family.
 
 ### Best value (sweet spot)
 | Model | SWE-bench | Out $/1M | Savings vs GPT-5.5 |
@@ -196,11 +196,11 @@
 | Sandbox / eval | E2B · Daytona · Vercel Sandbox; Langfuse / AgentOps for tracing | $0–$30/mo credits | [BACKEND.md](./BACKEND.md) Part 1A · [MEDIA.md](./MEDIA.md) Part 3 |
 | Judge it | TB 2.1 for agents (official snapshot) · SWE-bench for models (harness-aware) | — | [AGENTS.md](./AGENTS.md) · [MODELS.md](./MODELS.md) |
 
-### Opus 4.8 free access
-- **claude.ai** — daily cap on free plan
-- **Anthropic API trial** — $5/90 days → console.anthropic.com
-- **AWS Bedrock** new account — $300 credits/90 days
-- **Notion Business trial** — 30 days unlimited
+### Opus 5 free access (corrected Aug 17)
+- **claude.ai** — free plan is **Sonnet 5, not Opus**; Opus 5 needs Pro/Max ($17+/mo)
+- **Anthropic API trial** — $5/90 days → console.anthropic.com (covers Opus 5)
+- **AWS Bedrock** new account — $300 credits/90 days, model `anthropic.claude-opus-5`
+- **Notion Business trial** — 30 days unlimited (unverified this pass)
 
 ---
 

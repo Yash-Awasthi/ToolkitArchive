@@ -38,7 +38,7 @@
 | **AWS Bedrock** (new acct) | $300* | Yes | 90 days | Claude/Llama/Titan | aws.amazon.com/free |
 | **Azure AI Foundry** | $200 | Yes | 30 days | GPT, Claude, Llama, 1,700+ models | azure.microsoft.com/free |
 | **Oracle Cloud** | $300 | Yes | 30 days + always-free VMs | Free ARM VMs forever | oracle.com/cloud/free |
-| **Anthropic API** | $5 | No | 90 days | All Claude incl. Opus 4.8 | console.anthropic.com |
+| **Anthropic API** | $5 | No | 90 days | All Claude incl. Opus 5 | console.anthropic.com |
 | **OpenAI** | $5 | No | 90 days | All GPT | platform.openai.com |
 | **DeepSeek** | $5 | No | 30 days | V4 Pro/Flash | platform.deepseek.com |
 | **Together AI** | ~$1 | No | 30–90 days | Open models (free promos ended) | together.ai |
@@ -124,7 +124,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 ## Maximal-Free Playbook
 
 1. **Daily coding** → free LLM keys (Groq + Cerebras + Google AI Studio + OpenRouter `:free`), routed via LiteLLM/OpenRouter to multiply quotas. → [FREE-ACCESS.md](./FREE-ACCESS.md)
-2. **Need a frontier model** → burn a trial: Anthropic $5 / Vertex $300 / Bedrock $300, model `anthropic.claude-opus-4-8`.
+2. **Need a frontier model** → burn a trial: Anthropic $5 / Vertex $300 / Bedrock $300, model `anthropic.claude-opus-5`. (Opus is NOT on the Claude.ai free plan — free tier is Sonnet 5, capped.)
 3. **Student?** → GitHub Student Pack = Copilot Pro + $100 Azure + $200 DO + $50 Mongo.
 4. **Building a startup?** → Google $350K AI-First / Azure Founders / AWS GenAI.
 5. **Own a Copilot/Claude sub?** → CLIProxyAPI to reuse it as an API.

@@ -329,7 +329,7 @@ brew install aionui
 
 | Interface | By | Best Model | Free | Price | Standout Feature |
 |---|---|---|---|---|---|
-| **Claude.ai** | Anthropic | Opus 5 / Sonnet 5 | Yes (daily cap) | Pro $17/mo | Best reasoning, Artifacts, Projects |
+| **Claude.ai** | Anthropic | Sonnet 5 on free (capped) · Opus 5 on Pro/Max | Yes (Sonnet 5, not Opus) | Pro $17/mo | Best reasoning, Artifacts, Projects |
 | **ChatGPT** | OpenAI | GPT-5.6 / GPT-5.5 | Yes | Plus $20/mo | Canvas, code exec, image gen, deep research |
 | **Gemini** | Google | Gemini 3.7 Flash (free) / 3.1 Pro | Yes | AI Pro $19.99/mo | Deep Research, Google Workspace |
 | **chat.z.ai** | Z.AI / Zhipu | GLM-5.2 (1M ctx, unverified) | Yes (generous) | Coding $3/mo | Web chat is free; the GLM-5.2 API itself is paid ($1.40/$4.40 per 1M, see [MODELS.md](./MODELS.md)) — don't read "developer API free" from the free web chat. MIT-license claim not confirmed on the official pricing doc |

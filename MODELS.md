@@ -247,7 +247,7 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 
 > ⚠️ Subscription proxies are reverse-engineered — ToS/account-ban risk. `iFlow` and `Qwen` free tiers were **discontinued in 2026**; use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier is still live (60 req/min, 1,000 req/day) — a discontinuation claim here in a prior pass was unverified and has been removed. See [AGENTS.md](./AGENTS.md) Part 1.
 
-**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ≈70% → DeepSeek V4 Flash ($0.28/M) · Tier 2 ≈25% → Kimi K2.6 / GLM-5.1 (≈$1/M) · Tier 3 ≈5% → Opus 4.8. Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
+**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ≈70% → DeepSeek V4 Flash ($0.66/M out off-peak — GA pricing since Aug 16) · Tier 2 ≈25% → Kimi K2.6 / GLM-5.1 (≈$1/M) · Tier 3 ≈5% → Opus 5. Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
 
 ---
 
