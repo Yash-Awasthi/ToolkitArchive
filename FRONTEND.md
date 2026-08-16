@@ -2,7 +2,7 @@
 
 > Vibe-coding tools that turn a prompt (or a screenshot, or a Figma file) into a running frontend.
 > Free tiers move fast — every major builder is now **credit/token metered**. Numbers verified ~June 2026; confirm on vendor pages before relying on them.
-> ℹ️ **17 Aug 2026:** this file was **not** re-verified this pass — it is now the oldest unverified content in the archive along with MEDIA.md. Treat every free tier and credit count below as June-era until re-checked (Bolt/Lovable/v0/Replit credit plans especially).
+> ℹ️ **17 Aug 2026:** **Part 1 (full-stack builders) re-verified this pass** — Bolt (1M tok/mo, 300K/day), Lovable (5/day → 30/mo + 20 Cloud/mo), v0 ($5/mo, 200 projects) confirmed against current vendor pricing docs. **Parts 1.5–5 (mobile, UI generators, design-to-code, no-code sites, OSS self-host) were NOT re-verified** — treat their free tiers and credit counts as June-era until re-checked.
 
 ---
 
@@ -19,11 +19,11 @@
 
 | Tool | What | Free tier | Paid entry | Model / BYOK | Link |
 |---|---|---|---|---|---|
-| **Bolt.new** | Browser IDE, full-stack in WebContainers | **1M tokens/mo** (no card) — most generous of the majors, ~2–5 small apps | Pro $25/mo (~13M tokens) | Claude (no BYOK) | bolt.new |
+| **Bolt.new** | Browser IDE, full-stack in WebContainers | **1M tokens/mo, 300K/day cap** (no card) — most generous of the majors, ~2–5 small apps (re-verified 17 Aug 2026) | Pro $25/mo (~13M tokens) | Claude (no BYOK) | bolt.new |
 | **Blink.new** (YC W25) | Prompt → production web/Next.js app, auto-provisions Turso + Firebase + Deno Deploy | Free tier | Credits | Managed | blink.new |
-| **Lovable** | Prompt → React + Supabase SaaS, cleanest code | 5 credits/day, ~30/mo cap | Pro from $25/mo (100 credits) | Managed | lovable.dev |
+| **Lovable** | Prompt → React + Supabase SaaS, cleanest code | **5 credits/day, capped at 30/mo** + **20 Cloud credits/mo grant** (re-verified 17 Aug 2026 — lovable.dev/pricing + docs.lovable.dev) | Pro from $25/mo (100 credits) | Managed | lovable.dev |
 | **Replit Agent** (Agent 4) | Cloud IDE + DB + deploy, 50+ langs, real-browser testing | Starter: daily Agent trial, 1 published app | Core $20–25/mo ($25 credits) · Pro $100/mo | Managed | replit.com |
-| **v0** (Vercel) | Polished React/Next UI, auto-deploy to Vercel | Limited free credits | Premium $20/mo (Mini/Pro/Max tiers) | Managed (no model choice) | v0.dev |
+| **v0** (Vercel) | Polished React/Next UI, auto-deploy to Vercel | **$5/mo credits, up to 200 projects** — reset monthly, no rollover (re-verified 17 Aug 2026) | Premium $20/mo (Mini/Pro/Max tiers) | Managed (no model choice) | v0.dev |
 | **Create.xyz** ("Anything") | NL → web + mobile apps w/ backend, exportable code | Free try-out tier | Pro/Max (credits) | Managed | create.xyz |
 | **Base44** (Wix) | Full-stack internal tools, no-code | Free tier | ~$16/mo | Managed | base44.com |
 | **Emergent** | Managed full-stack runtime, GitHub export | Free trial | Credits | Managed | emergent.sh |
