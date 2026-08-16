@@ -1,7 +1,7 @@
 # Free API Access & Model Access — June 2026
 
 > Permanent free API tiers below. For **trial-credit stacking, student/startup programs, free GPU, and subscription-as-API tricks** → [CREDITS.md](./CREDITS.md).
-> ✅ **Verified June 27, 2026** — free tiers change weekly; confirm before relying.
+> ✅ **Re-checked Aug 16, 2026** (prior pass: June 27, 2026) — free tiers change weekly; confirm before relying. Not every row was independently re-fetched this pass; where a number wasn't re-confirmed, the row says so.
 
 ---
 
@@ -17,12 +17,12 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 | Provider | Best Free Models | RPM | RPD | Daily Tokens | Notes |
 |---|---|---|---|---|---|
-| **Google AI Studio** | Gemini 3.5 Flash, 3.1 Flash (74%), Flash Lite | 15 | 1,500 | ~750K | Best free tier. Multimodal. Not available EU/UK |
-| **Groq** | Llama 3.3 70B, Llama 4 Scout, Qwen3-32B, gpt-oss-120b | 30 | 1,000 | 100K | LPU hardware, ultra-fast. Reduced RPD 2026 |
+| **Google AI Studio** | Gemini 3.5 Flash, 3.1 Flash (74%), Flash Lite | ~15 | ~1,500 | ~750K | Best free tier, no card. Multimodal. Not available EU/UK. The exact RPM/RPD/token numbers are from a prior pass, not re-confirmed this pass — check aistudio.google.com/rate-limit before relying on them |
+| **Groq** | Llama 3.3 70B, Llama 4 Scout, Qwen3-32B, gpt-oss-120b | ~30 | ~1,000 | ~100K | LPU hardware, ultra-fast, no card required for the free tier (card only needed to upgrade to Developer). Per-model RPM/TPM/RPD figures vary by model and are not re-verified this pass — check console.groq.com/docs/rate-limits for the current number before relying on it |
 | **Cerebras** | gpt-oss-120b, zai-glm-4.7 | 30 | 14,400 | 1M | Wafer-scale, ~2,600 tok/sec. 8K ctx on free |
-| **OpenRouter `:free`** | Qwen3-Coder (78%), gpt-oss-120b, Nemotron Ultra 550B, 22+ models | 20 | 200 | — | 1K RPD with $10 balance. Single key |
-| **Mistral** | Mistral Medium 3.5 (128B), Mistral Small 4, Codestral | ~1 RPS | — | 500K | ~1B tokens/month. Non-commercial. EU-hosted |
-| **Cloudflare Workers AI** | Llama 3.3 70B, Llama 4 Scout, Kimi K2.7, Gemma 4 26B, GLM-4.7-Flash, 50+ models | — | — | 10K neurons | Edge-distributed, serverless, global |
+| **OpenRouter `:free`** | Qwen3-Coder (78%), gpt-oss-120b, Nemotron Ultra 550B, check openrouter.ai/models live for the current free-model count — it rotates weekly and static counts (16/22/27/29) all disagree across sources | 20 | 50 | — | 50 RPD under $10 lifetime spend, 1,000 RPD at $10+. Corrected from a prior flat "200" — the real limit is a two-tier split. Single key |
+| **Mistral** | Mistral Medium 3.5 (128B), Mistral Small 4, Codestral | ~1 RPS | — | 500K | Non-commercial, EU-hosted. The "~1B tokens/month" Experiment-tier figure is unverified — only partially confirmed by a primary source (the free chat plan with $10/mo API credit is real; the exact monthly token ceiling is not), don't treat it as a fixed number |
+| **Cloudflare Workers AI** | Llama 3.3 70B, Llama 4 Scout, Kimi K2.7, Gemma 4 26B, GLM-4.7-Flash, 50+ models | — | — | 10,000 neurons/day, no card, resets 00:00 UTC | Edge-distributed, serverless, global. $0.011/1K neurons past the free quota. Some models require a paid billing account attached regardless of remaining quota — check the model page before assuming a given model is reachable free |
 | **Cohere** | Command A+ (218B), Command A (111B), Command R+ | 20 | 1,000 calls/mo | — | 256K ctx on Command A. Non-commercial |
 | **NVIDIA NIM** | Nemotron 3 Super, Nemotron 3 Ultra, DeepSeek-R1, Llama 405B, MiniMax M2.7, 100+ | ~40 | — | — | build.nvidia.com. NVIDIA Dev Program |
 | **GitHub Models** | gpt-5, gpt-4.1, gpt-4o, o4-mini, Llama 4 Scout, DeepSeek-R1, 45+ | 10–15 | 50–150 | — | GitHub account only. 8K in / 4K out per req |
@@ -38,7 +38,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Ollama Cloud** | qwen3-coder:480b, deepseek-v3.1:671b, kimi-k2:1t, gpt-oss:120b, 30+ cloud models | session | session | — | Not OpenAI-compatible. Uses Ollama API |
 | **Aion Labs** | Aion 2.5, Aion 2.0, Aion-RP 1.0 | 15 | — | 20K | Roleplay/storytelling specialist. IL-based |
 | **AIMLAPI** | 400+ models (GPT, Claude, Gemini, DeepSeek free tier) | — | — | — | One key, 400+ models |
-| **TokenLB** | Claude Opus 4.8, GPT-5.5, DeepSeek, Qwen, 40+ providers | — | — | — | Lower-cost reseller. OSS dev credit program |
+| **TokenLB** | Claude Opus 4.8, GPT-5.5, DeepSeek, Qwen, 40+ providers (vendor-claimed) | — | — | — | Site returned a 401 this pass — treat as unverified. See caveat section below, not a confirmed free tier |
 | **BazaarLink** | `auto:free` → best available free model (Llama/Gemma/Qwen/DeepSeek) | 10 | 150 | — | **No card, no trial expiry.** OpenAI-compatible (`sk-bl-`). Agent self-registration endpoint. TW-based |
 | **Pollinations.AI** | Text + image + audio + video, one API | — | — | — | **Zero-auth, no signup.** Server keys unmetered (client keys 1 req/hr/IP). Also in Table 1B |
 | **NLP Cloud** | Open + proprietary models (gen, NER, classification, embeddings) | limited | — | — | Free dev tier; production-NLP focus |
@@ -73,7 +73,6 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 | Tool | What | Link |
 |---|---|---|
-| **cheahjs/free-llm-api-resources** | The canonical community list of legitimate free LLM APIs (excludes reverse-engineered/cracked services) | github.com/cheahjs/free-llm-api-resources |
 | **MrFadiAi/free-llm-gateway** | OpenAI-compatible gateway aggregating **24+ providers, 260+ free models** auto-discovered, auto-fallback, rate-limit tracking, dashboard | github.com/MrFadiAi/free-llm-gateway |
 | **FreeLLMAPI** | OSS BYOK proxy (~9.8K★). Stacks the free tiers of **16 providers (~1.7B tokens/mo, 110+ models)** behind one `/v1`. Smart routing, auto-failover, per-key rate tracking (avoids 429s), AES-256 key encryption. Live catalog = $19/yr; router free forever | freellmapi.co · github.com/tashfeenahmed/freellmapi |
 | **gaca-core** (G.A.C.A.) | OSS "Universal AI Bus" — **87+ free models from 11 providers**, OpenAI-compatible (`/v1/chat/completions`), auto-failover + ranking + rate limiting. Drop-in fallback for any OpenAI client | github.com/gacabartosz/gaca-core |
@@ -124,7 +123,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | Method | Value | Duration | How |
 |---|---|---|---|
 | **Anthropic API trial** | $5 credits | 90 days | console.anthropic.com |
-| **Notion Business Trial** | Unlimited Opus | 30 days | notion.so → start Business trial |
+| **Notion Business Trial** | Unlimited Opus (strong claim, not re-verified this pass — Notion's tiering changed recently, confirm before relying on it) | 30 days | notion.so → start Business trial |
 | **AWS Bedrock** | $300 credits | 90 days | Model ID: `anthropic.claude-opus-4-8` |
 | **Google Vertex AI** | $300 credits | 90 days | Model: `claude-opus-4-8@anthropic` |
 | **Azure AI Foundry** | $200 credits | 30 days | Azure AI Studio → Anthropic models |
@@ -133,55 +132,18 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 ---
 
-## TokenLB — API Marketplace & Developer Credits
+## TokenLB — API Marketplace & Developer Credits (caveat, demoted this pass)
 
-**URL:** tokenlb.net · **Users:** 19,000+ · **Providers:** 40+ · **Activation:** minutes
+**URL:** tokenlb.net — returned a 401 this pass, could not re-verify live.
 
-TokenLB is a self-service API key marketplace offering lower-cost access to 40+ AI providers under a single dashboard. Useful for global developers who want cheaper rates, faster key activation, and unified billing across OpenAI, Claude, Gemini, DeepSeek, Qwen, and Llama.
+> Demoted from a plain entry to a caveat this pass. Every number below is vendor-supplied, not independently confirmed: the 19,000+ user count, the weekly model-usage ranking, and the "lower-cost" claim. The credit program also requires you to display a TokenLB attribution link in your own README/docs to qualify — that's the shape of a paid-placement deal, not a neutral free-credit program. The ranking table and user count from a prior pass have been removed; treat anything below as a vendor pitch, not fact.
 
-### Why Use TokenLB
+TokenLB describes itself as a self-service API key marketplace offering access to 40+ AI providers (OpenAI, Anthropic, Gemini, DeepSeek, Qwen, Llama) under one dashboard, with a per-star monthly token-credit program for open-source maintainers who add its attribution link. None of that is independently confirmed this pass.
 
-| Feature | Detail |
-|---|---|
-| Single dashboard | Keys, balance, usage logs in one place — no hopping between provider portals |
-| Lower cost | Designed for recurring API workloads — better rates than direct provider billing |
-| Self-service | Register → fund → generate key → connect app — no manual processing |
-| 40+ providers | OpenAI, Anthropic, Gemini, DeepSeek, Qwen, Llama, and more |
-| Usage transparency | Per-model usage logs, weekly trends, token breakdowns |
-
-### Weekly Model Rankings (June 26, 2026)
-
-Top 5 models by routed tokens across 19K+ users — real usage signal:
-
-| Rank | Model | Provider | Weekly Tokens | Share |
-|---|---|---|---|---|
-| 1 | claude-opus-4-8 | Anthropic | 173.2M | 46.7% |
-| 2 | claude-opus-4-7 | Anthropic | 76.6M | 20.7% |
-| 3 | gpt-5.5 | OpenAI | 56.0M | 15.1% |
-| 4 | gpt-5.4-mini | OpenAI | 21.4M | 5.8% |
-| 5 | claude-sonnet-4-6 | Anthropic | 17.7M | 4.8% |
-
-> Claude Opus 4.8 dominates at 46.7% of all routed tokens — strong adoption signal.
-
-### Developer Support Program (Free Credits for OSS)
-
-TokenLB offers monthly token credits for open-source maintainers, content creators, and community operators:
-
-| Stars | Monthly Credits |
-|---|---|
-| 100–499 stars | $20–50 / month |
-| 500–1,999 stars | $50–100 / month |
-| 2,000–9,999 stars | $100–300 / month |
-| 10,000+ stars | Evaluated individually |
-
-**How to apply:** Join t.me/tokenlb and submit your GitHub link + stars + usage scenario. Must display TokenLB attribution link in README/docs.
-
-Community creators (Discord, YouTube, Telegram, newsletters) can also apply.
-
-### Quick Start
+### Quick Start (as documented by the vendor — unverified)
 
 ```python
-# TokenLB is OpenAI API-compatible — swap base_url
+# TokenLB claims to be OpenAI API-compatible — swap base_url
 from openai import OpenAI
 
 client = OpenAI(
@@ -275,9 +237,10 @@ console.log(result);
 
 ## Useful Repos
 
+> `cheahjs/free-llm-api-resources` — previously listed here and described as "the canonical community list" — returns a 404 this pass. Removed until a live URL for it turns up; don't call any single list canonical in the meantime.
+
 | Repo | What |
 |---|---|
 | [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | Permanent free LLM API list |
 | [amardeeplakshkar/awesome-free-llm-apis](https://github.com/amardeeplakshkar/awesome-free-llm-apis) | Rate limits, SDK compat, speed tiers |
-| [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | Free LLM inference resources |
 | [bradAGI/awesome-cli-coding-agents](https://github.com/bradAGI/awesome-cli-coding-agents) | Curated CLI agents directory |

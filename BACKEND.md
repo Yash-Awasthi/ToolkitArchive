@@ -1,7 +1,7 @@
 # Backend / Database / Deploy / Auth — Free-Tier Reference (June 2026)
 
 > Everything to ship the backend of a vibe-coded app for **$0** — BaaS, databases, hosting, auth, vector stores, and the glue (email/payments/storage).
-> Free tiers verified ~June 2026. They change fast (PlanetScale killed its free tier in 2024; Fly.io dropped free for new users; Netlify went credit-based) — confirm before architecting.
+> Re-checked Aug 16, 2026 (prior pass: ~June 2026). Free tiers change fast (PlanetScale killed its free tier in 2024; Fly.io dropped free for new users; Netlify went credit-based) — confirm before architecting. This pass added the sandbox/cloud-dev-environment section (Part 1A) and fixed a Northflank number; the rest of this file's numbers are carried from the prior pass, not independently re-fetched.
 
 ---
 
@@ -19,6 +19,24 @@
 | **Encore** | TS/Go backend framework + infra | Free OSS, cloud free tier | Yes | Type-safe backend + IaC | encore.dev |
 | **Wasp** | Full-stack React/Node DSL | Free OSS | Yes | Opinionated full-stack | wasp.sh |
 | **Microsoft Rayfin** | Fabric/OneLake BaaS (TS code → SQL DB + Entra ID auth + GraphQL API + hosting) | Preview, perpetual free tier | No (deploys to Fabric tenant) | Agent-first; data lands in OneLake (no ETL). Replit launch partner. ⚠️ Entra-ID-only auth | microsoft.com/microsoft-fabric |
+
+---
+
+## Part 1A — Sandbox / Cloud Dev Environments
+
+> Ephemeral compute for running AI-generated or agent-driven code away from your own machine.
+
+| Platform | Free | Notes | Link |
+|---|---|---|---|
+| **Blaxel** | $200 credit, no card | 10 sandbox cap, pure per-second billing | blaxel.ai |
+| **E2B** | Hobby free, $100 one-time credit | 1hr session cap, 20 concurrent sandboxes; Pro $150/mo + usage | e2b.dev |
+| **Modal** | $30/mo credit | 3 seats, 100 containers, CPU ~$0.0000131/core-sec; Team $250/mo | modal.com |
+| **Daytona** | $200 credit, no card | 5GB storage, per-second billing. "Sub-90ms boot" is a vendor marketing claim, not something this archive measured — confirm before relying on it | daytona.io |
+| **Vercel Sandbox** | Hobby: 5 Active-CPU-hr, 420 GB-hr, 5,000 sandbox creations/mo, 45min session cap, 10 concurrent | Pro tier is usage-priced | vercel.com/sandbox |
+| **CodeSandbox** | ~400 credits/mo, $0.015/credit; Pro $9/mo | Pricing page sits behind a bot-wall this pass — these numbers come from a search index, not a live fetch. Use with a caveat | codesandbox.io |
+| **Fly.io** | No permanent free tier | Exact new-account trial credit is disputed across sources ($5 vs. a 2hr/7-day trial) — check the dashboard at signup rather than trusting either number | fly.io |
+| **Northflank** | Sandbox tier: $0, 2 services + 1 DB + 2 cron jobs, always-on, no card; $0.01667/vCPU-hr beyond that | This archive previously said "2 services, 2 DBs" elsewhere in this file — the sourced figure is 1 DB, not 2; that older line is corrected below | northflank.com |
+| **Lightning.ai** | 1 free CPU studio (4hr restart), persistent storage, single-GPU access, no card | Monthly free-credit amount is disputed across sources (15 vs. 30) — not stated here until confirmed. Pro (~$20–50) and Teams (~$119–140) are ranges from secondary sources, not point prices — treat as a caveat | lightning.ai |
 
 ---
 
@@ -55,7 +73,7 @@
 | **Deno Deploy** | TS/JS edge | Generous free | Deno runtime | deno.com/deploy |
 | **Coolify** | Self-host PaaS (Heroku alt) | Free OSS — bring a $5 VPS | You run the server | coolify.io |
 | **Dokku** | Git-push PaaS on your VPS | Free OSS | CLI-driven | dokku.com |
-| **Northflank** | GPU PaaS + true BYOC (AWS/Azure/GCP/Oracle/bare-metal) | Always-on free sandbox (2 services, 2 DBs) | Full data plane in *your* VPC, infra billed at list (no markup). NVIDIA B200→A100, MIG/time-slicing. SOC 2 Type 2 | northflank.com |
+| **Northflank** | GPU PaaS + true BYOC (AWS/Azure/GCP/Oracle/bare-metal) | Always-on free sandbox (2 services, 1 DB, 2 cron jobs — corrected from "2 DBs" this pass, see Part 1A) | Full data plane in *your* VPC, infra billed at list (no markup). NVIDIA B200→A100, MIG/time-slicing. SOC 2 Type 2 | northflank.com |
 | **SnapDeploy** | Minimal container hosting | 10 deploys/day free · $12/mo always-on | Lightweight; verify specs on vendor page | snapdeploy.io |
 | **Zeabur / Sevalla / Koyeb** | Modern PaaS | Various free trials | — | — |
 
