@@ -5,6 +5,13 @@
 
 ---
 
+**Contents:** [Part 1 BaaS](#part-1--backend-as-a-service-auth--db--storage--functions-in-one) · [Part 1A sandboxes](#part-1a--sandbox--cloud-dev-environments) ·
+[Part 2 serverless DBs](#part-2--serverless--edge-databases) · [Part 3 hosting](#part-3--hosting--deploy--paas) ·
+[Part 4 auth](#part-4--auth-mau--monthly-active-users) · [Part 5 vector DBs](#part-5--vector-dbs--ai-data-infra) ·
+[Part 6 glue](#part-6--shipping-glue-email--payments--storage--cron) · [Zero-dollar stack](#zero-dollar-stack-reference)
+
+---
+
 ## Part 1 — Backend-as-a-Service (auth + DB + storage + functions in one)
 
 | Tool | Stack | Free tier | Self-host | Best for | Link |

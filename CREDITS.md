@@ -1,8 +1,13 @@
-# Credits, Freebies & Maximizing Free AI — June 2026
+# Credits, Freebies & Maximizing Free AI — (June-2026 content · re-checked 17 August 2026)
 
 > Companion to [FREE-ACCESS.md](./FREE-ACCESS.md) (which lists the permanent free API tiers).
 > This file is about **stacking $$$ of credits**, student/startup programs, free GPU, and grey-area "subscription-as-API" tricks. Numbers shift constantly — verify on official pages.
-> ✅ **Re-checked Aug 16, 2026** (prior pass: June 27, 2026). This pass re-verified the items flagged in the trust-status pass below — see [Part 6](#part-6--provider-trust-status) for what's Clean vs Caveat vs Unverified. Not every number in this file was independently re-fetched; where it wasn't, the prose says so.
+> ✅ **Re-checked Aug 17, 2026** (prior passes: June 27 and Aug 16, 2026). Fresh this pass: [Part 6](#part-6--provider-trust-status) trust status (Gemini 3.7 to Clean, oxaam upgraded to scam-flagged), Codex for Students, Anthropic AI-for-Science + Economic Futures grants, AMD GPU credits, Thunder Compute. **Parts 1–5 numbers remain June-2026-era** unless a row says otherwise.
+
+**Contents:** [Latest drops](#-latest-drops--june-2026) · [Part 1 trial credits](#part-1--trial-credits-to-stack-cloud--llm) ·
+[Part 2 student programs](#part-2--student-programs-edu--goldmine) · [Part 3 startup programs](#part-3--startup--founder-programs-bigger-credits) ·
+[Part 4 sub-as-API](#part-4--subscription-as-api-use-what-you-already-pay-for) · [Part 5 free GPU](#part-5--free-gpu--compute) ·
+[Max-free playbook](#maximal-free-playbook) · [Part 6 provider trust](#part-6--provider-trust-status)
 
 ---
 

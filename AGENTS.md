@@ -11,6 +11,16 @@
 > (builders, deploy, quality, no-code, local runners, video/music/UI) remain June-2026 content**
 > and were not re-verified this pass.
 
+**Contents:** [TB 2.1 rankings](#terminal-bench-21-rankings) · [GitHub stars](#github-stars--popularity) ·
+[Part 1 CLI agents](#part-1--cli--terminal-coding-agents) · [Part 2 IDEs](#part-2--agentic-ides) ·
+[Part 3 chat/web agents](#part-3--chat--web-autonomous-agents) · [Part 4 chat interfaces](#part-4--ai-chat-interfaces) ·
+[Part 5 infra](#part-5--infrastructure--orchestration) · [Part 5A MCP](#part-5a--mcp-model-context-protocol--full-reference) ·
+[BYOK setup](#byok-setup) · [Deprecated](#deprecated--retiring) · [Part 6 website builders](#part-6--ai-website-builders) ·
+[Part 7 deploy](#part-7--deployment-platforms) · [Part 8 code quality](#part-8--code-quality--static-analysis) ·
+[Part 9 no-code](#part-9--no-code--low-code-agent-builders) · [Part 10 local runners](#part-10--local-model-runners) ·
+[Part 11 social discovery](#part-11--social-discovery) · [Part 12 video](#part-12--ai-video-generation-june-2026) ·
+[Part 13 music](#part-13--ai-music-generation-june-2026) · [Part 14 UI tools](#part-14--ai-ui--design-tools-june-2026)
+
 ---
 
 ## Terminal-Bench 2.1 Rankings

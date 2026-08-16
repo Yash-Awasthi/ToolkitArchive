@@ -2,7 +2,10 @@
 
 > Image / voice generation, plus the LLMOps stack (observability, eval, gateways) and docs tooling for vibe-coded apps.
 > **Video, music, and UI-design AI live in [AGENTS.md](./AGENTS.md) Parts 12–14.** Free tiers verified ~June 2026.
-> ℹ️ **17 Aug 2026:** this file was **not** re-verified this pass — it is now the oldest unverified content in the archive along with FRONTEND.md. Treat every free tier, price, and arena score below as June-era until re-checked. The image-gen table in particular (FLUX.2, Imagen 4, gpt-image-2) and the TTS arena rankings move fast.
+> ℹ️ **17 Aug 2026:** **Part 1 (image-gen) was re-checked this pass** — all Google Imagen models shut down Aug 17 and were replaced by Gemini 3.1 Flash Image (see the ⛔/🆕 rows below). **Parts 2–4 (voice, LLMOps, docs) were not re-verified this pass** — treat their free tiers, prices, and arena scores as June-era until re-checked (the TTS arena rankings in particular move fast).
+
+**Contents:** [Part 1 image gen](#part-1--image-generation) · [Part 2 voice/audio](#part-2--voice--audio-tts--stt--music) ·
+[Part 3 LLMOps](#part-3--llmops-observability--eval--gateways) · [Part 4 docs/devrel](#part-4--docs--devrel--knowledge)
 
 ---
 

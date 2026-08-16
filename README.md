@@ -10,16 +10,18 @@
 
 ## Map
 
-| Stage | File | Contents |
-|---|---|---|
-| 🎨 **Build the frontend** | [FRONTEND.md](./FRONTEND.md) | AI app/UI builders, design-to-code, no-code sites, OSS self-hostable — free tiers |
-| 🗄️ **Build the backend** | [BACKEND.md](./BACKEND.md) | BaaS, serverless DBs, hosting/deploy, auth, vector DBs, glue — **free-tier limits** |
-| 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | 32 API models (incl. GPT-5.6 Sol/Terra/Luna) + upcoming, pricing, context, proxy routes (data-driven) |
-| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | 22+ free API tiers · credit-stacking, student/startup, sub-as-API, free GPU |
-| 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality |
-| 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | Image/voice gen, LLMOps (observability/eval/gateways), docs |
-| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | What MCP is, how to use Skills per IDE/CLI, skill repos (start at [anthropics/skills](https://github.com/anthropics/skills)) |
-| 📚 **Source repos** | [REFERENCES.md](./REFERENCES.md) | Runnable tools + proxy/router projects + merged awesome-lists |
+| Stage | File | Contents | Freshness |
+|---|---|---|---|
+| 🎨 **Build the frontend** | [FRONTEND.md](./FRONTEND.md) | AI app/UI builders, design-to-code, no-code sites, OSS self-hostable — free tiers | ⏳ June-era (oldest) |
+| 🗄️ **Build the backend** | [BACKEND.md](./BACKEND.md) | BaaS, serverless DBs, hosting/deploy, auth, vector DBs, glue — **free-tier limits** | ⏳ June-era (1A + a few rows Aug 16) |
+| 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | 32 API models (incl. GPT-5.6 Sol/Terra/Luna) + upcoming, pricing, context, proxy routes (data-driven) | ✅ 17 Aug 2026 |
+| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | 27 no-card tiers + 23 hidden gems + aggregators · credit-stacking, student/startup, sub-as-API, free GPU | ✅ 17 Aug 2026 (CREDITS Parts 1–5 ⏳ June-era) |
+| 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality | ✅ 17 Aug 2026 (Parts 6–14 ⏳ June-era) |
+| 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | Image/voice gen, LLMOps (observability/eval/gateways), docs | ⏳ June-era (Part 1 image-gen ✅ 17 Aug) |
+| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | What MCP is, how to use Skills per IDE/CLI, skill repos (start at [anthropics/skills](https://github.com/anthropics/skills)) | ⏳ June-era (link fixes only) |
+| 📚 **Source repos** | [REFERENCES.md](./REFERENCES.md) | Runnable tools + proxy/router projects + merged awesome-lists | ✅ 17 Aug 2026 |
+
+> **Freshness legend:** ✅ = re-checked 17 Aug 2026 · ⏳ = June-2026 content, treated as unverified until its own pass (reasons vary: never refreshed, or only link/count fixes). Every file carries a matching banner at its top. plan.md is the living status doc — it logs every pass and the still-open verify list.
 
 > 📊 **All charts are generated** — model charts from [`data/models.json`](./data/models.json), agent/IDE/free-tier charts from [`data/extra_charts.json`](./data/extra_charts.json) → `python3 charts/gen_charts.py`. The "32 API models" count above is the length of the `models` array — update it whenever an entry is added or removed there, and keep `extra_charts.json` in sync with the AGENTS.md/FREE-ACCESS.md tables it mirrors.
 
