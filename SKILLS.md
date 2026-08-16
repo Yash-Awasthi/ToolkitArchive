@@ -62,13 +62,13 @@ Skills live in a `skills/` folder; each skill is a subfolder with a `SKILL.md` (
 | **Any MCP agent** | Skills can be surfaced as MCP tools via `mcp-builder` |
 
 ```bash
-# Fastest start — clone a skill library straight into Claude Code:
-git clone https://github.com/Yash-Awasthi/Claude-skill
-cp -r Claude-skill/skills/* ~/.claude/skills/     # all 1,374 skills
-# or just one:
-cp -r Claude-skill/skills/deep-research ~/.claude/skills/
+# Fastest start — clone the official skill library straight into Claude Code:
+git clone https://github.com/anthropics/skills
+cp -r skills/* ~/.claude/skills/
 # restart Claude Code → skills trigger automatically on relevant tasks
 ```
+
+> A previous version of this file pointed readers at `github.com/Yash-Awasthi/Claude-skill` as a 1,374-skill starting point. That repo now returns a 404 — removed from this archive this pass.
 
 > Skills load **progressively**: at session start the agent sees only each skill's name + description (~100 tokens each); the full `SKILL.md` (<5K tokens) loads only when relevant. That's how one agent hosts hundreds of skills without context bloat.
 
@@ -342,7 +342,6 @@ git clone https://github.com/michaelshimeles/ralphy
 
 | Repo / Resource | What | Notes |
 |---|---|---|
-| **[Yash-Awasthi/Claude-skill](https://github.com/Yash-Awasthi/Claude-skill)** | **1,374 ready skills** — clone & drop into `~/.claude/skills/` | Automation (800+ integrations), Security (pentest/recon/OSINT), Engineering, Research, Product, AI/Agents |
 | [anthropics/skills](https://github.com/anthropics/skills) | Official Agent Skills | docx/pdf/pptx/xlsx, `webapp-testing`, `skill-creator`, `brand-guidelines` |
 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 50+ curated skills + how-skills-work explainer | Great starting index |
 | [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated list | Highlights community libraries |
@@ -353,7 +352,7 @@ git clone https://github.com/michaelshimeles/ralphy
 | [Anthropic Engineering — "Equipping agents with skills"](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) | Official deep dive | Design + progressive disclosure |
 | [Andrej Karpathy](https://github.com/karpathy) | Origin of the coding-discipline rules | Repos: nanoGPT, nanochat, llm.c, llm-council |
 
-> **Recommended path:** start with **[Yash-Awasthi/Claude-skill](https://github.com/Yash-Awasthi/Claude-skill)** (1,374 skills, one clone) for breadth → **anthropics/skills** for production-grade official skills → **obra/superpowers** + the Karpathy skill for coding discipline.
+> **Recommended path:** start with **anthropics/skills** for production-grade official skills → **obra/superpowers** + the Karpathy skill for coding discipline → the curated awesome-lists above for breadth once you know what you're looking for.
 
 ---
 

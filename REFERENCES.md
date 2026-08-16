@@ -9,8 +9,8 @@
 
 | Repo | Stars | What it is |
 |---|---|---|
-| [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) | 82K+ | Gold-standard local LLM inference engine (C++) |
-| [Mozilla-Ocho/llamafile](https://github.com/Mozilla-Ocho/llamafile) | 24K+ | Ship any model as one executable file |
+| [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 82K+ | Gold-standard local LLM inference engine (C++). Repo moved from `ggerganov/llama.cpp` to the `ggml-org` organization — updated this pass |
+| [Mozilla-Ocho/llamafile](https://github.com/Mozilla-Ocho/llamafile) | 24K+ | Ship any model as one executable file. This link redirects elsewhere as of this pass; the exact new org wasn't confirmed, so the URL is left as-is rather than guessed |
 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 20K+ | Official MCP server for browser automation |
 | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) | 25K+ | AI orchestration SDK (C# / Python / Java) |
 | [browserbase/stagehand](https://github.com/browserbase/stagehand) | 12K+ | Natural-language browser control (act/extract/observe/agent) |
@@ -43,7 +43,7 @@ Content from these awesome-lists has been folded into the topic files; originals
 
 | List | Folded into |
 |---|---|
-| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) · [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | [FREE-ACCESS.md](./FREE-ACCESS.md) |
+| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | [FREE-ACCESS.md](./FREE-ACCESS.md) |
 | [bradAGI/awesome-cli-coding-agents](https://github.com/bradAGI/awesome-cli-coding-agents) · [PierrunoYT/awesome-ai-dev-tools](https://github.com/PierrunoYT/awesome-ai-dev-tools) | [AGENTS.md](./AGENTS.md) |
 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [AGENTS.md](./AGENTS.md) Part 5A |
 | [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) · [caramaschiHG/awesome-ai-agents-2026](https://github.com/caramaschiHG/awesome-ai-agents-2026) | [AGENTS.md](./AGENTS.md) Part 9 |
@@ -63,7 +63,7 @@ Content from these awesome-lists has been folded into the topic files; originals
 
 **Backend** — [Microsoft Rayfin](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) · [Zilliz Vector Lakebase](https://www.businesswire.com/news/home/20260621822926/en/) · [ScyllaDB Vector Search](https://www.scylladb.com/vector-search/) · [Actian VectorAI DB](https://www.actian.com/databases/vectorai-db/) · [Northflank BYOC](https://northflank.com/features/bring-your-own-cloud)
 
-**Media** — [FLUX.2 Pro pricing](https://bfl.ai/pricing) · [OpenAI gpt-image-2](https://openai.com/index/introducing-chatgpt-images-2-0/) · [Mistral Voxtral TTS](https://mistral.ai/news/voxtral-tts/) · [Hume TADA](https://www.hume.ai/blog/opensource-tada) · [Kyutai Pocket TTS](https://kyutai.org/blog/2026-01-13-pocket-tts) · [Fun-Realtime-TTS #1 Arena](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) · [GPT-Realtime-2](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/) · [ClickHouse acquires Langfuse](https://siliconangle.com/2026/01/16/database-maker-clickhouse-raises-400m-acquires-ai-observability-startup-langfuse/) · [Braintrust $80M Series B](https://bayelsawatch.com/braintrust-raises-80m-series-b/)
+**Media** — [FLUX.2 Pro pricing](https://bfl.ai/pricing) · [OpenAI gpt-image-2](https://openai.com/index/introducing-chatgpt-images-2-0/) · [Mistral Voxtral TTS](https://mistral.ai/news/voxtral-tts/) · [Hume TADA](https://www.hume.ai/blog/opensource-tada) · [Kyutai Pocket TTS](https://kyutai.org/blog/2026-01-13-pocket-tts) · [Fun-Realtime-TTS #1 Arena](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) · [GPT-Realtime-2](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/) · [ClickHouse acquires Langfuse](https://siliconangle.com/2026/01/16/database-maker-clickhouse-raises-400m-acquires-ai-observability-startup-langfuse/) · Braintrust $80M Series B — source link (bayelsawatch.com) is gone (410), removed this pass, claim not re-sourced
 
 **Free access** — [BazaarLink](https://bazaarlink.ai/free) · [freellm.net](https://freellm.net/) · [OpenCode Zen](https://opencode.ai/zen) · [xAI free credits](https://www.getaiperks.com/en/blogs/22-xai-grok-free-credits) · [Vercel AI Gateway](https://vercel.com/ai-gateway)
 
