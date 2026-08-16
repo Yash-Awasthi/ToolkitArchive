@@ -266,6 +266,11 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **Thunder Compute added** (CREDITS.md Part 5, ⚠️): free monthly GPU credits + student program — community-reported (Medium/Spheron lists), not directly verified.
 - Model-release check for Aug 14-17: only GLM-5.3 (added) and Gemini 3.7 Flash (added) — no other frontier releases this week; Writer shipped a low-cost GLM-5.2-based model (TechCrunch Aug 13) — noted, not a new entry.
 
+## Web-sweep pass 5 — 17 Aug 2026 (user: "search other helpful materials")
+
+- **Imagen shutdown fixed in MEDIA.md (timely — it happened TODAY):** all Google Imagen models deprecated and shut down as early as Aug 17, 2026 (verified via Firebase imagen-models-migration guide + ai.google.dev deprecations page). Imagen 4 row marked ⛔ shut down; new **Gemini 3.1 Flash Image** ("Nano Banana", May 28, 2026) row added as the replacement (free in AI Studio); summary line updated (Imagen 4 Fast no longer "cheapest at scale").
+- Supabase free-tier numbers cross-checked against Jun 2026 pricing sources (2 projects/500MB/5GB/50K MAU) — BACKEND.md already correct, no edit.
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)

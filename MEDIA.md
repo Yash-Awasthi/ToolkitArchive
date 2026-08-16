@@ -9,13 +9,15 @@
 ## Part 1 — Image Generation
 
 > Big 2026 shift: free now rivals paid. Gemini "Nano Banana Pro" + free Flux (via Krea/OpenArt) get you ~most of the way to Midjourney. Pay only for volume / resolution / commercial license / privacy.
+> ⚠️ **Re-checked 17 Aug 2026 — Google shut down all Imagen models today** (deprecation announced, earliest shutdown Aug 17; Firebase migration guide + ai.google.dev deprecations table). Replacement: **`gemini-3.1-flash-image`** (the API "Nano Banana", May 28, 2026) — new builds must use it, not Imagen.
 
 | Tool | Best for | Free tier | Paid entry | API | Link |
 |---|---|---|---|---|---|
 | **Midjourney v8.1** | Artistic quality (aesthetic king) — still strongest aesthetic | None | $10/mo Basic → $120 Mega | ❌ no public API (subscription-only) | midjourney.com |
 | **FLUX.2 Pro** (Black Forest Labs) | **Best photoreal API**, multi-ref consistency, edit ≤4MP | schnell/Klein open-weight (local) | MP-based: ~$0.03 first MP then $0.015/MP (~$0.02–0.06/img) | ✅ | bfl.ai |
 | **gpt-image-2** (OpenAI) | Conversational image creation, **95%+ text** accuracy, 4K, web-search/thinking | ChatGPT free (limited) | API (token-based) · Plus $20/mo | ✅ (API + Codex) | openai.com |
-| **Imagen 4** (Google) | **Best text rendering** + photorealism, 2K, SynthID | Free in AI Studio | $0.02 Fast · $0.04 Std · $0.06 Ultra /img | ✅ | ai.google.dev |
+| **Imagen 4** (Google) ⛔ | **Was** best text rendering + photorealism, 2K, SynthID | ❌ **Shut down Aug 17, 2026** — deprecated, all Imagen models removed | — | — | ai.google.dev (deprecations) |
+| **Gemini 3.1 Flash Image** ("Nano Banana") 🆕 | **The Imagen replacement** (API image model, May 28, 2026) | Free in AI Studio | Token-based (Gemini pricing) | ✅ | ai.google.dev |
 | **Ideogram v3** | Readable **text in images** (typography king, 90–95%), Style Refs | 10 credits/wk (~40 img) | Plus $15/mo (1,000 credits) | Enterprise | ideogram.ai |
 | **MAI-Image-2.5** (Microsoft) | T2I + editing, **#3 on Arena** (beats Nano Banana Pro) | — | $5/$33 per 1M (+ Flash variant) | ✅ Foundry/OpenRouter/Fireworks | microsoft.ai |
 | **Recraft** | **Vectors / SVG**, brand systems | 50 credits/day | $10/mo (1,000 credits) | ✅ | recraft.ai |
@@ -27,7 +29,7 @@
 | **Adobe Firefly** | Commercial-safe, integrated | Free credits | Creative Cloud | ✅ | firefly.adobe.com |
 | **Stable Diffusion / SDXL / SD3** | Local, fully free | Free (open-weight) | — | self-host | stability.ai |
 
-> **Cheapest API at scale:** Imagen 4 Fast / FLUX.2 Pro (~$0.02/img). **Best text-in-image:** Ideogram v3 / Imagen 4 / gpt-image-2 (95%+). **Strongest aesthetic:** Midjourney v8.1 (no API). **Most generous free:** Krea / Recraft (50/day). **Commercial-safe:** Firefly. ⚠️ Free tiers usually make outputs public + trainable; only paid = private + ownership.
+> **Cheapest API at scale:** Gemini 3.1 Flash Image / FLUX.2 Pro (~$0.02/img). **Best text-in-image:** Ideogram v3 / gpt-image-2 (95%+) — Imagen is gone (Aug 17). **Strongest aesthetic:** Midjourney v8.1 (no API). **Most generous free:** Krea / Recraft (50/day). **Commercial-safe:** Firefly. ⚠️ Free tiers usually make outputs public + trainable; only paid = private + ownership.
 
 ---
 
