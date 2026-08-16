@@ -4,11 +4,12 @@
 > **Benchmark rule:** TB rows measure an agent + model + effort configuration, not an agent in
 > isolation. The official TB 2.1 leaderboard was checked on 17 August; it uses five trials and
 > forbids submissions from changing timeouts or resources.
-> ℹ️ **What was refreshed on 17 Aug 2026:** Parts 1 (CLI agents — added Grok Build, corrected
-> DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder, ZCode), 4 (chat interfaces — current
-> flagship models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note), 11 (social
-> discovery — August wave usage). **Parts 6–14 (builders, deploy, quality, no-code, local
-> runners, video/music/UI) remain June-2026 content** and were not re-verified this pass.
+> ℹ️ **What was refreshed on 17 Aug 2026:** Parts 1 (CLI agents — added Grok Build, Muse Code;
+> corrected DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder, ZCode), 4 (chat interfaces —
+> current flagship models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note;
+> MCP 2.0 / 2026-07-28 spec note), 11 (social discovery — August wave usage). **Parts 6–14
+> (builders, deploy, quality, no-code, local runners, video/music/UI) remain June-2026 content**
+> and were not re-verified this pass.
 
 ---
 
@@ -111,6 +112,7 @@ spend, rather than a reproduction of these published entries.
 
 | Agent | By | Lang | License | What | Stars |
 |---|---|---|---|---|---|
+| **Muse Code** ⚠️ | **Meta** | — | Proprietary (beta) | **Meta's first coding agent** — terminal, multi-agent by default (parallel agents + self-verification), one-command install (macOS/Linux). Powered by **Muse Spark 1.2** (Aug 5, 2026). Tiered pricing; Spark 1.2 also on the Meta Model API. No TB 2.1 / SWE-bench published yet — beta, watch | — |
 | **Nanocoder** | Nano Collective | TS | MIT | Local-first (Ollama/LM Studio/llama.cpp/MLX), cloud opt-in | ~2K |
 | **claw-code-agent** | Community | Python | MIT | Pure-Python Claude Code rewrite, zero deps (from Mar-2026 leak) | ~517 |
 | **g3** | Community | Rust | MIT | Tool-running, repo interaction, skills, provider abstraction | ~515 |
@@ -363,6 +365,8 @@ brew install aionui
 > MCP is the USB-C of AI agents — one standard that connects any AI to any tool.
 
 **Origin:** Anthropic, November 2024. Adopted by OpenAI and Google DeepMind early 2025. Donated to Linux Foundation's Agentic AI Foundation December 2025.
+
+> 🔄 **MCP 2.0 — the 2026-07-28 specification (checked Aug 17, 2026):** a major step toward making agent infrastructure "work like the rest of the web" — **stateless, cacheable, routable, globally distributed** transports, with updated TypeScript/Python/Go SDKs (Cloudflare blog Aug 6, Simon Willison Jul 31). **Sampling is deprecated** (still works for now) in favor of the new architecture; governance/OAuth hardening included. If you're building new MCP integrations, target the 2026-07-28 spec — older 2025-era stateless-vs-stateful assumptions no longer hold.
 
 **Scale (June 2026):** A cross-registry aggregator counts **72,500+ servers** across the Official Registry, Glama, Smithery, mcp.so and PulseMCP. Glama alone tracks ~37K (split into Official / Claimed / crawled tiers).
 

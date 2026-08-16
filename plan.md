@@ -254,6 +254,12 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **aistudentdiscount.com/deals** referenced in CREDITS Part 2 (71 verified student deals, 21 free, $41K+ savings, Jul 2026 check).
 - No chart changes (no model-price/SWE rows affected).
 
+## Web-sweep pass 3 — 17 Aug 2026 (user: "search more, 15 minutes")
+
+- **Meta Muse Code added** (AGENTS.md Part 1 Emerging, ⚠️ beta): Meta's first coding agent, terminal, multi-agent default, Muse Spark 1.2, Aug 5 2026 — verified via research.meta.ai blog + CNBC + Reddit + developer.meta.com. No TB 2.1/SWE-bench published yet.
+- **MCP 2.0 / 2026-07-28 spec noted** (AGENTS.md Part 5A): stateless/cacheable/routable transports, Sampling deprecated, new TS/Python/Go SDKs — verified via Cloudflare blog (Aug 6) + Simon Willison (Jul 31).
+- README: Aug 5 timeline row + digest bullet. No chart changes.
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)
