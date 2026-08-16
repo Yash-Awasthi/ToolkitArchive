@@ -2,7 +2,7 @@
 
 > Companion to [FREE-ACCESS.md](./FREE-ACCESS.md) (which lists the permanent free API tiers).
 > This file is about **stacking $$$ of credits**, student/startup programs, free GPU, and grey-area "subscription-as-API" tricks. Numbers shift constantly — verify on official pages.
-> ✅ **Verified June 27, 2026.**
+> ✅ **Re-checked Aug 16, 2026** (prior pass: June 27, 2026). This pass re-verified the items flagged in the trust-status pass below — see [Part 6](#part-6--provider-trust-status) for what's Clean vs Caveat vs Unverified. Not every number in this file was independently re-fetched; where it wasn't, the prose says so.
 
 ---
 
@@ -12,7 +12,7 @@
 
 | Drop | What you get | How | Link |
 |---|---|---|---|
-| **Google AI Studio (full-stack, free)** | Describe an app → Gemini 3.1 Pro builds frontend+backend, auto Firebase Auth + Firestore, **1-click deploy**. No model limits | Just sign in | aistudio.google.com |
+| **Google AI Studio (full-stack, free)** | Describe an app → Gemini 3.1 Pro builds frontend+backend, auto Firebase Auth + Firestore, **1-click deploy** | Just sign in | aistudio.google.com |
 | **Google AI Pro for Students** | **12 months free** — Gemini 3.1 Pro, NotebookLM premium, 2TB storage | Verify w/ SheerID (.edu) | gemini.google/students |
 | **Cursor for Students** | **1 year Cursor Pro free** | Student verification | cursor.com/students |
 | **Kiro Student** | **1,000 dev credits/mo for 12 mo** (save $240) | SheerID | kiro.dev |
@@ -24,7 +24,7 @@
 | **GitLab Duo Agent Platform on Free tier** | Free-tier groups can now buy **pooled GitLab Credits** ($1/credit) → run Duo agents (planner, security analyst) without a paid seat. GA Jan 2026. Premium bundles $12/user, Ultimate $24/user of credits | Buy credits at group level | about.gitlab.com/pricing |
 | **Genspark free tier** | ~100–200 daily credits (refresh every 24h, no card) for the Super Agent + 1-month Plus trial. Chat+image = 0 credits on paid through Dec 31 2026 | Sign up | genspark.ai |
 
-**Copilot pricing change (Jun 1 2026):** moved to usage-based **AI Credits**; new **Max tier $100**. Business gets $19 credits (promo **$30** Jun–Aug), Enterprise $39 (promo **$60**). Completions + Next-Edit don't consume credits.
+**Copilot pricing change (Jun 1 2026):** moved to usage-based **AI Credits**; new **Max tier $100**. Business gets $19 credits (promo **$30** Jun–Aug), Enterprise $39 (promo **$60**). Completions + Next-Edit don't consume credits. Not re-verified this pass — treat the promo figures as a prior-pass caveat, confirm on github.com/copilot before relying on them.
 
 > ⚠️ **No student program exists** for ChatGPT Plus, Claude Pro, Midjourney, Suno, ElevenLabs, Runway, HeyGen, Descript (OpenAI's 2025 student promo did not return). Avoid invite-code generators / cracked accounts / shared logins → permanent ban risk. Stick to official student/.gov/carrier verification.
 
@@ -56,15 +56,17 @@
 
 | Program | What you get | Link |
 |---|---|---|
-| **GitHub Student Developer Pack** | The bundle below + **GitHub Copilot Pro free** | education.github.com/pack |
+| **GitHub Student Developer Pack** | The bundle below. New Copilot Pro signups through the Pack are **paused** as of this pass — newly verified students now get plain GitHub Copilot Free instead of Pro. Students who already have Pro through the Pack keep it | education.github.com/pack |
 | → **Azure for Students** | **$100 Azure credit, 12 mo, no card** (1,700+ models incl. GPT/o-series) | azure.microsoft.com/free/students |
 | → **DigitalOcean** | $200 credit / 1yr (⚠️ no longer covers GPU/AI inference since Jun 2026) | digitalocean.com |
 | → **MongoDB Atlas** | $50 credit + Univ certification ($150 value) | mongodb.com/students |
 | → **Heroku, Namecheap, Sentry, DataCamp, Frontend Masters, JetBrains, …** | 100+ free perks | — |
 | **GitHub Copilot Free** | Free for verified students AND OSS maintainers (also a free tier for everyone: 2K completions + 50 chats/mo) | github.com/copilot |
+| **Zed Education** | Zed Pro free for 12 months, plus $10/mo AI credit; premium models excluded from the free credit. Requires a GitHub account 30+ days old and an edu email; auto-downgrades to the regular free plan after 12 months | zed.dev/education |
 | **Google Colab** | Free T4 GPU (usage-limited); Pro for more | colab.research.google.com |
 | **Cloudflare Workers for Students** | 10M req/mo free for 12 mo (.edu) | cloudflare.com |
-| **JetBrains / Notion / Figma / Linear** | Free student/edu plans | — |
+| **JetBrains / Figma / Linear** | Free student/edu plans | — |
+| **Notion Education Plus** | Free with an edu email — the base Notion plan, not Notion AI. Notion AI itself has no student discount; it's bundled into Business ($20/member) and Enterprise plans only — the standalone AI add-on was retired May 2025 | notion.com/students |
 
 > Azure-for-Students path is the **no-credit-card** one — don't land on the regular Azure Free Trial (that one always asks for a card). Click **"Activate Now"** under Azure for Students via the Pack.
 
@@ -100,7 +102,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 | **cc-compatible-models** | Configs + pricing to run Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun in Claude Code | Reference guide | github.com/Alorse/cc-compatible-models |
 | **Puter.js** | Keyless access to 400+ models (GPT, Claude, Gemini, Grok, DeepSeek) — **"user-pays"** | Free *for the developer*; end-users cover usage | developer.puter.com |
 
-> ⚠️ `iFlow`, `Qwen`, and `Gemini CLI` free tiers were **discontinued in 2026** — use Kiro / OpenCode-Free / Vertex instead.
+> ⚠️ `iFlow` and `Qwen` free tiers were **discontinued in 2026** — use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier is not discontinued — a prior version of this line said it was, but the repo is live with a 60 req/min / 1,000 req/day free tier; that discontinuation claim only traced to an aggregator and has been removed.
 > ⚠️ **ToS warning:** the Copilot/Claude-Code proxies are **unofficial, reverse-engineered** — they may violate provider ToS and risk account suspension. Use on your own accounts at your own risk; not a sanctioned path. CLIProxyAPI and Puter.js are the lowest-risk options.
 
 ---
@@ -111,7 +113,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 |---|---|---|---|
 | **Google Colab** | T4 GPU, usage-capped | Notebooks; Pro for A100/longer | colab.research.google.com |
 | **Kaggle Notebooks** | ~30 GPU-hrs/week (T4×2/P100) + TPU | Weekly quota | kaggle.com |
-| **Lightning AI Studio** | Free monthly GPU credits | Persistent studios | lightning.ai |
+| **Lightning AI Studio** | 1 free CPU studio (4hr restart), no card | Persistent studios, single-GPU access. Monthly credit amount is disputed across sources (15 vs. 30) — not stated as fact | lightning.ai |
 | **HuggingFace Spaces** | Free CPU; ZeroGPU (A100) for PRO/community | Demos | huggingface.co/spaces |
 | **Modal** | $30/mo free compute | Serverless GPU functions | modal.com |
 | **Paperspace / Gradient** | Free GPU tiers (queue) | — | paperspace.com |
@@ -138,7 +140,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 
 ### Clean — confirmed real, does what it says
 
-Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Moda.app (a design tool — don't confuse with the unrelated modaai.app), Kimi K2, GLM 5.3, Gemini 3.7, DeepSeek Harness, Blaxel, E2B, Modal, Daytona, CodeSandbox, Vercel, Fly.io, Northflank, Lightning.ai, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
+Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studentoffers.co, Kimi K2, GLM 5.3, DeepSeek Harness, Blaxel, E2B, Modal, Daytona, Vercel, Fly.io, Northflank, Comet.com, Dokie.ai, Mwm.ai, Architecto.dev, Framer.com, RelevanceAI.com, Manus.im, Magnific.com, Pomelli, Opal.
 
 ### Use with a caveat — real, but read the note before you rely on it
 
@@ -149,6 +151,9 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 | **Draftly.space** | Real cinematic 3D-site builder. Don't confuse with draftly.live or draftly.so — different domains, not verified as the same operator |
 | **Oxaam.com** | Access works, but it runs on pooled/shared logins — ToS risk for you and the account owner. Not a clean free tier; it's a sketchy-method workaround, label it that way |
 | **Resourify.com** | Domain is spelled without a "c" — resourify.com, not resourcify.com |
+| **Gemini 3.7 (Flash)** | Moved out of Clean this pass. One scan of this archive's own research found a primary pricing page for it; a second scan of the same research called the model name a likely hallucination. That's our own sources disagreeing with each other, not a clean confirmation — recheck ai.google.dev before relying on this name or its $0.75/$3.75 price |
+| **CodeSandbox** | Moved out of Clean this pass. Its pricing page sits behind a bot-wall — the credit numbers we have (400 credits/mo, $0.015/credit, Pro $9/mo) came from a search index, not a live fetch |
+| **Lightning.ai** | Moved out of Clean this pass. The free CPU studio and no-card signup are confirmed, but the monthly free-credit amount is disputed across sources (15 vs. 30) — don't quote either number as settled |
 
 ### Unverified — flagged, not a confirmed free tier, use at own risk, not stable
 
@@ -160,6 +165,11 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 - **Tokenrouter.com**
 - **api.hcnsec.cn**
 - **Cto.new** — the company itself is real, but its "free unlimited" claim is a promotion that will expire or change; mark it promotional, not a standing free tier
+- **Moda.app** — moved here from Clean this pass. Nothing in this pass re-verified it as a working design tool with the claimed features; until it is re-checked, treat it as unconfirmed rather than real. Keep the standing disambiguation note attached wherever it's mentioned: this is a design tool, not the unrelated modaai.app
+- **CatAPI** (catapi.ai) — a self-hosted "New API"-style reseller gateway, not an official provider. Signup credits are unverified vendor claims; treat any key issued through it as untrusted. Also flagged in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B
+- **TokenLB.net** — link returned a 401 this pass and the whole promo section built around it (weekly model-usage rankings, 19,000+ user count, the OSS-credit program) is vendor-supplied, none of it independently confirmed. The credit program also requires an attribution link in your README to qualify, which is the shape of a paid-placement deal, not a neutral free-credit program. See [FREE-ACCESS.md](./FREE-ACCESS.md) for the specific numbers this demotes
+
+> **Never a source of a plain fact, archive-wide:** perkstack, choosfy, buldrr, costgoat, tokenmix, pricepertoken, aitoolsradar, bestaiforstudents, apidog, serenitiesai, aimadetools, and any similar SEO-farm aggregator. A claim sourced only to one of these domains cannot be marked Clean — at best it's Caveat with the domain named, more often it belongs in Unverified.
 
 ### Kept out entirely
 

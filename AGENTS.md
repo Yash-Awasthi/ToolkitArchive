@@ -23,7 +23,7 @@
 | Agent | By | TB 2.1 | License | Price | Model | BYOK | Stars |
 |---|---|---|---|---|---|---|---|
 | **Codex CLI** | OpenAI | **83.4%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5 | Yes | 93K |
-| **Claude Code** | Anthropic | **78.9%** | Proprietary | Pro $17 · Max 5x $100 · Max 20x $200 · API PAYG | Opus 4.8 | API only | — |
+| **Claude Code** | Anthropic | **78.9%** | Proprietary | Pro $17 · Max 5x $100 · a higher usage tier exists above Max 5x, but this pass found no confirmed price for it — the $200 figure previously here was not re-verified · API PAYG | Opus 4.8 | API only | — |
 | **OpenHands** | All-Hands AI | **77.6%** | MIT | Free / cloud plans | Any (LiteLLM 100+ providers) | Yes | 78K |
 | **MiMo Code** | Xiaomi | ~73% [V] | MIT | Free (bundled MiMo V2.5 Pro) | MiMo V2.5 Pro | Yes | 5.6K |
 | **Verdent AI** | Verdent | ~71% [est] | Proprietary | Credit-based PAYG | Any (Quality/Speed modes) | Yes | — |
@@ -41,12 +41,12 @@
 |---|---|---|---|---|---|
 | **Hermes Agent** | Nous Research | ~70% [est] | MIT | Free BYOK | 200K |
 | **Claw Code** | Community | ~70% [est] | MIT | Free BYOK | 194K |
-| **OpenCode** | anomalyco (sst) | ~71.5% [est] | MIT | Free BYOK · Go $10/mo | 177K |
+| **OpenCode** | anomalyco (sst) | ~71.5% [est] | MIT | Free BYOK · a paid Go/Black tier is rumored ($10/mo, $200/mo) but only sourced from an aggregator, not OpenCode's own pricing page — unverified | 177K (also seen as 165K elsewhere in this archive, neither re-verified this pass) |
 | **Pi (OH-MY-PI)** | Community | ~68% [est] | MIT | Free BYOK | 65K |
 | **Open Interpreter** | OpenInterpreter | ~62% [est] | MIT | Free BYOK | 64K |
 | **Cline** | cline | ~65% [est] | Apache 2.0 | Free BYOK | 63K |
 | **Goose** | Block / Linux Fdn | ~55% [est] | Apache 2.0 | Free BYOK | 50K |
-| **Aider** | aider-AI | ~60% [est] | Apache 2.0 | Free BYOK | 47K |
+| **Aider** | aider-AI | ~60% [est] | Apache 2.0 | Free BYOK | ~44K (Aug 2026) |
 | **Continue** | Continue.dev | ~58% [est] | Apache 2.0 | Free BYOK | 34K |
 | **Crush** | Charmbracelet | ~60% [est] | MIT | Free BYOK | 26K |
 | **Kilo Code** | kilo.ai | ~65% [est] | MIT | Free BYOK · Teams $15/user | 24K |
@@ -77,7 +77,7 @@
 | **Mini-Kode** | Community | — | MIT | Educational, readable reference implementation | ~304 |
 | **zot** | Community | — | OSS | Zero-overhead harness — TUI/JSON/RPC, diffs, skills, guardrails | ~271 |
 
-> ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Gemini CLI **retired** (Jun 18), Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode (165K★) feuded with Anthropic over subscription login.
+> ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode feuded with Anthropic over subscription login. **Gemini CLI retirement, corrected this pass:** a prior version of this archive stated Gemini CLI was retired June 18 — that was wrong. The repo is live, Apache 2.0, ~106K stars, with a free tier of 60 req/min and 1,000 req/day. The "migrate to Antigravity" claim traced back to an aggregator, not a Google announcement, and could not be confirmed — treat it as unverified, not fact. Star count for OpenCode also has two conflicting figures in this archive (165K vs 177K elsewhere) — neither re-verified this pass, don't trust either to the digit.
 
 ### Proxy / Router Tools (free + cheaper model access in your existing agent)
 
@@ -146,17 +146,17 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 | Agent | By | TB 2.1 | Price | BYOK |
 |---|---|---|---|---|
-| **Cursor** | Cursor | ~72% [est] | Free hobby · Pro $20 · Ultra $200/mo | Yes |
+| **Cursor** | Cursor | ~72% [est] | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | Yes |
 | **FreeBuff** | Codebuff / YC | ~70% [est] | Free ad-supported (5hr/day on V4 Flash) | Partial |
 | **GitHub Copilot** | Microsoft | ~65% [est] | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo | Partial |
 | **Kiro** | AWS | N/A | Free 50cr · Pro $10 · Pro+ $20/mo | Yes |
 | **Qwen Code** | Alibaba | N/A | Free BYOK | Yes |
-| **Amp** | Sourcegraph | ~68% [est] | Free (no token caps) | Yes |
+| **Amp** | Sourcegraph | ~68% [est] | Free tier is ad-supported, no hard token cap · Megawatt $20/mo · Gigawatt $200/mo · Unconstrained PAYG | Yes |
 | **Zencoder** | Zencoder | ~66% [est] | Free tier · Pro $19/mo | Yes |
 | **Augment Code** | Augment | ~70% [est] | Pro $50 · Max $200/mo | No |
 | **Sweep AI** | Sweep | ~60% [est] | Free OSS · Pro $19/mo | Yes |
 
-**Amp (Sourcegraph)** — zero token caps, broadest codebase indexing engine. Best for mono-repos. CLI + VS Code. Free.
+**Amp (Sourcegraph)** — zero hard token cap, broadest codebase indexing engine. Best for mono-repos. CLI + VS Code. Free tier is ad-supported, not plain free — paid tiers (Megawatt $20, Gigawatt $200, Unconstrained PAYG) drop the ads.
 
 **Zencoder** — Repo-Grokking: analyzes full project structural patterns before generating. Self-improving agentic pipeline. JetBrains + VS Code, 40K+ installs.
 
@@ -164,7 +164,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 **Sweep AI** — turns GitHub issues directly into PRs. AI generates, tests, and self-reviews. JetBrains-first (4.9 stars, 40K installs). Best for automated issue → PR workflow.
 
-> **Gemini CLI RETIRING** — migrate to Antigravity CLI before June 18, 2026.
+> **Gemini CLI is not retiring, corrected this pass** — the repo is live (Apache 2.0, ~106K★, free tier 60 req/min / 1,000 req/day). Earlier text here claimed a June 18 retirement and told readers to migrate to Antigravity CLI; that claim only traces to an aggregator, not a Google source, and could not be confirmed. Treat "Gemini CLI is gone" as unverified, not fact.
 
 ---
 
@@ -174,16 +174,17 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 | IDE | By | Price | Agent Features | Privacy | Notes |
 |---|---|---|---|---|---|
-| **Cursor** | Cursor | Free · Pro $20 · Ultra $200/mo | 8 parallel agents, BugBot, Background Agents, Design Mode, multi-repo | Encrypted | Cursor 3 "Glass" rebuild Apr 2. $100M+ ARR |
+| **Cursor** | Cursor | Free (Hobby) · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | 8 parallel agents, BugBot, Background Agents, Design Mode, multi-repo | Encrypted | Cursor 3 "Glass" rebuild Apr 2. $100M+ ARR |
 | **Kiro** | AWS | Free 50cr · Pro $10 · Pro+ $20/mo | Spec-driven (requirements→code), Hooks | AWS-hosted | "AI IDE for adults." May 7 launch |
 | **Warp** | Warp | Free · Pro $19 · Team $35/mo | Agent Mode, MCP, Cloud Agents (Oz), multi-agent hub | Open-source | Open-source May 28 |
-| **Devin Desktop** | Cognition | $20/mo + $2.25/ACU | Devin Local from Jul 1 | Cloud | Formerly Windsurf, rebranded Jun 2 |
+| **Devin Desktop** | Cognition | $20/mo + $2.25/ACU (official pricing page returned an error twice this pass — treat as unverified, not current) | Devin Local from Jul 1 | Cloud | Formerly Windsurf, rebranded Jun 2 (confirmed: windsurf.com redirects to devin.ai) |
 | **GitHub Copilot** | Microsoft | Free · Pro $10 · Pro+ $39 · Max $100/mo | Workspace, Coding Agent, BugBot, multi-provider | Microsoft | Usage-based credits since Jun 1 |
-| **Antigravity** | Google | Free · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use | Google | Replaces Gemini CLI |
+| **Antigravity** | Google | Free · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use | Google | Google's newer agentic IDE. Does not replace Gemini CLI — that tool is still live, see Part 1 note |
+| **Gemini CLI** | Google | Free (60 req/min, 1,000 req/day) | Terminal agent | Google | ~106K★, Apache 2.0. A prior retirement claim in this archive was unverified and has been removed |
 | **Trae** | ByteDance | Free · Lite $3 · Pro $10 · Ultra $100/mo | SOLO mode, MCP | **5-yr retention, no opt-out** | VS Code fork |
 | **Void** | Void | Free | Agent Mode (multi-file, terminal) | **No telemetry, fully local** | Open-source VS Code fork |
 | **PearAI** | PearAI | Free BYOK | Full agentic, Continue-based | BYOK = local keys | Open-source VS Code fork |
-| **Zed** | Zed Industries | Free | ACP — run any agent natively | Open-source | Open agent ecosystem |
+| **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |
 | **Claude Code** | Anthropic | Pro $17 · Max 5x $100 · Max 20x $200 | Terminal + VS Code, MCP, parallel subagents | Anthropic cloud | Best MCP + tool-use |
 | **AionUI** | AionUI OSS | Free (Apache 2.0) | Unified desktop dashboard for 20+ CLI agents, built-in agent, Cron scheduler, office editing | 100% local SQLite | 28K+ stars. GUI wrapper for terminal agents |
 | **Eigent** | Eigent AI | Free (OSS) · Pro $? | Multi-agent workforce (Browser/Terminal/Document/Multimodal), CAMEL-based, scheduled tasks | Local-first | 14.4K stars. "Open Source Cowork Desktop" |
@@ -263,7 +264,7 @@ brew install aionui
 | **OpenClaw** | OpenClaw Foundation | Self-hosted personal agent | Free (MIT, BYO LLM key) | **380K+ stars — most-starred self-hosted agent.** Long-running Node service routing 23+ chat channels (WhatsApp/Telegram/Discord/Signal/Slack) to an agent that reads files, runs commands, persists memory. ClawHub skill registry. Founder Peter Steinberger joined OpenAI; foundation now stewards it. ⚠️ Broad system access + untrusted 3rd-party skills = real RCE/malware risk |
 | **Manus AI** | Manus (ex-Monica.im) | Autonomous VM agent | Free 300cr/day · Pro $20 · Extended $200/mo | Sandboxed VM. Web browse, code, files, slides. 20 concurrent tasks on Pro |
 | **Genspark** | Genspark | All-in-one "Super Agent" | Free ~100–200cr/day (no card) · Plus $24.99 ($19.99/yr, 10K cr) · Pro $249.99 (125K cr) | Orchestrates many frontier models + 80+ tools. AI Slides/Sheets, image+video gen, AI Developer, real phone calls. Chat+image = 0 credits on paid through Dec 31 2026 |
-| **Devin** | Cognition | Autonomous SWE | $20/mo + $2.25/ACU | Full tickets end-to-end, PR creation |
+| **Devin** | Cognition | Autonomous SWE | $20/mo + $2.25/ACU (unverified this pass — official pricing page unreachable) | Full tickets end-to-end, PR creation |
 | **Relevance AI** | Relevance AI | Enterprise multi-agent | Free 100cr/day · Pro $19/mo · Business custom | 9,000+ integrations, multi-agent teams, production workflows |
 | **OpenHands** | All-Hands AI | DevOps agent | Free (cloud plans available) | 77.6% SWE-bench, bash+code+push PRs, 78K stars |
 | **SWE-agent** | Princeton NLP | Bug fixing agent | Open-source | Research-grade, SWE-bench optimized, 20K stars |
@@ -283,11 +284,11 @@ brew install aionui
 | **Claude.ai** | Anthropic | Opus 4.8 / Sonnet 4.6 | Yes (daily cap) | Pro $17/mo | Best reasoning, Artifacts, Projects |
 | **ChatGPT** | OpenAI | GPT-5.5 / o3 | Yes | Plus $20/mo | Canvas, code exec, image gen, deep research |
 | **Gemini** | Google | Gemini 3.1 Pro | Yes | AI Pro $19.99/mo | Deep Research, Google Workspace |
-| **chat.z.ai** | Z.AI / Zhipu | GLM-5.2 (1M ctx) | Yes (generous) | Coding $3/mo | Free. GLM-5.2 MIT open-weight. Developer API free |
+| **chat.z.ai** | Z.AI / Zhipu | GLM-5.2 (1M ctx, unverified) | Yes (generous) | Coding $3/mo | Web chat is free; the GLM-5.2 API itself is paid ($1.40/$4.40 per 1M, see [MODELS.md](./MODELS.md)) — don't read "developer API free" from the free web chat. MIT-license claim not confirmed on the official pricing doc |
 | **Grok** | xAI | Grok 4.3 | Yes (on X) | SuperGrok $30/mo | Deep Search, X integration, image gen |
 | **Perplexity** | Perplexity | Multiple | Yes | Pro $20/mo | Best for research + citations |
 | **aider.chat** | aider-AI | Claude / GPT / local | N/A | Free (BYOK API) | Web frontend for Aider CLI — same BYOK model |
-| **Kimi** | Moonshot | Kimi K2.6 | Yes (trial) | Pro $20/mo | 80.2% SWE-bench, 262K ctx, 4000+ tool calls |
+| **Kimi** | Moonshot | Kimi K2.6 | Yes (trial) | Pro $20/mo | 80.2% SWE-bench, 256K ctx, 4000+ tool calls |
 | **Mistral Le Chat** | Mistral | Mistral Medium 3.5 | Yes | Pro $14.99/mo | EU-hosted, GDPR, Canvas mode |
 | **Manus AI** | Manus | Internal + frontier | Yes (300cr/day) | Pro $20/mo | Autonomous agent, not just chat |
 
@@ -527,10 +528,11 @@ ANTHROPIC_API_KEY=sk-ant-... jcode --host user@remote.server
 
 | Tool | Status | Replace With |
 |---|---|---|
-| Gemini CLI | Retired June 18 | Antigravity CLI |
-| Windsurf | Rebranded June 2 | Devin Desktop |
-| Cascade engine | EOL July 1 | Devin Local |
-| Amazon Q Developer | Replaced May 2026 | Kiro |
+| Windsurf | Rebranded June 2 (Cognition/Devin merge, confirmed via windsurf.com → devin.ai redirect) | Devin Desktop |
+| Cascade engine | EOL July 1 (not re-checked this pass) | Devin Local |
+| Amazon Q Developer | Replaced May 2026 (not re-checked this pass) | Kiro |
+
+> Gemini CLI removed from this table — it was previously listed here as "retired June 18," but the repo is live with a free tier (see Part 1). The claim that Antigravity CLI replaces it, or that free Gemini CLI users lose access, only traces to an aggregator and is unverified — don't act on it either direction.
 
 ---
 
@@ -869,7 +871,7 @@ Run open-weight models entirely on your hardware. No API keys, no data leaving y
 | **GPT4All** | gpt4all.io | 74K+ | Desktop GUI | CPU/CUDA | Fully offline, no GPU required |
 | **llamafile** | github.com/Mozilla-Ocho/llamafile | 24K+ | Single executable | CPU/CUDA | Single-file distribution, share models as executables |
 | **vLLM** | docs.vllm.ai | 50K+ | REST API server | CUDA (multi-GPU) | High-throughput production serving |
-| **llama.cpp** | github.com/ggerganov/llama.cpp | 82K+ | CLI | CPU/CUDA/Metal | Raw performance, all quantization levels |
+| **llama.cpp** | github.com/ggml-org/llama.cpp | 82K+ | CLI | CPU/CUDA/Metal | Raw performance, all quantization levels. Moved from `ggerganov/llama.cpp` — updated this pass |
 | **Msty** | msty.app | — | Desktop GUI | CUDA/Metal | Beautiful UI, multi-model chats, Ollama companion |
 
 ### Best Local Coding Models (June 2026)
