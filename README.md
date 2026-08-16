@@ -2,9 +2,9 @@
 
 > One consolidated archive of **everything for vibe coding** — frontend builders, backends, databases, CLI agents, AI models, MCP, automation, media gen, and every way to get **free AI keys, credits, and freebies** on the internet.
 
-![verified](https://img.shields.io/badge/links%20%26%20figures-verified%20June%202026-2ecc71) ![updated](https://img.shields.io/badge/updated-2026--06--27-blue)
+![verified](https://img.shields.io/badge/links%20%26%20figures-rechecked%20Aug%202026-2ecc71) ![updated](https://img.shields.io/badge/updated-2026--08--16-blue)
 
-> ✅ **Verified June 27, 2026.** Prices, free-tier limits, and star counts drift fast — re-check vendor pages before relying on a number.
+> ✅ **Re-checked Aug 16, 2026** (prior pass: June 27, 2026). This pass re-verified the flags raised in [CREDITS.md Part 6](./CREDITS.md#part-6--provider-trust-status), fixed several stale numbers (see [plan.md](./plan.md) for the list), and added the link-check script described below. Not every figure in every file was independently re-fetched this pass — where a number is carried over from June, the file says so. Prices, free-tier limits, and star counts drift fast regardless — re-check vendor pages before relying on a number.
 
 ---
 
@@ -14,14 +14,14 @@
 |---|---|---|
 | 🎨 **Build the frontend** | [FRONTEND.md](./FRONTEND.md) | AI app/UI builders, design-to-code, no-code sites, OSS self-hostable — free tiers |
 | 🗄️ **Build the backend** | [BACKEND.md](./BACKEND.md) | BaaS, serverless DBs, hosting/deploy, auth, vector DBs, glue — **free-tier limits** |
-| 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | 31 API models (incl. GPT-5.6 Sol/Terra/Luna) + upcoming, pricing, context, proxy routes (data-driven) |
-| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) | 22+ free API tiers · credit-stacking, student/startup, sub-as-API, free GPU |
+| 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | 32 API models (incl. GPT-5.6 Sol/Terra/Luna) + upcoming, pricing, context, proxy routes (data-driven) |
+| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | 22+ free API tiers · credit-stacking, student/startup, sub-as-API, free GPU |
 | 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality |
 | 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | Image/voice gen, LLMOps (observability/eval/gateways), docs |
-| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | What MCP is, how to use Skills per IDE/CLI, skill repos (incl. [Claude-skill — 1,374 skills](https://github.com/Yash-Awasthi/Claude-skill)) |
+| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | What MCP is, how to use Skills per IDE/CLI, skill repos (start at [anthropics/skills](https://github.com/anthropics/skills)) |
 | 📚 **Source repos** | [REFERENCES.md](./REFERENCES.md) | Runnable tools + proxy/router projects + merged awesome-lists |
 
-> 📊 Charts + model tables are generated from [`data/models.json`](./data/models.json) → `python3 charts/gen_charts.py`.
+> 📊 Charts + model tables are generated from [`data/models.json`](./data/models.json) → `python3 charts/gen_charts.py`. The "32 API models" count above is the length of that file's `models` array — update this number whenever an entry is added or removed there.
 
 ---
 
@@ -93,7 +93,7 @@
 ### Best model for performance
 | Model | SWE-bench | Out $/1M | Context |
 |---|---|---|---|
-| GPT-5.6 Sol | ~91% [est] | $30 | 1.5M |
+| GPT-5.6 Sol | ~91% [est] | $30 | 1.05M |
 | GPT-5.5 | 88.7% | $30 | 1M |
 | Claude Opus 4.8 | 88.6% | $25 | 1M |
 
@@ -200,7 +200,7 @@
 | Apr | JCode trends — Rust SSH agent, +670 stars/day |
 | Apr | Claw Code hits 194K stars — fastest repo to 100K in history |
 | Mar | Claude Code source leak → Claw Code fork created |
-| May 19 | Gemini CLI retired → Antigravity CLI |
+| ~~May 19~~ | ~~Gemini CLI retired → Antigravity CLI~~ — corrected: the repo is live with a free tier, this claim was unverified aggregator noise, see [AGENTS.md](./AGENTS.md) Part 1 |
 
 ---
 
@@ -214,3 +214,31 @@
 | `[est]` | Community estimated | Low — directional |
 
 Scale SEAL standardized (June 2026): GPT-5.4 xHigh **59.1%** · Opus 4.6 **51.9%** · Haiku 4.5 **39.5%**
+
+---
+
+## Keeping This Archive Honest
+
+### Provider trust tiers
+
+Every provider mentioned in this archive falls into one of four tiers. The full breakdown, with the actual providers in each tier, lives in [CREDITS.md Part 6](./CREDITS.md#part-6--provider-trust-status); the rule itself has also been applied to entries in [FREE-ACCESS.md](./FREE-ACCESS.md), [BACKEND.md](./BACKEND.md), and [AGENTS.md](./AGENTS.md).
+
+| Tier | Meaning |
+|---|---|
+| **Clean** | Confirmed real and doing what it claims — safe to read as a plain fact anywhere in this archive |
+| **Caveat** | Real, but with a rough edge (a disputed number, a pooled-login/ToS risk, a claim only sourced to one side) — the entry carries a one-line warning, read it before relying on the row |
+| **Unverified** | Not independently confirmed — kept out of the plain tables, listed only in its own section, never a source of a plain fact |
+| **Kept out** | A confirmed scam, or a name shared by unrelated companies that hasn't been disambiguated — excluded from the archive entirely, except as a warning |
+
+A provider only earns a plain, unqualified entry once it's confirmed both real and doing what it claims — a real product with a rough edge still gets the caveat sentence, never a silent plain entry.
+
+### Link check
+
+`scripts/link_check.py` walks every markdown file in the repo, pulls every URL out of it, and checks each one (HEAD, falling back to GET on a 405 or 4xx/5xx) concurrently. Run it with:
+
+```bash
+pip install requests
+python3 scripts/link_check.py
+```
+
+It prints dead links (4xx/5xx, timeout, or connection error) and redirected links, grouped by the file that references them, and exits with status 1 if anything is dead. Known placeholder URLs used as fill-in-the-blank examples (`your-coolify.com`, `localhost:PORT`, and similar) are ignored by pattern instead of being reported as dead. It only checks that a link resolves — it does not check whether the page behind it still says what this archive claims it says; that's still a manual re-check against the trust tiers above.
