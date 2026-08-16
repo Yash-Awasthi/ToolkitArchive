@@ -62,6 +62,7 @@
 | → **MongoDB Atlas** | $50 credit + Univ certification ($150 value) | mongodb.com/students |
 | → **Heroku, Namecheap, Sentry, DataCamp, Frontend Masters, JetBrains, …** | 100+ free perks | — |
 | **GitHub Copilot Free** | Free for verified students AND OSS maintainers (also a free tier for everyone: 2K completions + 50 chats/mo) | github.com/copilot |
+| **Codex for Students** 🆕 | **$100 in ChatGPT credits to use in Codex** (US/Canada university students; verify with your university email — one claim per eligible student) | chatgpt.com/codex/students · developers.openai.com/community/students (primary) |
 | **Zed Education** | Zed Pro free for 12 months, plus $10/mo AI credit; premium models excluded from the free credit. Requires a GitHub account 30+ days old and an edu email; auto-downgrades to the regular free plan after 12 months | zed.dev/education |
 | **Google Colab** | Free T4 GPU (usage-limited); Pro for more | colab.research.google.com |
 | **Cloudflare Workers for Students** | 10M req/mo free for 12 mo (.edu) | cloudflare.com |
@@ -69,6 +70,7 @@
 | **Notion Education Plus** | Free with an edu email — the base Notion plan, not Notion AI. Notion AI itself has no student discount; it's bundled into Business ($20/member) and Enterprise plans only — the standalone AI add-on was retired May 2025 | notion.com/students |
 
 > Azure-for-Students path is the **no-credit-card** one — don't land on the regular Azure Free Trial (that one always asks for a card). Click **"Activate Now"** under Azure for Students via the Pack.
+> **Full verified student-deals list:** aistudentdiscount.com/deals — 71 checked deals, 21 completely free, $41K+ combined savings (latest check Jul 2026).
 
 ---
 
@@ -81,6 +83,8 @@
 | **AWS Activate** | Founders $1K · Builders $1K–$5K · Portfolio $25K–$100K · **GenAI up to $300K** (YC AI: $500K) | Big tiers need VC/accelerator | aws.amazon.com/activate |
 | **NVIDIA Inception** | $100K+ software/hardware discounts; unlocks $10K AWS | AI startups | nvidia.com/inception |
 | **Anthropic for Startups** | ~$25K Claude credits | Via partners/accelerators | anthropic.com |
+| **Anthropic AI for Science — Rare Disease call** 🆕 | **Up to $50,000 in Claude API credits over 6 months** | Rare-disease researchers + early-stage biotechs; compute, not cash; announced Jul 20, 2026 (first AI-for-Science call) | anthropic.com (AI for Science) |
+| **Anthropic Economic Futures** 🆕 | **$10K–$50K research funding + $5,000 Claude API credits** | For researchers/economists; credits for computational analysis | anthropic.com/economic-futures |
 | **Cloudflare for Startups** | Credits across Workers/R2/etc. | Accelerator-linked | cloudflare.com/startups |
 | **MongoDB / Notion / Linear / Vercel / Sentry for Startups** | Credits + free Pro | Various | — |
 

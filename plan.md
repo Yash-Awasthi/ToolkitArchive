@@ -247,6 +247,13 @@ offers, and an audit of benchmark claims. Work is intentionally divided by evide
 - **Cline-in-AgentRouter made explicit:** FREE-ACCESS.md AgentRouter row now says to add the AgentRouter key as a custom OpenAI-compatible provider in the **Cline VS Code extension** (Settings → API Provider → OpenAI Compatible) for free Claude/GPT in the IDE.
 - README digest bullet added; no chart changes (no model-price/SWE rows affected).
 
+## Web-sweep pass 2 — 17 Aug 2026 (user: "search more on internet")
+
+- **Codex for Students added** (CREDITS.md Part 2): $100 ChatGPT credits for Codex, US/CA university students, verify via university email — primary-sourced (chatgpt.com/codex/students, developers.openai.com/community/students, OpenAI X/TikTok).
+- **Anthropic research grants added** (CREDITS.md Part 3): AI for Science Rare Disease call (up to $50K Claude API credits over 6 mo, announced Jul 20 2026) + Economic Futures ($10K-50K funding + $5K Claude credits).
+- **aistudentdiscount.com/deals** referenced in CREDITS Part 2 (71 verified student deals, 21 free, $41K+ savings, Jul 2026 check).
+- No chart changes (no model-price/SWE rows affected).
+
 ## What this repo actually is
 
 A set of hand-maintained markdown tables (frontend/backend/models/agents/free-access/credits)
