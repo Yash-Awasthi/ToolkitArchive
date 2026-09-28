@@ -40,18 +40,18 @@
 |---|---|---|
 | Claude Pro / Max ($17–200) | Claude.ai free (Sonnet 5) · Opus 5.5 via $5 API trial · Kimi K3 free on kimi.com · Qwen 3.8-Max free on Qwen Chat | Free Claude has daily caps and no Opus |
 | ChatGPT Plus ($20) | ChatGPT free (GPT-6 Luna on desktop) · **4 months Plus free for US college students** (until Oct 31, card needed) | Cancel before it bills |
-| Gemini AI Pro ($19.99) | Gemini free (3.8 Flash) · student AI Pro offer where still open | US student sign-ups reportedly closed; check your country |
+| Gemini AI Pro ($19.99) | Gemini free (3.8 Flash) · **AI Pro free for 12 months** (US college students 18+) · **AI Plus free for 12 months** in 140+ other markets | School verification |
 | Perplexity Pro | Gemini Deep Research (free tier) · ChatGPT search · Perplexity free | |
 | Cursor Pro ($20) | **OpenCode** / **Cline** / **Kilo** + free models · **Antigravity** free · Copilot Free | Fewer premium-model calls |
 | Claude Code / Codex | OpenCode + DeepSeek V4.1 Flash (free on Token Harbor / Cline) · **Freebuff** · Gemini via Antigravity CLI | |
-| GitHub Copilot Pro ($10) | Copilot Free · GitHub Student Pack (Pro signups paused — you get Free) | |
+| GitHub Copilot Pro ($10) | **Copilot Student** via the GitHub Student Pack (unlimited completions + AI credits) · Copilot Free for everyone | Verification |
 | OpenAI/Anthropic API | Google AI Studio · Token Harbor `:free` · OpenRouter `:free` · Groq · NVIDIA NIM | Rate limits; free tiers may train on prompts |
 | ElevenLabs ($5–22) | **Kokoro**, **Chatterbox** (MIT, beat ElevenLabs in a blind test), **Qwen3-TTS**, **F5-TTS / GPT-SoVITS** (voice clone), **VoiceStudio** (local app, 16 engines) | Needs setup; GPU helps |
 | Suno Pro | **ACE-Step 1.5** (local, unlimited), YuE, DiffRhythm, Stable Audio Open | Still a step behind Suno v5 |
 | Runway / Veo / Kling | **Wan 2.7**, **LTX-2.3** (Apache 2.0, 4K + audio), **HunyuanVideo 1.5** | GPU-heavy |
 | Midjourney | Gemini / ChatGPT free image gen · **Qwen-Image-2.1** · FLUX (local) | |
 | Lovable / Bolt / v0 ($20+) | **Dyad**, **bolt.diy**, **Open Lovable** (MIT), **Creable** (MIT), **Cloudflare VibeSDK** — all with a free key | You bring the model key |
-| Figma paid / Framer | **Google Stitch** (350 free gens/mo), Figma Education (free), **Penpot** (open source) | |
+| Figma paid / Framer | **Google Stitch** (free; ~400 design credits/day after Stitch 2.0), Figma Education (free), **Penpot** (open source) | |
 | Notion AI | Notion Education Plus (free, no AI) + NotebookLM / Gemini for the AI part | |
 | Grammarly Premium / Quillbot | Any free chat model with "edit for clarity, keep my voice" | |
 | Otter / transcription | **Whisper** locally · Groq Whisper free tier | |
@@ -66,10 +66,10 @@
 
 | Program | What you get | Who | Link |
 |---|---|---|---|
-| **GitHub Student Developer Pack** | 100+ perks: Azure $100 (no card), DigitalOcean $200, MongoDB $50, JetBrains, domains | Verified students | education.github.com/pack |
+| **GitHub Student Developer Pack** | Copilot Student, free GitHub Pro, **Azure $100 (12 months, no card)** + 25 free Azure services, JetBrains IDEs and many partner offers | Verified students 18+ | education.github.com/pack |
 | **ChatGPT Plus for students** | 4 months free ($80) | US college, **deadline Oct 31, 2026**, card required | chatgpt.com (students page) |
 | **Codex for Students** | $100 ChatGPT credits for Codex | US/Canada university students | chatgpt.com/codex/students |
-| **Google AI Pro for students** | 12 months free where offered | School email; reportedly closed to new US sign-ups — check your region | gemini.google/students |
+| **Google AI Pro for students** | 12 months free (US college students 18+); **Google AI Plus** free for 12 months in 140+ other markets | School verification | gemini.google/students |
 | **Zed Education** | Zed Pro 12 months + $10/mo AI credit | edu email + GitHub 30+ days | zed.dev/education |
 | **Kiro for Students** | 1,000 credits/mo for 12 months | Verified enrollment | kiro.dev |
 | **JetBrains Student Pack** | All IDEs free | Students | jetbrains.com/student |
@@ -116,7 +116,7 @@ Full tables with links: [MEDIA.md](./MEDIA.md#free--open-source-media-sept-2026)
 
 | Step | Free tool |
 |---|---|
-| Design screens | **Google Stitch** — text/sketch/screenshot to UI, exports HTML/Tailwind/Flutter, 350 free gens/mo |
+| Design screens | **Google Stitch** — text/sketch/screenshot to UI, exports HTML/Tailwind/Flutter, free (~400 design credits/day) |
 | Build the app | **Dyad** (local, no sign-up) · **bolt.diy** · **Open Lovable** (clone a site into React/Next) · **Creable** |
 | Components | **v0** free credits · shadcn/ui (free) |
 | Host | Cloudflare Pages (unlimited bandwidth) · Vercel Hobby · GitHub Pages |
@@ -126,7 +126,7 @@ Full tables with links: [MEDIA.md](./MEDIA.md#free--open-source-media-sept-2026)
 
 ## Don't get scammed
 
-- ⛔ **aerolink.lat** and **lumosel.vip** sell "cheap Claude Opus/Sonnet" but actually serve **Qwen** and **DeepSeek**, with fake token counters. They call themselves Chinese grey-market proxies. Many similar Chinese credit routers do the same. Details and a 3-step check: [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers--gateways-community-reported--all-unverified).
+- ⛔ **aerolink.lat** and **lumosel.vip** sell "cheap Claude Opus/Sonnet" but actually serve **Qwen** and **DeepSeek**, with fake token counters. They call themselves Chinese grey-market proxies. Many similar Chinese credit routers do the same. Details and a 3-step check: [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers-community-reported--unverified).
 - ⛔ **ZCode** uploaded users' whole repos (with Git history and old secrets). See [NEWS.md](./NEWS.md).
 - ⛔ Cracked keys, "keygen/activator" repos, shared-account sites, and anything asking for your real Claude/ChatGPT password. These steal accounts or install malware.
 - ⚠️ Free and stealth models (OpenRouter stealth, TokenRa, Muse "contributor", Gemini free tier) may train on your prompts. Never paste API keys, passwords, or private data.

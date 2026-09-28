@@ -100,7 +100,7 @@ Sources: api-docs.deepseek.com (changelog + pricing) · siliconangle.com (Sept 1
   (Aug 30) — shared cloud sessions, rebuilt Control UI, automatic skill learning.
 - **Antigravity** — free Individual plan still $0 with weekly agent limits; Gemini 3.8 Flash added Sept 1.
 - **Terminal-Bench 4.0** is now the live terminal benchmark (66 tasks, flat 8-hour timeout). TB 2.1 is
-  saturated (top models ~88-90%) — see [AGENTS.md](./AGENTS.md#terminal-bench-40--current-snapshot-29-sep-2026).
+  saturated (top models ~88-90%) — see [AGENTS.md](./AGENTS.md#terminal-bench-40).
 
 ---
 

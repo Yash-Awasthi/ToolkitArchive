@@ -1,18 +1,13 @@
-# Skills, Plugins & MCP — Directory and Reference (updated 29 September 2026)
+# ⚡ Skills, Plugins & MCP — What's New, Directories, How-To (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Every star count is live from the GitHub API (29 Sep 2026). Install commands are copied from each
+> project's README. ⚠️ Read every `SKILL.md`, plugin and MCP server before installing — they are
+> instructions and code your agent will run.
 
-> Skills extend Claude agents with reusable, callable capabilities. Each skill is a discrete unit of functionality — invoked by name, loaded lazily into context.
-> ✅ **Verified June 27, 2026** — repo star counts drift; confirm on GitHub.
-> 🔄 **29 Sep 2026:** added the skill/plugin directory list and install commands below, plus Claude's new plugin directory. The older sections are still June-era.
-> ℹ️ **17 Aug 2026:** a dead `Claude-skill` link was removed (see below) and a redirecting skills URL was updated, but the *content* of this file was **not** re-verified this pass — treat skill counts, star counts, and builder-setup numbers as June-era unless you re-check them.
-
-**Contents:** [Sept 2026 wave](#new-skills-plugins--mcps--sept-2026-wave) · [Skill directories](#skill-directories-where-to-find-skills) · [Install in 60 seconds](#install-a-skill-or-plugin-in-60-seconds) · [Overview](#overview) · [What is MCP?](#what-is-mcp-60-second-primer) · [How to use skills](#how-to-use-skills-by-platform) ·
-[Skill categories](#skill-categories) · [Notable deep dives](#notable-skills-deep-dive) · [Skill access](#skill-access) ·
-[Creating skills](#creating-custom-skills) · [Builders' setups](#notable-builders-setups-skills--workflows) ·
-[Security bundles](#security--red-team-skill-bundles) · [Dev packs](#dev--engineering-skill-packs) ·
-[Skill repos](#skill-repositories) · [Counts](#skill-count-by-category-june-2026)
+**Contents:** [Sept 2026 wave](#new-skills-plugins--mcps--sept-2026-wave) · [Directories](#skill-directories-where-to-find-skills) · [Install in 60 seconds](#install-a-skill-or-plugin-in-60-seconds) · [How skills work](#how-skills-work) · [Write your own](#write-your-own-skill) · [Builders' setups](#notable-builders-setups) · [Security bundles](#security--red-team-skill-bundles) · [Dev packs](#dev--engineering-skill-packs)
 
 ---
 
@@ -151,366 +146,96 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 
 ---
 
-## Overview
+## How skills work
 
-The Claude skills ecosystem currently indexes **1,400+ skills** across categories spanning API integrations, development workflows, security research, data pipelines, and productivity automation.
+A **skill** is a folder with a `SKILL.md` file (name + one-line description + instructions) and optional
+scripts or reference files. At session start the agent sees only each skill's name and description; the
+full instructions load only when a task needs them, so you can install hundreds without filling the
+context. The format is an open standard (Anthropic, Dec 2025) supported by Claude Code, claude.ai, the
+Claude API, Codex, OpenCode, Cursor, Antigravity, Qoder and others.
 
-Skills are:
-- **Lazy-loaded** — only the description lives in context until invoked
-- **Composable** — chain skills together in agent workflows
-- **Provider-agnostic** — work across Claude models (Haiku, Sonnet, Opus)
-- **Reusable** — share and reuse across sessions and teams
+### Skills vs MCP vs plugins
 
-**Standard:** Anthropic introduced the Skills format Oct 2025, released it as an **open standard** Dec 2025. Now supported by Claude Code, Claude.ai, the Claude API, OpenAI Codex, Cursor, Gemini CLI / Antigravity, and Windsurf.
-
----
-
-## What is MCP? (60-second primer)
-
-**MCP (Model Context Protocol)** is the "USB-C of AI agents" — one open standard (Anthropic, Nov 2024; now Linux Foundation) that lets any AI connect to any external tool or data source.
-
-```
-AI agent (Claude Code / Cursor / Codex / …)
-   │  MCP protocol (JSON-RPC over stdio / SSE / HTTP)
-   ▼
-MCP server (GitHub / Supabase / Playwright / Notion / …)
-   ▼
-the real service / DB / browser
-```
-
-Each **MCP server** exposes **Tools** (actions), **Resources** (readable data), **Prompts** (templates); the agent decides when to call them. Full MCP reference — 72K+ servers, registries, remote MCP, build-your-own — in [AGENTS.md](./AGENTS.md) Part 5A.
-
-### Skills vs MCP — when to use which
-
-| | **Skill** | **MCP** |
-|---|---|---|
-| Is a | folder of instructions (`SKILL.md`) + scripts | running server exposing tools |
-| Adds | *know-how* — how to do a task well | *capabilities* — access to an external system |
-| Loads | lazily into context when relevant | connects at startup via config |
-| Example | "write a brand-compliant PDF" | "query my Postgres / control a browser" |
-| Use together | a Skill can tell the agent *how* to use an MCP tool | — |
-
-> Rule of thumb: **Skill = teach the model a workflow. MCP = give the model a new hand.** They compose.
-
----
-
-## How to Use Skills (by platform)
-
-Skills live in a `skills/` folder; each skill is a subfolder with a `SKILL.md` (trigger conditions + instructions) and optional helper files.
-
-| Platform | How to add a skill |
-|---|---|
-| **Claude Code** | Drop into `~/.claude/skills/` (global, all projects) or `.claude/skills/` (project-only). Or register a marketplace: `/plugin marketplace add anthropics/skills` then install. Restart so it's discovered |
-| **Claude.ai** | Settings → Capabilities → enable Skills; upload/enable in Projects with tool-use on |
-| **Claude API** | Expose each skill via the `tools` parameter / Agent SDK `Skill` tool |
-| **Cursor / Windsurf** | Place in the project `.claude/skills/` (both read the open standard); reload window |
-| **OpenAI Codex / Gemini CLI / Antigravity** | Supported via the open Skills standard — point them at the skills dir per their docs |
-| **Any MCP agent** | Skills can be surfaced as MCP tools via `mcp-builder` |
-
-```bash
-# Fastest start — clone the official skill library straight into Claude Code:
-git clone https://github.com/anthropics/skills
-cp -r skills/* ~/.claude/skills/
-# restart Claude Code → skills trigger automatically on relevant tasks
-```
-
-> A previous version of this file pointed readers at a personal 1,374-skill bundle repo as a starting point. That repo now returns a 404 — the reference was removed from this archive (17 Aug 2026).
-
-> Skills load **progressively**: at session start the agent sees only each skill's name + description (~100 tokens each); the full `SKILL.md` (<5K tokens) loads only when relevant. That's how one agent hosts hundreds of skills without context bloat.
-
----
-
-## Skill Categories
-
-### API & Service Integrations (~800+ skills)
-
-The largest category. One skill per external service — covers auth, CRUD, webhooks, and pagination for each provider.
-
-| Category | Example Skills | Count |
-|---|---|---|
-| CRM / Sales | salesforce, hubspot, attio, pipedrive, folk, capsule-crm | 40+ |
-| Marketing | mailerlite, mailersend, activecampaign, klaviyo, brevo | 30+ |
-| Productivity | notion-read/write, airtable, baserow, clickup, asana | 25+ |
-| Communication | slackbot, discordbot, teams, telegram, whatsapp | 20+ |
-| File / Storage | googledrive, onedrive, dropbox, box, s3 | 15+ |
-| Finance | stripe, braintree, quickbooks, xero, plaid | 25+ |
-| AI Providers | openai, gemini, groqcloud, mistral-ai, replicate, elevenlabs | 30+ |
-| Data / Analytics | bigquery, snowflake, mongodb, postgres, redis | 20+ |
-| Developer Tools | github, gitlab, jira, linear, sentry, datadog | 30+ |
-| E-commerce | shopify, woocommerce, amazon, ebay, etsy | 20+ |
-| HR / Recruiting | workday, greenhouse, lever, ashby, breezy-hr | 15+ |
-
-### Development Workflows (~100 skills)
-
-Purpose-built for software engineering tasks. Used heavily by CLI agents and agentic IDEs.
-
-| Skill | Purpose |
-|---|---|
-| `code-review-and-quality` | Automated PR review, style enforcement, complexity analysis |
-| `test-driven-development` | Generate test suites, assert coverage, red-green-refactor cycles |
-| `debugging-and-error-recovery` | Root cause analysis, stack trace interpretation, fix suggestions |
-| `git-workflow-and-versioning` | Branch strategy, commit message standards, merge conflict resolution |
-| `ci-cd-and-automation` | Pipeline generation for GitHub Actions, GitLab CI, CircleCI |
-| `performance-optimization` | Profiling, bottleneck identification, caching strategies |
-| `security-and-hardening` | SAST, dependency audit, secrets scanning, OWASP checklist |
-| `documentation-and-adrs` | ADR templates, API docs, README generation |
-| `spec-driven-development` | Requirements → spec → code workflow (similar to Kiro) |
-| `context-engineering` | Optimize prompts, manage context windows, reduce token waste |
-| `incremental-implementation` | Break large features into atomic, testable steps |
-| `source-driven-development` | Build from source references, maintain provenance |
-| `subagent-driven-development` | Spawn and coordinate multiple sub-agents |
-| `autonomous-agent-patterns` | ReAct, Plan-and-Execute, reflexion, tool-use patterns |
-| `planning-and-task-breakdown` | Decompose tasks, estimate complexity, create work plans |
-| `api-and-interface-design` | REST/GraphQL/gRPC API design, OpenAPI spec generation |
-| `code-simplification` | Refactor for clarity, reduce duplication, improve readability |
-| `deprecation-and-migration` | Safe migration paths, breaking change detection |
-| `doubt-driven-development` | Uncertainty-first: flag assumptions before writing code |
-
-### Security & Red Team (~60 skills)
-
-Research and audit skills. Used for authorized penetration testing and vulnerability research.
-
-| Skill | Scope |
-|---|---|
-| `hunt-xss` | Cross-site scripting detection and payload generation |
-| `hunt-sqli` | SQL injection pattern recognition and exploitation |
-| `hunt-idor` | Insecure direct object reference mapping |
-| `hunt-ssrf` | Server-side request forgery chain discovery |
-| `hunt-rce` | Remote code execution vector identification |
-| `hunt-oauth` | OAuth flow misconfigurations and token leakage |
-| `hunt-graphql` | GraphQL introspection abuse, batching attacks |
-| `hunt-llm-ai` | LLM-specific: prompt injection, jailbreak vectors, model DoS |
-| `hunt-subdomain` | Subdomain enumeration and takeover detection |
-| `hunt-cloud-misconfig` | AWS/GCP/Azure misconfiguration detection |
-| `osint-methodology` | OSINT collection framework and source chaining |
-| `redteam-mindset` | Attacker perspective, threat modeling, kill chain mapping |
-| `bug-bounty` | Scope analysis, severity rating, disclosure templates |
-| `web3-audit` | Smart contract audit, reentrancy, access control |
-| `apk-redteam-pipeline` | Android APK static/dynamic analysis pipeline |
-| `m365-entra-attack` | Microsoft 365 / Entra ID attack surface mapping |
-
-### Data & Document Processing (~50 skills)
-
-| Skill | Purpose |
-|---|---|
-| `pdf` | Extract, parse, and manipulate PDF content |
-| `excel-automation` | Read/write Excel files, formula generation, pivot tables |
-| `docx` | Word document creation and manipulation |
-| `pptx` | PowerPoint slide generation |
-| `xlsx` | XLSX parsing and generation |
-| `deep-research` | Multi-source research synthesis with citations |
-| `academic-paper` | Research paper structure, citations, abstract writing |
-| `academic-pipeline` | Full research pipeline: literature review → methodology → write-up |
-| `image-enhancer` | Image upscaling, restoration, and enhancement |
-| `video-downloader` | Extract and process video content |
-| `audio-transcribe` | Speech-to-text with speaker diarization |
-
-### Productivity & Content (~80 skills)
-
-| Skill | Purpose |
-|---|---|
-| `notion-read` / `notion-write` / `notion-update` | Full Notion database CRUD |
-| `content-research-writer` | Research + structured content generation |
-| `report-writing` | Formal report structure, executive summaries |
-| `tailored-resume-generator` | Resume tailoring to job descriptions |
-| `internal-comms` | Internal memo, announcement, and update templates |
-| `meeting-insights-analyzer` | Extract action items and decisions from meeting notes |
-| `lead-research-assistant` | Prospect research, enrichment, and scoring |
-| `email-research-workflow` | Email research pipeline with verification |
-| `invoice-organizer` | Invoice parsing, categorization, and export |
-| `file-organizer` | Directory structure analysis and reorganization |
-| `changelog-generator` | Generate changelogs from git history |
-| `domain-name-brainstormer` | Brand name generation with availability check |
-| `idea-refine` | Structured ideation and concept refinement |
-| `interview-me` | Mock interview preparation and feedback |
-
-### Infrastructure & Cloud (~40 skills)
-
-| Skill | Purpose |
-|---|---|
-| `cloudflare-automation` | DNS, Workers, R2, KV, Pages management |
-| `digital-ocean-automation` | Droplets, Spaces, App Platform |
-| `neon-automation` | Neon serverless Postgres branching and queries |
-| `turso-automation` | Turso SQLite edge database |
-| `docker-hub-automation` | Container image management |
-| `cloud-iam-deep` | IAM policy analysis and least-privilege enforcement |
-| `mcp-builder` | Build MCP servers — tools, resources, prompts |
-| `connect-apps` | App connection and OAuth flow setup |
-
----
-
-## Notable Skills Deep Dive
-
-### `autonomous-agent-patterns`
-
-Implements established agentic reasoning patterns:
-
-- **ReAct** (Reason + Act) — interleave reasoning traces with tool calls
-- **Plan-and-Execute** — generate full plan upfront, execute steps sequentially
-- **Reflexion** — self-evaluate outputs, iterate on failures
-- **LATS** (Language Agent Tree Search) — tree-search over action sequences
-- **Multi-agent coordination** — spawning, messaging, result aggregation
-
-### `context-engineering`
-
-Manages the "context budget" problem for long agent runs:
-
-- Token counting and budget estimation
-- Summarization strategies (rolling, hierarchical)
-- Relevant chunk retrieval vs full-context loading
-- System prompt compression patterns
-- Lazy skill loading (< 1,000 token descriptions until invoked — same pattern Pi agent uses)
-
-### `mcp-builder`
-
-End-to-end MCP server scaffolding:
-
-- Tool definition with JSON Schema parameters
-- Resource URI templates
-- Prompt templates
-- Server packaging for Claude Desktop / agent frameworks
-- Testing harness generation
-
-### `deep-research`
-
-Multi-step research pipeline:
-
-1. Query decomposition into sub-questions
-2. Parallel web search across sources
-3. Source credibility scoring
-4. Cross-reference and contradiction detection
-5. Synthesis with inline citations
-6. Executive summary generation
-
----
-
-## Skill Access
-
-Skills are available through:
-
-| Method | How |
-|---|---|
-| **Claude.ai Projects** | Skills surface in Projects with tool-use enabled |
-| **Claude API** | Via `tools` parameter — each skill is a callable tool |
-| **Hermes Agent** | Native skill integration — auto-creates skills from experience |
-| **Agent SDK** | `Skill` tool in Claude Agent SDK for orchestration |
-| **MCP** | Skills exposed as MCP tools for any MCP-compatible agent |
-
----
-
-## Creating Custom Skills
-
-The `skill-creator` meta-skill generates new skills from natural language descriptions:
-
-```python
-# Invoke skill-creator to scaffold a new skill
-result = await agent.invoke_skill("skill-creator", {
-    "name": "my-service-automation",
-    "description": "Automate interactions with MyService API",
-    "api_docs_url": "https://docs.myservice.com/api",
-    "auth_type": "bearer_token"
-})
-# Returns: skill manifest, tool definitions, example invocations
-```
-
-Custom skill structure:
-```yaml
-name: my-service-automation
-description: One-line description (lives in context always)
-version: 1.0.0
-tools:
-  - name: create_record
-    description: Create a new record in MyService
-    parameters:
-      type: object
-      properties:
-        name: {type: string}
-        data: {type: object}
-      required: [name]
-instructions: |
-  Full instructions here — only loaded when skill is invoked.
-  Can be 10,000+ tokens without impacting idle context usage.
-```
-
----
-
-## Notable Builders' Setups, Skills & Workflows
-
-> Real, installable artifacts from prominent builders — Claude Code setups, agent skills, and autonomous workflows.
-
-| Builder | GitHub | Claude skills / workflows | Other notable repos |
+| | Skill | MCP server | Plugin (Claude Code) |
 |---|---|---|---|
-| **Garry Tan** (YC CEO) | [garrytan](https://github.com/garrytan) | **[gstack](https://github.com/garrytan/gstack)** (134K★) — his exact Claude Code setup: 23 opinionated tools acting as CEO/Designer/Eng-Manager/Release-Manager/Doc-Engineer/QA · **[gbrain](https://github.com/garrytan/gbrain)** (30K★) opinionated OpenClaw/Hermes brain · [alphaclaw](https://github.com/garrytan/alphaclaw) OpenClaw harness | gbrain-evals, openclaw |
-| **Ras Mic** (Michael Shimeles) | [michaelshimeles](https://github.com/michaelshimeles) | **[ralphy](https://github.com/michaelshimeles/ralphy)** (3.0K★) — autonomous bash loop running Claude Code + Codex + OpenCode + Cursor + Qwen + Droid until your PRD is done · **[skills](https://github.com/michaelshimeles/skills)** (~220★) his personal skills | [nextjs-starter-kit](https://github.com/michaelshimeles/nextjs-starter-kit) (3.0K★), react-starter-kit, hono-starter-kit, youpac-ai |
-| **Matt Palmer** (ex-Replit DevRel) | [mattppal](https://github.com/mattppal) | **[formatting-notion-pages](https://github.com/mattppal/formatting-notion-pages)** — agent skill for rich Notion pages · **[shipping-szn](https://github.com/mattppal/shipping-szn)** — auto-changelog (Slack→Mintlify) via Claude Agent SDK · [claude-codes](https://github.com/mattppal/claude-codes), hermes-agent-template | security checklist for vibe-coded apps, fasthtml-guestbook |
-| **Andrej Karpathy** | [karpathy](https://github.com/karpathy) | No first-party skill, but his coding principles are packaged as a Claude Code plugin: **[andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)** (4 rules: Think-Before-Coding, Simplicity-First, Surgical-Changes, Goal-Driven) — `/plugin marketplace add` or append its `CLAUDE.md` | [nanoGPT](https://github.com/karpathy/nanoGPT), nanochat, llm.c, minGPT, [llm-council](https://github.com/karpathy/llm-council), nn-zero-to-hero |
+| **Is** | Instructions + optional scripts | A service exposing tools/data | A bundle: skills + commands + hooks + MCP servers |
+| **Adds** | *How* to do something well | *Access* to a system (GitHub, DB, browser) | Both, installed together |
+| **Loads** | Only when relevant | Tool list sits in context while connected | Whatever it bundles |
+| **Example** | "Write a .docx in our house style" | GitHub MCP to open PRs | A team plugin with review skills + Sentry MCP |
+
+### Use skills on each platform
+
+| Platform | How |
+|---|---|
+| **Claude Code** | Put skill folders in `~/.claude/skills/` (all projects) or `.claude/skills/` (this repo); or install plugins with `/plugin marketplace add <repo>` → `/plugin install <name>` |
+| **claude.ai / Claude apps** | Settings → Capabilities → Skills → upload a zipped skill folder |
+| **Claude API** | Skills via the Agent SDK / API skills support (see Anthropic's Agent Skills docs) |
+| **Codex · OpenCode · Cursor · Antigravity · Qoder** | Each reads a skills directory — point it at the same folder |
+| **Several agents at once** | `localskills install <owner>/<skill> --target claude cursor windsurf` |
+
+### Write your own skill
+
+```markdown
+---
+name: api-conventions
+description: Use when writing or reviewing HTTP handlers in this repo — enforces our error format and pagination rules.
+---
+
+# API conventions
+
+1. Errors return `{ "error": { "code", "message" } }` with the right HTTP status.
+2. List endpoints take `?cursor=` and return `next_cursor`.
+3. Run `scripts/check_routes.py` before finishing.
+```
+
+Save as `.claude/skills/api-conventions/SKILL.md` (plus any `scripts/`). The **description decides when
+it loads** — make it specific about *when* to use the skill. Or ask Claude to use the official
+`skill-creator` skill to scaffold one for you.
+
+---
+
+## Notable builders' setups
+
+| Builder | Repo | ⭐ (live) | What |
+|---|---|---|---|
+| **Garry Tan** (YC) | [garrytan/gstack](https://github.com/garrytan/gstack) | 134K | His Claude Code setup: 23 opinionated tools acting as CEO / designer / eng manager / release manager / QA |
+| **Garry Tan** | [garrytan/gbrain](https://github.com/garrytan/gbrain) | 30K | Opinionated brain for OpenClaw / Hermes agents |
+| **Andrej Karpathy** (principles, packaged by others) | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 216K | Coding-discipline plugin: think before coding, simplicity, surgical changes |
+| **Ras Mic** | [michaelshimeles/ralphy](https://github.com/michaelshimeles/ralphy) | 3K | Loop that runs Claude Code / Codex / OpenCode until the PRD is done (last commit Feb 2026) |
 
 ```bash
-# Garry Tan's full Claude Code setup
 git clone https://github.com/garrytan/gstack
-# Ras Mic's autonomous agent loop
-git clone https://github.com/michaelshimeles/ralphy
-# Karpathy coding-discipline plugin (in Claude Code)
 /plugin marketplace add multica-ai/andrej-karpathy-skills
 ```
 
 ---
 
-## Security & Red-Team Skill Bundles
+## Security & red-team skill bundles
 
-> Dual-use — **authorized testing, CTF, and bug-bounty only.** Never run on systems you don't have written permission to test.
+> [!CAUTION]
+> Dual-use. **Authorized testing, CTFs and bug-bounty programs only** — never run against systems you don't have written permission to test.
 
-| Repo | Size | What | Link |
-|---|---|---|---|
-| **Claude-BugHunter** | 71 skills, 15 cmds, 681 report patterns, 24 vuln classes | Bug hunting + external red-team; scope-in-code, 7-question gate. Sister: **Claude-OSINT** | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) |
-| **pentest-agents** | 50 agents, 11 skills, 19 CLI tools, 2 MCP | Multi-harness autonomous bug-bounty (Claude Code/Codex/Gemini/Cursor/Windsurf/Copilot/OpenClaw); 16 BB platforms | [H-mmer/pentest-agents](https://github.com/H-mmer/pentest-agents) |
-| **Transilience communitytools** | 26 skills | Full pentest lifecycle, OWASP Top 10 + LLM Top 10, CVSS/CWE/MITRE reports, Kali container setup | [transilienceai/communitytools](https://github.com/transilienceai/communitytools) |
-| **claude-bug-bounty** | 20 vuln classes | Recon → hunt → validate → report (HackerOne/Bugcrowd/Intigriti/Immunefi). **Standalone CLI on free providers — no paid sub** | [shuvonsec/claude-bug-bounty](https://github.com/shuvonsec/claude-bug-bounty) |
-| **claude-code-pentest** | 6 skills, 43 scripts | Pure-Python, zero deps; recon → exploit chains → MITRE attack trees → report | [Orizon-eu/claude-code-pentest](https://github.com/Orizon-eu/claude-code-pentest) |
-| **cybersecurity-claude-skills** | 4 skills | `pentest-recon`, `web-hacking`, `secure-code-review`, `ctf-solver` | [mahmutka/cybersecurity-claude-skills](https://github.com/mahmutka/cybersecurity-claude-skills) |
-| **awesome-skills-security** | wordlists/payloads | SecLists + PayloadsAllTheThings packaged as Agent Skills (60+ agents) | [Eyadkelleh/awesome-skills-security](https://github.com/Eyadkelleh/awesome-skills-security) |
-
----
-
-## Dev / Engineering Skill Packs
-
-| Repo | Size | What | Link |
-|---|---|---|---|
-| **obra/superpowers** | 292K★ | Full SDLC framework: brainstorm → worktree → plan → subagent execution → TDD (RED-GREEN-REFACTOR) → review→merge. Works on Claude Code/Codex/Cursor/Gemini/Copilot/OpenCode/Kimi/Pi. `/plugin install superpowers@claude-plugins-official` | [obra/superpowers](https://github.com/obra/superpowers) |
-| **antigravity-awesome-skills** | 1,689+ skills | Installer CLI + bundles across dev/test/security/infra/product/docs/QA/MCP | [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) |
-| **karanb192/awesome-claude-skills** | 50+ verified | TDD, debugging, git workflows, document processing | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) |
-| **great_cto** | 7 subagents | tech-lead, senior-dev, qa, security-officer, devops, l3-support, auditor — full SDLC pipeline | search "great_cto claude plugin" |
-| **Official dev skills** | — | `web-artifacts-builder` (React/Tailwind/shadcn), `frontend-design`, `webapp-testing` (Playwright) | [anthropics/skills](https://github.com/anthropics/skills) |
-
----
-
-## Skill Repositories
-
-| Repo / Resource | What | Notes |
+| Repo | ⭐ (live) | What (per its README) |
 |---|---|---|
-| [anthropics/skills](https://github.com/anthropics/skills) | Official Agent Skills | docx/pdf/pptx/xlsx, `webapp-testing`, `skill-creator`, `brand-guidelines` |
-| [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 50+ curated skills + how-skills-work explainer | Great starting index |
-| [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated list | Highlights community libraries |
-| [obra/superpowers](https://github.com/obra/superpowers) | 20+ battle-tested Claude Code skills | TDD, debugging, `/brainstorm`, `/write-plan`, `/execute-plan` + skills-search |
-| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | Karpathy coding-discipline plugin (tens of thousands of installs) | Curbs silent wrong assumptions, over-engineering, orthogonal edits |
-| [BehiSecc](https://github.com/BehiSecc/awesome-claude-skills) · [GetBindu](https://github.com/GetBindu/awesome-claude-code-and-skills) | More curated collections | Security, debugging, marketing, bundles |
-| **[Official Claude docs — Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills)** | Canonical reference | Spec, authoring, `SKILL.md` format |
-| [Anthropic Engineering — "Equipping agents with skills"](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) | Official deep dive | Design + progressive disclosure |
-| [Andrej Karpathy](https://github.com/karpathy) | Origin of the coding-discipline rules | Repos: nanoGPT, nanochat, llm.c, llm-council |
-
-> **Recommended path:** start with **anthropics/skills** for production-grade official skills → **obra/superpowers** + the Karpathy skill for coding discipline → the curated awesome-lists above for breadth once you know what you're looking for.
+| [awarexone/Agentic-Bug-Hunter](https://github.com/awarexone/Agentic-Bug-Hunter) (ex shuvonsec/claude-bug-bounty) | 5.2K | Recon → hunt → validate → report for HackerOne/Bugcrowd/Intigriti; runs on free providers |
+| [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) | 4.7K | Bug hunting + external red-team skills and report patterns |
+| [H-mmer/pentest-agents](https://github.com/H-mmer/pentest-agents) | 1K | Multi-harness bug-bounty agents (last commit Jun 2026) |
+| [transilienceai/communitytools](https://github.com/transilienceai/communitytools) | 0.5K | Pentest lifecycle, OWASP Top 10 + LLM Top 10 |
+| [Eyadkelleh/awesome-skills-security](https://github.com/Eyadkelleh/awesome-skills-security) | 0.4K | SecLists + PayloadsAllTheThings as agent skills |
 
 ---
 
-## Skill Count by Category (June 2026)
+## Dev & engineering skill packs
 
-| Category | Skills |
-|---|---|
-| API & Service Integrations | 800+ |
-| Development Workflows | 100+ |
-| Security & Red Team | 60+ |
-| Productivity & Content | 80+ |
-| Data & Document Processing | 50+ |
-| Infrastructure & Cloud | 40+ |
-| Meta / Orchestration | 20+ |
-| **Total** | **1,400+** |
+| Repo | ⭐ (live) | What |
+|---|---|---|
+| [obra/superpowers](https://github.com/obra/superpowers) | 292K | Full workflow: brainstorm → plan → subagent execution → TDD → review. Works on Claude Code, Codex, Cursor, Gemini, Copilot, OpenCode, Kimi, Pi |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) (Everything Claude Code) | 269K | 64 agents, 261 skills, hooks, rules, MCPs |
+| [anthropics/skills](https://github.com/anthropics/skills) | 179K | Official: docx/pdf/pptx/xlsx, frontend-design, webapp-testing, skill-creator |
+| [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 76K | Curated skills + app-integration skills |
+| [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) (ex antigravity-awesome-skills) | 47K | Huge installable bundle across dev, security, infra, docs |
+| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) | 64K | Spec-driven workflow against context rot |
+| [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | 15K | Curated list |
+| [BehiSecc/awesome-claude-skills](https://github.com/BehiSecc/awesome-claude-skills) | 10K | Curated list incl. security |
+
+**Recommended path:** anthropics/skills (official) → superpowers + the Karpathy plugin (discipline) → a design skill (Impeccable or Taste Skill) → browse the [directories](#skill-directories-where-to-find-skills) for anything else. Official docs: [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills) · [Anthropic Engineering deep dive](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills).

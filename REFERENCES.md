@@ -1,89 +1,78 @@
-# References — Runnable Repos & Source Tools (re-checked 29 September 2026)
+# 📚 References — Runnable Repos & Primary Sources (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Runnable tools, SDKs and lists this archive draws on. Star counts and last-commit dates come from the
+> GitHub API on 29 Sep 2026. Repos with no commits for months are marked so you don't build on a dead project.
 
-> Actual runnable tools, libraries, SDKs, and the proxy/router projects this archive relies on.
-> (Replaces the old `references/` directory — clone any repo directly from its link.)
-> ✅ **Re-checked Aug 17, 2026** (dead-link pass + DeepSeek Harness / llamafile-org moves added).
-
-**Contents:** [Core runnable tools](#core-runnable-tools) · [Sub-as-API / proxies](#subscription-as-api--proxy--router-projects) ·
-[Curated lists](#curated-lists-merged-into-this-archive) · [Primary sources](#primary-sources--recent-additions)
+**Contents:** [Runnable tools](#runnable-tools) · [Routers & subscription proxies](#routers--subscription-proxies) · [Curated lists](#curated-lists) · [Primary sources](#primary-sources-29-sep-2026-pass)
 
 ---
 
-## Core Runnable Tools
+## Runnable tools
 
-| Repo | Stars | What it is |
+| Repo | ⭐ (live) | What it is |
 |---|---|---|
-| [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 82K+ | Gold-standard local LLM inference engine (C++). Repo moved from `ggerganov/llama.cpp` to the `ggml-org` organization — updated this pass |
-| [mozilla-ai/llamafile](https://github.com/mozilla-ai/llamafile) | 24K+ | Ship any model as one executable file. **Org confirmed this pass:** the old `Mozilla-Ocho/llamafile` URL redirects to `mozilla-ai/llamafile` (verified by the link checker, twice) — updated here and in [AGENTS.md](./AGENTS.md) Part 10 |
-| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 20K+ | Official MCP server for browser automation |
-| [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) | 25K+ | AI orchestration SDK (C# / Python / Java) |
-| [browserbase/stagehand](https://github.com/browserbase/stagehand) | 12K+ | Natural-language browser control (act/extract/observe/agent) |
-| [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | 239K | **DeepSeek Harness (`dsh`)** — MIT agent harness, open-sourced Aug 14 2026, "everything is a plugin" (models/tools/skills/UI), Cordis meta-framework. The harness behind DeepSeek's TB 2.1 runs |
-| [CodebuffAI/freebuff](https://github.com/CodebuffAI/freebuff) | 13K | **Freebuff** — free, ad-supported coding agent (CLI, desktop, web builder, cloud IDE) from the Codebuff team. Apache 2.0, `npm i -g freebuff`. Daily "Freebucks" pay for DeepSeek V4.1 Flash, GPT-6 Luna, GLM-5.3 Flash and more |
-| [cline.bot — Cline Desktop](https://cline.bot/blog/cline-desktop-an-open-source-app-for-open-weight-models) | 69K (cline) | Open-source desktop app (Sept 14, 2026 beta): imports Claude Code/Codex sessions, cron jobs, parallel sessions, free rotating models, ClinePass $9.99/mo |
-| [mizorewww/laya-mlx](https://github.com/mizorewww/laya-mlx) | ~6.6K | MLX runtime for Convai's **Laya** typed-decision models — 7–14 ms decisions on Apple Silicon, no PyTorch or cloud. Apache-2.0. Sibling: [laya-coreml](https://github.com/mizorewww/laya-coreml) |
-| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | — | Source-backed guide to TypeSafe's **Jev** typed decision model (SDKs, demos, independent evals). SDKs: `pip install typesafe-sdk`, `npm i @typesafe-ai/sdk` |
-| [MoonshotAI/Kimi-K3](https://github.com/MoonshotAI/Kimi-K3) | — | Kimi K3 (2.8T) open weights + model card; modified-MIT licence with a $20M MaaS revenue clause |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 211K | Open-source coding agent; best harness for free/OpenAI-compatible keys |
+| [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | 239K | DeepSeek's "everything is a plugin" agent harness (MIT) |
+| [ollama/ollama](https://github.com/ollama/ollama) | 182K | Default local model runtime |
+| [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 130K | Local inference engine (C++) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 93K | High-throughput GPU serving |
+| [cline/cline](https://github.com/cline/cline) | 69K | Coding agent + Cline Desktop (free rotating models) |
+| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 38K | Browser automation MCP (also ships inside Playwright) |
+| [mozilla-ai/llamafile](https://github.com/mozilla-ai/llamafile) | 26K | A model as a single executable |
+| [browserbase/stagehand](https://github.com/browserbase/stagehand) | 25K | Browser SDK for agents (v3, CDP-native) |
+| [CodebuffAI/freebuff](https://github.com/CodebuffAI/freebuff) | 13K | Free ad-supported coding agent (`npm i -g freebuff`) |
+| [MoonshotAI/Kimi-K3](https://github.com/MoonshotAI/Kimi-K3) | 8.9K | Kimi K3 open weights + model card (modified-MIT, $20M MaaS revenue clause) |
+| [mizorewww/laya-mlx](https://github.com/mizorewww/laya-mlx) · [laya-coreml](https://github.com/mizorewww/laya-coreml) | 6.6K · 1.5K | Laya typed-decision models on Apple Silicon (7–14 ms / ~5 ms), Apache-2.0 |
+| [cloudflare/vibesdk](https://github.com/cloudflare/vibesdk) | 5.4K | Run your own vibe-coding platform on Cloudflare |
+| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | 0.5K | Guide to TypeSafe's Jev (SDKs: `pip install typesafe-sdk`, `npm i @typesafe-ai/sdk`) |
+
+More agents, frameworks and MCP servers with live stars: [AGENTS.md](./AGENTS.md) · [SKILLS.md](./SKILLS.md).
 
 ---
 
-## Subscription-as-API / Proxy / Router Projects
+## Routers & subscription proxies
 
-> Reuse a Claude Code / Copilot / ChatGPT subscription as an API, or route Claude Code to free/cheaper backends.
-> ⚠️ Many are reverse-engineered — may violate provider ToS, risk account suspension. Use on your own accounts at your own risk. See [CREDITS.md](./CREDITS.md) Part 4.
+> [!CAUTION]
+> Subscription proxies are reverse-engineered — they can break provider terms and get accounts suspended. Avoid any repo advertising "keygen / activator / unlimited Pro" — malware pattern.
 
-| Repo | What it does |
-|---|---|
-| [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) | 53K★ — wraps Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API |
-| [decolua/9router](https://github.com/decolua/9router) | Routes Claude Code/Codex/Cursor/Cline/Copilot/Antigravity to free Claude/GPT/Gemini via 40+ providers; auto-fallback, taps Kiro/OpenCode-Free/Vertex |
-| [Alorse/cc-compatible-models](https://github.com/Alorse/cc-compatible-models) | Reference: configs + pricing for Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun with Claude Code |
-| [jodavan/claude-code-proxy](https://github.com/jodavan/claude-code-proxy) | Route each Claude Code tier to a different provider (e.g. GLM for Haiku/Opus via `api.z.ai/api/anthropic`), keep Sonnet on your sub |
-| [horselock/claude-code-proxy](https://github.com/horselock/claude-code-proxy) | Standalone OAuth — direct API calls using Claude Code credentials |
-| [Rishurajgautam24/free-claude-code](https://github.com/Rishurajgautam24/free-claude-code) | Local FastAPI proxy → NVIDIA NIM / OpenRouter / DeepSeek / Ollama / LM Studio; intercepts trivial requests to save quota |
-| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 29K★ — OpenAI-compatible BYOK proxy stacking 16 providers' free tiers (~1.7B tok/mo) behind one `/v1`; smart routing, failover, encrypted keys |
-| [gacabartosz/gaca-core](https://github.com/gacabartosz/gaca-core) | "Universal AI Bus" — 87+ free models from 11 providers, OpenAI-compatible, auto-failover + ranking + rate limiting |
-| [TokenRouter](https://www.tokenrouter.com/docs/) | Hosted 300+ model gateway with OpenAI-, Claude-, and Gemini-compatible integration. This is a commercial routing service, not a way to obtain paid models free; model usage is billed from balance. |
-
-> [!WARNING]
-> ⚠️ Avoid any repo advertising "keygen / activator / unlimited Pro without payment" — classic malware/scam pattern.
+| Repo | ⭐ (live) | Last commit | What it does |
+|---|---|---|---|
+| [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | 71K | Sept 2026 | Self-hosted gateway over 340 providers; ⚠️ CVE-2026-49352 reported |
+| [BerriAI/litellm](https://github.com/BerriAI/litellm) | 60K | Sept 2026 | OpenAI-compatible router for 100+ providers |
+| [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) | 53K | Sept 2026 | Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API |
+| [decolua/9router](https://github.com/decolua/9router) | 30K | Sept 2026 | Route agents to 40+ providers' free tiers with fallback |
+| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 29K | Sept 2026 | Stack 16 providers' free tiers behind one `/v1` |
+| [Rishurajgautam24/free-claude-code](https://github.com/Rishurajgautam24/free-claude-code) | 0.9K | Mar 2026 | Local proxy → NIM / OpenRouter / DeepSeek / Ollama for trivial requests |
+| [MrFadiAi/free-llm-gateway](https://github.com/MrFadiAi/free-llm-gateway) | 0.2K | May 2026 | Free-model gateway with auto-discovery |
+| [horselock/claude-code-proxy](https://github.com/horselock/claude-code-proxy) | 0.2K | Jan 2026 | Direct API calls with Claude Code credentials |
+| [Alorse/cc-compatible-models](https://github.com/Alorse/cc-compatible-models) | 31 | Apr 2026 | Configs for Chinese open models in Claude Code |
+| [jodavan/claude-code-proxy](https://github.com/jodavan/claude-code-proxy) | 4 | Oct 2025 (inactive) | Per-tier routing — superseded by 9router/CLIProxyAPI |
 
 ---
 
-## Curated Lists (merged into this archive)
+## Curated lists
 
-Content from these awesome-lists has been folded into the topic files; originals for reference:
-
-| List | Folded into |
-|---|---|
-| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | [FREE-ACCESS.md](./FREE-ACCESS.md) |
-| [bradAGI/awesome-cli-coding-agents](https://github.com/bradAGI/awesome-cli-coding-agents) · [PierrunoYT/awesome-ai-dev-tools](https://github.com/PierrunoYT/awesome-ai-dev-tools) | [AGENTS.md](./AGENTS.md) |
-| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [AGENTS.md](./AGENTS.md) Part 5A |
-| [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) · [caramaschiHG/awesome-ai-agents-2026](https://github.com/caramaschiHG/awesome-ai-agents-2026) | [AGENTS.md](./AGENTS.md) Part 9 |
-| [DmitryScaletta/free-database-services](https://github.com/DmitryScaletta/free-database-services) | [BACKEND.md](./BACKEND.md) |
+| List | ⭐ (live) | Folded into |
+|---|---|---|
+| [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | 96K | [AGENTS.md](./AGENTS.md#part-5a--mcp-model-context-protocol) |
+| [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | 76K | [SKILLS.md](./SKILLS.md) |
+| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | 8.6K | [FREE-ACCESS.md](./FREE-ACCESS.md) |
+| [kyrolabs/awesome-agents](https://github.com/kyrolabs/awesome-agents) | 2.9K | [AGENTS.md](./AGENTS.md) |
+| [caramaschiHG/awesome-ai-agents-2026](https://github.com/caramaschiHG/awesome-ai-agents-2026) | 1.9K | [AGENTS.md](./AGENTS.md) (last commit Jun 2026) |
+| [bradAGI/awesome-cli-coding-agents](https://github.com/bradAGI/awesome-cli-coding-agents) | 1.3K | [AGENTS.md](./AGENTS.md#part-1--cli--terminal-coding-agents) |
+| [mvalentsev/awesome-free-ai-coding](https://github.com/mvalentsev/awesome-free-ai-coding) | — | [STUDENTS.md](./STUDENTS.md) |
 
 ---
 
-## Primary Sources — recent additions
+## Primary sources (29 Sep 2026 pass)
 
-> Earlier entries were web-verified on June 27, 2026. The additions below record later targeted
-> checks; they do not silently refresh unrelated numbers in the archive.
+**Models** — [Claude Opus 5.5](https://www.anthropic.com/news) · [Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5) · [Fable 5.1 / Mythos 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1) · [GPT-6 Sol & Luna](https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more) · [DeepSeek changelog](https://api-docs.deepseek.com/updates/) · [DeepSeek pricing](https://api-docs.deepseek.com/quick_start/pricing) · [Grok 4.7](https://www.marktechpost.com/2026/09/21/spacexai-releases-grok-4-7/) · [MiMo-V2.6](https://www.eweek.com/news/xiaomi-mimo-v26-open-source-rl-reproduction/) · [Muse Spark 1.3](https://research.meta.ai/blog/introducing-muse-spark-1-3) · [Mercury 2.5](https://www.inceptionlabs.ai/blog/introducing-mercury-2-5) · [Kimi K3](https://github.com/MoonshotAI/Kimi-K3)
 
-**17 Aug 2026 refresh** — [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Terminal-Bench 2.1 release and methodology](https://www.tbench.ai/news/terminal-bench-2-1) · [TokenRouter product and documentation](https://www.tokenrouter.com/docs/) · [OpenAI GPT-5.6 model catalog](https://developers.openai.com/api/docs/models) · [DeepSeek V4 pricing](https://api-docs.deepseek.com/quick_start/pricing) · [Groq free-plan limits](https://console.groq.com/docs/rate-limits) · [Cerebras pricing](https://www.cerebras.ai/pricing).
+**Benchmarks** — [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models) · [llm-stats Terminal-Bench 4.0](https://llm-stats.com/benchmarks/terminal-bench-4.0) · [LMArena](https://arena.ai/leaderboard/text) · [AA image arena](https://artificialanalysis.ai/image/leaderboard/text-to-image) · [AA video arena](https://artificialanalysis.ai/video/leaderboard/text-to-video) · [Terminal-Bench 4.0](https://www.tbench.ai/news/terminal-bench-4-0)
 
-**Models** — [Claude Fable 5 / Mythos 5 (Anthropic)](https://www.anthropic.com/news/claude-fable-5-mythos-5) · [Microsoft MAI models (Build 2026)](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) · [Kimi K2.7-Code (Moonshot)](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) · [Meta Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-msl/) · [Apple AFM 3 (WWDC)](https://www.apple.com/newsroom/) · [Gemini Omni (I/O)](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)
+**Security & shutdowns** — [ZCode uploads (Tom's Hardware)](https://www.tomshardware.com/tech-industry/artificial-intelligence/devs-say-chinese-ai-company-silently-uploaded-hundreds-of-megabytes-of-local-workspace-data-z-ai-the-firm-behind-the-glm-models-didnt-ask-for-user-consent-and-made-564-attempts-to-exfiltrate-313mb-archive) · [Gemini CLI → Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) · [Helicone joins Mintlify](https://www.helicone.ai/blog/joining-mintlify) · [Traceloop joins ServiceNow](https://traceloop.com/blog/traceloop-is-joining-servicenow)
 
-**Agents / MCP** — [OpenClaw](https://github.com/openclaw/openclaw) · [Gumloop $50M Series B](https://techcrunch.com/2026/03/12/gumloop-lands-50m-from-benchmark-to-turn-every-employee-into-an-ai-agent-builder/) · [VoltAgent](https://github.com/VoltAgent/voltagent) · [OpenAgents](https://github.com/openagents-org/openagents) · [Anthropic Creative Connectors](https://www.anthropic.com/news/claude-for-creative-work)
-
-**Frontend** — [Claude Design (Anthropic Labs)](https://www.anthropic.com/news/claude-design-anthropic-labs) · [a0.dev (YC W25)](https://news.ycombinator.com/item?id=43015267) · [Cloudflare VibeSDK](https://github.com/cloudflare/vibesdk) · [Blink.new (YC)](https://www.ycombinator.com/companies/blink-new)
-
-**Backend** — [Microsoft Rayfin](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) · [Zilliz Vector Lakebase](https://www.businesswire.com/news/home/20260621822926/en/) · [ScyllaDB Vector Search](https://www.scylladb.com/vector-search/) · [Actian VectorAI DB](https://www.actian.com/databases/vectorai-db/) · [Northflank BYOC](https://northflank.com/features/bring-your-own-cloud)
-
-**Media** — [FLUX.2 Pro pricing](https://bfl.ai/pricing) · [OpenAI gpt-image-2](https://openai.com/index/introducing-chatgpt-images-2-0/) · [Mistral Voxtral TTS](https://mistral.ai/news/voxtral-tts/) · [Hume TADA](https://www.hume.ai/blog/opensource-tada) · [Kyutai Pocket TTS](https://kyutai.org/blog/2026-01-13-pocket-tts) · [Fun-Realtime-TTS #1 Arena](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) · [GPT-Realtime-2](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/) · [ClickHouse acquires Langfuse](https://siliconangle.com/2026/01/16/database-maker-clickhouse-raises-400m-acquires-ai-observability-startup-langfuse/) · Braintrust $80M Series B — source link (bayelsawatch.com) is gone (410), removed this pass, claim not re-sourced
-
-**Free access** — [BazaarLink](https://bazaarlink.ai/free) · [freellm.net](https://freellm.net/) · [OpenCode Zen](https://opencode.ai/zen) · [xAI free credits](https://www.getaiperks.com/en/blogs/22-xai-grok-free-credits) · [Vercel AI Gateway](https://vercel.com/ai-gateway)
-
-> [!WARNING]
-> ⚠️ **Not added (research caught these):** *Kluster.ai* was shut down (acquired by MITO, sunset Jun 9 2026) — excluded as a dead free provider. *VoltAgent* star count listed as ~2K (sourced), not the 26K in the source notes (unverified).
+**Pricing** — every free tier and price in FRONTEND, BACKEND, CREDITS, MEDIA, AGENTS and FREE-ACCESS was read from the vendor's own pricing page on 29 Sep 2026 (the URL is in each row's Link column).

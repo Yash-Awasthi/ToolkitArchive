@@ -16,7 +16,7 @@
 > **Just want the best model?** See the [head-to-head verdict](./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks): Claude Opus 5.5 wins 98% of matchups across 34 benchmarks.
 
 > [!CAUTION]
-> **Avoid:** **ZCode** silently uploaded users' repositories (Sept 18) · **aerolink.lat** and **lumosel.vip** bill for Claude but serve Qwen / DeepSeek. Details in [NEWS.md](./NEWS.md) and [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers--gateways-community-reported--all-unverified).
+> **Avoid:** **ZCode** silently uploaded users' repositories (Sept 18) · **aerolink.lat** and **lumosel.vip** bill for Claude but serve Qwen / DeepSeek. Details in [NEWS.md](./NEWS.md) and [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers-community-reported--unverified).
 
 ## 🧭 Start here
 
@@ -159,10 +159,8 @@ flowchart LR
 
 ## 🗂️ Freshness
 
-| File | Status |
-|---|---|
-| NEWS · MODELS · STUDENTS · USAGE · FREE-ACCESS (Sept wave) · AGENTS Parts 1–5A · SKILLS (wave + directories) · MEDIA (free media + leaderboards) · benchmarks · charts | ✅ Verified 29 Sep 2026 |
-| AGENTS Parts 6–14 · FRONTEND · BACKEND · CREDITS Parts 1–5 · MEDIA Parts 1–4 · SKILLS older sections · REFERENCES | ⏳ Older passes (June–Aug 2026) — being re-verified; each file says which parts |
+> [!NOTE]
+> **Every file was re-verified on 29 September 2026.** Prices and free tiers were read from each vendor's live pricing page (411 pages), every GitHub star count and archived/inactive status comes from the GitHub API, and benchmarks come from Artificial Analysis, LMArena and llm-stats. Things that shut down, got acquired or went inactive are marked in place rather than left looking current. Re-run `python scripts/update_stars.py`, `python scripts/update_md_stars.py` and `python charts/gen_charts.py` to refresh the live numbers.
 
 <details>
 <summary><b>🛡️ Keeping this archive honest — trust tiers & link check</b></summary>

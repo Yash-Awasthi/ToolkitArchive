@@ -1,162 +1,168 @@
-# Backend / Database / Deploy / Auth — Free-Tier Reference (June 2026)
+# 🗄️ Backend — BaaS, Databases, Hosting, Auth, Vectors (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Everything to ship the backend of an app for **$0**. Every free tier below was read from the
+> vendor's live pricing page on 29 Sep 2026.
 
-> Everything to ship the backend of a vibe-coded app for **$0** — BaaS, databases, hosting, auth, vector stores, and the glue (email/payments/storage).
-> Re-checked Aug 16, 2026 (prior pass: ~June 2026). Free tiers change fast (PlanetScale killed its free tier in 2024; Fly.io dropped free for new users; Netlify went credit-based) — confirm before architecting. This pass added the sandbox/cloud-dev-environment section (Part 1A) and fixed a Northflank number; the rest of this file's numbers are carried from the prior pass, not independently re-fetched.
+> [!WARNING]
+> **Changed since the last pass:** **InstantDB** was acquired by OpenAI — new sign-ups are closed and Instant Cloud shuts down Aug 31, 2027 (self-host guide available) · **CodeSandbox** acquired by Together AI · **Koyeb** is joining Mistral AI · **Gel (EdgeDB)** acquired by Vercel · **Stytch** free tier cut to 10,000 MAU · **Xata** no longer has a free cloud tier (free = self-host) · **CockroachDB** is now a 30-day $400 trial.
 
----
-
-**Contents:** [Part 1 BaaS](#part-1--backend-as-a-service-auth--db--storage--functions-in-one) · [Part 1A sandboxes](#part-1a--sandbox--cloud-dev-environments) ·
-[Part 2 serverless DBs](#part-2--serverless--edge-databases) · [Part 3 hosting](#part-3--hosting--deploy--paas) ·
-[Part 4 auth](#part-4--auth-mau--monthly-active-users) · [Part 5 vector DBs](#part-5--vector-dbs--ai-data-infra) ·
-[Part 6 glue](#part-6--shipping-glue-email--payments--storage--cron) · [Zero-dollar stack](#zero-dollar-stack-reference)
+**Contents:** [BaaS](#part-1--backend-as-a-service) · [Sandboxes](#part-1a--sandboxes--cloud-dev-environments) · [Databases](#part-2--serverless--edge-databases) · [Hosting](#part-3--hosting--deploy--paas) · [Auth](#part-4--auth) · [Vector DBs](#part-5--vector-databases) · [Glue](#part-6--shipping-glue) · [$0 stack](#zero-dollar-stack)
 
 ---
 
-## Part 1 — Backend-as-a-Service (auth + DB + storage + functions in one)
+## Part 1 — Backend-as-a-Service
 
-| Tool | Stack | Free tier | Self-host | Best for | Link |
+| Tool | Stack | Free tier | Cheapest paid | Self-host | Link |
 |---|---|---|---|---|---|
-| **Supabase** | Postgres + RLS + pgvector | 2 projects, 500MB DB, 5GB egress, 50K MAU | Yes (Docker) | Default pick; relational + AI | supabase.com |
-| **Convex** | Reactive TS document store | Generous free, real-time built-in | No | Real-time TS apps, auto-sync | convex.dev |
-| **Appwrite** | TS/Go, multi-DB | 2 projects (pause after 7d idle), no card | Yes (Docker, 58K★) | Open-source ownership | appwrite.io |
-| **PocketBase** | Single Go binary + SQLite | Free — runs on $5 VPS | Yes (it's the binary) | Lightest backend, side projects | pocketbase.io |
-| **Nhost** | Postgres + Hasura GraphQL | Free tier | Yes | GraphQL-first / JAMstack | nhost.io |
-| **InstantDB** | Relational realtime ("Firebase + relations") | Generous free | No | Optimistic-UI realtime apps | instantdb.com |
-| **Firebase** | NoSQL + auth + functions | Spark plan free (Google) | No | Google ecosystem, mobile | firebase.google.com |
-| **Encore** | TS/Go backend framework + infra | Free OSS, cloud free tier | Yes | Type-safe backend + IaC | encore.dev |
-| **Wasp** | Full-stack React/Node DSL | Free OSS | Yes | Opinionated full-stack | wasp.sh |
-| **Microsoft Rayfin** | Fabric/OneLake BaaS (TS code → SQL DB + Entra ID auth + GraphQL API + hosting) | Preview, perpetual free tier | No (deploys to Fabric tenant) | Agent-first; data lands in OneLake (no ETL). Replit launch partner. ⚠️ Entra-ID-only auth | microsoft.com/microsoft-fabric |
+| ★ **Supabase** | Postgres + auth + storage + functions + pgvector | 50K MAU, 500 MB DB, 1 GB files, 5 GB egress (projects pause after 1 week idle) | Pro $25/mo | Yes | supabase.com/pricing |
+| ★ **Firebase** | NoSQL + auth + functions (Google) | Spark plan, no cost | Blaze pay-as-you-go | No | firebase.google.com/pricing |
+| **Convex** | Reactive TypeScript database, real-time | Free with built-in resources, then pay as you go | Professional $25/dev/mo | Yes (OSS) | convex.dev/pricing |
+| **Appwrite** | Open-source BaaS (58K★) | $10/mo of compute credits included | Dedicated from $10/mo | Yes | appwrite.io/pricing |
+| **PocketBase** | Single Go binary + SQLite | Free, open source (no paid plan) | — | Yes (it's the binary) | pocketbase.io |
+| **Nhost** | Postgres + Hasura GraphQL | 1 project (pauses after 1 week idle) | Pro $25/mo | Yes | nhost.io/pricing |
+| **Encore** | TS/Go backend framework + infra | Free Starter (local dev, small projects) | Pro $49/member + usage | Yes | encore.dev/pricing |
+| **Wasp** | Full-stack React/Node/Prisma framework | Free, open source | — | Yes | wasp.sh |
+| **Microsoft Rayfin** | Agent-friendly BaaS (auth, hosting, DB, data API) as SDK or on Fabric | Fabric trial capacity | Fabric pricing | No | microsoft.com/microsoft-fabric/features/rayfin |
+| ~~InstantDB~~ | Acquired by OpenAI — sign-ups closed, cloud ends Aug 31 2027 | — | — | Yes (self-host) | instantdb.com |
 
 ---
 
-## Part 1A — Sandbox / Cloud Dev Environments
+## Part 1A — Sandboxes & Cloud Dev Environments
 
-> Ephemeral compute for running AI-generated or agent-driven code away from your own machine.
+For running AI-generated or agent-driven code away from your own machine.
 
-| Platform | Free | Notes | Link |
+| Tool | Free | Paid | Link |
 |---|---|---|---|
-| **Blaxel** | $200 credit, no card | 10 sandbox cap, pure per-second billing | blaxel.ai |
-| **E2B** | Hobby free, $100 one-time credit | 1hr session cap, 20 concurrent sandboxes; Pro $150/mo + usage | e2b.dev |
-| **Modal** | $30/mo credit | 3 seats, 100 containers, CPU ~$0.0000131/core-sec; Team $250/mo | modal.com |
-| **Daytona** | $200 credit, no card | 5GB storage, per-second billing. "Sub-90ms boot" is a vendor marketing claim, not something this archive measured — confirm before relying on it | daytona.io |
-| **Vercel Sandbox** | Hobby: 5 Active-CPU-hr, 420 GB-hr, 5,000 sandbox creations/mo, 45min session cap, 10 concurrent | Pro tier is usage-priced | vercel.com/sandbox |
-| **CodeSandbox** | ~400 credits/mo, $0.015/credit; Pro $9/mo | Pricing page sits behind a bot-wall this pass — these numbers come from a search index, not a live fetch. Use with a caveat | codesandbox.io |
-| **Fly.io** | No permanent free tier | Exact new-account trial credit is disputed across sources ($5 vs. a 2hr/7-day trial) — check the dashboard at signup rather than trusting either number | fly.io |
-| **Northflank** | Sandbox tier: $0, 2 services + 1 DB + 2 cron jobs, always-on, no card; $0.01667/vCPU-hr beyond that | This archive previously said "2 services, 2 DBs" elsewhere in this file — the sourced figure is 1 DB, not 2; that older line is corrected below | northflank.com |
-| **Lightning.ai** | 1 free CPU studio (4hr restart), persistent storage, single-GPU access, no card | Monthly free-credit amount is disputed across sources (15 vs. 30) — not stated here until confirmed. Pro (~$20–50) and Teams (~$119–140) are ranges from secondary sources, not point prices — treat as a caveat | lightning.ai |
+| ★ **Daytona** | **$200 free compute**, no card; startups up to $50K credits | Per-second (vCPU ~$0.05/h) | daytona.io/pricing |
+| ★ **Blaxel** | Up to $200 free credits | Tier 1 $20/mo, usage-based | blaxel.ai/pricing |
+| **E2B** | Hobby: $100 one-time usage credit, no card | Pro $150/mo + usage | e2b.dev/pricing |
+| **Modal** | **$30/mo free compute** (Starter $0) | Team $250/mo; academic/startup grants | modal.com/pricing |
+| **Northflank** | Sandbox: always-on, 2 services + 1 database + 2 cron jobs | From $2.70/mo compute | northflank.com/pricing |
+| **Lightning.ai** | Free: up to 30 credits/mo | Pro $20/mo (annual) · academic pricing | lightning.ai/pricing |
+| **Vercel Sandbox** | Included in Hobby usage | Usage-based on Pro | vercel.com/sandbox |
+| **CodeSandbox** (Together AI) | Build $0 | Scale $170/mo · education/OSS discounts | codesandbox.io/pricing |
+| **Fly.io** | No free tier; up to $15K startup credits | Machines from $1.94/mo | fly.io/pricing |
 
 ---
 
-## Part 2 — Serverless / Edge Databases
+## Part 2 — Serverless & Edge Databases
 
-| DB | Engine | Free tier | Notes | Link |
+| DB | Type | Free tier | Cheapest paid | Link |
 |---|---|---|---|---|
-| **Neon** | Serverless Postgres | 0.5GB/project, 100 CU-hrs/mo, up to 100 projects | Branching, scale-to-zero. Owned by Databricks | neon.tech |
-| **Turso** | Edge SQLite/libSQL | 1–5GB, 500M row reads/mo, 3 active DBs | DB-per-user at scale; no scale-to-zero | turso.tech |
-| **Xata** | Postgres + search | 10GB free | Built-in full-text search, branching | xata.io |
-| **MongoDB Atlas** | Document | M0 cluster (~512MB) free | Classic NoSQL | mongodb.com |
-| **CockroachDB** | Distributed SQL | Basic free tier | Global, Postgres-compatible | cockroachlabs.com |
-| **Upstash** | Serverless Redis / Vector / Kafka | Redis 256MB + 500K cmds/mo; Vector 10K free | True pay-per-request | upstash.com |
-| **Supabase DB** | Postgres | (see BaaS above) | pgvector for AI | supabase.com |
-| **EdgeDB / Gel** | Graph-relational on Postgres | Free tier | Modern query language | geldata.com |
-| **PlanetScale** | Vitess MySQL + Postgres | ❌ **no free tier** — from $5/mo | Killed free Hobby Apr 2024 | planetscale.com |
+| ★ **Neon** | Serverless Postgres (branching, scale-to-zero) | 100 projects, 100 CU-hours/project/mo, 0.5 GB/project, no card | Launch usage-based (~$15/mo typical) | neon.tech/pricing |
+| ★ **Turso** | Edge SQLite/libSQL | **100 DBs, 5 GB, 500M rows read, 10M rows written/mo** | Developer $4.99/mo | turso.tech/pricing |
+| **Supabase** | Postgres | 500 MB (see BaaS) | Pro $25/mo | supabase.com/pricing |
+| **MongoDB Atlas** | Document | Free forever cluster, 512 MB | Flex up to $30/mo | mongodb.com/pricing |
+| **Upstash** | Serverless Redis / Vector / QStash | 256 MB, 500K commands, 10 GB bandwidth/mo | Pay-as-you-go $0.20/100K cmds · Fixed 250 MB $10/mo | upstash.com/pricing |
+| **Gel** (ex-EdgeDB, Vercel) | Graph-relational on Postgres | 1/4 compute unit, 1 GB disk | Pro $19.50/mo | geldata.com/pricing |
+| **PlanetScale** | Postgres + Vitess MySQL | ❌ none | From $5/mo (single node) | planetscale.com/pricing |
+| **CockroachDB** | Distributed SQL | 30-day trial, $400 credit | Standard $0.092/vCPU-hr | cockroachlabs.com/pricing |
+| **Xata** | Postgres platform | Free self-host only | Cloud $0.012/hr + storage | xata.io/pricing |
 
-> **Most free storage:** Xata (10GB) > Turso (1–5GB) > Atlas/Neon (~0.5GB). **Most free reads:** Turso (500M rows/mo).
+> **Most free storage:** Turso (5 GB). **Most free reads:** Turso (500M rows/mo). **Most free projects:** Neon (100).
 
 ---
 
 ## Part 3 — Hosting / Deploy / PaaS
 
-| Platform | Best for | Free tier | Gotcha | Link |
+| Platform | Best for | Free tier | Cheapest paid | Link |
 |---|---|---|---|---|
-| **Cloudflare Pages** | Static / Jamstack | **Unlimited bandwidth**, 500 builds/mo, 100 sites | 1 concurrent build | pages.cloudflare.com |
-| **Cloudflare Workers** | Edge functions/APIs | 100K req/day, 10ms CPU, 128MB; KV/D1/R2 free tiers; **no egress fees** | 10ms CPU on free | workers.cloudflare.com |
-| **Vercel** | Next.js | Hobby: 100GB transfer, 1M func calls, 1GB Blob | **No commercial use** on Hobby; 60s timeout | vercel.com |
-| **Netlify** | Static + commercial OK | 300 credits/mo (~30GB, ~20 builds) | Credit-based since Sep 2025 | netlify.com |
-| **Render** | Full-stack + free Postgres | Free web service 512MB + free Postgres + custom domains | Cold start after 15min idle | render.com |
-| **Railway** | Quick full-stack deploys | $5 first month, then $1/mo credit | Pauses when credit out | railway.app |
-| **Koyeb** | Containers + free Postgres | 1 vCPU/512MB + Postgres scale-to-zero | **No outbound internet on free** | koyeb.com |
-| **Fly.io** | Container control, multi-region | ❌ no free tier for new users (card + 2h demo) | Treat as paid | fly.io |
-| **Deno Deploy** | TS/JS edge | Generous free | Deno runtime | deno.com/deploy |
-| **Coolify** | Self-host PaaS (Heroku alt) | Free OSS — bring a $5 VPS | You run the server | coolify.io |
-| **Dokku** | Git-push PaaS on your VPS | Free OSS | CLI-driven | dokku.com |
-| **Northflank** | GPU PaaS + true BYOC (AWS/Azure/GCP/Oracle/bare-metal) | Always-on free sandbox (2 services, 1 DB, 2 cron jobs — corrected from "2 DBs" this pass, see Part 1A) | Full data plane in *your* VPC, infra billed at list (no markup). NVIDIA B200→A100, MIG/time-slicing. SOC 2 Type 2 | northflank.com |
-| **SnapDeploy** | Minimal container hosting | 10 deploys/day free · $12/mo always-on | Lightweight; verify specs on vendor page | snapdeploy.io |
-| **Zeabur / Sevalla / Koyeb** | Modern PaaS | Various free trials | — | — |
+| ★ **Cloudflare Pages** | Static / Jamstack | Free, **unlimited sites, requests and bandwidth** | — | pages.cloudflare.com |
+| ★ **Cloudflare Workers** | Edge functions / APIs | Free plan (Workers, KV, D1, R2 free tiers) | Workers Paid (usage) | workers.cloudflare.com |
+| ★ **Vercel** | Next.js | Hobby $0 (personal, non-commercial): first 100 GB Fast Data Transfer, 10 s function default | Pro $20/mo | vercel.com/pricing |
+| **Netlify** | Static + functions | 300 credits/mo, free forever; credits for qualifying OSS | Personal $9/mo · Pro $20/mo | netlify.com/pricing |
+| **Render** | Full-stack + Postgres | Hobby $0 + compute | Pro $25/mo + compute | render.com/pricing |
+| **Railway** | Quick full-stack deploys | 30-day trial with $5, then $1/mo credit (1 vCPU / 0.5 GB per service) | Hobby $20/mo | railway.app/pricing |
+| **Sevalla** | Static + apps | Static hosting free: 100 sites, 100 GB bandwidth, 600 build min | Apps from $5/mo | sevalla.com/pricing |
+| **Zeabur** | PaaS | Free $0 plan | Dev $5/mo | zeabur.com/pricing |
+| **Northflank** | GPU PaaS + bring-your-own-cloud | Always-on sandbox (2 services, 1 DB, 2 cron) | From $2.70/mo | northflank.com/pricing |
+| **Koyeb** (joining Mistral AI) | Containers + Postgres | 5 h free (0.25 vCPU, 1 GB) | Pro $29/mo | koyeb.com/pricing |
+| **Deno Deploy** | TS/JS edge | Free tier | Usage-based | deno.com/deploy |
+| **Fly.io** | Multi-region containers | ❌ none (startup credits only) | From $1.94/mo | fly.io/pricing |
+| **Coolify** | Self-host PaaS (Heroku alternative) | **Free forever self-hosted**, all features | Cloud $5/mo (2 servers) | coolify.io/pricing |
+| **Dokku** | Git-push PaaS on your VPS | Free open source | Dokku Pro from $10/mo | dokku.com |
 
 ---
 
-## Part 4 — Auth (MAU = monthly active users)
+## Part 4 — Auth
 
-| Provider | Free tier | Notable | Self-host | Link |
+| Provider | Free tier | Cheapest paid | Self-host | Link |
 |---|---|---|---|---|
-| **WorkOS (AuthKit)** | **1,000,000 MAU** free (social, MFA, passkeys, RBAC) | SSO connections $125/mo each | No | workos.com |
-| **Clerk** | 50,000 MAU (raised Feb 2026) | Best React/Next DX, drop-in UI; no SCIM | No | clerk.com |
-| **Stytch** | 25,000 MAU | Passwordless-first (now Twilio) | No | stytch.com |
-| **Kinde** | 10,500 MAU | Auth + flags + billing, flat pricing | No | kinde.com |
-| **Better-Auth** | Unlimited (self-host) | OSS library; Auth.js folded into it | Yes | better-auth.com |
-| **Supabase Auth** | Bundled w/ Supabase (50K MAU) | Free w/ the BaaS | Yes | supabase.com |
-| **Logto** | Free tier (OSS) | OIDC, multi-tenant | Yes | logto.io |
-| **SuperTokens** | Free self-host, 5K MAU cloud | OSS, full control | Yes | supertokens.com |
-| **ZITADEL** | 25K MAU free cloud | Enterprise CIAM, Go single-binary, event-sourced, first-class multi-tenant (B2B SaaS). OIDC/SAML/LDAP. 15K★ | Yes | zitadel.com |
-| **Authentik** | Free (OSS) | **Proxy/forward-auth mode** — enforce MFA/SSO in front of ANY app (incl. legacy, no OIDC) with zero code changes. Also IdP + LDAP. 26K★ | Yes | goauthentik.io |
-| **Ory / Hanko / Stack Auth** | OSS free | Passkeys, modern | Yes | ory.sh · hanko.io · stack-auth.com |
+| ★ **WorkOS AuthKit** | **First 1,000,000 active users free** | Add-ons (SSO, Audit Logs $99/mo) | No | workos.com/pricing |
+| ★ **Clerk** | 50,000 monthly retained users per app, no card | Pro $20/mo | No | clerk.com/pricing |
+| ★ **Supabase Auth** | 50K MAU (bundled) | Pro $25/mo | Yes | supabase.com/pricing |
+| **Logto** | 50,000 MAU | Pro $24/mo | Yes (OSS) | logto.io/pricing |
+| **Kinde** | 10,500 MAU | Pro $25/mo | No | kinde.com/pricing |
+| **Stytch** | 10,000 MAU + AI agents, 5 SSO/SCIM connections | Pay as you go | No | stytch.com/pricing |
+| **Hanko** | 10,000 MAU, 2 projects | Starter $29/mo | Yes (OSS) | hanko.io/pricing |
+| **Stack Auth** | 10,000 users | Team $49/mo | Yes (OSS) | stack-auth.com/pricing |
+| **Better Auth** | Library free & open source; hosted dashboard Starter $0 | Pro $20/mo | Yes | better-auth.com |
+| **SuperTokens** | Self-host free with no limits; cloud free under 5K MAU | Add-ons from $100/mo minimum | Yes | supertokens.com/pricing |
+| **ZITADEL** | All features, 100 daily active users (15K★) | Pro $100/mo | Yes | zitadel.com/pricing |
+| **Authentik** | Open source (26K★), forward-auth proxy + IdP + LDAP | Enterprise $5/user/mo | Yes | goauthentik.io/pricing |
+| **Ory** | Developer free | Production $770/year | Yes (OSS) | ory.sh/pricing |
 
-> **Most free MAU:** WorkOS (1M). **Best DX:** Clerk. **Zero-cost full control:** Better-Auth / SuperTokens.
+> **Most free users:** WorkOS (1M). **Best DX:** Clerk. **Zero-cost full control:** Better Auth / SuperTokens self-hosted.
 
 ---
 
-## Part 5 — Vector DBs / AI Data Infra
+## Part 5 — Vector Databases
 
-| Tool | Free tier | Notes | Link |
+| DB | Free tier | Cheapest paid | Link |
 |---|---|---|---|
-| **pgvector** | Free (Postgres ext) | Use inside Supabase/Neon — no extra service | github.com/pgvector |
-| **Qdrant** | 1GB free cloud cluster | OSS, Rust, fast | qdrant.tech |
-| **Pinecone** | Free starter index | Managed, popular | pinecone.io |
-| **Weaviate** | 14-day sandbox / OSS self-host | Hybrid search | weaviate.io |
-| **Chroma** | Free OSS (embedded) | Easiest local RAG | trychroma.com |
-| **Milvus / Zilliz** | OSS + free cloud tier | Scale | milvus.io |
-| **Zilliz Vector Lakebase** | Public preview, $100 credits | Milvus-based — unifies real-time search + batch analytics + external data-lake search on one zero-copy data plane. 3 serving tiers, BYOC, 30+ regions (Jun 2026) | zilliz.com |
-| **ScyllaDB Vector Search** | In ScyllaDB Cloud | Native vector in the NoSQL DB (GA Jan 2026) — embeddings beside operational data, CQL `ANN OF`. Rust/USearch, HNSW, 1B+ vectors, ~1.7ms P99 | scylladb.com |
-| **Actian VectorAI DB** | Free community (5K vectors) | Edge/air-gapped/on-prem — embeds in-app, runs on Jetson/Pi. ~22x faster vs Milvus/Qdrant (10M-vec VDBBench). HIPAA/GDPR/SOC2. Paid from $417/mo | actian.com |
-| **LanceDB** | Free OSS (embedded) | Serverless, multimodal | lancedb.com |
-| **Upstash Vector** | 10K vectors free | Serverless | upstash.com |
-| **Turbopuffer** | Usage-based, cheap | Object-storage-backed | turbopuffer.com |
+| ★ **pgvector** | Free Postgres extension — use inside Supabase / Neon | — | github.com/pgvector/pgvector |
+| ★ **Qdrant** | Free forever cluster: 0.5 vCPU, 1 GB RAM, 4 GB disk + free cloud inference | Standard usage-based | qdrant.tech/pricing |
+| **Weaviate** | Always free: 1 cluster, 100K objects, 1 GB memory | Flex $45/mo | weaviate.io/pricing |
+| **Pinecone** | Starter free | Builder $20/mo flat | pinecone.io/pricing |
+| **Zilliz / Milvus** | Zilliz free: 5 GB, 5 collections; Milvus open source | Serverless usage / Dedicated | zilliz.com/pricing · milvus.io |
+| **Chroma** | Open source; cloud $0 + usage | Team $250/mo | trychroma.com/pricing |
+| **Upstash Vector** | Free tier (with Upstash) | Pay as you go | upstash.com/pricing |
+| **LanceDB** | Open source (embedded) | Cloud Pro $779/mo | lancedb.com/pricing |
+| **Turbopuffer** | None | Launch $16/mo | turbopuffer.com/pricing |
+| **ScyllaDB Vector Search** | 30-day developer trial | Standard plan | scylladb.com/pricing |
 
 ---
 
-## Part 6 — Shipping Glue (email · payments · storage · cron)
+## Part 6 — Shipping Glue
 
-| Need | Tool | Free tier | Link |
-|---|---|---|---|
-| Email | **Resend** | 3K emails/mo, 100/day | resend.com |
-| Email | Loops / Postmark / Brevo | Free tiers | — |
-| Payments | **Stripe** | Pay-as-you-go (no monthly) | stripe.com |
-| Payments (MoR) | **Polar** / Lemon Squeezy / Paddle | % per sale, no monthly | polar.sh |
-| File upload | **UploadThing** | 2GB free | uploadthing.com |
-| Object storage | **Cloudflare R2** | 10GB free, no egress fee | r2.cloudflare.com |
-| Background jobs | **Trigger.dev** / Inngest | Free tiers | trigger.dev · inngest.com |
-| Realtime | Ably / Pusher / Liveblocks | Free tiers | — |
-| Search | Meilisearch / Typesense / Algolia | OSS / free tier | — |
+| Need | Pick | Free tier | Paid | Link |
+|---|---|---|---|---|
+| Email | ★ **Resend** | 3,000 emails/mo (100/day), 3 domains | Pro $20/mo | resend.com/pricing |
+| Email | **Loops** | Up to 4,000 sends per rolling 30 days | See site | loops.so/pricing |
+| Email | **Brevo** | Free forever | Starter $8.08/mo | brevo.com/pricing |
+| Email | **Postmark** | 100 emails/mo | Basic $15/mo | postmarkapp.com/pricing |
+| Payments | ★ **Stripe** | No monthly fee | 2.9% + 30¢ (US domestic cards) | stripe.com/pricing |
+| Payments (merchant of record) | **Polar** | Starter: 5% + 50¢, no monthly; startup program free 12 months | Pro $20/mo | polar.sh |
+| Payments (MoR) | **Lemon Squeezy** · **Paddle** | No monthly fee | 5% + 50¢ per transaction | lemonsqueezy.com · paddle.com |
+| File upload | **UploadThing** | 2 GB storage | 100 GB $10/mo | uploadthing.com/pricing |
+| Object storage | ★ **Cloudflare R2** | 10 GB-month, 1M Class A + 10M Class B ops/mo, **free egress** | Usage-based past the free tier | developers.cloudflare.com/r2/pricing |
+| Background jobs | **Trigger.dev** | $5/mo credits, 20 concurrent runs (Apache 2.0) | Hobby $10/mo | trigger.dev/pricing |
+| Background jobs | **Inngest** | 50K executions/mo, 5 seats | Pro $99/mo | inngest.com/pricing |
+| Realtime | **Ably** | 200 connections, 6M messages/mo | Standard $29/mo | ably.com/pricing |
+| Realtime | **Pusher** | 200K messages/day, 100 connections | Startup $49/mo | pusher.com/channels/pricing |
+| Realtime (collab) | **Liveblocks** | Free, no card | Pro $25/mo | liveblocks.io/pricing |
+| Search | **Algolia** | 10K searches, 50K records/mo | Grow pay-as-you-go | algolia.com/pricing |
+| Search | **Meilisearch** · **Typesense** | Open source; cloud trials (14 days · 720 cluster-hours) | Meilisearch Cloud $20/mo · Typesense from $0.03/hr | meilisearch.com · typesense.org |
 
 ---
 
-## Zero-Dollar Stack (reference)
+## Zero-Dollar Stack
 
 ```
 Frontend  : Cloudflare Pages (unlimited bandwidth)
-Backend   : Supabase (Postgres + Auth + Storage, 50K MAU)
-   or      PocketBase on a $5 VPS (or free Oracle/Fly demo)
-DB extra  : Neon / Turso for a second free Postgres/SQLite
-Auth      : WorkOS (1M MAU) or Supabase Auth (bundled)
-Vectors   : pgvector inside Supabase (no extra service)
-Edge fns  : Cloudflare Workers (100K req/day)
+Backend   : Supabase (Postgres + Auth + Storage, 50K MAU)  or  PocketBase on any small VPS
+DB extra  : Neon (100 projects) / Turso (5 GB, 500M reads)
+Auth      : WorkOS (1M users) or Supabase Auth
+Vectors   : pgvector inside Supabase
+Edge fns  : Cloudflare Workers (free plan)
+Storage   : Cloudflare R2 (10 GB, free egress)
 Email     : Resend (3K/mo)
 Payments  : Stripe / Polar (no monthly fee)
-LLM       : free key from FREE-ACCESS.md (Groq / Google AI Studio)
+Sandboxes : Daytona ($200) · Modal ($30/mo)
+LLM       : free keys from FREE-ACCESS.md (Gemini 3.8 Flash on AI Studio, Token Harbor :free, Groq)
 ```
 
-Cross-ref: AI keys & credits → [FREE-ACCESS.md](./FREE-ACCESS.md) · builders → [FRONTEND.md](./FRONTEND.md)
+Cross-ref: AI keys & credits → [FREE-ACCESS.md](./FREE-ACCESS.md) · builders → [FRONTEND.md](./FRONTEND.md) · students → [STUDENTS.md](./STUDENTS.md)

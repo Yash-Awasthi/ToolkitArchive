@@ -1,14 +1,15 @@
-# Media Gen, Voice & LLMOps — June 2026
+# 🎬 Media — Image, Voice, Video, Music, LLMOps & Docs (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Free/open-source first, then paid tools. Every free tier and price was read from the vendor's
+> live pricing page on 29 Sep 2026; leaderboards are the Artificial Analysis and LMArena arenas.
 
-> Image / voice generation, plus the LLMOps stack (observability, eval, gateways) and docs tooling for vibe-coded apps.
-> **Video, music, and UI-design AI live in [AGENTS.md](./AGENTS.md) Parts 12–14.** Free tiers verified ~June 2026.
-> ℹ️ **17 Aug 2026:** **Part 1 (image-gen) was re-checked this pass** — all Google Imagen models shut down Aug 17 and were replaced by Gemini 3.1 Flash Image (see the ⛔/🆕 rows below). **Parts 2–4 (voice, LLMOps, docs) were not re-verified this pass** — treat their free tiers, prices, and arena scores as June-era until re-checked (the TTS arena rankings in particular move fast).
+> [!WARNING]
+> **Changed since the last pass:** **Kling 4.0** launched Sept 28 (Flash now, full model in October) · **FLUX 3** (image+video+audio) in early access · **Stable Audio 3.0** ships open weights · **Midjourney V8.2** is the default · **Sora** API shut down Sept 24 · **Imagen** shut down Aug 17 · **Helicone** acquired by Mintlify (maintenance mode) · **Traceloop** joined ServiceNow.
 
-**Contents:** [Free / open-source media (Sept 2026)](#free--open-source-media-sept-2026) · [Part 1 image gen](#part-1--image-generation) · [Part 2 voice/audio](#part-2--voice--audio-tts--stt--music) ·
-[Part 3 LLMOps](#part-3--llmops-observability--eval--gateways) · [Part 4 docs/devrel](#part-4--docs--devrel--knowledge)
+**Contents:** [Free / open-source](#free--open-source-media-sept-2026) · [Leaderboards](#image--video-leaderboards-29-sep-2026) · [Image](#part-1--image-generation-paid--freemium) · [Voice](#part-2--voice--audio-tts--stt) · [Video](#part-3--video-generation-paid--freemium) · [Music](#part-4--music-generation) · [LLMOps](#part-5--llmops-observability--evals--gateways) · [Docs](#part-6--docs--devrel--knowledge)
 
 ---
 
@@ -53,11 +54,11 @@
 | ★ **LTX-2.3** (Lightricks) | 4K + audio, Apache 2.0. **LTX-2.5** (Aug 2026) adds world-model features | Consumer GPU |
 | ★ **Wan 2.7** (Alibaba) | Leads its own benchmark; strong motion | GPU |
 | **HunyuanVideo 1.5** (Tencent) | ~75 s per clip on one RTX 4090 | High-end GPU |
-| **Kling / Pika / Hailuo free credits** | Browser, no GPU; daily free credits | Account |
+| **Runway free plan** | 125 one-time credits in the browser, no GPU | Account |
 
-> OpenAI's Sora API shut down Sept 24, 2026. Closed video arena (Sept): Kling v3 > Happy Horse 1.0 (Alibaba) > Seedance 2.0 Fast.
+> OpenAI's Sora API shut down Sept 24, 2026. Current closed-model rankings are in the video leaderboard below.
 
-### Image & video leaderboards (29 Sep 2026)
+## Image & video leaderboards (29 Sep 2026)
 
 Interactive charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) → "Image generation" / "Video generation".
 
@@ -102,99 +103,120 @@ Interactive charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArch
 
 ---
 
-## Part 1 — Image Generation
+---
 
-> Big 2026 shift: free now rivals paid. Gemini "Nano Banana Pro" + free Flux (via Krea/OpenArt) get you ~most of the way to Midjourney. Pay only for volume / resolution / commercial license / privacy.
-> ⚠️ **Re-checked 17 Aug 2026 — Google shut down all Imagen models today** (deprecation announced, earliest shutdown Aug 17; Firebase migration guide + ai.google.dev deprecations table). Replacement: **`gemini-3.1-flash-image`** (the API "Nano Banana", May 28, 2026) — new builds must use it, not Imagen.
+## Part 1 — Image Generation (paid & freemium)
 
-| Tool | Best for | Free tier | Paid entry | API | Link |
+| Tool | Best for | Free | Cheapest paid | API | Link |
 |---|---|---|---|---|---|
-| **Midjourney v8.1** | Artistic quality (aesthetic king) — still strongest aesthetic | None | $10/mo Basic → $120 Mega | ❌ no public API (subscription-only) | midjourney.com |
-| **FLUX.2 Pro** (Black Forest Labs) | **Best photoreal API**, multi-ref consistency, edit ≤4MP | schnell/Klein open-weight (local) | MP-based: ~$0.03 first MP then $0.015/MP (~$0.02–0.06/img) | ✅ | bfl.ai |
-| **gpt-image-2** (OpenAI) | Conversational image creation, **95%+ text** accuracy, 4K, web-search/thinking | ChatGPT free (limited) | API (token-based) · Plus $20/mo | ✅ (API + Codex) | openai.com |
-| **Imagen 4** (Google) ⛔ | **Was** best text rendering + photorealism, 2K, SynthID | ❌ **Shut down Aug 17, 2026** — deprecated, all Imagen models removed | — | — | ai.google.dev (deprecations) |
-| **Gemini 3.1 Flash Image** ("Nano Banana") 🆕 | **The Imagen replacement** (API image model, May 28, 2026) | Free in AI Studio | Token-based (Gemini pricing) | ✅ | ai.google.dev |
-| **Ideogram v3** | Readable **text in images** (typography king, 90–95%), Style Refs | 10 credits/wk (~40 img) | Plus $15/mo (1,000 credits) | Enterprise | ideogram.ai |
-| **MAI-Image-2.5** (Microsoft) | T2I + editing, **#3 on Arena** (beats Nano Banana Pro) | — | $5/$33 per 1M (+ Flash variant) | ✅ Foundry/OpenRouter/Fireworks | microsoft.ai |
-| **Recraft** | **Vectors / SVG**, brand systems | 50 credits/day | $10/mo (1,000 credits) | ✅ | recraft.ai |
-| **Leonardo AI** | Game/concept art + editing | 150 tokens/day (~20–30 img) | $12/mo | ✅ | leonardo.ai |
-| **Krea** | Real-time gen, generous free | 50–100/day | ~$5/mo (annual) | ✅ | krea.ai |
-| **Freepik / Magnific** | All-in-one (Flux+Gemini+Ideogram+Runway in one sub) | 20 gen/day | €6–9.99/mo | ✅ | freepik.com |
-| **Google Gemini (Nano Banana Pro)** | Free frontier quality | Free in Gemini app / AI Studio | — | ✅ (AI Studio) | gemini.google.com |
-| **DALL·E 3 / GPT Image** | In ChatGPT | ChatGPT free (limited) | Plus $20/mo | ✅ | openai.com |
-| **Adobe Firefly** | Commercial-safe, integrated | Free credits | Creative Cloud | ✅ | firefly.adobe.com |
-| **Stable Diffusion / SDXL / SD3** | Local, fully free | Free (open-weight) | — | self-host | stability.ai |
-
-> **Cheapest API at scale:** Gemini 3.1 Flash Image / FLUX.2 Pro (~$0.02/img). **Best text-in-image:** Ideogram v3 / gpt-image-2 (95%+) — Imagen is gone (Aug 17). **Strongest aesthetic:** Midjourney v8.1 (no API). **Most generous free:** Krea / Recraft (50/day). **Commercial-safe:** Firefly. ⚠️ Free tiers usually make outputs public + trainable; only paid = private + ownership.
+| ★ **GPT Image 2.5** (OpenAI) | #1 on both image arenas; `@Sketch`, posters, precise edits | ChatGPT free (limited, slower) | ChatGPT Go/Plus · API Flare / Sunburst | ✅ | openai.com |
+| ★ **Nano Banana 2** (Gemini 3.1 Flash Image) | Fast, cheap, strong edits; replaced Imagen (shut down Aug 17) | Free in Gemini app / AI Studio | Gemini API token pricing | ✅ | ai.google.dev/pricing |
+| **Midjourney V8.2** | Aesthetics (V8.2 default since Jul 24) | None | Basic $10 · Standard $30 · Pro $60 · Mega $120 /mo | ❌ | docs.midjourney.com |
+| **FLUX 3** (Black Forest Labs) | New multimodal model (image, video, audio) — early access | FLUX schnell/Klein open weights locally | Pay per generation, no subscriptions | ✅ | bfl.ai |
+| **MAI-Image-2.6** (Microsoft) | #3–5 on image arenas, ~$39 per 1K images | — | API (Foundry / OpenRouter) | ✅ | microsoft.ai |
+| **Muse Image** (Meta) | Top-7 arena quality at ~$10 per 1K images | Meta AI app | Meta Model API | ✅ | meta.ai |
+| **Ideogram** | Text inside images | Weekly slow credits for eligible accounts | Plus $15/mo | ✅ | ideogram.ai/pricing |
+| **Recraft** | Vectors / SVG, brand systems | 3 generations per style/day, no commercial use | Basic $10/mo | ✅ | recraft.ai/pricing |
+| **Leonardo AI** | Game & concept art | 150 tokens/day | Essential $12/mo | ✅ | leonardo.ai/pricing |
+| **Krea** | Real-time generation | 5,000 units/mo | Basic $5.25/mo (commercial licence on all plans) | ✅ | krea.ai/pricing |
+| **Freepik** (with Magnific) | Many models in one subscription | Limited | Premium $7.25/mo | ✅ | freepik.com/pricing |
+| **Adobe Firefly** | Commercially safe, Creative Cloud | Free daily generations | Standard $9.99/mo · Pro $19.99/mo | ✅ | adobe.com/products/firefly/plans.html |
+| **Stable Diffusion / SD3.5** | Local, fully free | Open weights | — | self-host | stability.ai |
 
 ---
 
-## Part 2 — Voice / Audio (TTS · STT · music)
+## Part 2 — Voice & Audio (TTS · STT)
 
-| Tool | What | Free tier | Link |
-|---|---|---|---|
-| **ElevenLabs** | Best TTS + voice cloning | 10K chars/mo | elevenlabs.io |
-| **Alibaba Fun-Realtime-TTS** | **#1 Arena Elo (1,219)** — beats Gemini 3.1 Flash TTS & Cartesia Sonic. 30+ langs, Chinese dialects | API ~$27.6/1M chars | tongyi (FunAudioLLM) |
-| **Inworld Realtime TTS-2** | Closed-loop (hears prior audio), NL voice-direction, 100+ langs — built for game NPCs | API ~$35/1M chars | inworld.ai |
-| **OpenAI GPT-Realtime-2** | GPT-5-class speech-to-speech — *reasons* before speaking, tool calls mid-speech, preambles | API $32/$64 per 1M audio tok | openai.com |
-| **Cartesia** (Sonic) | Ultra-low-latency TTS for agents | Free credits | cartesia.ai |
-| **Mistral Voxtral TTS** | **Open-weight** frontier TTS (CC BY-NC), 3s voice clone, ~90ms TTFA, 9 langs. Beats ElevenLabs Flash | Weights free (HF) · API $16/1M chars | mistral.ai |
-| **Hume AI TADA** | **MIT** open — text-acoustic dual alignment = *zero hallucinations*, 5x+ faster, ≤700s. 1B EN / 3B multiling | Free (open-weight) | hume.ai |
-| **Kyutai Pocket TTS** | **100M params, runs CPU realtime** (even WASM/browser), voice clone, 6 langs. Lightest prod TTS | Free (open-weight) | kyutai.org |
-| **MAI-Voice-2** (Microsoft) | TTS, 15 langs, voice clone from short sample (+Flash) | API (Foundry/OpenRouter) | microsoft.ai |
-| **MAI-Transcribe-1.5** (Microsoft) | SOTA STT — 5x faster than competitors, 43 langs | API (Foundry/OpenRouter) | microsoft.ai |
-| **PlayHT / Play.ai** | TTS + voice agents | Free trial | play.ht |
-| **Deepgram** | Fast STT (transcription) | $200 free credit | deepgram.com |
-| **AssemblyAI** | STT + audio intelligence | Free credits | assemblyai.com |
-| **OpenAI Whisper** | Open-weight STT | Free (self-host) / API | github.com/openai/whisper |
-| **Groq Whisper** | Whisper at LPU speed | Free tier (see FREE-ACCESS) | groq.com |
-| **Suno / Udio** | Music generation | Free daily credits | suno.com · udio.com |
-| **Stability Audio** | Music/SFX | Free tier | stableaudio.com |
-
-> **TTS 2026 rankings (Artificial Analysis Speech Arena):** Fun-Realtime-TTS (1,219) > Gemini 3.1 Flash TTS (1,214) > Inworld TTS-2 (1,209) > Cartesia Sonic 3.5 (1,203) — within 24 Elo, tightest race ever.
-> **Pick:** open-weight/on-device → Voxtral · Hume TADA · Pocket TTS · reasoning voice agents → GPT-Realtime-2 · Inworld TTS-2 · cheapest quality → Fun-Realtime-TTS.
-> Full music-gen comparison + licensing tree → [AGENTS.md](./AGENTS.md) Part 13.
-
----
-
-## Part 3 — LLMOps: Observability · Eval · Gateways
-
-Three camps: **tracing** (Langfuse, LangSmith), **gateways** (Helicone, Portkey — routing/caching/cost, usually zero markup), **eval** (Braintrust, Phoenix).
-
-| Tool | Camp | License | Free tier | Link |
+| Tool | What | Free | Cheapest paid | Link |
 |---|---|---|---|---|
-| **Langfuse** | Tracing + prompts + eval | MIT (now ClickHouse-owned) | Hobby 50K obs/mo; **unlimited self-host** | langfuse.com |
-| **AgentOps** | Agent tracing — time-travel debugging, multi-agent viz | Apache 2.0 | Free tier; 400+ LLMs | agentops.ai |
-| **W&B Weave** | Tracing + eval inside existing W&B console (`@weave.op`) | Apache 2.0 | Free tier | wandb.ai/weave |
-| **Laminar** | Agent-first tracing, **OTel-native** (~5% overhead) | Apache 2.0 | Free 1GB; self-host free | laminar.sh |
-| **Confident AI** | Eval-first (cloud **DeepEval**) — every trace scored, alerts | OSS core (18K★) | Free tier | confident-ai.com |
-| **Maxim AI** | Agent **simulation** pre-prod + real-time post-deploy | Closed | Free tier | getmaxim.ai |
-| **LangSmith** | Tracing (LangChain/Graph) | Closed | 5K traces/mo | smith.langchain.com |
-| **Helicone** | Gateway (1-line proxy) | Apache 2.0 | 10K req/mo, 7-day retention; self-host free | helicone.ai |
-| **Portkey** | Gateway (multi-provider routing) | MIT | 10K logs/mo | portkey.ai |
-| **Braintrust** | Eval-first | Closed | **1M spans/mo, 10K evals** (most generous by volume) | braintrust.dev |
-| **Arize Phoenix** | Eval + OTel-native | ELv2 | **Unlimited self-host** | phoenix.arize.com |
-| **Opik** (Comet) | Tracing + eval | Apache 2.0 | Free OSS | comet.com/opik |
-| **OpenLLMetry** | OTel instrumentation | Apache 2.0 | Free OSS | traceloop.com |
-| **Pydantic Logfire** | Tracing (Pydantic AI) | Free tier | — | pydantic.dev/logfire |
-
-> **Zero-cost stack:** self-host Langfuse or Phoenix → no per-unit cost. **Fastest start:** Helicone (change one URL). **By framework:** LangChain→LangSmith · LlamaIndex→Phoenix/Langfuse · raw API→Helicone/Portkey. Combine freely (OTel-based tools interop).
-
-> **2026 funding signals:** Langfuse **acquired by ClickHouse** (Jan 16, $400M Series D, $15B valuation) — still MIT, no pricing change. Braintrust raised **$80M Series B** (Feb 2026, ~$800M valuation; Vercel/Notion/Dropbox customers). Capital is flowing to eval/accountability infra, not just model deployment.
+| ★ **ElevenLabs** | Best-known TTS + voice cloning + music | 10K credits/mo, 3 Studio projects | Starter $6/mo · Creator $22/mo | elevenlabs.io/pricing |
+| **Hume AI** | Expressive TTS + speech-to-speech; **TADA** open-weight model (MIT) | 10K characters/mo | Starter $3/mo | hume.ai/pricing |
+| **Cartesia** (Sonic) | Ultra-low-latency TTS for agents | 20K credits/mo + $1 agent credit | Pro $5/mo | cartesia.ai/pricing |
+| **Inworld TTS** | Game/NPC voices, voice direction | Up to 70 min TTS | Creator $25/mo | inworld.ai/pricing |
+| **Mistral Voxtral** | Open-weight TTS/STT (CC BY-NC weights) | Le Chat free plan includes $10/mo API credit | Le Chat Pro $14.99/mo (**students $5.99**) | mistral.ai/pricing |
+| **Kyutai Pocket TTS** | 100M-param TTS that runs on CPU / in the browser | Open weights | — | kyutai.org |
+| **MAI-Voice / MAI-Transcribe** (Microsoft) | TTS and speech-to-text | — | API (Foundry / OpenRouter) | microsoft.ai |
+| **OpenAI Realtime** | Speech-to-speech voice agents | ChatGPT free voice (limited) | API usage | openai.com |
+| **Deepgram** | Fast speech-to-text | **$200 credit**, no card | Pay as you go | deepgram.com/pricing |
+| **AssemblyAI** | STT + audio intelligence | Free: up to 185 h pre-recorded / 333 h streaming | Universal-2 from $0.15/h | assemblyai.com/pricing |
+| **Whisper** (OpenAI) | Open-weight STT (110K★) | Free self-host | — | github.com/openai/whisper |
+| **Groq Whisper** | Whisper at LPU speed | Free tier (see [FREE-ACCESS.md](./FREE-ACCESS.md)) | Pay as you go | console.groq.com |
 
 ---
 
-## Part 4 — Docs / DevRel / Knowledge
+## Part 3 — Video Generation (paid & freemium)
 
-| Tool | What | Free tier | Link |
-|---|---|---|---|
-| **Mintlify** | AI-native docs (beautiful, fast) | Free tier | mintlify.com |
-| **GitBook** | Docs + AI search | Free for OSS/personal | gitbook.com |
-| **Docusaurus** | OSS docs framework (Meta) | Free | docusaurus.io |
-| **Fern** | SDK + docs from OpenAPI | Free tier | buildwithfern.com |
-| **Inkeep / Trieve** | AI answer engine over your docs | Free tier | inkeep.com · trieve.ai |
-| **Context7** | Up-to-date lib docs as MCP for agents | Free | context7.com |
-| **Kapa AI** | AI assistant grounded in YOUR docs (cites sources, flags gaps). Ingests MD/GitHub/Confluence/YouTube/Zendesk → Slack/Discord/in-app + hosted MCP | Free tier | kapa.ai |
-| **Swimm** | **Code-coupled docs** — linked to code snippets, auto-flags/updates on change, CI staleness check | Free tier | swimm.io |
+| Tool | Best for | Free | Cheapest paid | Link |
+|---|---|---|---|---|
+| ★ **Gemini Omni Flash** (Google) | #1 video-with-audio arena | Gemini app (limited) | API ≈ $0.10/second | ai.google.dev/pricing |
+| ★ **Kling 4.0** (Kuaishou, **Sept 28**) | Native 30-second clips, 4K 10-bit HDR, 10 keyframes, 15 references; Flash live now, full model in October | — | Standard $10/mo · Pro $20/mo | klingai.com |
+| **Wan 3.0 / 2.7** (Alibaba) | #2 arena; Wan 2.x open weights | Open weights (2.x) | API | wan.video |
+| **MiniMax H3** | #3–4 arena, **open weights** | Open weights | ~$7.80/min API | minimax.io |
+| **Seedance 2.0** (ByteDance) | Strong motion | — | Via Dreamina / API | dreamina.capcut.com |
+| **Veo 3.1** (Google) | Cinematic quality | Gemini app (limited) | Gemini API | ai.google.dev/pricing |
+| **Runway** | Marketing, references, editing | 125 one-time credits | Standard $12/mo · Pro $28/mo | runwayml.com/pricing |
+| **Luma** (Dream Machine / Ray) | Fast generation | — | Plus $30/mo | lumalabs.ai/pricing |
+| **Pika** | Social effects | Credit packs only | Starter $10/mo | pika.art/pricing |
+| **HeyGen** | Talking-head avatars | 3 videos/mo up to 1 min | Creator $29/mo | heygen.com/pricing |
+| **Synthesia** | Enterprise avatar video, 140+ languages | Basic $0 (1,200 credits/mo) | Starter $19/mo ($14 billed yearly) | synthesia.io/pricing |
+| ~~Sora~~ | App closed Apr 26; API shut down Sept 24, 2026 | — | — | — |
 
-Cross-ref: AI code review / SAST → [AGENTS.md](./AGENTS.md) Part 8 · video/music/UI → Parts 12–14.
+> Open-source video to run yourself: see [Free / open-source media](#free--open-source-media-sept-2026) above.
+
+---
+
+## Part 4 — Music Generation
+
+| Tool | Best for | Free | Cheapest paid | Commercial use | Link |
+|---|---|---|---|---|---|
+| ★ **Suno** (v5) | Best full songs | 50 credits/day, no downloads, no commercial rights | Pro $8/mo · Premier $24/mo | Paid plans | suno.com/pricing |
+| **Udio** | Section inpainting and edits | 10 credits/day (100/mo) | Standard $10/mo · **student discount** | Paid plans | udio.com/pricing |
+| **ElevenLabs Music** | Licensed training data — safest for client work | Shares ElevenLabs credits | Starter $6/mo | ✅ | elevenlabs.io |
+| **Stable Audio 3.0** (Stability) | Full songs up to 6 min, **open weights**, DAW plugin | Open weights | Solo $12/mo (web app) | ✅ (check licence) | stability.ai/stable-audio |
+| **Mubert** | Streaming / background | 25 tracks/mo non-commercial | Creator $11.69/mo | Pro plan | mubert.com/pricing |
+| **Loudly** | Rights-cleared background music | Try all models free | See site | ✅ | loudly.com |
+| **Boomy** | Quick releases | 25 song saves, no downloads | $9.99/mo | Paid plans | boomy.com/pricing |
+| **ACE-Step 1.5** | Local, unlimited, open source | Free | — | Check licence | github.com/fspecii/ace-step-ui |
+
+```
+Commercial / client work?  → ElevenLabs Music · Stable Audio 3.0 · Loudly
+Personal, best quality?    → Suno
+Edit parts of a song?      → Udio
+$0 and unlimited?          → ACE-Step 1.5 locally
+```
+
+---
+
+## Part 5 — LLMOps: Observability · Evals · Gateways
+
+| Tool | What | Licence | Free tier | Paid | Link |
+|---|---|---|---|---|---|
+| ★ **Langfuse** | Tracing + prompts + evals (ClickHouse-owned) | MIT | Hobby 50K units/mo; **unlimited self-host**; discounts for students/OSS | Core $29/mo | langfuse.com/pricing |
+| ★ **Pydantic Logfire** | Tracing (Pydantic AI, OTel) | — | **10M records/mo**, no card | Team $49/mo | pydantic.dev/logfire |
+| **Laminar** | Agent-first, OTel-native tracing | Apache 2.0 | 1 GB data, 1 project | Starter $30/mo | laminar.sh/pricing |
+| **Braintrust** | Evals | Closed | $10 credits, 1 GB, 10K scores/mo | Usage | braintrust.dev/pricing |
+| **Arize Phoenix / AX** | Evals + OTel | ELv2 | Phoenix self-host free; AX Free 25K spans | AX Pro $50/mo | phoenix.arize.com |
+| **Confident AI** (DeepEval, 18K★) | Eval-first | OSS core | 2 seats, 5 test runs/week | Starter $200/mo | confident-ai.com/pricing |
+| **Portkey** | Gateway, multi-provider routing | MIT | 10K logs/mo | Production $49/mo | portkey.ai/pricing |
+| **Maxim AI** | Agent simulation + monitoring | OSS + closed | Free OSS | Enterprise | getmaxim.ai |
+| **W&B Weave** | Tracing + evals in W&B | Apache 2.0 | Free tier | W&B plans | wandb.ai/weave |
+| **AgentOps** | Agent tracing & replay (5.8K★) | MIT | Free tier | See site | agentops.ai |
+| **LangSmith** | Tracing for LangChain/LangGraph | Closed | See site | See site | smith.langchain.com |
+| **Opik** (Comet) | Tracing + evals | Apache 2.0 | Free OSS | Comet plans | comet.com/opik |
+| **OpenLLMetry / Traceloop** (now ServiceNow) | OTel instrumentation | Apache 2.0 | Free: 50K spans/mo | Enterprise | traceloop.com |
+| **Helicone** (acquired by Mintlify — maintenance mode) | 1-line gateway/proxy | Apache 2.0 | 10K requests/mo | Pro $79/mo | helicone.ai |
+
+---
+
+## Part 6 — Docs / DevRel / Knowledge
+
+| Tool | What | Free | Paid | Link |
+|---|---|---|---|---|
+| ★ **Docusaurus** | Open-source docs framework (Meta) | Free | — | docusaurus.io |
+| ★ **Fern** | Docs + SDKs from OpenAPI | **Free forever**: 10 members, 1,000 pages, 250 AI credits/mo, custom domain | Enterprise | buildwithfern.com/pricing |
+| **Mintlify** | AI-native docs | First month of credits free | Starter ~$123/mo | mintlify.com/pricing |
+| **GitBook** | Docs + AI search | $0 per site | Premium $65/site/mo | gitbook.com/pricing |
+| **Context7** | Up-to-date library docs for agents (MCP) | Free (63K★) | — | github.com/upstash/context7 |
+| **Kapa AI** | AI assistant grounded in your docs + hosted MCP | 14-day trial | Growth (contact) | kapa.ai/pricing |
+| **Inkeep** | AI answers over your docs | None | Pro $29/mo | inkeep.com |
+| **Swimm** | Code-coupled docs | None | Contact sales | swimm.io |

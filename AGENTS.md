@@ -1,29 +1,16 @@
-# Agentic Coding Tools — Full Reference (re-checked 29 September 2026)
+# 🤖 Agents — CLI Agents, IDEs, Chat Apps, MCP & Tooling (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Every price was read from the vendor's live pricing page and every star count comes from the GitHub
+> API on 29 Sep 2026. Terminal-Bench rows measure an **agent + model + effort** configuration, not an
+> agent on its own.
 
-> TB 2.1 = Terminal-Bench 2.1 from tbench.ai. Only measured scores are shown; the old community "[est]" estimates were removed on 29 Sep 2026.
-> **Benchmark rule:** TB rows measure an agent + model + effort configuration, not an agent in
-> isolation. The official TB 2.1 leaderboard was checked on 17 August; it uses five trials and
-> forbids submissions from changing timeouts or resources.
-> 🔄 **29 Sep 2026 pass:** Terminal-Bench 4.0 section added (TB 2.1 is saturated), Claude Code / Codex / Cursor / Copilot / Cline / Grok Build / Muse Code rows updated to the September models, **ZCode flagged as unsafe** (silent repo uploads), and the Gemini CLI retirement is **restored** — Google's own blog confirms free and Pro/Ultra users were cut off June 18 and moved to Antigravity CLI; the Aug pass wrongly called that unverified. Parts 6–14 still June-era.
-> ℹ️ **What was refreshed on 17 Aug 2026:** Parts 1 (CLI agents — added Grok Build, Muse Code;
-> corrected DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder, ZCode), 4 (chat interfaces —
-> current flagship models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note;
-> MCP 2.0 / 2026-07-28 spec note), 11 (social discovery — August wave usage). **Parts 6–14
-> (builders, deploy, quality, no-code, local runners, video/music/UI) remain June-2026 content**
-> and were not re-verified this pass.
+> [!WARNING]
+> **Changed since the last pass:** **Roo Code** and **Void** are archived · **Flowise** repo archived (Aug 2026) · **Plandex**, **Trae Agent**, **Sweep** (open-source repo) and **GPT4All** have gone quiet · **ZCode** uploaded users' repos — don't use it · **Gemini CLI** free/Pro access ended June 18 → Antigravity CLI · **Cursor** is owned by SpaceX · **Kiro** is now Pro $20 / Pro+ $40 / Pro Max $100 / Power $200 · **Devin** Pro $20 (Max $200) · **Warp** Build $18 · **Qoder** is no longer free (2-week trial, Pro $20).
 
-**Contents:** [TB 4.0 chart](#terminal-bench-40) · [GitHub stars](#github-stars--popularity) ·
-[Part 1 CLI agents](#part-1--cli--terminal-coding-agents) · [Part 2 IDEs](#part-2--agentic-ides) ·
-[Part 3 chat/web agents](#part-3--chat--web-autonomous-agents) · [Part 4 chat interfaces](#part-4--ai-chat-interfaces) ·
-[Part 5 infra](#part-5--infrastructure--orchestration) · [Part 5A MCP](#part-5a--mcp-model-context-protocol--full-reference) ·
-[BYOK setup](#byok-setup) · [Deprecated](#deprecated--retiring) · [Part 6 website builders](#part-6--ai-website-builders) ·
-[Part 7 deploy](#part-7--deployment-platforms) · [Part 8 code quality](#part-8--code-quality--static-analysis) ·
-[Part 9 no-code](#part-9--no-code--low-code-agent-builders) · [Part 10 local runners](#part-10--local-model-runners) ·
-[Part 11 social discovery](#part-11--social-discovery) · [Part 12 video](#part-12--ai-video-generation-june-2026) ·
-[Part 13 music](#part-13--ai-music-generation-june-2026) · [Part 14 UI tools](#part-14--ai-ui--design-tools-june-2026)
+**Contents:** [Terminal-Bench 4.0](#terminal-bench-40) · [CLI agents](#part-1--cli--terminal-coding-agents) · [IDEs](#part-2--agentic-ides--desktop-apps) · [Autonomous agents](#part-3--autonomous--web-agents) · [Chat apps](#part-4--ai-chat-apps) · [Infrastructure](#part-5--infrastructure--protocols) · [MCP](#part-5a--mcp-model-context-protocol) · [BYOK recipes](#byok-recipes) · [Deprecated](#deprecated--retiring) · [Deploy & CI](#part-7--deployment--cicd) · [Code quality](#part-8--code-quality-ai-review--security) · [Frameworks](#part-9--agent-builders-frameworks--browser-agents) · [Local runners](#part-10--local-model-runners) · [Social discovery](#part-11--social-discovery)
 
 ---
 
@@ -31,76 +18,12 @@
 
 ![Terminal-Bench 4.0](./charts/terminal-bench-4.png)
 
----
+TB 2.1 is saturated (top models land at 88–91% in vendor runs), so labs now report **Terminal-Bench 4.0**: 66 tasks, flat 8-hour timeout, calibrated CPU/memory. The official tbench.ai board renders client-side and couldn't be read, so two secondary sources are shown.
 
-## GitHub Stars — Popularity
-
-![GitHub stars — coding agents](./charts/github-stars-agents.png)
-
-> Live from the GitHub API on 29 Sep 2026 (`python scripts/update_stars.py`).
-
----
-
-## Part 1 — CLI / Terminal Coding Agents
-
-### Tier 1 — Top Performance
-
-| Agent | By | TB 2.1 | License | Price | Model | BYOK | Stars |
-|---|---|---|---|---|---|---|---|
-| **Claude Code** | Anthropic | **83.8%** | Proprietary | Pro $17/mo annual ($20 monthly) · Max 5x $100 · Max 20x $200 · API PAYG | Fable 5, xhigh (TB 2.1 run) · now defaults to **Opus 5.5** | API only | — |
-
-> **Skills:** Claude Code, OpenCode, Codex, Cursor, Gemini CLI/Antigravity, and Qoder all support the open Agent Skills standard (lazy-loaded `SKILL.md` folders). Full skill ecosystem, install paths, and security bundles → [SKILLS.md](./SKILLS.md).
-| **Codex CLI** | OpenAI | **83.1%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5, xhigh (TB 2.1 run) · now GPT-6 Sol / Astra | Yes | 127K |
-| **OpenHands** | All-Hands AI | **77.6%** SWE-bench | MIT | Free / cloud plans | Any (LiteLLM 100+ providers) | Yes | 78K |
-| **MiMo Code** | Xiaomi | ~73% [V] | MIT | Free (bundled MiMo V2.5 Pro) | MiMo V2.5 Pro | Yes | 5.6K |
-| **Verdent AI** | Verdent | — | Proprietary | Credit-based PAYG | Any (Quality/Speed modes) | Yes | — |
-| **Antigravity CLI** | Google | ~70.7% | Proprietary | Free preview · Pro $19.99 · Ultra $99.99/mo | Gemini 3.1 Pro | Yes | — |
-| **Grok Build** | xAI (SpaceXAI) | ~[V] | OSS harness (xai-org/grok-build) · proprietary models | **Free tier** (opened ~Jul 2026) · Heavy tier up to $299/mo per coverage | **Grok 4.7** (Sept 21) / 4.6 | No | — |
-
-> **Grok Build** — SpaceXAI's terminal-first coding agent (full-screen TUI; the harness repo is open-source). Free to try; heavier usage tiers exist. Its coding model `grok-build-0.1` ($1/$2, 256K) is also on OpenRouter/Kilo. TB score not independently confirmed this pass.
-
-> **OpenHands** (formerly OpenDevin): 77.6% SWE-bench on open leaderboard — highest for any open-source agent. LiteLLM routes to 100+ providers. LLM-based risk assessment gates high-risk actions.
-> **MiMo Code:** Fork of OpenCode. Free MiMo V2.5 Pro (1T param, 42B active). Data routes through Xiaomi/Chinese cloud.
-> **Verdent AI:** 76.1% SWE-bench single-attempt production-level. Multi-agent parallel execution. VS Code extension + Verdent Deck standalone app. SEAlign ICSE 2026 Distinguished Paper.
-
-### Terminal-Bench 2.1 — reproducible snapshot (17 Aug 2026)
-
-| Rank | Agent + model | Effort | Accuracy | Submission date |
-|---|---|---|---|---|
-| 1 | Claude Code + Fable 5 | xhigh | **83.8% ± 1.2%** | 7 Jun 2026 |
-| 2 | Codex + GPT-5.5 | xhigh | **83.1% ± 1.1%** | 1 May 2026 |
-| 3 | Terminus 2 + Fable 5 | high | **80.4% ± 1.2%** | 5 Jun 2026 |
-| 4 | Cursor CLI + Grok 4.5 | high | **79.3% ± 1.5%** | 9 Jul 2026 |
-| 5 | Claude Code + Opus 4.8 | high | **78.9% ± 1.3%** | 9 Jul 2026 |
-
-Source: [official Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1).
-Do not compare a row to a different model, effort, date, or task version as though it measured the
-agent alone. A new local run would be a new benchmark submission with different model snapshots and
-spend, rather than a reproduction of these published entries.
-
-> **Terminus 2 is the benchmark's own reference agent** — a neutral testbed with a single
-> headless-terminal tool, used to compare models (per the TB arXiv paper). It is **not an
-> end-user coding product**; the row above is a model-comparison baseline, not something to
-> install. (Checked 17 Aug 2026.)
-
-> **Vendor-reported scores that are NOT on the official leaderboard (different harness — do not
-> rank against the rows above):** DeepSeek V4 Pro 0813 claims **87.9** and V4 Flash 0731 claims
-> **82.7**, both via DeepSeek's own "DeepSeek Harness minimal mode" (max effort) — see DeepSeek's
-> API changelog (Aug 13 / Jul 31). Standardized-harness aggregators also report Qwen 3.8-Max
-> **86.6** and Gemini 3.7 Flash **85.8**. These are model-level numbers, not agent configurations;
-> treat them as directional, tagged [V] in [MODELS.md](./MODELS.md).
-
-### Terminal-Bench 4.0 — current snapshot (29 Sep 2026)
-
-TB 2.1 is saturated (the top models all land at 88–91% in vendor runs), so vendors now report
-**Terminal-Bench 4.0**: 66 tasks, a flat 8-hour agent timeout, calibrated CPU/memory, 8 saturated or
-leaked tasks removed. The official tbench.ai board renders client-side and couldn't be read this pass,
-so two secondary sources are shown side by side (checked 29 Sep 2026).
-
-| Model | TB 4.0 — vendor/aggregated (llm-stats, Sept 28) | TB 4.0 — independent (Artificial Analysis, mini-swe-agent, pass@1 ×3) |
+| Model | TB 4.0 — vendor/aggregated (llm-stats, Sept 28) | TB 4.0 — independent (Artificial Analysis, mini-swe-agent) |
 |---|---|---|
-| Claude Sonnet 5.5 | **70.6%** | **63.6%** (max effort) |
-| Claude Opus 5.5 | 66.4% | 59.6% (max and xhigh) |
+| Claude Sonnet 5.5 | **70.6%** | **63.6%** |
+| Claude Opus 5.5 | 66.4% | 59.6% |
 | Claude Mythos 5.1 | 60.9% | — (trusted access only) |
 | GPT-6 Astra | 57.7% | — |
 | Claude Fable 5.1 | 55.8% | — |
@@ -112,773 +35,408 @@ so two secondary sources are shown side by side (checked 29 Sep 2026).
 | MiMo-V2.6-Pro | 34.9% | — |
 | DeepSeek V4.1 Flash | 31.2% | — |
 | MiMo-V2.6-Flash | 28.8% | — |
-| Claude Opus 4.8 | 23.6% | — |
-| GPT-5.6 Terra | 21.5% | — |
-| Grok 4.6 | 20.3% | — |
 | Gemini 3.8 Flash | 19.1% | — |
-| GPT-5.6 Luna | 17.3% | — |
-| Claude Sonnet 5 · Grok 4.5 | 12.4% | — |
 
-> The independent run scores Anthropic's models ~7 points lower than their own launch numbers — same
-> ordering, different harness. Compare within a column, never across. GPT-6 Sol/Luna, Kimi K3 and
-> Qwen have no TB 4.0 entry on either board yet. Free stealth model **Union Alpha** is claimed at
-> ~50–60% by its fan site — unverified.
-> Full per-benchmark charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html). Official board: tbench.ai/leaderboard/terminal-bench/4.0.
+> Compare within a column, never across. Every benchmark and the head-to-head verdict: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html).
 
----
+<details>
+<summary><b>Older: Terminal-Bench 2.1 official leaderboard snapshot (17 Aug 2026)</b></summary>
 
-### Tier 2 — Open Source Power
+| Rank | Agent + model | Effort | Accuracy |
+|---|---|---|---|
+| 1 | Claude Code + Fable 5 | xhigh | 83.8% ± 1.2% |
+| 2 | Codex + GPT-5.5 | xhigh | 83.1% ± 1.1% |
+| 3 | Terminus 2 (reference agent) + Fable 5 | high | 80.4% ± 1.2% |
+| 4 | Cursor CLI + Grok 4.5 | high | 79.3% ± 1.5% |
+| 5 | Claude Code + Opus 4.8 | high | 78.9% ± 1.3% |
 
-| Agent | By | TB 2.1 | License | Price | Stars |
-|---|---|---|---|---|---|
-| **Hermes Agent** | Nous Research | — | MIT | Free BYOK | 250K |
-| **Claw Code** | Community | — | MIT | Free BYOK | 195K |
-| **OpenCode** | anomalyco (sst) | — | MIT | Free BYOK · a paid Go/Black tier is rumored ($10/mo, $200/mo) but only sourced from an aggregator, not OpenCode's own pricing page — unverified | 211K |
-| **Pi (OH-MY-PI)** | Community | — | MIT | Free BYOK | 110K |
-| **Open Interpreter** | OpenInterpreter | — | MIT | Free BYOK | 68K |
-| **Cline** | cline | — | Apache 2.0 | Free BYOK · **free rotating models** · ClinePass $9.99/mo (13 open-weight models) | 69K |
-| **Goose** | Block / Linux Fdn | — | Apache 2.0 | Free BYOK | 55K |
-| **Aider** | aider-AI | — | Apache 2.0 | Free BYOK | 49K |
-| **Continue** | Continue.dev | — | Apache 2.0 | Free BYOK | 36K |
-| **Crush** | Charmbracelet | — | MIT | Free BYOK | 28K |
-| **Kilo Code** | kilo.ai | — | MIT | Free BYOK · Teams $15/user | 27K |
-| **Qwen Code** | Alibaba | — | Apache 2.0 | Free BYOK | 28K |
-| **Roo Code CLI** | RooCodeInc | — | MIT | Free BYOK | 24.3K |
-| **Plandex** | Plandex | — | AGPL 3.0 | Free BYOK | 15.5K |
-| **SWE-agent** | Princeton NLP | — | MIT | Free BYOK | 20K |
-| **Trae Agent** | ByteDance | — | MIT | Free BYOK | 11.7K |
-| **Kimi Code CLI** | Moonshot AI | — | Apache 2.0 | Free BYOK · v2.1.0 Sept 23, pairs with Kimi K3 | 11K |
-| **Free Code** | Community | — | MIT | Free BYOK | 8.5K |
-| **DeepSeek Harness** | DeepSeek AI | — [V] | MIT | Free BYOK | 239K |
-| **Claurst** | Community | — | MIT | Free BYOK | 9.8K |
-| **gptme** | gptme | — | MIT | Free BYOK | 4.3K |
-| **JCode** | 1jehuang / cnjack | — | MIT | Free BYOK | ~4K |
-| **Mistral Vibe** | Mistral AI | — | Apache 2.0 | Free BYOK | 4.6K |
-| **Nanocoder** | Nano Collective | — | MIT | Free BYOK | 2.1K |
-| **Letta Code** | Letta AI | — | MIT | Free BYOK | 2.8K |
+</details>
 
 ---
 
-### Tier 2.5 — Emerging (under 5K stars, worth watching)
+## Part 1 — CLI / Terminal Coding Agents
 
-| Agent | By | Lang | License | What | Stars |
+![GitHub stars — coding agents](./charts/github-stars-agents.png)
+
+> [!TIP]
+> Every agent below supports the open **Agent Skills** standard or MCP. Skills, plugins and install commands: [SKILLS.md](./SKILLS.md). Free models to plug in: [FREE-ACCESS.md](./FREE-ACCESS.md).
+
+### Commercial agents
+
+| Agent | By | Free | Paid | Models | ⭐ (live) |
 |---|---|---|---|---|---|
-| **Muse Code** ⚠️ | **Meta** | — | Proprietary (beta) | **Meta's first coding agent** — terminal, multi-agent by default (parallel agents + self-verification), one-command install (macOS/Linux). Launched Aug 5 on Muse Spark 1.2; **now runs Muse Spark 1.3** (Sept 2, max reasoning — ~20% fewer tool calls, ~25% fewer tokens). Spark 1.3 on the Meta Model API at $1.25/$4.25; a cheaper "contributor" tier lets Meta keep your data. No TB 2.1 / SWE-bench published yet — beta, watch | — |
-| **Nanocoder** | Nano Collective | TS | MIT | Local-first (Ollama/LM Studio/llama.cpp/MLX), cloud opt-in | ~2K |
-| **claw-code-agent** | Community | Python | MIT | Pure-Python Claude Code rewrite, zero deps (from Mar-2026 leak) | ~517 |
-| **g3** | Community | Rust | MIT | Tool-running, repo interaction, skills, provider abstraction | ~515 |
-| **Coro Code** | Community | — | OSS | Free Claude Code alternative — generate/debug/manage | ~363 |
-| **Mini-Kode** | Community | — | MIT | Educational, readable reference implementation | ~304 |
-| **zot** | Community | — | OSS | Zero-overhead harness — TUI/JSON/RPC, diffs, skills, guardrails | ~271 |
-| **CodeWhale** ⚠️ | Community | — | OSS | Terminal coding agent, BYO model, started as a native DeepSeek experience (community-driven, very new — verify before adopting) | — |
+| ★ **Claude Code** | Anthropic | — (needs Pro or API) | Pro $17/mo annual ($20 monthly) · Max 5x $100 · Max 20x $200 · API | Opus 5.5 default; Sonnet 5.5, Fable 5.1 | 148K |
+| ★ **Codex CLI** | OpenAI | ChatGPT Free (limited Codex, GPT-6 Luna) | ChatGPT Plus / Pro · API | GPT-6 Sol / Astra / Luna | 127K |
+| **Grok Build** | SpaceXAI | Free tier | Heavier tiers | Grok 4.7 | 27K (harness) |
+| **Muse Code** | Meta | Beta | Meta Model API ($1.25/$4.25 for Spark 1.3) | Muse Spark 1.3 | — |
+| **Antigravity CLI** | Google | Free Individual plan (weekly agent limits) | Google AI Pro $19.99 · Ultra $99.99 | Gemini 3.8 Flash, 3.1 Pro, Claude 4.6 | — |
+| **Freebuff** | Codebuff (YC) | **Free, ad-supported**: 100 Freebucks/day (DeepSeek V4.1 Flash 6 h, GPT-6 Luna 5 h, GLM-5.3 Flash 20 h…) | — | Rotating free models | 13K |
+| **Verdent** | Verdent | Free mode | Lite $5 · Starter $19 · Pro $59/mo | Parallel agents, BYOK | — |
+| **Amp** | Sourcegraph | Hobby free (all features, bring your own ChatGPT/other subscriptions) | Individual $20/mo | Multi-model | — |
+| **MiMo Code** | Xiaomi | Free with MiMo models | — | MiMo (OpenCode fork) | 14K |
 
-> **DeepSeek Harness (`dsh`)** — open-source agent harness, **open-sourced Aug 14, 2026** (developer preview). "Everything is a plugin": models, tools, skills, and UI are all plugins, powered by the Cordis meta-framework (Node.js). It is the harness behind DeepSeek's own TB 2.1 runs (V4 Pro 0813 = 87.9, vendor-reported). MIT. [github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) — see also [REFERENCES.md](./REFERENCES.md).
+### Open-source agents (free, bring your own key)
 
-> [!WARNING]
-> ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode feuded with Anthropic over subscription login, **Cursor was bought by SpaceX** (Aug 14), and **Gemini CLI stopped serving free and AI Pro/Ultra users on June 18, 2026** (Google Developers Blog, May 19) — those users moved to Antigravity CLI; Gemini CLI now only works with paid Gemini API keys or enterprise licences. The Aug pass wrongly called this unverified. Star count for OpenCode also has two conflicting figures in this archive (165K vs 177K elsewhere) — neither re-verified this pass, don't trust either to the digit.
+| Agent | Licence | ⭐ (live) | Notes |
+|---|---|---|---|
+| ★ **OpenCode** | MIT | 211K | Best harness for free models — any OpenAI-compatible key, 75+ providers, Zen free models. Optional **OpenCode Go** $10/mo (Go Plus $40) for cheap hosted models; Black tier higher |
+| **Hermes Agent** (Nous) | MIT | 250K | Self-improving: writes its own skills, persistent user model; v0.21 adds desktop app, Bot Mode, A2A |
+| **DeepSeek Harness** (`dsh`) | MIT | 239K | "Everything is a plugin"; the harness behind DeepSeek's own benchmark runs |
+| **Claw Code** | MIT | 195K | Python/Rust rewrite of the Claude Code architecture, any model |
+| **Pi** | MIT | 110K | Minimal harness, <1K-token system prompt, lazy skills |
+| **OpenHands** | MIT | 89K | Autonomous dev agent; free open source + free individual cloud tier |
+| ★ **Cline** | Apache 2.0 | 69K | VS Code/JetBrains/CLI + **Cline Desktop**; free for individuals (pay inference) + rotating **free models**; ClinePass $9.99/mo |
+| **Open Interpreter** | Apache 2.0 | 68K | Runs code locally to do tasks |
+| **Goose** (Linux Foundation) | Apache 2.0 | 55K | Extensible local agent |
+| **Aider** | Apache 2.0 | 49K | Git-native pair programmer (last release May 2026) |
+| **CodeWhale** | MIT | 41K | Rust TUI agent built for DeepSeek V4 (also OpenAI and others) |
+| **Continue** | Apache 2.0 | 36K | IDE extension + CLI, custom assistants |
+| **Crush** (Charm) | Source-available (see repo) | 28K | Terminal agent with LSP |
+| **Qwen Code** | Apache 2.0 | 28K | Gemini-CLI fork for Qwen models |
+| **Kilo Code** | MIT | 27K | Free for individuals + `kilo-auto/free` router; Teams $15/user |
+| **SWE-agent** (Princeton) | MIT | 20K | Research agent for GitHub issues |
+| **JCode** | MIT | 20K | Rust agent for remote servers over SSH (project's own benchmark: 14 ms boot) |
+| **Kimi Code CLI** | Apache 2.0 | 11K | Moonshot's agent, pairs with Kimi K3 (v2.1, Sept 23) |
+| **Claurst** | GPL-3.0 | 10K | Rust Claude Code-style agent |
+| **Mistral Vibe** | Apache 2.0 | 5K | Mistral's CLI agent |
+| **gptme** | MIT | 4.4K | Minimal terminal agent |
+| **Letta Code** | Apache 2.0 | 3.5K | Memory-first coding agent |
+| **Nanocoder** | See repo | 2.5K | Local-first (Ollama, LM Studio, llama.cpp, MLX) |
+| ~~Roo Code~~ · ~~Plandex~~ · ~~Trae Agent~~ | — | 24K · 16K · 12K | Archived / no commits since Oct 2025 / Feb 2026 — don't start new projects on them |
 
-### Proxy / Router Tools (free + cheaper model access in your existing agent)
+### Platform / enterprise agents
 
-| Tool | What it does | Stars |
+| Agent | Free | Paid | Link |
+|---|---|---|---|
+| **Cursor** (SpaceX) | Hobby: limited agent requests + Composer | Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/user | cursor.com/pricing |
+| **GitHub Copilot** | 2,000 completions/mo, Haiku 4.5, GPT-5 mini, agent mode, CLI | Pro $10 · Pro+ $39 · Max $100 | github.com/features/copilot/plans |
+| **Kiro** (AWS) | 50 credits/mo incl. Claude Sonnet 4.5 + open models | Pro $20 · Pro+ $40 · Pro Max $100 · Power $200 | kiro.dev/pricing |
+| **Augment Code** | — | Standard $20 · Business $100 | augmentcode.com/pricing |
+| **Zencoder** | 7-day Pro trial | Pro $40/user (annual) | zencoder.ai/pricing |
+| **Sweep** (JetBrains plugin) | Trial: 1,000 autocompletes + $5 API credit | Basic $10 · Pro $20 · Ultra $60 | sweep.dev |
+
+### Proxy / router tools
+
+| Tool | What | ⭐ (live) |
 |---|---|---|
-| **[CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** | Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 53K |
-| **[9router](https://github.com/decolua/9router)** | Route Claude Code/Codex/Cursor/Cline/Copilot/Antigravity to free Claude/GPT/Gemini via 40+ providers; taps Kiro/OpenCode-Free/Vertex; auto-fallback | rising |
-| **[cc-compatible-models](https://github.com/Alorse/cc-compatible-models)** | Configs + pricing to run Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun in Claude Code | — |
-| **[jodavan/claude-code-proxy](https://github.com/jodavan/claude-code-proxy)** | Route each tier to a different provider (GLM for Haiku/Opus), keep Sonnet on your sub — dodges weekly limits | — |
-| **[free-claude-code](https://github.com/Rishurajgautam24/free-claude-code)** | Local FastAPI proxy → NIM/OpenRouter/DeepSeek/Ollama/LM Studio; saves quota on trivial requests | — |
-| **[TokenRouter](https://www.tokenrouter.com/)** | Hosted unified gateway for 300+ text/image/video/audio models, with OpenAI-, Claude-, and Gemini-compatible APIs. It is not a free-model provider; see the current pricing caveat in [FREE-ACCESS.md](./FREE-ACCESS.md). | — |
-| **[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** | MIT self-hosted gateway: one OpenAI-compatible endpoint in front of 340 providers (90+ free, ~1.5B free tokens/mo pooled). Quota-aware auto-fallback, 19 routing strategies, token compression (RTK+Caveman, 15-95%), MCP + A2A. Works with Claude Code, Codex, Cursor, OpenCode, Cline, Copilot. ⚠️ CVE-2026-49352 reported; you hand it your keys — vet before production use. See [FREE-ACCESS.md](./FREE-ACCESS.md). | 71K |
+| **OmniRoute** | Self-hosted gateway: one OpenAI-compatible endpoint over 340 providers (90+ with free tiers), quota-aware fallback. ⚠️ CVE-2026-49352 reported — you hand it your keys | 71K |
+| **CLIProxyAPI** | Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 53K |
+| **9router** | Route agents to 40+ providers' free tiers with fallback | 30K |
+| **TokenRouter** | Hosted 300+ model gateway; some `:free` IDs | — |
+| **cc-compatible-models** | Configs to run Chinese open models in Claude Code | 31 |
 
-> [!WARNING]
-> ⚠️ Reverse-engineered — may violate ToS / risk bans. Genuine "free" = routing to other providers' free tiers, not bypassing the Opus paywall. Avoid "keygen/activator" repos (malware). Full detail → [CREDITS.md](./CREDITS.md) Part 4.
+> [!CAUTION]
+> Subscription proxies are reverse-engineered and can get accounts banned. Avoid "keygen/activator" repos — malware. See [CREDITS.md](./CREDITS.md#part-4--subscription-as-api).
 
 ---
 
-### Notable Agent Deep Dives
-
-#### Hermes Agent (Nous Research) — 250K stars
-Self-improving agent with a closed learning loop. Creates skills from experience, improves them during use, builds a persistent user model across sessions.
-
-- **300+ model support** — any provider via unified interface
-- **Automated skill creation** — agent writes its own skills when it encounters new patterns
-- **Persistent memory** — user model deepens over time
-- **Sandboxed execution** — Unix socket RPC for safe code runs
-- **Multi-platform** — Telegram, Slack, Discord, WhatsApp integrations
-- **Status:** Fastest-growing agent after Claude Code and Claw Code
-- **Sept 2026 (v0.21.x):** native desktop app, Bot Mode, group chats between agents, 27+ messaging integrations, A2A support
-
-#### Claw Code — 195K stars
-Clean-room Python/Rust rewrite of Claude Code architecture. Born from the March 2026 Claude Code source leak (oh-my-codex). Fastest repo in GitHub history to 100K stars.
-
-- Drop-in replacement for Claude Code — same UX, any model
-- Supports all BYOK providers including local Ollama
-- Apache 2.0 → MIT licensed
-
-#### Pi (OH-MY-PI) — 110K stars
-By the authors of Flask and Jinja2. Most minimal harness available.
-
-- **System prompt under 1,000 tokens** (vs 7,000–10,000 for most agents)
-- **Lazy skills** — only the one-line description lives in context; full instructions load only when invoked
-- TypeScript/Rust monorepo, local-first design
-- Works with any provider via `pi-builder` wrapper
-
-#### JCode — ~4K stars (fast-rising)
-Rust-native. Purpose-built for remote servers over SSH.
-
-| Metric | JCode | Copilot CLI | Cursor Agent | Claude Code |
-|---|---|---|---|---|
-| Boot time | **14ms** | 1,500ms | 1,900ms | 3,400ms |
-| RAM (session) | **27.8MB** | — | — | 386.6MB |
-| SSH support | **Yes** | No | No | No |
-| Subagent nesting | **3 levels** | — | — | — |
-
-#### Warp
-AI-native terminal — not an agent, but agents run inside it. Open-sourced May 28, 2026.
-
-- **Agent Mode** — natural language → shell commands
-- **Active AI** — contextual suggestions from shell history, exit codes, recent I/O
-- **MCP support** — connect to Linear, Sentry, Postgres, internal docs
-- **Cloud Agents (Oz)** — containerized background agents on webhook/schedule
-- **Multi-agent hub** — run Claude Code, Codex CLI, Antigravity CLI inside Warp as managed subagents
-- **Pricing:** Free · Pro $19/mo · Team $35/mo
-
----
-
-### Tier 3 — Platform / Enterprise
-
-| Agent | By | TB 2.1 | Price | BYOK |
-|---|---|---|---|---|
-| **Cursor** | Cursor (**SpaceX-owned** since Aug 14) | — | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom. Usage split into two pools: first-party (Grok 4.5–4.7, Composer 2.5, Auto) and third-party (Claude/GPT/Gemini) | Yes |
-| **FreeBuff** | Codebuff / YC | — | Free, ad-supported: 100 "Freebucks"/day — DeepSeek V4.1 Flash 6 h, GPT-6 Luna 5 h, GLM-5.3 Flash 20 h, MiMo 2.6 Pro 3 h, Space Bunny Alpha unlimited. CLI + desktop + web builder + cloud IDE | Partial |
-| **GitHub Copilot** | Microsoft | — | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo. Sept: Opus 5.5 + GPT-6 Sol (Pro+ and up), GPT-6 Luna + Grok 4.7 (Pro and up) | Partial |
-| **Kiro** | AWS | N/A | Free 50cr · Pro $10 · Pro+ $20/mo | Yes |
-| **Qwen Code** | Alibaba | N/A | Free BYOK | Yes |
-| **Amp** | Sourcegraph | — | Free tier is ad-supported, no hard token cap · Megawatt $20/mo · Gigawatt $200/mo · Unconstrained PAYG | Yes |
-| **Zencoder** | Zencoder | — | Free tier · Pro $19/mo | Yes |
-| **Augment Code** | Augment | — | Pro $50 · Max $200/mo | No |
-| **Sweep AI** | Sweep | — | Free OSS · Pro $19/mo | Yes |
-
-**Amp (Sourcegraph)** — zero hard token cap, broadest codebase indexing engine. Best for mono-repos. CLI + VS Code. Free tier is ad-supported, not plain free — paid tiers (Megawatt $20, Gigawatt $200, Unconstrained PAYG) drop the ads.
-
-**Zencoder** — Repo-Grokking: analyzes full project structural patterns before generating. Self-improving agentic pipeline. JetBrains + VS Code, 40K+ installs.
-
-**Augment Code** — enterprise-grade Context Engine. Indexes full codebase once, instant queries after. Max tier ($200/mo) rivals Cursor Ultra on large codebases.
-
-**Sweep AI** — turns GitHub issues directly into PRs. AI generates, tests, and self-reviews. JetBrains-first (4.9 stars, 40K installs). Best for automated issue → PR workflow.
-
-> **Gemini CLI → Antigravity CLI (confirmed).** Google's Developers Blog (May 19) announced it and it happened June 18: Gemini CLI stopped serving free and AI Pro/Ultra users, who now use **Antigravity CLI** (Go rewrite, async multi-agent, same Skills/Hooks/Subagents; extensions became Antigravity plugins). The repo stays up and still works with paid Gemini API keys and enterprise licences. Antigravity's free Individual plan: unlimited Tab and Command, weekly-limited agent use; Gemini 3.8 Flash added Sept 1.
-
----
-
-## Part 2 — Agentic IDEs
+## Part 2 — Agentic IDEs & Desktop Apps
 
 ![What coding plans cost](./charts/coding-plans.png)
 
-| IDE | By | Price | Agent Features | Privacy | Notes |
-|---|---|---|---|---|---|
-| **Cursor** | Cursor (SpaceX) | Free (Hobby) · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | 8 parallel agents, BugBot, Background Agents, Design Mode, multi-repo | Encrypted | SpaceX closed the $60B acquisition Aug 14. Grok 4.5 was co-trained with SpaceXAI; Grok + Composer 2.5 are the in-house models |
-| **Codex IDE** | OpenAI | Free (limited) · Plus $20 · Pro $200/mo | VS Code extension — Codex cloud coding agent, chat, terminal, PR-to-branch workflow | OpenAI cloud | The GUI home of the Codex CLI agent (TB 2.1 83.1% via Codex + GPT-5.5) |
-| **Kiro** | AWS | Free 50cr · Pro $10 · Pro+ $20/mo | Spec-driven (requirements→code), Hooks | AWS-hosted | "AI IDE for adults." May 7 launch |
-| **Warp** | Warp | Free · Pro $19 · Team $35/mo | Agent Mode, MCP, Cloud Agents (Oz), multi-agent hub | Open-source | Open-source May 28 |
-| **Devin Desktop** | Cognition | $20/mo + $2.25/ACU (official pricing page returned an error twice this pass — treat as unverified, not current) | Devin Local from Jul 1 | Cloud | Formerly Windsurf, rebranded Jun 2 (confirmed: windsurf.com redirects to devin.ai) |
-| **GitHub Copilot** | Microsoft | Free · Pro $10 · Pro+ $39 · Max $100/mo | Workspace, Coding Agent, BugBot, multi-provider, local agent sandboxing (preview) | Microsoft | Usage-based credits since Jun 1. Auto model selection has efficiency / balance / intelligence tiers (Sept) |
-| **Antigravity** | Google | Free (weekly agent limits) · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use, Antigravity CLI | Google | Replaced Gemini CLI for free and Pro/Ultra users on June 18. Models: Gemini 3.8/3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6, gpt-oss-120b |
-| **Gemini CLI** | Google | Paid Gemini API key only | Terminal agent | Google | 107K★, Apache 2.0. Free and Pro/Ultra access ended June 18, 2026 — use Antigravity CLI instead |
-| **Trae** | ByteDance | Free · Lite $3 · Pro $10 · Ultra $100/mo | SOLO mode, MCP | **5-yr retention, no opt-out** | VS Code fork |
-| **Qoder** | Alibaba | **Free** (agent platform; ∞ model access per router dashboards) | Agent Autonomous Development platform, Quest mode, context-engineered editor, MCP | Cloud (Aliyun) | Launched Sep 2025 as free AI IDE; **Qoder 1.0 May 15, 2026** upgraded it to an agentic coding platform (Win/macOS/Linux). Pricing details on qoder.com |
-| ~~**ZCode**~~ ⛔ | Z.AI / Zhipu | Free | Desktop coding agent, GLM-5.x | **Uploaded your repo** | **Do not use.** Disclosed Sept 18: default-on codebase indexing packed whole repos incl. full Git history (old secrets too) and uploaded them, encrypted with a Z.ai-held key, to Alibaba Cloud — no opt-out, not in the privacy policy. Z.ai removed it in v3.14.0 (Sept 21) and open-sourced ZCode with history wiped. Rotate any secret that ever sat in a repo you opened with it. Details in [NEWS.md](./NEWS.md) |
-| **Void** | Void | Free | Agent Mode (multi-file, terminal) | **No telemetry, fully local** | Open-source VS Code fork |
-| **PearAI** | PearAI | Free BYOK | Full agentic, Continue-based | BYOK = local keys | Open-source VS Code fork |
-| **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |
-| **Claude Code** | Anthropic | Pro $17 (annual) / $20 · Max 5x $100 · Max 20x $200 | Terminal, IDEs, desktop, web, Slack, CI; MCP 2.0, plugins, parallel subagents | Anthropic cloud | Opus 5.5 default Opus since Sept 22; 5-hour limits raised Sept 22 |
-| **Cline Desktop** | Cline | Free (open source, beta) + ClinePass $9.99/mo | Imports Claude Code/Codex sessions, cron jobs, parallel sessions, any model incl. local | Local-first | Sept 14. **Kimi K3 free in it** since Sept 18 |
-| **LM Studio Bionic** | LM Studio | Free (local inference free) | Agent app for open models: Code Projects (edit/debug a local folder with inline diffs), Work Projects (PDFs, decks, sheets in a sandbox), web search, checkpoints, live meeting transcription | Local-first, zero data retention for cloud fallback | Jul 16 preview (macOS first) |
-| **AionUI** | AionUI OSS | Free (Apache 2.0) | Unified desktop dashboard for 20+ CLI agents, built-in agent, Cron scheduler, office editing | 100% local SQLite | 28K+ stars. GUI wrapper for terminal agents |
-| **Eigent** | Eigent AI | Free (OSS) · Pro $? | Multi-agent workforce (Browser/Terminal/Document/Multimodal), CAMEL-based, scheduled tasks | Local-first | 14.4K stars. "Open Source Cowork Desktop" |
-
-### Desktop Cowork Platforms — Deep Dive
-
-These aren't IDEs — they're GUI desktops that orchestrate multiple AI agents in parallel, manage context, and run scheduled automations. Think of them as the "operating system layer" above CLI agents.
-
----
-
-#### AionUI
-
-> *"The best free alternative to proprietary enterprise cowork platforms"*
-
-**GitHub:** github.com/iOfficeAI/AionUi · **Stars:** 28K+ · **License:** Apache 2.0 · **Stack:** Electron + React
-
-**What it does:**
-- Auto-detects and integrates 20+ installed CLI tools (Claude Code, OpenCode, Codex, Gemini CLI, Aider, etc.) into one dashboard
-- Built-in 24/7 agent — connects to any API (OpenAI, Anthropic, Gemini, Qwen) or runs fully offline via Ollama
-- Shared MCP config — configure MCP servers once, all integrated agents inherit them instantly
-
-**Killer features:**
-| Feature | Detail |
-|---|---|
-| Cron Automation | Natural language → cron expression. "Scrape this site every morning at 9 AM" runs unattended |
-| Rich File Preview | 30+ coding languages, PDF, HTML, images rendered inline — never leave the app |
-| Office Native Editing | Generate/modify `.docx`, `.xlsx`, `.pptx` natively via OfficeCLI engine (incl. PowerPoint Morph transitions) |
-| Remote WebUI | Control your desktop agents from phone via local WebUI server. Push notifications to Telegram/Lark/DingTalk |
-| Local SQLite | All context stored locally. No cloud upload. Privacy-first. |
-
-**Install:**
-```bash
-# macOS (Homebrew)
-brew install aionui
-
-# Or download binary from GitHub Releases (.dmg / .exe / Linux AppImage)
-# https://github.com/iOfficeAI/AionUi/releases
-```
-
-**Common issues:**
-- CLI tools not detected → paste global npm/python bin path in Settings > Environment PATH
-- Cron tasks fail overnight → disable OS sleep mode for 24/7 operation
-- WebUI unreachable from phone → allow inbound connections in OS firewall, ensure same Wi-Fi
-
----
-
-#### Eigent
-
-> *"Your AI Workforce, Ready to Work"*
-
-**GitHub:** github.com/eigent-ai/eigent · **Stars:** 14.4K · **License:** Open-source
-
-**What it does:**
-- Multi-agent workforce — spawn specialized agents that communicate and collaborate:
-  - **Browser Agent** — web search, research, scraping
-  - **Terminal Agent** — shell commands, code execution
-  - **Multi-modal Agent** — process images, PDFs, charts
-  - **Document Agent** — write and edit files
-- Single Agent mode for focused tasks; Workforce mode for complex multi-step work
-- Scheduled triggers — recurring workflows with execution logs and success rate tracking
-- Agent Folder — all generated files (`.csv`, `.md`, `.html`, `.png`) surfaced in one panel
-
-**Use cases from their demos:**
-- Deep-dive research on 26 AI infrastructure companies → structured JSON + HTML report
-- Build 10 HTML5 games from a single prompt
-- Automate Salesforce deal updates via browser agent
-- Turn Excel sales data into an analytics HTML report via Kimi K2.5
-
-**Model support:** GLM-5.1/5.2, Gemini 3.1 Pro, Kimi K2.5, MiniMax M2, OpenAI, Anthropic, local models
-
----
-
-## Part 3 — Chat / Web Autonomous Agents
-
-| Agent | By | Type | Price | Capability |
+| IDE / app | By | Free | Paid | Notes |
 |---|---|---|---|---|
-| **OpenClaw** | OpenClaw Foundation | Self-hosted personal agent | Free (MIT, BYO LLM key) | **391K stars — most-starred self-hosted agent.** Long-running Node service routing 23+ chat channels (WhatsApp/Telegram/Discord/Signal/Slack) to an agent that reads files, runs commands, persists memory. ClawHub skill registry. Founder Peter Steinberger joined OpenAI; foundation now stewards it. ⚠️ Broad system access + untrusted 3rd-party skills = real RCE/malware risk |
-| **Manus AI** | Manus (ex-Monica.im) | Autonomous VM agent | Free 300cr/day · Pro $20 · Extended $200/mo | Sandboxed VM. Web browse, code, files, slides. 20 concurrent tasks on Pro |
-| **Genspark** | Genspark | All-in-one "Super Agent" | Free ~100–200cr/day (no card) · Plus $24.99 ($19.99/yr, 10K cr) · Pro $249.99 (125K cr) | Orchestrates many frontier models + 80+ tools. AI Slides/Sheets, image+video gen, AI Developer, real phone calls. Chat+image = 0 credits on paid through Dec 31 2026 |
-| **Devin** | Cognition | Autonomous SWE | $20/mo + $2.25/ACU (unverified this pass — official pricing page unreachable) | Full tickets end-to-end, PR creation |
-| **Relevance AI** | Relevance AI | Enterprise multi-agent | Free 100cr/day · Pro $19/mo · Business custom | 9,000+ integrations, multi-agent teams, production workflows |
-| **OpenHands** | All-Hands AI | DevOps agent | Free (cloud plans available) | 77.6% SWE-bench, bash+code+push PRs, 78K stars |
-| **SWE-agent** | Princeton NLP | Bug fixing agent | Open-source | Research-grade, SWE-bench optimized, 20K stars |
-| **GitHub Copilot Workspace** | Microsoft | PR automation | Included in Copilot | Issue → branch → PR in web UI |
-| **Vercel v0** | Vercel | UI generation + deploy | Free · Pro $20/mo | React/Next.js from text, auto-deploys |
-| **Bolt.new** | StackBlitz | Full-stack + deploy | Free · Pro $20/mo | In-browser app builder, GitHub push |
-| **Lovable** | Lovable | Product builder | Free · Pro $25/mo | React + Supabase, GitHub push |
-| **Replit Agent** | Replit | Full-stack + deploy | Core $25/mo | Deploys to Replit infra |
-| **Cursor Background Agents** | Cursor | Async parallel | Included in Pro/Ultra | Runs while you work |
+| ★ **Cursor** | SpaceX | Hobby (limited) | Pro $20 · Pro+ $60 · Ultra $200 · Teams $40 | Two usage pools: first-party (Grok, Composer) and third-party models |
+| ★ **VS Code + GitHub Copilot** | Microsoft | Copilot Free | Pro $10 · Pro+ $39 · Max $100 | Local agent sandboxing (preview), auto model tiers |
+| ★ **Antigravity** | Google | Free Individual (weekly agent limits) | Google AI Pro $19.99 · Ultra $99.99 | Replaced Gemini CLI's free tier |
+| **Codex app / IDE extension** | OpenAI | ChatGPT Free (limited) | ChatGPT plans | Cloud agent, PR workflow |
+| **Claude Code / desktop** | Anthropic | — | Pro $17 · Max $100 / $200 | Terminal, IDE, desktop, web, Slack, CI |
+| **Kiro** | AWS | 50 credits/mo | Pro $20 → Power $200 | Spec-driven development, hooks |
+| **Zed** | Zed Industries | 2,000 edit predictions/mo; unlimited with your own keys or external agents | Pro $10 ($5 tokens incl.) · Business $30/seat | Open source; runs any agent via ACP |
+| **Devin Desktop** (ex-Windsurf) | Cognition | Light agent quota, unlimited Tab | Pro $20 · Max $200 · Teams $80 + $40/seat | windsurf.com → devin.ai |
+| **Warp** | Warp | Free terminal (limited AI) | Build $18 · Max $180 · Business $45/user | Open source; runs Claude Code/Codex inside |
+| **Qoder** | Alibaba | 2-week trial (300 credits), BYOK | Pro $20 · Pro+ $60 · Ultra $200 | No longer free |
+| **Trae** | ByteDance | — | Lite $3 · Pro $10 · Pro+ $30 · Ultra $100 | ⚠️ 5-year data retention, no opt-out |
+| **Cline Desktop** | Cline | Free, open source (beta) | ClinePass $9.99 | Imports Claude Code/Codex sessions; Kimi K3 free inside |
+| **LM Studio Bionic** | LM Studio | Free (local) | Bionic+ $20/mo | Local agent for code and documents |
+| **AionUI** | iOfficeAI | Free (Apache 2.0, 33K★) | — | One desktop over 20+ CLI agents, cron, office file editing |
+| **Eigent** | Eigent AI | Free, open source (15K★) | — | Multi-agent "workforce" desktop (browser, terminal, docs) |
+| **PearAI** | PearAI | Free (BYOK) | — | VS Code fork (last commit Jun 2026) |
+| ~~Void~~ | — | — | — | **Archived June 2026** |
+| ~~ZCode~~ ⛔ | Z.ai | — | — | **Do not use** — silently uploaded users' repos (Sept 18). See [NEWS.md](./NEWS.md) |
 
 ---
 
-## Part 4 — AI Chat Interfaces
+## Part 3 — Autonomous & Web Agents
 
-| Interface | By | Best Model | Free | Price | Standout Feature |
-|---|---|---|---|---|---|
-| **Claude.ai** | Anthropic | Sonnet 5 on free (capped) · **Opus 5.5 / Fable 5.1** on Pro/Max | Yes (Sonnet 5, not Opus) | Pro $17/mo | Best reasoning, Artifacts, Projects, Cowork |
-| **ChatGPT** | OpenAI | GPT-6 Astra (Pro/Business) / GPT-6 Sol | Yes (GPT-6 Luna on desktop) | Plus $20/mo | Canvas, code exec, image gen, deep research |
-| **Gemini** | Google | Gemini 3.8 Flash / 3.1 Pro (Gemini 4 Pro expected Oct) | Yes | AI Pro $19.99/mo | Deep Research, Google Workspace |
-| **chat.z.ai** | Z.AI / Zhipu | GLM-5.2 (1M ctx, unverified) | Yes (generous) | Coding $3/mo | Web chat is free; the GLM-5.2 API itself is paid ($1.40/$4.40 per 1M, see [MODELS.md](./MODELS.md)) — don't read "developer API free" from the free web chat. MIT-license claim not confirmed on the official pricing doc |
-| **Qwen Chat** | Alibaba | **Qwen 3.8-Max (free)**, Qwen 3.7 | Yes | Free | Free chat access to Qwen 3.8-Max (2.4T, Aug 2026); also the ModelScope/API route for paid access | chat.qwen.ai |
-| **Grok** | xAI (SpaceXAI) | Grok 4.7 | Yes (on X) | SuperGrok $30/mo | Deep Search, X integration, image gen |
-| **Perplexity** | Perplexity | Multiple | Yes | Pro $20/mo | Best for research + citations |
-| **aider.chat** | aider-AI | Claude / GPT / local | N/A | Free (BYOK API) | Web frontend for Aider CLI — same BYOK model |
-| **Kimi** | Moonshot | **Kimi K3 (free)** | Yes | Pro $20/mo | 2.8T open-weight flagship, free on kimi.com, 1M ctx |
-| **Mistral Le Chat** | Mistral | Mistral Medium 3.5 | Yes | Pro $14.99/mo | EU-hosted, GDPR, Canvas mode |
-| **Manus AI** | Manus | Internal + frontier | Yes (300cr/day) | Pro $20/mo | Autonomous agent, not just chat |
+| Agent | Type | Free | Paid | Notes |
+|---|---|---|---|---|
+| ★ **OpenClaw** | Self-hosted personal agent (391K★) | Free (MIT, your key) | — | Routes WhatsApp/Telegram/Discord/Slack to an agent with files, commands, memory. ⚠️ Broad system access + third-party skills = real malware risk |
+| **Manus** | Cloud VM agent | 300 credits/day | Standard $12 · Extended $40/mo | Browse, code, slides |
+| **Genspark** | "Super Agent" | 100 credits/day | Plus (10K credits) · Pro (125K credits) | Slides, sheets, calls, image/video |
+| **Devin** | Autonomous engineer | Light quota | Pro $20 · Max $200 | Ticket → PR |
+| **OpenHands** | Open-source dev agent | Free | Enterprise | See Part 1 |
+| **ChatGPT Work** | OpenAI agent (replaced Agent mode) | All plans on desktop | — | Multi-hour tasks with approvals |
+| **Cursor Background Agents** | Async agents | In paid plans | — | Run while you work |
+| **Relevance AI** | Enterprise multi-agent | — | Enterprise | Custom pricing |
+
+App builders (Bolt, Lovable, v0, Replit) → [FRONTEND.md](./FRONTEND.md).
 
 ---
 
-## Part 5 — Infrastructure / Orchestration
+## Part 4 — AI Chat Apps
+
+| App | Best model (Sept 2026) | Free | Paid | Standout |
+|---|---|---|---|---|
+| **Claude** | Opus 5.5 / Fable 5.1 (paid) · Sonnet 5 (free) | ✅ | Pro $17/mo annual · Max from $100 | Artifacts, Projects, Claude Design, Cowork |
+| **ChatGPT** | GPT-6 Astra / Sol · GPT-6 Luna free | ✅ (unlimited Luna text, limited images/Codex) | Go · Plus · Pro | Scheduled Tasks, ChatGPT Work, Codex. **Free for US K-12 teachers until June 2027** |
+| **Gemini** | Gemini 3.8 Flash · 3.1 Pro | ✅ | AI Plus $4.99 · AI Pro $19.99 · Ultra $99.99 | Deep Research, Gems, NotebookLM; free AI Pro year for US college students |
+| **Kimi** | Kimi K3 | ✅ (Adagio) | Plus $15 · Pro $31 · Max $79/mo | 2.8T open-weight flagship |
+| **Qwen Chat** | Qwen 3.8-Max | ✅ | — | Free Max-class model |
+| **chat.z.ai** | GLM-5.3 | ✅ | GLM Coding Plan from $18/mo | Web chat free; API paid |
+| **Grok** | Grok 4.7 | ✅ (on X / grok.com) | SuperGrok (see grok.com/plans) | X integration |
+| **Perplexity** | Multiple | ✅ | Pro (students $10/mo) · Computer plans | Cited research, Comet browser |
+| **Mistral Le Chat** | Mistral models | ✅ ($10/mo API credit included) | Pro $14.99 (**students $5.99**) | EU-hosted |
+
+Feature-by-feature guide to Claude, ChatGPT and Gemini: [USAGE.md](./USAGE.md).
+
+---
+
+## Part 5 — Infrastructure & Protocols
 
 | Tool | Type | Purpose |
 |---|---|---|
-| **pi-builder** | Wrapper | Wraps any installed CLI agent (Claude Code, Codex, OpenCode, Aider, Goose, Plandex, SWE-agent, Crush) behind single interface with capability routing, health caching, fallback chains, SQLite |
-| **LiteLLM** | Router | OpenAI-compatible proxy for 100+ providers. Used internally by OpenHands |
-| **OpenRouter** | Router | 200+ models via single API key. `:free` suffix for free models |
-| **MCP** | Protocol | Model Context Protocol — standard for agent↔tool integration. 72,500+ servers (cross-registry, Jun 2026) |
-| **A2A (Agent2Agent)** | Protocol | Google's open spec for agent↔agent interop — the companion to MCP (tool access). Native in Google ADK, OpenAgents, VoltAgent |
-| **ACP (Zed)** | Protocol | Agent Client Protocol — run any agent natively in Zed editor |
-| **CLIProxyAPI** | Proxy | Wraps Claude Code / Codex / Antigravity / Grok Build OAuth sessions → OpenAI-compatible API. Multi-account round-robin load balancing. 53K stars. [github.com/router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) |
+| **MCP** | Protocol | Agent ↔ tool standard (2026-07-28 spec = "MCP 2.0"), Linux Foundation |
+| **A2A** | Protocol | Agent ↔ agent interop (Google ADK, Hermes, VoltAgent, OpenAgents) |
+| **ACP** | Protocol | Agent Client Protocol — run any agent inside Zed and other editors |
+| **Agent Skills** | Standard | Portable `SKILL.md` folders — see [SKILLS.md](./SKILLS.md) |
+| **OpenRouter** | Router | One key for hundreds of models; `:free` variants |
+| **LiteLLM** (60K★) | Router | OpenAI-compatible proxy for 100+ providers |
+| **google/ax + Agent Executor** | Runtime | Durable, resumable, sandboxed agent runs |
 
 ---
 
-## Part 5A — MCP (Model Context Protocol) — Full Reference
-
-> **Sept 2026:** Claude **Plugins** are now Anthropic's main third-party extension format (directory submission portal, auto-validation, publishing controls, analytics) and support MCP 2.0, MCP Apps and Enterprise Managed Auth. If you ship an MCP server for Claude users, package it as a plugin.
-
-> MCP is the USB-C of AI agents — one standard that connects any AI to any tool.
-
-**Origin:** Anthropic, November 2024. Adopted by OpenAI and Google DeepMind early 2025. Donated to Linux Foundation's Agentic AI Foundation December 2025.
+## Part 5A — MCP (Model Context Protocol)
 
 > [!NOTE]
-> 🔄 **MCP 2.0 — the 2026-07-28 specification (checked Aug 17, 2026):** a major step toward making agent infrastructure "work like the rest of the web" — **stateless, cacheable, routable, globally distributed** transports, with updated TypeScript/Python/Go SDKs (Cloudflare blog Aug 6, Simon Willison Jul 31). **Sampling is deprecated** (still works for now) in favor of the new architecture; governance/OAuth hardening included. If you're building new MCP integrations, target the 2026-07-28 spec — older 2025-era stateless-vs-stateful assumptions no longer hold.
-
-**Scale (June 2026):** A cross-registry aggregator counts **72,500+ servers** across the Official Registry, Glama, Smithery, mcp.so and PulseMCP. Glama alone tracks ~37K (split into Official / Claimed / crawled tiers).
-
-**Composite leaderboard (by GitHub stars):** Browser Use (117K★) · n8n (206K★) · Context7/upstash (63K★ — the only server listed on *every* registry) · GitHub MCP (33K★, 51 tools) · Toolbox for Databases (googleapis).
+> **MCP 2.0 (2026-07-28 spec):** stateless, cacheable, routable transports; Sampling deprecated; OAuth hardening. Target it for new servers. **Claude Plugins** (Sept 2026) are now the main way to ship MCP servers + skills to Claude users.
 
 > [!WARNING]
-> ⚠️ **Vetting matters — registry inclusion ≠ safe.** A scan of 8,000+ public servers found 36.7% with SSRF holes, 43% with unsafe command execution, and 41% in the official registry with **zero auth**. Sandbox and review any community server before giving it production credentials.
-
-### How MCP Works
+> Registry listing ≠ safe. Scans of public servers keep finding SSRF, unsafe command execution and missing auth. Sandbox community servers and never give them production credentials.
 
 ```
-AI Agent (Claude, GPT, Gemini, Cursor, etc.)
-        │
-        │  MCP Protocol (JSON-RPC 2.0 over stdio/SSE/HTTP)
-        ▼
-   MCP Server (GitHub / Supabase / Linear / Slack / ...)
-        │
-        ▼
-   External Service / Data Source / Tool
+AI agent (Claude Code / Cursor / Codex / …)
+   │  MCP (JSON-RPC over stdio / streamable HTTP)
+   ▼
+MCP server (GitHub / Supabase / Playwright / …)  →  the real service
 ```
 
-Each MCP server exposes **Tools** (callable actions), **Resources** (readable data), and **Prompts** (templates). The agent decides when to call them.
+### MCP clients
 
-### MCP Clients (What Supports MCP)
+Claude Code, Claude apps, Codex, Cursor, VS Code + Copilot, Cline, Continue, Zed (via ACP), Warp, OpenCode, Antigravity, Devin Desktop, LM Studio — all support MCP.
 
-| Client | Type | MCP Support |
+### Popular MCP servers (⭐ live, 29 Sep 2026)
+
+| Server | ⭐ | What it does |
 |---|---|---|
-| **Claude Desktop** | Desktop app | Native, full |
-| **Claude Code** | CLI agent | Native, full — best MCP integration |
-| **Cursor** | IDE | Full MCP support |
-| **Windsurf / Devin Desktop** | IDE | Full |
-| **VS Code + Copilot** | IDE | Full (2025) |
-| **Cline** | VS Code extension | Full |
-| **Continue.dev** | VS Code / JetBrains | Full |
-| **Zed** | Editor | Via ACP (MCP-compatible) |
-| **Warp** | Terminal | Full MCP support |
-| **OpenCode** | CLI | Full |
+| **modelcontextprotocol/servers** (reference: Fetch, Filesystem, Git, Memory…) | 91K | Official reference servers |
+| **Context7** (Upstash) | 63K | Up-to-date library docs for agents |
+| **Chrome DevTools MCP** | 53K | Performance traces, network, console in your real Chrome |
+| **Playwright MCP** | 38K | Browser automation (now inside Playwright) |
+| **GitHub MCP** | 33K | Issues, PRs, code search, Actions |
+| **MCP Toolbox for Databases** (Google) | 17K | Postgres, MySQL, BigQuery, Spanner… |
+| **Figma Context MCP** (community) · official Figma MCP | 16K · — | Design context; official server can now write to the canvas |
+| **AWS MCP** (awslabs) | 9.7K | AWS services |
+| **Firecrawl MCP** | 7.5K | Scrape, crawl, search |
+| **Exa MCP** | 5.1K | Semantic web search |
+| **Notion MCP** | 4.7K | Pages and databases |
+| **Cloudflare MCP** | 4.3K | Workers, R2, DNS… (plus hosted remote servers) |
+| **Supabase MCP** | 2.9K | Postgres, auth, storage, functions |
+| **Tavily MCP** | 2.4K | Search + extraction |
+| **Kubernetes MCP** | 2.1K | Cluster management |
+| **Slack MCP** (community) | 1.8K | Channels, messages, search |
+| **Brave Search MCP** | 1.5K | Web search |
+| **Atlassian MCP** | 1.1K | Jira + Confluence |
+| **Sentry MCP** | 0.9K | Errors and releases |
+| **Neon MCP** | 0.6K | Serverless Postgres, branches |
+| ~~Browserbase MCP~~ | 3.4K | **Archived** — use Stagehand or Playwright MCP |
 
-### Best MCP Servers by Category
+Design, browsing, memory and dev-workflow MCPs added this month (Paper, 21st.dev, shadcn, Serena, Agent-Reach…) → [SKILLS.md](./SKILLS.md#new-skills-plugins--mcps--sept-2026-wave).
 
-#### Developer Tools
-| Server | Stars | What It Does |
-|---|---|---|
-| **GitHub MCP** | 20K+ | Most-installed ever. Issues, PRs, code search, repo management from chat |
-| **GitLab MCP** | 5K+ | Same for GitLab — MRs, pipelines, issues |
-| **Sentry MCP** | 4K+ | Query errors, stack traces, releases from agent |
-| **Linear MCP** | 6K+ | Issues, sprints, projects — no more context-switching |
-| **Jira MCP** | 4K+ | Atlassian Jira issues and project management |
-| **Vercel MCP** | 3K+ | Deployments, domains, env vars |
-
-#### Data & Databases
-| Server | Stars | What It Does |
-|---|---|---|
-| **Supabase MCP** | 8K+ | Postgres queries, auth, storage, edge functions from agent |
-| **Neon MCP** | 3K+ | Serverless Postgres, branch creation, query execution |
-| **PostgreSQL MCP** | 5K+ | Direct Postgres schema inspection and queries |
-| **SQLite MCP** | 4K+ | Local SQLite interaction |
-| **Chroma MCP** | 4K+ | Vector DB — semantic document search from agent |
-
-#### Search & Research
-| Server | Stars | What It Does |
-|---|---|---|
-| **Brave Search MCP** | 6K+ | Web search without hitting rate limits |
-| **Exa MCP** | 5K+ | Semantic web search — best for research agents |
-| **Firecrawl MCP** | 5K+ | Web scraping + structured extraction |
-| **Tavily MCP** | 4K+ | Research-optimized search with citations |
-| **Fetch MCP** | 8K+ | Read any URL as clean markdown |
-
-#### Productivity & Comms
-| Server | Stars | What It Does |
-|---|---|---|
-| **Slack MCP** | 7K+ | Read/send messages, manage channels, search history |
-| **Notion MCP** | 6K+ | Read/write Notion pages and databases |
-| **Google Drive MCP** | 4K+ | List, read, upload files |
-| **Gmail MCP** | 3K+ | Read, send, search emails |
-| **HubSpot MCP** | 3K+ | CRM contacts, deals, notes |
-
-#### Browser & UI
-| Server | Stars | What It Does |
-|---|---|---|
-| **Playwright MCP** | 20K+ | Microsoft-built. Full browser control — navigate, click, screenshot |
-| **Puppeteer MCP** | 5K+ | Chrome automation from agent |
-| **BrowserBase MCP** | 4K+ | Cloud browser sessions — no local Chromium needed |
-| **Stagehand MCP** | 3K+ | Natural-language browser control |
-
-#### Infrastructure
-| Server | Stars | What It Does |
-|---|---|---|
-| **Cloudflare MCP** | 5K+ | DNS, Workers, R2, KV, Pages management |
-| **AWS MCP** | 5K+ | EC2, S3, Lambda, CloudWatch from agent |
-| **Docker MCP** | 4K+ | Container management — build, run, inspect |
-| **Kubernetes MCP** | 3K+ | Pod management, deployments, logs |
-
-**Creative / Design**
-
-| Server | Stars/Scale | What It Does |
-|---|---|---|
-| **Anthropic Creative Connectors** | 9 official | Claude for Creative Work (Apr 28 2026) — Blender, Adobe CC (50+ tools), Ableton, Autodesk Fusion, SketchUp, Affinity, Resolume, Splice. MCP-based → work in any MCP client, free on all plans |
-| **Figma Dev Mode MCP** | official | Figma's own Dev Mode server — pull design context (frames, variables, components) straight into the IDE/agent |
-| **Docker Hub MCP** | official | Docker's MCP catalog — discover/run containerized MCP servers in a sandbox |
-
-### MCP Apps (January 26, 2026)
-
-Anthropic launched **MCP Apps** — MCP servers can now render interactive UIs directly inside Claude's chat window. Not just text responses — actual interactive interfaces.
-
-Launch partners: Amplitude, Asana, Box, Canva, Clay, Figma, Hex, Monday.com, Slack, Salesforce.
-
-Example: Ask Claude "show my Linear sprint" → a Kanban board renders inline in the chat.
-
-### Remote MCP (2026 Growth)
-
-Remote MCP runs as hosted endpoints — no local server needed, connect via URL + auth token.
-
-| Provider | Remote MCP URL | Auth |
-|---|---|---|
-| Vercel | mcp.vercel.com | OAuth |
-| Neon | mcp.neon.tech | API key |
-| HubSpot | mcp.hubspot.com | OAuth |
-| Atlassian | mcp.atlassian.com | OAuth |
-| Linear | mcp.linear.app | API key |
-| Sentry | mcp.sentry.io | API key |
-| Cloudflare | 13 hosted servers (~2,500 API endpoints) | OAuth |
-
-Remote MCP grew from 16 servers (Jan 2026) → 25+ (Apr 2026). All major dev platforms now have remote endpoints. **Cloudflare** ships the widest first-party set — 13 remote servers spanning ~2,500 API endpoints (Workers, R2, KV, DNS, Radar, etc.).
-
-### Build Your Own MCP Server
-
-```python
-# Python MCP server — minimal example
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
-from mcp import types
-
-app = Server("my-server")
-
-@app.list_tools()
-async def list_tools():
-    return [types.Tool(
-        name="get_data",
-        description="Fetch data from my service",
-        inputSchema={"type": "object", "properties": {
-            "query": {"type": "string"}
-        }}
-    )]
-
-@app.call_tool()
-async def call_tool(name: str, arguments: dict):
-    if name == "get_data":
-        return [types.TextContent(type="text", text=f"Result for: {arguments['query']}")]
-
-async def main():
-    async with stdio_server() as (read, write):
-        await app.run(read, write, app.create_initialization_options())
-```
+### Add a server
 
 ```bash
-# Install MCP server in Claude Desktop
-# Add to ~/Library/Application Support/Claude/claude_desktop_config.json:
+# Claude Code
+claude mcp add github -- npx -y @modelcontextprotocol/server-github
+claude mcp add --transport http context7 https://mcp.context7.com/mcp
+
+# Any client that uses a JSON config (Claude Desktop, Cursor, Cline…)
 {
   "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "ghp_..." }
-    },
-    "supabase": {
-      "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase"],
-      "env": { "SUPABASE_URL": "...", "SUPABASE_KEY": "..." }
-    }
+    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"], "env": { "GITHUB_TOKEN": "ghp_..." } }
   }
 }
 ```
 
-### MCP Discovery
+### Build your own (Python)
 
-| Resource | URL | Count (Jun 2026) | Best for |
-|---|---|---|---|
-| Official registry | registry.modelcontextprotocol.io | canonical feed | Programmatic discovery; publish here first |
-| Glama catalog | glama.ai/mcp/servers | ~37K | Max coverage + verification tiers |
-| mcp.so | mcp.so | ~19.7K | Community/experimental servers |
-| Smithery | smithery.ai | ~7K | Clean app-store UX, 1-click + hosted remote |
-| PulseMCP | pulsemcp.com | ~18K (hand-reviewed) | Quality-filtered discovery |
-| Awesome MCP | github.com/punkpeye/awesome-mcp-servers | — | Curated list |
-| MCP Bundles | mcpbundles.com | — | Grouped server packs |
+```python
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP("my-server")
+
+@mcp.tool()
+def get_data(query: str) -> str:
+    """Fetch data from my service"""
+    return f"Result for: {query}"
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+### Where to find servers
+
+| Directory | Best for |
+|---|---|
+| registry.modelcontextprotocol.io (7.3K★ repo) | Official registry — publish here first |
+| github.com/punkpeye/awesome-mcp-servers (96K★) | Largest curated list |
+| glama.ai/mcp/servers · smithery.ai · pulsemcp.com · mcp.so | Searchable catalogs, hosted/remote servers |
+| Claude plugin directory · claudemarketplaces.com | Plugins bundling MCP + skills |
 
 ---
 
-## BYOK Setup
-
-Best free combo: **OpenCode + Qwen3-Coder 480B on OpenRouter `:free`** = 78% quality, $0
+## BYOK Recipes
 
 ```bash
-OPENROUTER_API_KEY=sk-or-... opencode --model qwen/qwen3-coder-480b:free
-```
+# Free: OpenCode + Token Harbor free model (OpenAI-compatible)
+# add a provider in opencode.json (see FREE-ACCESS.md), then pick deepseek-v4.1-flash:free
 
-Best paid combo: **Aider + DeepSeek V4 Pro** = 80.6% quality, $1.98-3.96/M out (off-peak/peak, GA pricing since Aug 16 — see [MODELS.md](./MODELS.md))
+# Free: OpenCode + OpenRouter free model
+OPENROUTER_API_KEY=sk-or-... opencode   # then /models → any ":free" model
 
-```bash
-OPENAI_BASE_URL=https://openrouter.ai/api/v1 \
-OPENAI_API_KEY=sk-or-... \
-aider --model openai/deepseek/deepseek-v4-pro
-```
+# Cheap: Aider + DeepSeek V4.1 Flash ($0.60/M out off-peak)
+OPENAI_BASE_URL=https://api.deepseek.com OPENAI_API_KEY=sk-... aider --model openai/deepseek-flash
 
-SSH remote with JCode:
-
-```bash
-ANTHROPIC_API_KEY=sk-ant-... jcode --host user@remote.server
+# Local: any agent → Ollama's OpenAI-compatible endpoint at http://localhost:11434/v1
 ```
 
 ---
 
 ## Deprecated / Retiring
 
-| Tool | Status | Replace With |
+| Tool | Status | Use instead |
 |---|---|---|
-| Windsurf | Rebranded June 2 (Cognition/Devin merge, confirmed via windsurf.com → devin.ai redirect) | Devin Desktop |
-| Cascade engine | EOL July 1 (not re-checked this pass) | Devin Local |
-| Amazon Q Developer | Replaced May 2026 (not re-checked this pass) | Kiro |
-| Gemini CLI (free, AI Pro/Ultra) | Stopped serving June 18, 2026 (Google Developers Blog); still works with paid API keys | Antigravity CLI |
-| ZCode (Z.ai) | Silent workspace uploads disclosed Sept 18 — see [NEWS.md](./NEWS.md) | Any other agent; GLM via API / OpenCode / Cline |
+| Gemini CLI (free, AI Pro/Ultra) | Stopped serving June 18, 2026; paid API keys only | Antigravity CLI |
+| ZCode (Z.ai) | Silent repo uploads (Sept 18) | Any other agent; GLM via API / OpenCode / Cline |
+| Roo Code · Void | Archived | Cline / Kilo Code · Zed / VS Code |
+| Flowise | Repo archived Aug 2026 | Langflow / n8n |
+| Windsurf | Rebranded to Devin Desktop (June 2) | Devin Desktop |
 | DeepSeek V4 Flash | Retired Sept 10 | DeepSeek V4.1 Flash (`deepseek-flash`) |
-| OpenAI Sora API | Sunset Sept 24, 2026 | Veo 3.1 / Kling 3.0 / Runway Gen-4 |
+| OpenAI Sora | App closed Apr 26; API shut down Sept 24 | Gemini Omni Flash / Kling 4.0 / Veo 3.1 |
+| Google Imagen | Shut down Aug 17 | Nano Banana 2 (Gemini 3.1 Flash Image) |
+| InstantDB cloud | Acquired by OpenAI; closes Aug 31, 2027 | Self-host / Convex / Supabase |
+| Mocha · Motiff | Shut down / discontinued | See [FRONTEND.md](./FRONTEND.md) |
 
 ---
 
-## Part 6 — AI Website Builders
+## Part 6 — Website & App Builders → moved
 
-AI website builders split into three lanes in 2026: **design-first** (Framer, Webflow), **all-in-one business** (Wix AI, Hostinger, Durable), and **code-first full-stack** (Lovable, Bolt.new, V0, Base44).
-
-### Code-First / Full-Stack Builders
-
-| Tool | URL | Stack Output | Deploys To | Free Tier | Monthly |
-|---|---|---|---|---|---|
-| **Lovable** | lovable.dev | React + Supabase auth + DB | Lovable CDN / GitHub | 5 projects | $20+ |
-| **Bolt.new** | bolt.new | React/Vue/Svelte/Next.js | Netlify / StackBlitz | Limited tokens | $20+ |
-| **V0** | v0.dev | React + shadcn/ui + Tailwind | Vercel 1-click | 200 credits/mo | $20+ |
-| **Base44** | base44.com | Full-stack (Wix-owned) | Built-in hosting | Yes | $16+ |
-| **Create.xyz** | create.xyz | React web apps | Built-in | Yes | $15+ |
-| **Replit Agent** | replit.com | Any stack | Replit hosting | Yes | $25+ |
-
-**Lovable** is the most complete for entrepreneurs — generates exportable React code with Supabase auth and DB from a single prompt. Can push to GitHub.
-
-**V0** is the developer pick — produces production-quality React + shadcn/ui components, one-click Vercel deploy. Best for frontend acceleration.
-
-**Base44** (acquired by Wix 2025) — includes built-in database, auth, and hosting. No external services needed. Best all-in-one for internal tools.
-
-### Design-First Builders
-
-| Tool | URL | Best For | Export Code | CMS | Monthly |
-|---|---|---|---|---|---|
-| **Framer** | framer.com | Marketing sites, SaaS landing pages | No (platform-locked) | Basic | $15+ |
-| **Webflow** | webflow.com | Content-heavy, editorial, CMS | Yes (clean HTML/CSS) | Best-in-class | $18+ |
-| **Draftly.space** | draftly.space | Cinematic 3D scroll-driven sites | Yes (ZIP + GitHub) | No | Early access |
-| **Readdy** | readdy.ai | Quick no-code sites | Partial | No | Free |
-
-**Draftly.space** — 3D cinematic website builder. Full pipeline: pick a preset → describe visual atmosphere → AI generates a cinematic keyframe → converts to 8-second video → extracts 400 frames → builds scroll-reactive parallax site → outputs ZIP (HTML/CSS/JS + Express backend starter). No WebGL, no Three.js — pure native browser scroll with frame interpolation. Works on every device and browser.
-
-Key features:
-- **Multi-Video Continuation** — chain multiple videos end-to-end for longer scroll animations
-- **Iterative Chat Editing** — change copy, colors, sections via chat without rebuilding
-- **Product Injection** — upload product photos, tell AI where to place them in 3D
-- **Adjustable FPS** — 10–40 FPS slider controls frame density and scroll speed
-- **Preset Gallery** — production-ready presets: Mindloop (newsletter), Power AI (dark hero), Halo (fintech), Targo (logistics), and more
-
-Built in India. Beta. Export: ZIP download with full frontend + Express API backend starter.
-
-**Framer** — pre-Series-A standard for SaaS landing pages. Smooth animations, modern typography, responsive. AI layout generation built in.
-
-### All-in-One / Business Builders
-
-| Tool | URL | Best For | AI Features |
-|---|---|---|---|
-| **Wix AI** | wix.com | Beginners, small business | AI site generator, ADI |
-| **Squarespace AI** | squarespace.com | Portfolios, e-commerce | AI text + layout |
-| **Hostinger** | hostinger.com/website-builder | Budget, fast deployment | AI site creator |
-| **Durable** | durable.co | Micro-businesses, 30-second sites | Full AI generation |
-| **Webstudio** | webstudio.is | Webflow open-source alternative | Visual builder |
-
-### Choosing a Builder
-
-| Use Case | Best Tool |
-|---|---|
-| SaaS landing page, polished | Framer |
-| Full-stack web app + auth + DB | Lovable |
-| React components, developer workflow | V0 |
-| Max framework flexibility | Bolt.new |
-| Content-heavy, SEO-critical | Webflow |
-| 3D / cinematic / portfolio | Draftly.space |
-| Budget + fast | Hostinger / Durable |
-| Internal tools, no-code | Base44 |
-
-> SEO caveat: Most code-first AI builders generate SPAs that are hard for Google to crawl. For SEO-critical sites use Webflow or server-render via Next.js.
+AI app builders, UI design generators, design-to-code and no-code site builders now live in one verified place: **[FRONTEND.md](./FRONTEND.md)** (Bolt, Lovable, v0, Google Stitch, Claude Design, Framer, Webflow, Draftly.space and more).
 
 ---
 
-## Part 7 — Deployment Platforms
+## Part 7 — Deployment & CI/CD
 
-Deployment platforms that expose REST APIs for automation — connect via API key, CI/CD pipelines, or CLI.
+Managed hosting (Vercel, Cloudflare, Netlify, Render, Railway, Fly.io, Sevalla, Zeabur, Koyeb…) with verified free tiers is in **[BACKEND.md → Hosting](./BACKEND.md#part-3--hosting--deploy--paas)**. This part covers self-hosted PaaS, CI/CD and deploy APIs.
 
-### Managed PaaS (Hosted)
+### Self-Hosted PaaS (run on your own VPS)
 
-| Platform | URL | API | Free Tier | Best For | Pricing |
-|---|---|---|---|---|---|
-| **Vercel** | vercel.com | REST + CLI | Yes (hobby) | Next.js, frontend, edge functions | $20/mo pro |
-| **Railway** | railway.app | REST + CLI | $5 credit/mo | Full-stack apps, fastest DX | Usage-based |
-| **Render** | render.com | REST API | Yes (750hr/mo) | Reliable backend, auto-scaling | $7/mo+ |
-| **Fly.io** | fly.io | `flyctl` CLI + API | No (removed 2024) | Global edge, multi-region | Usage-based |
-| **Netlify** | netlify.com | REST API | Yes | Static + Jamstack, serverless fns | $19/mo pro |
-| **Heroku** | heroku.com | REST API | No | Legacy, established ecosystem | $5/mo+ |
-| **Deno Deploy** | deno.com/deploy | GitHub push | Yes | Deno / TypeScript edge | $10/mo+ |
-| **Cloudflare Pages** | pages.cloudflare.com | Wrangler CLI + API | Yes (unlimited) | Static + Workers, global CDN | Free / $5+ |
-
-**Railway** — best developer experience. Code to production in under 60 seconds, no infra thinking. New default for greenfield projects.
-
-**Vercel** — unmatched for Next.js: Edge Functions, ISR, on-demand revalidation, image optimization, Edge Config. One-click deploy from GitHub.
-
-**Fly.io** — best for global multi-region apps needing low latency everywhere. Firecracker VMs, deep networking control. Removed free tier in 2024.
-
-**Render** — the "boring reliable one." Auto-scales, managed PostgreSQL, Redis, background workers. Good for teams that want zero infra ops.
-
-### Self-Hosted PaaS (Run on Your VPS)
-
-| Platform | URL | Stars | API Support | Best For |
+| Platform | ⭐ Stars (live) | What | Cost | Link |
 |---|---|---|---|---|
-| **Coolify** | coolify.io | 40K+ | REST API (full) | Modern Heroku replacement, 280+ services |
-| **Dokku** | dokku.com | 29K+ | CLI + plugin API | Minimal, git-push deploy, battle-tested |
-| **CapRover** | caprover.com | 14K+ | Experimental REST | Docker Swarm, one-click app store |
-| **Dokploy** | dokploy.com | 12K+ | REST API | Docker Compose + Swarm, newer/faster |
-| **Kamal** | kamal-deploy.org | 13K+ | SSH-based | Rails-native, Docker deploy via SSH |
+| ★ **Coolify** | 62K | Heroku/Vercel-style UI, REST API, 280+ one-click services | Free self-hosted (all features) · Cloud $5/mo | coolify.io |
+| **Dokploy** | 38K | Docker Compose + Swarm, fast UI | Self-host free · Cloud from $4.50/mo per server | dokploy.com |
+| **Dokku** | 32K | Git-push PaaS, Heroku buildpacks, CLI-driven | Free (Dokku Pro from $10/mo) | dokku.com |
+| **CapRover** | 15K | Docker Swarm, one-click app store, automatic HTTPS | Free | caprover.com |
+| **Kamal** (Basecamp) | 15K | Deploy Docker containers to any server over SSH | Free | kamal-deploy.org |
 
-**Coolify** — most recommended for 2026. Beautiful UI, REST API with Bearer token auth (root/write/deploy/read permission levels), supports databases, queues, monitoring, AI/vector DB tools. Deploy anything on a $6/mo VPS.
+### CI/CD
 
-**Dokku** — Unix-first, CLI-driven. Heroku buildpack compatible. Minimal resource overhead. Ideal if you want git-push deploys without a UI.
-
-### Database / Backend-as-a-Service
-
-| Platform | URL | API Key | Type | Free Tier |
-|---|---|---|---|---|
-| **Supabase** | supabase.com | Yes | Postgres + auth + storage + realtime | Yes (2 projects) |
-| **Neon** | neon.tech | Yes | Serverless Postgres, branching | Yes |
-| **PlanetScale** | planetscale.com | Yes | MySQL (Vitess), serverless | Yes |
-| **Turso** | turso.tech | Yes | SQLite edge (LibSQL) | Yes (500 DBs) |
-| **Upstash** | upstash.com | Yes | Redis + Kafka + Vector, serverless | Yes |
-| **MongoDB Atlas** | mongodb.com/atlas | Yes | MongoDB, multi-cloud | Yes (512MB) |
-| **Fauna** | fauna.com | Yes | Document + relational hybrid | Yes |
-| **Xata** | xata.io | Yes | Postgres + search + AI | Yes |
-
-### CI/CD & Automation
-
-| Tool | URL | API | Free For OSS |
+| Tool | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|
-| **GitHub Actions** | github.com/features/actions | REST API | Yes (public repos) |
-| **GitLab CI** | gitlab.com | REST API | Yes |
-| **Buildkite** | buildkite.com | REST API | No |
-| **CircleCI** | circleci.com | REST API | Yes (limited) |
-| **Depot** | depot.dev | CLI + API | No | Fast Docker builds (10x faster) |
-| **Earthly** | earthly.dev | CLI | Yes | Reproducible builds |
+| ★ **GitHub Actions** | Free for public repos; included minutes on private | Per-minute | github.com/features/actions |
+| **GitLab CI** | Free tier (400 compute minutes/mo, 5 users/group) | Premium $29/user/mo | gitlab.com/pricing |
+| **CircleCI** | **6,000 build minutes/mo**, 5 active users; OSS up to 400K credits/mo | Performance $15/mo | circleci.com/pricing |
+| **Buildkite** | Up to 5 users, 10 concurrent jobs, 2,000 Linux vCPU min | Pro $30/active user/mo | buildkite.com/pricing |
+| **Depot** | 7-day trial | Developer $20/mo | depot.dev/pricing |
+| ~~Earthly~~ | Repo inactive since Oct 2025 | — | github.com/earthly/earthly |
 
-### Deployment via API — Quick Reference
+### Deploy via API — quick reference
 
 ```bash
-# Vercel — deploy via API
+# Vercel
 curl -X POST https://api.vercel.com/v13/deployments \
-  -H "Authorization: Bearer $VERCEL_TOKEN" \
-  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" -H "Content-Type: application/json" \
   -d '{"name":"my-app","gitSource":{"type":"github","repoId":"...","ref":"main"}}'
 
-# Railway — trigger deployment
+# Railway (GraphQL)
 curl -X POST https://backboard.railway.app/graphql/v2 \
   -H "Authorization: Bearer $RAILWAY_TOKEN" \
   -d '{"query":"mutation { deploymentTrigger(input:{serviceId:\"...\"}){id} }"}'
 
-# Coolify — deploy via REST API
+# Coolify
 curl -X POST https://your-coolify.com/api/v1/deploy \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" \
-  -d '{"uuid":"app-uuid","force":false}'
+  -H "Authorization: Bearer $COOLIFY_TOKEN" -d '{"uuid":"app-uuid","force":false}'
 
-# Render — trigger deploy hook
-curl -X POST https://api.render.com/deploy/$RENDER_DEPLOY_HOOK_ID?key=$RENDER_DEPLOY_KEY
+# Render deploy hook
+curl -X POST "https://api.render.com/deploy/$RENDER_DEPLOY_HOOK_ID?key=$RENDER_DEPLOY_KEY"
 ```
 
 ---
 
-## Part 8 — Code Quality & Static Analysis
+## Part 8 — Code Quality, AI Review & Security
 
-Tools for automated code review, linting, security scanning, and technical debt tracking.
+### Code quality platforms
 
-### Code Quality Platforms
-
-| Tool | URL | Type | Languages | CI Integration | Free For OSS |
-|---|---|---|---|---|---|
-| **SonarQube** | sonarqube.org | SAST + quality | 30+ | GitHub, GitLab, Jenkins | Community edition |
-| **Sonar Cloud** | sonarcloud.io | Hosted SonarQube | 30+ | GitHub Actions native | Yes (public repos) |
-| **CodeClimate** | codeclimate.com | Quality + coverage | JS/TS, Ruby, Python | GitHub PR checks | Yes (OSS) |
-| **Codacy** | codacy.com | Quality + security | 40+ | GitHub, GitLab, Bitbucket | Yes (OSS) |
-| **DeepSource** | deepsource.com | Autofix + quality | 12+ | GitHub, GitLab | Yes (OSS) |
-| **Qodana** | jetbrains.com/qodana | JetBrains IDE rules | 60+ | GitHub Actions | Yes (OSS) |
-| **Qlty** | qlty.sh | Multi-tool wrapper | 50+ | GitHub PR inline | Yes |
-
-### AI-Powered Code Review
-
-| Tool | URL | How It Works | Free |
+| Tool | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|
-| **CodeRabbit** | coderabbit.ai | AI reviews every PR, line-level comments | Yes (OSS) |
-| **Graphite Agent** | graphite.dev | AI stack + review acceleration | No |
-| **Greptile** | greptile.com | Codebase-aware AI reviewer | No |
-| **Sourcery** | sourcery.ai | Python refactoring + review | Yes (limited) |
-| **Sweep AI** | sweep.dev | AI turns issues into PRs | Yes (OSS) |
+| ★ **SonarQube Cloud** | Free up to 50K lines of code (private too) | Team $34/mo | sonarcloud.io/pricing |
+| **Qlty** | Free $0; **free for K-12 & universities** | Pro $20/contributor/mo | qlty.sh/pricing |
+| **Code Climate** | 1,000 analysis minutes + 100 AI autofixes/mo; free for schools | Pro $20/contributor/mo | codeclimate.com/pricing |
+| **Codacy** | Free forever for open source | Paid plans | codacy.com/pricing |
+| **DeepSource** | 14-day trial + $50 AI review credits | Team $24/user/mo | deepsource.com/pricing |
+| **Qodana** (JetBrains) | Free for open source; 30-day trial | Standard $5/developer | jetbrains.com/qodana |
 
-### Security Scanners (SAST/SCA)
+### AI code review
 
-| Tool | URL | Focus | Free |
+| Tool | Free | Paid | Link |
 |---|---|---|---|
-| **Snyk Code** | snyk.io | SAST + SCA + container | Yes (limited) |
-| **Semgrep** | semgrep.dev | Custom rules, SAST, secrets | Yes (OSS) |
-| **Trivy** | trivy.dev | Container + IaC + SBOM | Yes (OSS) |
-| **Gitleaks** | gitleaks.io | Secrets scanning in git history | Yes (OSS) |
-| **TruffleHog** | trufflesecurity.com | Secrets + credential detection | Yes (OSS) |
-| **OWASP Dependency-Check** | owasp.org | SCA, CVE matching | Yes (OSS) |
-| **Aikido** | aikido.dev | All-in-one AppSec platform | Yes (limited) |
+| ★ **CodeRabbit** | 14-day trial; free education plan for public repos | Essentials $24/mo | coderabbit.ai/pricing |
+| **Greptile** | Free for 1 developer (50 credits/mo); free for MIT/Apache non-commercial projects | Pro $30/seat/mo | greptile.com/pricing |
+| **Graphite** | Hobby free | Starter $20/user/mo | graphite.dev/pricing |
+| **Sourcery** | Free forever for public repos | Pro $12/dev/mo | sourcery.ai/pricing |
+| **Claude Code / Codex / Copilot review** | Built into those agents (`/review`, PR review) | Your plan | — |
 
-### Language-Specific Linters
+### Security scanners
 
-| Language | Tool | Notes |
-|---|---|---|
-| JavaScript/TypeScript | ESLint + Prettier | Standard combo, 40M+ weekly downloads |
-| Python | Ruff | Rust-based, 100x faster than flake8+isort |
-| Python | mypy | Static type checking |
-| Go | golangci-lint | 50+ linters bundled |
-| Rust | Clippy | Built into rustup |
-| Java | Checkstyle + SpotBugs | Google/Sun style + bug patterns |
-| C/C++ | clang-tidy + cppcheck | LLVM-based analysis |
-| Ruby | RuboCop | Style + lint + autocorrect |
-| PHP | PHPStan + Psalm | Static analysis |
-| Terraform | tflint + tfsec | IaC lint + security |
-| Docker | Hadolint | Dockerfile best practices |
-| SQL | sqlfluff | Dialect-aware SQL linter |
-| Markdown | markdownlint | Consistency for docs |
+| Tool | ⭐ (live) | Free | Link |
+|---|---|---|---|
+| ★ **Semgrep** | 17K | Community Edition free | semgrep.dev |
+| ★ **Trivy** | 38K | Open source (containers, IaC, SBOM) | trivy.dev |
+| ★ **Gitleaks** | 30K | Open source secrets scanner | gitleaks.io |
+| **TruffleHog** | 28K | Open source; Enterprise paid | trufflesecurity.com |
+| **Snyk** | — | Free plan (SCA, SAST, IaC, container) | snyk.io/pricing (Team $25/mo) |
+| **Aikido** | — | Developer: free forever, 2 users | aikido.dev/pricing (Basic $350/mo) |
+| **OWASP Dependency-Check** | — | Open source SCA | owasp.org/www-project-dependency-check |
 
-### Recommended Stack (2026)
+### Language linters (all free & open source)
 
-```
-Code Quality:    SonarCloud (free for OSS) or Codacy
-AI Review:       CodeRabbit (free for OSS) on every PR
-Security:        Semgrep (SAST) + Trivy (containers) + Gitleaks (secrets)
-Linting:         Language-native (Ruff/ESLint/golangci-lint)
-Pre-commit:      pre-commit hooks → lint + format + secrets scan
-CI Gate:         Quality gate blocks merge if issues > threshold
-```
+| Language | Tool |
+|---|---|
+| JavaScript / TypeScript | ESLint + Prettier, or Biome |
+| Python | Ruff (lint + format), mypy / pyright (types) |
+| Go | golangci-lint |
+| Rust | Clippy |
+| Java | Checkstyle + SpotBugs |
+| C / C++ | clang-tidy + cppcheck |
+| Ruby | RuboCop |
+| PHP | PHPStan / Psalm |
+| Terraform | tflint + Trivy (tfsec merged into Trivy) |
+| Docker | Hadolint |
+| SQL | sqlfluff |
+| Markdown | markdownlint |
 
 ```yaml
-# .github/workflows/quality.yml
+# .github/workflows/quality.yml — free for public repos
 name: Code Quality
 on: [pull_request]
 jobs:
@@ -886,361 +444,158 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run Ruff (Python)
-        run: pip install ruff && ruff check .
-      - name: Semgrep SAST
-        uses: semgrep/semgrep-action@v1
-        with:
-          config: p/default
-      - name: Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: fs
-          severity: HIGH,CRITICAL
-      - name: Gitleaks secrets scan
-        uses: gitleaks/gitleaks-action@v2
+      - run: pip install ruff && ruff check .
+      - uses: semgrep/semgrep-action@v1
+        with: { config: p/default }
+      - uses: aquasecurity/trivy-action@master
+        with: { scan-type: fs, severity: "HIGH,CRITICAL" }
+      - uses: gitleaks/gitleaks-action@v2
 ```
 
 ---
 
-## Part 9 — No-Code / Low-Code Agent Builders
+## Part 9 — Agent Builders, Frameworks & Browser Agents
 
-Visual platforms for building AI workflows, RAG pipelines, and multi-agent systems without writing infrastructure code.
+### No-code / low-code workflow builders
 
-### Workflow & Automation Builders
-
-| Platform | URL | Stars | Type | Self-Host | Free Tier | Monthly |
-|---|---|---|---|---|---|---|
-| **n8n** | n8n.io | 150K+ | Workflow automation + AI agents | Yes | Yes (cloud trial) | $24+ |
-| **Dify** | dify.ai | 136K+ | LLM app / RAG / chatbot builder | Yes | Yes (200k tokens/mo) | $59+ |
-| **Langflow** | langflow.org | 146K+ | Visual agent + RAG builder (Python) | Yes | Yes | $39+ |
-| **Flowise** | flowiseai.com | 51K+ | LLM pipeline visual builder | Yes | Yes | $35+ |
-| **Activepieces** | activepieces.com | 18K+ | Zapier-like + AI agents | Yes | Yes | $99+ |
-| **Stack AI** | stack-ai.com | — | Enterprise no-code AI builder | No | No | $199+ |
-| **Zapier AI** | zapier.com | — | AI actions on 7,000+ integrations | No | Yes (limited) | $20+ |
-| **Gumloop** | gumloop.com | — | No-code AI agents for non-devs, 130+ integrations | No | Yes | $97+ |
-| **Lindy** | lindy.ai | — | No-code AI agents/assistants for non-devs (email, meetings, CRM) | No | Yes (limited) | $49+ |
-
-**n8n** — default for enterprise workflow automation. Visual + code mode. Built-in AI agents, human-in-the-loop steps, TypeScript extensibility. 150K+ stars, most mature.
-
-**Dify** — best for chat-first RAG apps. Built-in knowledge base, multiple model support, app publishing. Simple enough for non-developers.
-
-**Langflow** — Python-first, developer-friendly. Best for RAG pipelines and complex agent graphs. Drag-and-drop + code hybrid.
-
-**Flowise** — LangChain visual. Wire vector store + model + tools in one screen. Perfect for local model setups via Ollama.
-
-**Gumloop** — fastest-rising no-code agent builder. $50M Series B led by Benchmark (Mar 2026, ~$70M total), YC-backed. Customers: Shopify, Ramp, Gusto, Instacart, Opendoor, Samsara. Model-agnostic — the pitch vs n8n is hosted speed + non-technical UX.
-
-**2026 enterprise pattern**: n8n as orchestration layer → Langflow/Flowise as AI reasoning layer.
-
-### AI Agent Frameworks (Code-Level)
-
-| Framework | URL | Stars | Language | Best For |
+| Platform | ⭐ (live) | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|---|
-| **LangChain** | langchain.com | 145K+ | Python/JS | Multi-step agents, RAG, tracing |
-| **LlamaIndex** | llamaindex.ai | 40K+ | Python | Data connectors, RAG, knowledge graphs |
-| **CrewAI** | crewai.com | 35K+ | Python | Multi-agent role-based teams |
-| **AutoGen** | microsoft.github.io/autogen | 45K+ | Python | Microsoft multi-agent conversations |
-| **Semantic Kernel** | github.com/microsoft/semantic-kernel | 25K+ | C#/Python/Java | Microsoft enterprise AI orchestration |
-| **Haystack** | haystack.deepset.ai | 22K+ | Python | Production RAG, pipelines |
-| **DSPy** | dspy.ai | 26K+ | Python | Programmatic LLM optimization |
-| **Instructor** | python.useinstructor.com | 12K+ | Python | Structured outputs from LLMs |
-| **Pydantic AI** | ai.pydantic.dev | 14K+ | Python | Type-safe agent construction |
-| **Mastra** | mastra.ai | 22K+ | TypeScript | **TS leader** — workflows, HITL, Next.js (YC W25, v1.0 Jan 2026) |
-| **OpenAI Agents SDK** | openai.github.io/openai-agents-python | — | Python/JS | OpenAI-native handoffs (Swarm successor, model-locked) |
-| **Google ADK** | google.github.io/adk-docs | — | Python | Gemini-optimized, A2A interop (can call LangGraph/CrewAI agents) |
-| **Microsoft Agent Framework (MAF)** | github.com/microsoft/agent-framework | — | Python/.NET | Unified AutoGen + Semantic Kernel successor. **1.0 GA Apr 2026** — both predecessors now maintenance-only |
-| **Agno** (ex-Phidata) | agno.com | 39K+ | Python | High-throughput agent swarms. Most-starred pure-agent framework |
-| **VoltAgent** | voltagent.dev | ~2K | TypeScript | Observability-first TS framework — typed tools, MCP + A2A, VoltOps console (addthis claims 26K — unverified, sourced count ~1.5K Apr 2026) |
-| **OpenAgents** | github.com/openagents-org/openagents | — | Python | Multi-agent *network* platform — native MCP + A2A, shared browser/workspace, Launcher daemon |
-| **Vercel AI SDK** | sdk.vercel.ai | — | TypeScript | Full-stack TS agents, streaming UI |
+| ★ **n8n** | 206K | Community Edition free self-hosted | Cloud Starter $20/mo (50% off for startups <20 staff) | n8n.io/pricing |
+| ★ **Dify** | 157K | Sandbox: 200 message credits, 5 apps; self-host free | Paid cloud plans | dify.ai/pricing |
+| ★ **Langflow** | 155K | Free (open source + cloud) | — | langflow.org |
+| **Activepieces** | 25K | **100 credits/day, free forever**, no card | Plus $20/mo | activepieces.com/pricing |
+| **Zapier** | — | 100 tasks/mo (AI steps use the same tasks) | Professional $19.99/mo | zapier.com/pricing |
+| **Stack AI** | — | 500 runs/mo, 2 projects | Enterprise | stack-ai.com/pricing |
+| **Gumloop** | — | 14-day trial | Pro $37/mo | gumloop.com/pricing |
+| **Lindy** | — | 7-day trial | Plus $29.99/mo | lindy.ai/pricing |
+| **AgentCrafters.ai** | — | Plain-English agents on 36 everyday tools (early-stage) | — | agentcrafters.ai |
+| ~~Flowise~~ | 55K | **Repository archived (Aug 2026)** — migrate to Langflow or n8n | — | github.com/FlowiseAI/Flowise |
 
-**Decision guide (2026):** complex stateful Python graphs → **LangGraph** (enterprise default: Klarna, Uber, JPMorgan) · fast multi-agent prototype → **CrewAI** (teams often graduate to LangGraph for checkpointing) · TypeScript → **Mastra** · type-safe Python → **Pydantic AI** · RAG-heavy → **LlamaIndex** · Microsoft/.NET → Microsoft Agent Framework. Pair any with an observability stack (LangSmith / Langfuse / Pydantic Logfire / AgentOps).
+### Code-level agent frameworks
 
-### Browser / Web Agents
-
-| Tool | URL | Stars | What It Does |
+| Framework | ⭐ (live) | Language | Best for |
 |---|---|---|---|
-| **Browser-Use** | browser-use.com | 86K+ | LLM controls real browser (Playwright-based) |
-| **Stagehand** | github.com/browserbase/stagehand | 12K+ | AI web automation with natural language |
-| **Skyvern** | skyvern.com | 14K+ | Visual browser agent for form filling / scraping |
-| **Vercel agent-browser** | — | 27K+ | AI-native browser control in agent workflows |
-| **Playwright MCP** | github.com/microsoft/playwright-mcp | 20K+ | Playwright as MCP tool for agents |
+| **LangChain** / **LangGraph** | 147K / 42K | Python, JS | Stateful agent graphs — the enterprise default |
+| **Dify** / **Langflow** | see above | — | Visual + code |
+| **CrewAI** | 59K | Python | Role-based multi-agent teams (cloud: 50 executions/mo free) |
+| **LlamaIndex** | 52K | Python | Data connectors, RAG, document parsing (cloud: 10K credits free) |
+| **Agno** | 42K | Python | High-throughput agents; control plane free |
+| **DSPy** | 38K | Python | Programmatic prompt/weight optimisation |
+| **OpenAI Agents SDK** | 30K | Python, JS | OpenAI-native handoffs, tools, tracing |
+| **Mastra** | 28K | TypeScript | TS workflows + HITL (cloud free: 100K events) |
+| **Vercel AI SDK** | 27K | TypeScript | Full-stack TS agents, streaming UI |
+| **Haystack** | 27K | Python | Production RAG pipelines (v3.2) |
+| **Google ADK** | 22K | Python | Gemini-optimised, A2A interop; pairs with google/ax runtime |
+| **Pydantic AI** | 20K | Python | Type-safe agents, durable workflows |
+| **Instructor** | 14K | Python | Structured outputs |
+| **Microsoft Agent Framework** | 14K | Python, .NET | Successor to AutoGen + Semantic Kernel (1.0 GA Apr 2026) |
+| **VoltAgent** | 11K | TypeScript | Observability-first TS framework, MCP + A2A |
+| **OpenAgents** | 4K | Python | Multi-agent networks, MCP + A2A |
+| AutoGen · Semantic Kernel | 61K · 29K | Python/.NET | Maintenance mode → use Microsoft Agent Framework |
 
-**Browser Use** 89.1% WebVoyager (Python, SOTA) · **Stagehand** MIT, wraps Playwright with act/extract/observe/agent, ~60–70% less boilerplate, caching → near-zero cost on repeat runs (TS) · **Skyvern** vision-first 85.85% WebVoyager, handles CAPTCHA/2FA natively (best for RPA/forms).
+**Decision guide:** stateful Python graphs → LangGraph · fast multi-agent prototype → CrewAI · TypeScript → Mastra or Vercel AI SDK · type-safe Python → Pydantic AI · RAG-heavy → LlamaIndex · Microsoft/.NET → Microsoft Agent Framework. Trace everything with Langfuse / Logfire (see [MEDIA.md](./MEDIA.md#part-5--llmops-observability--evals--gateways)).
 
-> **DOM vs vision:** DOM-driven (Stagehand, Playwright+Claude) is 12–17pt more reliable on common tasks; vision-driven (Anthropic Computer Use, OpenAI CUA) unlocks canvas/image-only/anti-bot UIs. Production pattern: Playwright for the predictable 80%, AI agent for the weird 20%.
+### Browser / web agents
+
+| Tool | ⭐ (live) | Free | Link |
+|---|---|---|---|
+| ★ **Browser Use** | 117K | Open source; cloud $15 free credits, then model cost + 20% | browser-use.com |
+| ★ **Playwright MCP / CLI** | 38K | Free (ships inside Playwright) | github.com/microsoft/playwright-mcp |
+| **Vercel agent-browser** | 43K | Free CLI | agent-browser.dev |
+| **Stagehand v3** (Browserbase) | 25K | Free SDK | stagehand.dev |
+| **Skyvern** | 23K | 5,000 credits free | skyvern.com/pricing (Hobby $29/mo) |
+| **Browser Harness** · **Agent-Reach** · **Chrome DevTools MCP** | 18K · 86K · 53K | Free | see [SKILLS.md](./SKILLS.md#browsing--web-access-for-agents) |
+
+> DOM-driven tools (Playwright, Stagehand, agent-browser) are cheaper and more reliable on normal sites; vision/computer-use agents handle canvas-only or anti-bot pages. Common pattern: Playwright for the predictable 80%, an agent for the rest.
 
 ---
 
 ## Part 10 — Local Model Runners
 
-Run open-weight models entirely on your hardware. No API keys, no data leaving your machine.
+Run open-weight models on your own hardware — no API keys, no data leaving your machine.
 
-### Runtime Tools
-
-| Tool | URL | Stars | UI | GPU | Best For |
-|---|---|---|---|---|---|
-| **Ollama** | ollama.com | 140K+ | CLI + REST API | CUDA/Metal/ROCm | Default local runtime, widest model library |
-| **LM Studio** | lmstudio.ai | 38K+ | Desktop GUI | CUDA/Metal | Beginners, visual model browser, easy GPU offloading |
-| **Jan** | jan.ai | 28K+ | Desktop GUI | CUDA/Metal | OpenAI-compatible local server, privacy-first |
-| **GPT4All** | gpt4all.io | 74K+ | Desktop GUI | CPU/CUDA | Fully offline, no GPU required |
-| **llamafile** | github.com/mozilla-ai/llamafile | 24K+ | Single executable | CPU/CUDA | Single-file distribution, share models as executables. Org moved from `Mozilla-Ocho` to `mozilla-ai` — confirmed via link check, updated this pass |
-| **vLLM** | docs.vllm.ai | 50K+ | REST API server | CUDA (multi-GPU) | High-throughput production serving |
-| **llama.cpp** | github.com/ggml-org/llama.cpp | 82K+ | CLI | CPU/CUDA/Metal | Raw performance, all quantization levels. Moved from `ggerganov/llama.cpp` — updated this pass |
-| **Msty** | msty.app | — | Desktop GUI | CUDA/Metal | Beautiful UI, multi-model chats, Ollama companion |
-
-### Best Local Coding Models (June 2026)
-
-| Model | Params | VRAM | SWE-bench | Via |
+| Tool | ⭐ (live) | UI | Free / paid | Best for |
 |---|---|---|---|---|
-| **Qwen3-Coder-Next** | 80B (3B active MoE) | 16GB | ~70% | Ollama |
-| **Qwen3.6 27B MTP** | 27B | 24GB | ~67% | Ollama / LM Studio |
-| **Kimi K2.6** | — | 48GB+ | 80.2% | Ollama |
-| **DeepSeek-R1 32B** | 32B | 24GB | ~65% | Ollama |
-| **Gemma 4 31B QAT** | 31B | 20GB | ~62% | Ollama |
-| **EXAONE 4.5 33B** | 33B | 24GB | ~60% | Ollama |
-| **North Mini Code 1.0** | ~7B | 8GB | ~55% | Ollama |
-| **Phi-4 Mini** | 3.8B | 4GB | ~48% | Ollama |
+| ★ **Ollama** | 182K | CLI + REST API | Local free · cloud models with starter credits · Pro $20/mo ($60 usage) | Default local runtime; OpenCode/Cline integration |
+| ★ **llama.cpp** | 130K | CLI | Free | Raw performance, every quantisation |
+| ★ **LM Studio** + **Bionic** agent | closed source | Desktop | Free (local + Bionic agent) · Bionic+ $20/mo | Beginners; Bionic codes and works on documents locally |
+| **vLLM** | 93K | REST server | Free | High-throughput GPU serving |
+| **Jan** | 45K | Desktop | Free, open source | Privacy-first local server |
+| **SGLang** | 37K | REST server | Free | Fast structured serving |
+| **llamafile** (Mozilla.ai) | 26K | Single executable | Free | Ship a model as one file |
+| **Msty** | — | Desktop | Free to start; Studio paid | Multi-model chat UI |
+| ~~GPT4All~~ | 77K | Desktop | Repo inactive since May 2025 | Use Jan or LM Studio instead |
 
-**Qwen3-Coder-Next** — best local coding model in 2026. MoE architecture activates only 3B of 80B params — runs on a 16GB laptop, delivers ~70% SWE-bench. Recommended by r/LocalLLaMA.
+### Best Local Coding Models (Sept 2026)
 
-**Gemma 4 31B QAT** — Google's 4-bit quantized, fits 20GB VRAM, multimodal (understands screenshots, PDFs, diagrams). Good all-rounder.
+| Model | Size | Runs on | Coding scores (vendor) | Licence |
+|---|---|---|---|---|
+| **Qwen3.8-27B** (Aug 14) | 27B dense, vision, 262K ctx | One 24 GB GPU at 4-bit (~56 GB at BF16) | Terminal-Bench 2.1 73.0 · SWE-bench Pro 61.7 · LiveCodeBench v6 90.3 | Apache 2.0 |
+| **Laguna XS 2.1** (Poolside, Jul 2) | 33B MoE, 3B active | Laptop / single GPU (BF16, FP8, NVFP4, INT4 builds) | SWE-bench Verified 70.9 | OpenMDW-1.1 |
+| **Qwen3.6 27B** | 27B dense | One 24 GB GPU at 4-bit | SWE-bench Verified 77.2 | Apache 2.0 |
+| **Qwen3.8-Flash-Next** (Aug 26) | 125B MoE, 6B active | Workstation / multi-GPU | SWE-bench Pro 62.5 · Toolathlon 73.5 | Open weights (Qwen 4 architecture preview) |
+| **Laguna S 2.1** (Poolside, Jul 21) | 118B MoE, 8B active, 1M ctx | Workstation | Terminal-Bench 2.1 70.2 · DeepSWE 40.4 | OpenMDW-1.1 |
+| **Gemma 4 31B** | 31B dense | One 24 GB GPU at 4-bit | AIME 2026 89.2 · MMLU-Pro 85.2 | Gemma licence |
 
-**EXAONE 4.5 33B** — LG AI Research, open-weight multimodal. Useful for coding workflows where you also need to understand UI layouts and documentation.
-
-**North Mini Code 1.0** — purpose-built for code generation, agentic software engineering, and terminal tasks. Lightweight.
-
-### Quick Setup
+**Pick:** 24 GB GPU → **Qwen3.8-27B**; laptop → **Laguna XS 2.1**; big workstation → **Qwen3.8-Flash-Next**.
 
 ```bash
-# Ollama — install and run a model
+# Ollama — install, pull a model from ollama.com/library, serve an OpenAI-compatible API on :11434
 curl -fsSL https://ollama.com/install.sh | sh
-ollama run qwen3-coder           # best local coding model
-ollama run deepseek-r1:32b       # best local reasoning
-ollama serve                     # start API server on :11434
-
-# Use with any OpenAI-compatible client
-curl http://localhost:11434/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -d '{"model":"qwen3-coder","messages":[{"role":"user","content":"Write a binary search in Python"}]}'
-
-# Flowise connecting to Ollama
-# Set Base URL: http://localhost:11434 in Flowise Ollama node
-# Full offline AI pipeline: Flowise + Ollama + Qwen3-Coder
+ollama pull <model>          # pick the current tag for Qwen3.8 / Laguna / Gemma on ollama.com/library
+ollama serve
+curl http://localhost:11434/v1/chat/completions -H "Content-Type: application/json" \
+  -d '{"model":"<model>","messages":[{"role":"user","content":"Write a binary search in Python"}]}'
+# Then add http://localhost:11434/v1 as an OpenAI-compatible provider in OpenCode or Cline.
 ```
 
 ---
 
 ## Part 11 — Social Discovery
 
-Where to find new AI tools before they hit mainstream coverage.
+Where new tools show up before mainstream coverage. Treat everything found this way as a lead — verify price, availability and safety before relying on it (this archive checks every lead against a live page or repo before adding it).
 
-### How this archive uses social signals (updated 17 Aug 2026)
+### Reddit
 
-Recent Reddit discussions and the community gist surfaced free-tier routers and credit-gateway
-signup waves; Instagram reels surfaced OmniRoute, aerolink, Bluesminds, and the DeepSeek V4-Pro
-`0813` launch. The 17 Aug 2026 pass used those as **discovery only** — every recommendation that
-resulted (OmniRoute, NaraRouter, LongCat, aerolink — since removed for model substitution, etc.) was then cross-checked against a live
-page, the vendor's GitHub, or a benchmark operator before it was written into a table. No public
-Discord offer independently justified a new entry this pass; the Terminal-Bench Discord is linked
-by the benchmark project for feedback, not used as a score source. Social signals are leads, not
-proof of price, availability, or safety — verify before relying.
-
-### Reddit Communities
-
-| Subreddit | Focus | Members |
-|---|---|---|
-| r/LocalLLaMA | Local model testing, Ollama setups, benchmarks | 250K+ |
-| r/ChatGPTCoding | Practical AI coding workflows | 120K+ |
-| r/ClaudeAI | Claude-specific tips, jailbreaks, agentic use | 180K+ |
-| r/artificial | General AI news and discussion | 900K+ |
-| r/MachineLearning | Research papers, model releases | 3M+ |
-| r/SideProject | Developers sharing AI-built projects | 350K+ |
-| r/webdev | AI tool mentions in web development context | 2M+ |
-
-### Twitter/X Accounts to Follow (AI Tools)
-
-| Handle | What They Cover |
+| Subreddit | Focus |
 |---|---|
-| @AnthropicAI | Claude releases, agent SDK updates |
-| @OpenAI | GPT/o-series releases |
-| @karpathy | AI fundamentals, tool breakdowns |
-| @simonw | Practical AI tooling, LLM tricks (Simon Willison) |
-| @swyx | AI engineering, tool reviews |
-| @GergelyOrosz | Engineering tools, Pragmatic Engineer |
-| @hwchase17 | LangChain updates |
-| @yoheinakajima | BabyAGI, agent frameworks |
-| @amasad | Replit CEO — AI coding tools |
+| r/LocalLLaMA | Local models, quantisation, benchmarks |
+| r/ClaudeAI · r/ClaudeCode | Claude and Claude Code tips, plugins |
+| r/codex · r/ChatGPTCoding | Codex and general AI coding workflows |
+| r/hermesagent | Free-API audits and agent setups |
+| r/singularity | Model leaks and release rumours |
+| r/MachineLearning | Research papers |
+| r/SideProject · r/webdev | Things people built with AI |
 
-> Notable builders' actual Claude Code setups, skills & workflows → [SKILLS.md](./SKILLS.md#notable-builders-setups-skills--workflows).
+### X / Twitter
 
-### Product Hunt Leaderboards (2026)
+| Handle | Covers |
+|---|---|
+| @AnthropicAI · @OpenAI · @GoogleDeepMind · @deepseek_ai · @Kimi_Moonshot · @Alibaba_Qwen | Official release announcements |
+| @karpathy | AI fundamentals |
+| @simonw | Practical LLM tooling (Simon Willison) |
+| @swyx | AI engineering |
+| @GergelyOrosz | Engineering industry (Pragmatic Engineer) |
+| @hwchase17 | LangChain / agents |
+| @kimmonismus · @testingcatalog | Leaks and early feature sightings (rumours — verify) |
 
-| Category | URL | Updated |
-|---|---|---|
-| AI Coding Agents | producthunt.com/categories/ai-coding-agents | Daily |
-| AI Agents | producthunt.com/categories/ai-agents | Daily |
-| LLM Developer Tools | producthunt.com/categories/llm-developer-tools | Daily |
-| AI Infrastructure | producthunt.com/categories/ai-infrastructure | Daily |
+### Trackers & lists
 
-### GitHub Trending Lists
+| Resource | What |
+|---|---|
+| producthunt.com/categories/ai-coding-agents · /ai-agents | Daily launches |
+| trendshift.io · ossinsight.io/trending/ai | GitHub trending with history |
+| llm-stats.com/ai-news · artificialanalysis.ai | Model releases and independent benchmarks |
+| github.com/bradAGI/awesome-cli-coding-agents | CLI agents and harnesses |
+| github.com/caramaschiHG/awesome-ai-agents-2026 | Broad agent tool list |
 
 ```bash
-# Track trending AI repos via GitHub API
+# Trending AI-agent repos via the GitHub API
 curl "https://api.github.com/search/repositories?q=topic:llm+topic:agent&sort=stars&order=desc&per_page=20"
-
-# Curated awesome lists to watch:
-# github.com/caramaschiHG/awesome-ai-agents-2026     (340+ tools, 20+ categories)
-# github.com/bradAGI/awesome-cli-coding-agents        (CLI agents + harnesses)
-# github.com/PierrunoYT/awesome-ai-dev-tools          (IDEs, plugins, productivity)
-# github.com/kyrolabs/awesome-agents                  (open-source agents)
 ```
 
 ---
 
-## Part 12 — AI Video Generation (June 2026)
+## Parts 12–14 — Video, Music, UI Design → moved
 
-| Tool | URL | Best For | Pricing | Notes |
-|---|---|---|---|---|
-| **Veo 3.1** | labs.google.com/veo | Best overall quality | $0.35/sec | Google DeepMind. Strongest all-round fidelity |
-| **Runway Gen-4** | runwayml.com | Marketing, brand consistency | $0.40/sec | Reference image controls, Gen-4 Turbo fast mode |
-| **Kling 3.0 Omni** | klingai.com | Native audio + lip-sync | **$0.07/sec** | 5-language lip-sync, audio timeline. 65% cheaper than Sora was |
-| **Pika 2.0** | pika.art | Social creators | $8/mo+ | Pikaffects, Pikaswaps, Pikaformance lip-sync |
-| **Luma Dream Machine** | lumalabs.ai | Fast generations | $0.30/sec | Ray2 model — good motion physics |
-| **HeyGen** | heygen.com | Talking head / avatar | $29/mo | Corporate training, multilingual lip-sync |
-| **Synthesia** | synthesia.io | Enterprise video + avatars | $30/mo | 140+ languages, SOC 2, GDPR |
-| **Wan 2.2** | wan.video | Open-source | Free/self-host | Alibaba open-weight video model |
-| **Seedance** | seedance.ai | Action + detail | $0.25/sec | Baidu. Strong motion at low cost |
-
-> **Sora discontinued** — OpenAI ended Sora web/app April 26, 2026. API ends Sep 24, 2026. Migrate to Veo, Kling, or Runway.
-
-### Choosing a Video Tool
-
-| Use Case | Best Tool |
-|---|---|
-| Highest visual quality | Veo 3.1 |
-| Brand marketing, consistency | Runway Gen-4 |
-| Cheapest quality option | Kling 3.0 ($0.07/sec) |
-| Social media, effects | Pika 2.0 |
-| Corporate avatar video | HeyGen / Synthesia |
-| Open-source self-host | Wan 2.2 |
-
----
-
-## Part 13 — AI Music Generation (June 2026)
-
-| Tool | URL | Best For | Commercial License | Free Tier | Monthly |
-|---|---|---|---|---|---|
-| **Suno v5** | suno.com | Best quality, full songs | Restricted (personal) | 50 credits/day | $10+ |
-| **Udio** | udio.com | Inpainting, section edits | UMG-licensed (2026) | Yes | $10+ |
-| **ElevenLabs Music** | elevenlabs.io/music | Commercial + voice | ✅ Clean (licensed dataset) | No | $22+ |
-| **Stable Audio 2** | stability.ai/stable-audio | Sound design, instrumentals | ✅ Clean (AudioSparx) | Yes | $20+ |
-| **Loudly** | loudly.com | Background music | ✅ Royalty-free | Yes | $9+ |
-| **Mubert** | mubert.com | Streaming / live | ✅ Royalty-free | Yes | $14+ |
-| **Boomy** | boomy.com | Quick release | Partial | Yes | $10+ |
-
-**Suno v5** — ELO 1,293, highest audio fidelity. $2.45B valuation, $300M ARR, 2M paid subscribers. Best for quality-first non-commercial use.
-
-**Udio** — unique inpainting: regenerate specific track sections without affecting the rest. UMG settlement Oct 2025 → joint licensed platform 2026. Cleanest rights story after ElevenLabs.
-
-**ElevenLabs Music** — trained exclusively on licensed music (Merlin Network, Kobalt). Best pick for anything client-facing, monetized, or commercial.
-
-**Stable Audio 2** — best for instrumental beds and sound design. AudioSparx-licensed dataset, clear commercial framework.
-
-### Licensing Decision Tree
-
-```
-Is this commercial / client-facing / monetized?
-├── YES → ElevenLabs Music or Stable Audio 2 (clean licensing)
-└── NO (personal / non-commercial)
-    ├── Want highest quality? → Suno v5
-    ├── Need to edit specific sections? → Udio
-    └── Just need background music? → Loudly / Mubert
-```
-
----
-
-## Part 14 — AI UI / Design Tools (June 2026)
-
-Tools for generating UI screens, wireframes, prototypes, and converting designs to code.
-
-### UI Generation
-
-| Tool | URL | Input | Output | Best For | Free |
-|---|---|---|---|---|---|
-| **Figma AI** | figma.com | Text prompt | Editable Figma frames | Teams already on Figma | Figma plan |
-| **Google Stitch** | stitch.withgoogle.com | Text / image / voice / sketch | UI screens + code export (HTML/CSS/Tailwind/Vue/Flutter/SwiftUI) | Free. Best all-round for mobile+web | Yes — 350/mo standard, 50/mo pro |
-| **Uizard** | uizard.io | Text / sketch | Multi-screen prototypes | Rapid ideation, PMs | Yes |
-| **Visily** | visily.ai | Text / screenshot | Wireframes + components | Non-designer teams | Yes |
-| **Galileo AI** | usegalileo.com | Text prompt | High-fidelity designs | Figma-integrated | $19/mo |
-| **Relume** | relume.io | Text prompt | Webflow/Figma sitemaps | Agency website structures | $38/mo |
-| **Motiff** | motiff.com | Text prompt | Design + auto-layout | Figma competitor with AI | Yes |
-
-### Design to Code
-
-| Tool | URL | From | To | Notes |
-|---|---|---|---|---|
-| **Locofy** | locofy.ai | Figma / Adobe XD | React, Next.js, Vue, Flutter | Production-quality output |
-| **Anima** | animaapp.com | Figma | React / HTML | 4M+ designers |
-| **Builder.io** | builder.io | Figma / screenshots | Any framework | Visual CMS + code export |
-| **DhiWise** | dhiwise.com | Figma | Flutter, React Native, React | Mobile-first |
-| **Tempo** | tempolabs.ai | Figma | React | In-editor visual editing |
-
-### AI-Assisted Design (Within Existing Tools)
-
-| Tool | Integration | AI Feature |
-|---|---|---|
-| **Figma AI** | Figma native | Generate layers, rename, auto-annotate |
-| **Framer AI** | Framer native | Layout generation from text |
-| **Adobe Firefly** | Adobe CC | Generative fill, text-to-vector |
-| **Canva AI** | Canva native | Magic Design, Dream Lab, text-to-image |
-
-### Google Stitch — Deep Dive
-
-> *"Design at the speed of AI"* — stitch.withgoogle.com (Beta, Google Labs)
-
-**Origin:** Google acquired Galileo AI (May 2025) and rebranded it as Google Stitch, powered by Gemini.
-
-**Two modes:**
-| Mode | Model | Speed | Best For |
-|---|---|---|---|
-| Standard | Gemini 2.5 Flash | Fast | Quick drafts, layout exploration |
-| Experimental | Gemini 2.5 Pro | Slower | Image-to-UI, complex flows, richer output |
-
-**Free tier:** 350 standard + 50 experimental generations/month. No card. Google account only.
-
-**Key features:**
-| Feature | Detail |
-|---|---|
-| Text-to-UI | Describe any screen in plain English → high-fidelity design |
-| Image-to-UI | Upload screenshot, wireframe, or sketch → polished design |
-| Voice Canvas (Mar 2026) | Speak your brief. AI interviews you, critiques canvas, makes live updates |
-| Multi-screen (5 screens) | Generate 5 interconnected screens simultaneously with consistent design language |
-| Interactive prototyping | Connect screens, define transitions, click Play to preview full user journey |
-| Code export | HTML, CSS, Tailwind, Vue.js, Angular, Flutter widgets, SwiftUI — 6 frameworks |
-| Figma export | One-click with auto-layout + components intact |
-| Design system import | Upload color palettes, typography, spacing, component libraries |
-| Web publish (2026) | Direct deploy to live URL via Netlify from Stitch |
-| Agent Log | Step-by-step transparency — see exactly what the AI did |
-
-**Ecosystem integrations:**
-- → **Antigravity IDE** — install Stitch Skills in your workspace, generate and redesign UI with natural language
-- → **Google AI Studio** — add backend logic and API connections to static Stitch designs
-- → **Figma** — export with layout preserved
-
-**Limitations:**
-- No granular element editing inside Stitch (regenerate or use Figma)
-- UI-only — no presentations, social graphics, marketing materials
-- Google Labs experimental — long-term availability uncertain
-
-### Workflow (2026 Standard)
-
-```
-1. Brief → Google Stitch (text/voice → 5 screens, free)
-         OR Uizard/Visily (wireframe in minutes)
-2. Prototype → Stitch Interactive Prototyping (connect screens, Play preview)
-3. Export → Figma (refine, component library) or Direct Code (HTML/Vue/Flutter)
-4. Code → V0 / Bolt.new (iterate with AI in the browser)
-5. Deploy → Vercel / Netlify (1-click from V0 or Stitch)
-```
+Video and music generation (with verified prices and the current image/video arena leaderboards) are in **[MEDIA.md](./MEDIA.md)**. AI UI/design tools, Google Stitch and design-to-code are in **[FRONTEND.md](./FRONTEND.md)**.

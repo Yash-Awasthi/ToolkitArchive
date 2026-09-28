@@ -1,138 +1,142 @@
-# Frontend / UI Builders & Design-to-Code — June 2026
+# 🎨 Frontend — AI App Builders, UI Design & Site Builders (verified 29 September 2026)
 
 <p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
+> [!NOTE]
+> Every free tier and price on this page was read from the vendor's live pricing page on 29 Sep 2026.
+> GitHub star counts come from the GitHub API the same day. Builders change credit rules often —
+> check the linked pricing page before you commit to a paid plan.
 
-> Vibe-coding tools that turn a prompt (or a screenshot, or a Figma file) into a running frontend.
-> Free tiers move fast — every major builder is now **credit/token metered**. Numbers verified ~June 2026; confirm on vendor pages before relying on them.
-> ℹ️ **17 Aug 2026:** **Part 1 (full-stack builders) re-verified this pass** — Bolt (1M tok/mo, 300K/day), Lovable (5/day → 30/mo + 20 Cloud/mo), v0 ($5/mo, 200 projects) confirmed against current vendor pricing docs. **Parts 1.5–5 (mobile, UI generators, design-to-code, no-code sites, OSS self-host) were NOT re-verified** — treat their free tiers and credit counts as June-era until re-checked.
+> [!WARNING]
+> **Shut down or discontinued since the last pass:** **Mocha** (closed Aug 1, 2026) · **Motiff** (discontinued; data export until Oct 31, 2026) · **Galileo AI** (the design tool became Google Stitch; galileo.ai is now an unrelated observability company, itself folded into Splunk on Aug 7) · **SuperDesign** open-source extension (no longer maintained) · **DhiWise** renamed **Rocket.new**.
 
----
-
-**Contents:** [Part 1 full-stack builders](#part-1--full-stack-ai-app-builders-prompt--deployed-app) ·
-[Part 1.5 mobile](#part-15--native-mobile-app-builders-prompt--real-react-native--ios) ·
-[Part 2 UI generators](#part-2--ui-component--design-generators-prompt-or-screenshot--components) ·
-[Part 3 design-to-code](#part-3--design-to-code-figma--mockup--production-code) ·
-[Part 4 no-code sites](#part-4--no-code-ai-site-builders-marketing--portfolio--cms) ·
-[Part 5 OSS self-host](#part-5--open-source--self-hostable-zero-vendor-lock-in-byok-or-local-model) · [Pick-by-need](#pick-by-need)
+**Contents:** [App builders](#part-1--full-stack-ai-app-builders-prompt--deployed-app) · [Mobile](#part-15--native-mobile-app-builders) · [UI design generators](#part-2--ui-design-generators-prompt-or-screenshot--screens) · [Design-to-code](#part-3--design-to-code-figma--production-code) · [Site builders](#part-4--ai-website-builders-marketing--portfolio--business) · [AI inside design tools](#part-45--ai-inside-the-design-tools-you-already-use) · [Open source / self-host](#part-5--open-source--self-hostable) · [Pick by need](#pick-by-need)
 
 ---
 
 ## Part 1 — Full-Stack AI App Builders (prompt → deployed app)
 
-| Tool | What | Free tier | Paid entry | Model / BYOK | Link |
+| Tool | What | Free tier (29 Sep 2026) | Cheapest paid | Link |
+|---|---|---|---|---|
+| ★ **Bolt.new** | Browser IDE, full-stack in WebContainers | **1M tokens/mo, 300K/day**, hosting, unlimited databases, Bolt branding | Pro $25/mo · Teams $30/member | bolt.new/pricing |
+| ★ **Lovable** | Prompt → React + Supabase SaaS | 5 build credits/day (max 30/mo) + 20 Cloud credits/mo, 5 lovable.app domains | Pro $25/mo · Business $50/mo · **students up to 50% off Pro** | lovable.dev/pricing |
+| **v0** (Vercel) | Polished React/Next UI, deploys to Vercel, Design Mode, GitHub sync | $5 of credits/mo, 7 messages/day | Plus $30/user/mo · Business $100/user/mo | v0.dev/pricing |
+| **Replit** (Agent) | Cloud IDE + DB + deploy, any language | Free Mode: up to 30 h of chat, up to 60 projects | Core $18/mo (annual) · Pro $90/mo (annual) | replit.com/pricing |
+| **Blink.new** (YC W25) | Prompt → production app with database, auth and a live URL | 5 build credits/day (max 30/mo), no card | Starter $13/mo · Pro $25/mo · Max from $100/mo | blink.new/pricing |
+| **Anything** (ex-Create.xyz) | Natural language → web + mobile apps with backend | 20K credits/mo | Pro $19/mo · Max $199/mo | create.xyz/pricing |
+| **Base44** (Wix) | Full-stack internal tools and apps | 25 message credits + 100 integration credits/mo | Starter $16/mo · Builder $40 · Pro $80 | base44.com/pricing |
+| **Emergent** | Managed full-stack agent platform, GitHub export | 10 credits/mo | Standard $17/mo (annual) · Pro $167/mo | emergent.sh/pricing |
+| **Rocket.new** (ex-DhiWise) | Prompt → full-stack web and mobile apps | See site | See site | rocket.new |
+| **Softr** | No-code apps on your databases | 5 AI credits/mo, unlimited apps, 3 builders, 5K records | Basic $19/mo · Pro $99/mo · 50% off for education | softr.io/pricing |
+
+> **Credit-burn rule:** vague prompts, long chats and error loops eat free credits. Plan first, then build. Bolt's 1M tokens/month is still the biggest free runway.
+
+---
+
+## Part 1.5 — Native Mobile App Builders
+
+| Tool | What | Free tier | Cheapest paid | Link |
+|---|---|---|---|---|
+| **a0.dev** (YC W25) | Prompt → React Native (Expo), browser iOS simulator, store submission | None | Pro $20/mo (100 credits) · Max $200/mo (1,250 credits) | a0.dev/pricing |
+| **Rork** | Prompt → mobile app; **Rork Max** builds native Swift for iPhone, iPad and Apple Watch | Design mode: 35 design credits/mo (max 5/day) | Pro $20/mo · Max $200/mo (1,000 credits) | rork.com/pricing |
+
+---
+
+## Part 2 — UI Design Generators (prompt or screenshot → screens)
+
+| Tool | What | Free tier | Cheapest paid | Link |
+|---|---|---|---|---|
+| ★ **Google Stitch** | Text / image / sketch / voice → UI screens, prototypes, code export (HTML/Tailwind/Flutter/SwiftUI), Figma export, `DESIGN.md` design systems, Stitch MCP for agents | **Free** — Stitch 2.0: ~400 design credits/day + 15 redesign credits/day (third-party reports; Google publishes no price) | Free | stitch.withgoogle.com |
+| ★ **Claude Design** (Anthropic Labs) | Prompt → designs, prototypes, slides; reads your repo's real components | Free to start with limits; fuller use on Claude paid plans | Claude Pro $17/mo (annual) | claude.ai/design |
+| **Banani** | Text/PRD/image → multi-screen UI + prototype; Figma/HTML export; MCP server on all plans | 12 credits/mo + 3/day | Plus $12/mo · Pro $30/mo | banani.co/pricing |
+| **UX Pilot** | Prompt → wireframes, hi-fi screens, flows; Figma plugin | 80 daily credits, no card | See site | uxpilot.ai/pricing |
+| **Subframe** | Design canvas + coding agent + browser (macOS app); can use your Claude/Codex subscription | 1 project, limited AI credits | Pro $20/editor/mo | subframe.com |
+| **Magic Patterns** | Screenshot/prompt → React; Figma + MCP | Free monthly credits | Starter $17/seat/mo · Business $85 | magicpatterns.com/pricing |
+| **Shadcn Studio** | shadcn/ui blocks, templates, AI theme designer, MCP server | Free forever (community support) | One-time: Basic $149 · Pro $249 | shadcnstudio.com/pricing |
+| **Uizard** | Wireframe/screenshot → editable UI (Autodesigner 2.0) | 3 AI generations/mo, 2 projects | Pro $12/mo · Business $39/mo | uizard.io/pricing |
+| **Visily** | Screenshot/text → wireframes & UI | 300 AI credits/mo | Pro $14/editor/mo · Business $29 | visily.ai/pricing |
+| **Relume** | AI sitemap + wireframes → Figma/Webflow | Free forever, no card | Pro from $14/mo · Team $36/mo | relume.io/pricing |
+| **tldraw "Make Real"** | Draw a wireframe → working HTML (bring your own key) | Free canvas | — | tldraw.com |
+| **Codia AI** | Screenshot/Figma → code | Free to start | See site (40% off yearly) | codia.ai/pricing |
+| **Polymet** | AI product design service | None listed | Enterprise, contact sales | polymet.ai |
+
+---
+
+## Part 3 — Design-to-Code (Figma → production code)
+
+| Tool | What | Free tier | Cheapest paid | Link |
+|---|---|---|---|---|
+| ★ **Figma Make / Figma AI** | Figma's own prompt-to-app and AI layer; Figma MCP lets agents read *and write* the canvas | 150 AI credits/day (max 500/mo) | Collab seat $3/mo · Professional Full seat $16/mo (+3,000 AI credits) · Dev seat $12/mo | figma.com/pricing |
+| **Builder.io Fusion** | Design-system and codebase-aware visual editing | 1 user, 60 Agent credits/mo | Pro $24/mo · Team $40/mo | builder.io/pricing |
+| **Anima** | Figma → React/Vue/HTML | 5 chat messages + 5 code generations/mo | Starter $20/seat/mo · Pro $40 | animaapp.com/pricing |
+| **Locofy** | Figma/Adobe → React/RN/Vue/Flutter | 7-day free trial of Hobby (2,000 LDM tokens) | Hobby $40/mo · Pro $80/mo | locofy.ai/pricing |
+
+> **Tempo** moved away from Figma-to-code: it's now "the IDE for the whole team" that turns issues and feedback into reviewed PRs (Free: 250 issues, 100 docs; Pro $50/mo) — tempo.new.
+
+---
+
+## Part 4 — AI Website Builders (marketing · portfolio · business)
+
+| Tool | Best for | Free tier | Cheapest paid | Code export | Link |
 |---|---|---|---|---|---|
-| **Bolt.new** | Browser IDE, full-stack in WebContainers | **1M tokens/mo, 300K/day cap** (no card) — most generous of the majors, ~2–5 small apps (re-verified 17 Aug 2026) | Pro $25/mo (~13M tokens) | Claude (no BYOK) | bolt.new |
-| **Blink.new** (YC W25) | Prompt → production web/Next.js app, auto-provisions Turso + Firebase + Deno Deploy | Free tier | Credits | Managed | blink.new |
-| **Lovable** | Prompt → React + Supabase SaaS, cleanest code | **5 credits/day, capped at 30/mo** + **20 Cloud credits/mo grant** (re-verified 17 Aug 2026 — lovable.dev/pricing + docs.lovable.dev) | Pro from $25/mo (100 credits) | Managed | lovable.dev |
-| **Replit Agent** (Agent 4) | Cloud IDE + DB + deploy, 50+ langs, real-browser testing | Starter: daily Agent trial, 1 published app | Core $20–25/mo ($25 credits) · Pro $100/mo | Managed | replit.com |
-| **v0** (Vercel) | Polished React/Next UI, auto-deploy to Vercel | **$5/mo credits, up to 200 projects** — reset monthly, no rollover (re-verified 17 Aug 2026) | Premium $20/mo (Mini/Pro/Max tiers) | Managed (no model choice) | v0.dev |
-| **Create.xyz** ("Anything") | NL → web + mobile apps w/ backend, exportable code | Free try-out tier | Pro/Max (credits) | Managed | create.xyz |
-| **Base44** (Wix) | Full-stack internal tools, no-code | Free tier | ~$16/mo | Managed | base44.com |
-| **Emergent** | Managed full-stack runtime, GitHub export | Free trial | Credits | Managed | emergent.sh |
-| **Mocha** | Prompt → full-stack app | Free tier | Credits | Managed | getmocha.com |
-| **Softr** | No-code apps on Airtable/DB | Free tier | ~$59/mo | Managed | softr.io |
+| ★ **Framer** | Design-led marketing & SaaS sites | 500 AI credits to try, framer.app domain, 1 GB bandwidth | Basic $10/mo · Pro $30/mo | No (hosted) | framer.com/pricing |
+| ★ **Webflow** | Content/SEO-heavy sites, CMS | Starter: webflow.io domain, 2 static pages, limited CMS, 1 GB bandwidth | Basic $15/mo · Premium $25/mo (billed yearly) | Yes | webflow.com/pricing |
+| **Readdy** | Prompt → site with code + Figma + backend | 250 credits/mo, 2 projects | $15/mo (30K credits, 1 site) | Yes | readdy.ai/pricing |
+| **Draftly.space** | Cinematic 3D scroll-driven sites (prompt → keyframe → video → scroll site), ZIP + GitHub export | One complete build, 2-day trial | Basic $20/mo · Pro $48/mo | Yes | draftly.space/pricing |
+| **Webstudio** | Open-source Webflow alternative | Unlimited projects on wstd.io subdomain | Pro $15/mo (yearly) · Team $35/mo | Yes | webstudio.is/pricing |
+| **Wix** (AI site builder) | Beginners, small business | Free with Wix branding | Light $17.77/mo | No | wix.com/pricing |
+| **Squarespace** | Portfolios, e-commerce | 14-day trial | Basic $19/mo · Core $29/mo | No | squarespace.com/pricing |
+| **Durable** | 30-second AI business site + CRM | Free site, hosting, 10 AI messages/mo | Launch $22/mo · Grow $41/mo | No | durable.co/pricing |
+| **Hostinger Horizons** | Cheap prompt → web app | Free trial | From ~$6.99/mo (per review sites) | Limited | hostinger.com/horizons |
 
-> **Credit-burn rule (all of them):** vague prompts, long chats, and error loops eat the free allowance. Plan before prompting. Bolt's 1M tokens/mo is the most usable free runway.
-
-> Also emerging (lighter coverage, verify before relying): **Lumi.new**, **Rocket.new**, **NxCode** — newer prompt→full-stack builders. **Cloudflare VibeSDK** is open-source and self-hostable → see Part 5.
+> SEO caveat: most prompt-built apps are single-page JavaScript apps that crawl poorly. For SEO-critical sites use Webflow/Framer or server-render with Next.js.
 
 ---
 
-## Part 1.5 — Native Mobile App Builders (prompt → real React Native / iOS)
+## Part 4.5 — AI inside the design tools you already use
 
-> The web builders above output web apps. These produce actual native mobile — real `.tsx` React Native (Expo), not a no-code wrapper — with store submission.
+| Tool | AI features | Free | Cheapest paid | Link |
+|---|---|---|---|---|
+| **Figma AI** | Generate layers, rename, annotate, Figma Make, Motion (beta) | 150 AI credits/day | $3–16/seat | figma.com/pricing |
+| **Framer AI** | Layout and site generation | 500 AI credits to try | Basic $10/mo | framer.com/pricing |
+| **Adobe Firefly** | Image, video, audio generation; generative fill | Free daily generations | Standard $9.99/mo · Pro $19.99/mo | adobe.com/products/firefly/plans.html |
+| **Canva AI** | Magic Design, image generation (AI Pass add-on) | Free plan · **free for K-12 schools and nonprofits** | Pro $144/year | canva.com/pricing |
 
-| Tool | What | Free | Paid entry | Output | Link |
+---
+
+## Part 5 — Open-Source / Self-Hostable
+
+| Tool | What | Licence | ⭐ Stars (live) | Cost | Link |
 |---|---|---|---|---|---|
-| **a0.dev** (YC W25) | Prompt → React Native (Expo). Browser iOS simulator, 1-click App Store + Play submit, built-in payments/analytics/OTA, 2-way GitHub sync. Convex/Supabase backend | 1 app project | Pro $20/mo (100 msg/day) → up to $800/mo | Real RN `.tsx` | a0.dev |
-| **Rork** | Prompt → production mobile app, Expo on-device preview (Expo Go) | Trial | Credits | React Native | rork.com |
-| **Rork Max** | Rork's top tier — **native Swift** for the full Apple ecosystem: iPhone/iPad/Watch/Vision Pro/TV (only tool doing this) | — | Higher tier | RN + native Swift | rork.com |
+| ★ **Dyad** | Local Lovable/Bolt alternative, runs on your machine | Apache 2.0 | 21.6K | Free forever (BYOK / Ollama); Pro $20/mo · Max $79/mo for hosted credits | dyad.sh · github.com/dyad-sh/dyad |
+| ★ **Penpot** | Open-source Figma alternative | MPL 2.0 | 60.5K | **Free, fully featured**; Unlimited $7/editor/mo | penpot.app |
+| **Open Lovable** (Firecrawl) | Clone a site into a React/Next + Tailwind app, any model | MIT | 28.6K | Free self-host (last commit Nov 2025) | github.com/firecrawl/open-lovable |
+| **bolt.diy** | Self-hostable open Bolt, 100+ models | MIT | 19.9K | Free (BYOK); last commit Feb 2026 | github.com/stackblitz-labs/bolt.diy |
+| **Onlook** | Visual React/Next editor, live DOM ↔ code (closed beta hosted) | Apache 2.0 | 26.8K | Free self-host | onlook.com |
+| **Reflex** | Full-stack web apps in pure Python (+ hosted Reflex Build AI builder) | Apache 2.0 | 28.9K | Framework free · Reflex Build Pro $25/mo | reflex.dev |
+| **Refine** | Data-heavy React apps framework (+ hosted AI builder) | MIT | 35.7K | Framework free · Pro $20/mo hosted | refine.dev |
+| **Plasmic** | Visual builder for existing codebases | MIT | 7K | Free (3 collaborators); Starter $39/mo | plasmic.app |
+| **Silex** | Open visual website builder | AGPL 3.0 | 3K | Free (cloud, desktop or self-host) | silex.me |
+| **Cloudflare VibeSDK** | Run your own vibe-coding platform on Cloudflare | MIT | 5.4K | Free self-host | github.com/cloudflare/vibesdk |
+| **GPT Pilot** (Pythagora) | AI full-stack dev; hosted Pythagora from $25/mo | — | 33.7K | Free self-host | github.com/Pythagora-io/gpt-pilot |
+
+> **Cheapest "Lovable but free":** Dyad or bolt.diy + a free key (Google AI Studio, Token Harbor `:free`, OpenRouter `:free`) or a local model → unlimited builds at $0. See [FREE-ACCESS.md](./FREE-ACCESS.md).
 
 ---
 
-## Part 2 — UI Component / Design Generators (prompt or screenshot → components)
-
-| Tool | What | Free | Code export | Stack | Link |
-|---|---|---|---|---|---|
-| **Claude Design** (Anthropic Labs) | Prompt → designs/prototypes/slides. **Codebase-aware** — links a repo, reads real React components to apply your design system. Canva export. Opus 4.7 vision. Research preview (Apr 17 2026) | Free on Pro/Max/Team/Enterprise (no separate SKU) | — (exports to Claude Code) | claude.ai/design |
-| **Banani** | Text/PRD/image-ref → editable multi-screen UI + linked prototype. Canvas bird's-eye view, clarifying-question agent. 1-click Figma export, HTML/CSS, **MCP server** for IDE integration | Free tier | Credits | React/HTML, Figma | banani.co |
-| **UXPilot** (Nodey) | Prompt → wireframes + hi-fi screens + screen flows, predictive heatmaps, Figma plugin. PRD → UI. 300K+ users | Free (non-commercial) | $15/mo | React/HTML/Tailwind | uxpilot.ai |
-| **Shadcn Studio** | shadcn/ui components, blocks, templates + AI theme designer. **MCP server** for shadcn/ui in Cursor/Claude Code; Figma → shadcn code plugin | Free + paid | Credits | shadcn/ui (React) | shadcnstudio.com |
-| **Subframe** | AI-native visual canvas, real design controls, 1:1 React/Tailwind export (YC, ex-Vercel/Stripe) | Free plan (export/page limits) | React + Tailwind | React/Tailwind only | subframe.com |
-| **Magic Patterns** | Screenshot/prompt → React, Figma + MCP import/export (YC S23, a16z) | Free tier | React + Tailwind | React | magicpatterns.com |
-| **Polymet** | Component-driven; builds a design system from prompts | Free trial (export = paid) | Yes (paid) | React | polymet.ai |
-| **Motiff** | UI generator — **discontinued**, data export until Oct 31 2026 | — | — | — | motiff.com |
-| **Galileo AI** | Text → editable UI designs | Free credits | Figma | — | usegalileo.ai |
-| **Uizard** | Wireframe/screenshot → editable UI | Free tier | — | — | uizard.io |
-| **tldraw "Make Real"** | Draw a wireframe → working HTML | Free (BYOK) | HTML | — | tldraw.com |
-| **Codia AI** | Screenshot/Figma → code | Free credits | Multi | — | codia.ai |
-| **Visily** | Screenshot/text → wireframes & UI | Free tier | — | — | visily.ai |
-
----
-
-## Part 3 — Design-to-Code (Figma / mockup → production code)
-
-| Tool | What | Free | Link |
-|---|---|---|---|
-| **Figma Make** | Figma's native AI prompt-to-app | Included in Figma plans | figma.com |
-| **Anima** | Figma/XD → React/Vue/HTML | Free tier | animaapp.com |
-| **Locofy** | Figma/Adobe → React/RN/Vue, "Lightning" AI | Free tier | locofy.ai |
-| **Builder.io Fusion** | Design-system + codebase aware, visual control, enterprise | ~60–75 Agent credits/mo (15–25/day) | Pro $24/user/mo (500 credits) | builder.io |
-| **Quest** | Figma → React, clean code | Free tier | quest.ai |
-| **Tempo** | AI + visual editor for React apps | Free tier | tempo.new |
-
----
-
-## Part 4 — No-Code AI Site Builders (marketing / portfolio / CMS)
-
-| Tool | What | Free tier | Paid entry | Code export | Link |
-|---|---|---|---|---|---|
-| **Framer** | Design-led sites, Wireframer + Workshop AI | Full editor, 1,000 pages, 10 CMS, 2-page publish | Basic ~$10/mo · Pro $30/mo (+$40/editor seat) | **No export (lock-in)** | framer.com |
-| **Webflow** | Content/SEO-heavy, AI Site Builder + AEO audits | Limited (Webflow badge) | Site plans + $19/mo workspace (layered) | Yes | webflow.com |
-| **Readdy** | NL → sites, outputs clean code + Figma + built-in backend | 250 credits/mo, 2 projects | Starter ~$11–19/mo · Pro ~$24–40/mo (25 credits/generation) | Yes | readdy.ai |
-| **Wix AI** | Prompt → full site | Free (Wix ads) | ~$17/mo | No | wix.com |
-| **Durable** | 30-second AI business site | Free trial | ~$15/mo | No | durable.co |
-| **Relume** | AI sitemap + wireframes → Figma/Webflow | Free trial | ~$36/mo | To Figma/Webflow | relume.io |
-| **Hostinger Horizons** | Prompt → app, cheap | Trial | ~$19/mo | Limited | hostinger.com |
-
----
-
-## Part 5 — Open-Source / Self-Hostable (zero vendor lock-in, BYOK or local model)
-
-| Tool | What | License | Stars | Cost | Link |
-|---|---|---|---|---|---|
-| **Dyad** | Local v0/Lovable/Bolt alt, runs on your machine, no sign-up | Apache 2.0 | rising | Free (BYOK; Ollama = $0) · Pro $20/mo | dyad.sh · github.com/dyad-sh/dyad |
-| **bolt.diy** | Self-hostable open Bolt.new, 100+ models | MIT | high | Free (BYOK) | github.com/stackblitz-labs/bolt.diy |
-| **Onlook** | Visual React/Next editor, live DOM ↔ code, desktop | Apache 2.0 | ~26K | Free | onlook.com |
-| **Plasmic** | Visual builder, integrates existing codebase | MIT | — | Free tier | plasmic.app |
-| **Reflex** | Full-stack web apps in pure Python | Apache 2.0 | ~29K | Free | reflex.dev |
-| **Refine** | Data-rich React apps framework | MIT | ~35K | Free | refine.dev |
-| **Silex** | Open visual website builder | AGPL 3.0 | ~2.9K | Free | silex.me |
-| **Open Lovable** | Clone any site into a React/Next + Tailwind app (Firecrawl + any model), self-host | MIT | rising | Free (BYOK) | open-lovable.com |
-| **Creable** | Open Lovable alternative: prompt → full-stack Next.js with DB, auth, visual editor, GitHub sync | MIT | rising | Free self-host (50 free credits hosted) | — |
-| **Penpot** | Open-source Figma alternative (design + prototyping), self-host or free cloud | MPL 2.0 | high | Free | penpot.app |
-| **Pythagora** | AI full-stack app dev (GPT Pilot lineage) | — | high | Free (BYOK) | pythagora.ai |
-| **Cloudflare VibeSDK** | Deploy your *own* vibe-coding platform in 1 click — per-user sandboxes, live preview, Workers deploy. React/TS/Tailwind output, Gemini default via AI Gateway | MIT | rising | Free (self-host on Cloudflare) | github.com/cloudflare/vibesdk |
-| **SuperDesign** | UI design agent inside your IDE — only OSS IDE-native option, 10+ variants locally, BYO model | MIT | rising | Free (BYOK) | superdesign.dev |
-
-> **Cheapest path to "Lovable but free":** Dyad or bolt.diy + a free LLM key (Google AI Studio / Groq) or local Ollama → unlimited builds at $0. See [FREE-ACCESS.md](./FREE-ACCESS.md).
-
----
-
-## Pick-by-need
+## Pick by need
 
 | Need | Pick |
 |---|---|
 | Most free runway | Bolt.new (1M tokens/mo) |
-| Non-technical SaaS MVP | Lovable |
-| Real backend / non-JS / deploy | Replit Agent |
+| Free UI design | Google Stitch · Penpot |
+| Non-technical SaaS MVP | Lovable (students: up to 50% off) |
+| Real backend, any language | Replit |
 | Inside Vercel/Next | v0 |
-| Enterprise codebase + design system | Builder.io Fusion |
-| Designer who wants real controls | Subframe |
-| Screenshot → code | Magic Patterns |
-| Marketing/portfolio site | Framer (design) / Webflow (content+SEO) |
-| Native mobile (real RN, store submit) | a0.dev / Rork (Rork Max for Apple-wide native Swift) |
 | Design system from your codebase | Claude Design |
-| Run your own AI app-builder platform | Cloudflare VibeSDK (self-host) |
+| Screenshot → code | Magic Patterns |
+| Marketing / portfolio site | Framer (design) · Webflow (content + SEO) |
+| Cinematic 3D site | Draftly.space |
+| Native mobile | a0.dev · Rork (Rork Max for native Swift) |
 | Zero cost, self-host | Dyad / bolt.diy + free key |
+| Run your own builder platform | Cloudflare VibeSDK |
