@@ -1,16 +1,93 @@
-# Free API Access & Model Access — re-checked 17 August 2026
+# Free API Access & Model Access — re-checked 29 September 2026
 
 > Permanent free API tiers below. For **trial-credit stacking, student/startup programs, free GPU, and subscription-as-API tricks** → [CREDITS.md](./CREDITS.md).
+> 🔄 **29 Sep 2026 pass:** added the [September free wave](#september-2026-free-wave-start-here) (Cline free models, Freebuff, OpenRouter's new free list, TokenRa stealth models, Token Harbor, TokenRouter free IDs, Gemini 3.8 Flash on AI Studio, Kimi K3 free), and **removed ZCode** — it silently uploaded users' repositories (see [NEWS.md](./NEWS.md)).
+>
 > ✅ **Re-checked Aug 17, 2026** (prior pass: June 27, 2026; first Aug pass: Aug 16) — free tiers change weekly; confirm before relying. This pass added the August wave of free-AI offers surfaced on Reddit/Instagram and verified against live pages (OmniRoute, aerolink.lat, NaraRouter, LongCat-2.0, GoRouter, Tokeness, OpenRouter Fusion), upgraded the AgentRouter/Bluesminds rows from "unverified" to caveated, and added **ZCode** (GLM-5.3 free on it since Aug 16-17). Not every row was independently re-fetched this pass; where a number wasn't re-confirmed, the row says so.
 
 ---
 
-**Contents:** [Daily budget chart](#free-api-daily-token-budget) · [Table 1 no-card API tiers](#table-1--no-card-api-access-ongoing-free-tiers-and-clearly-labelled-trials) ·
+**Contents:** [Sept 2026 free wave](#september-2026-free-wave-start-here) · [Daily budget chart](#free-api-daily-token-budget) · [Table 1 no-card API tiers](#table-1--no-card-api-access-ongoing-free-tiers-and-clearly-labelled-trials) ·
 [Table 1B hidden gems](#table-1b--hidden-gems--decentralized--obscure-free-providers) ·
 [Aggregators](#aggregators-route-across-many-free-tiers-with-one-key) · [Chinese routers](#chinese-credit-routers--gateways-community-reported--all-unverified) ·
 [Table 2 trial credits](#table-2--trial-credits-stack-these) · [Claude Opus 5 free](#how-to-access-claude-opus-5-for-free) ·
 [TokenLB caveat](#tokenlb--api-marketplace--developer-credits-caveat-demoted-this-pass) ·
 [Best model by use case](#best-free-model-by-use-case) · [Quick start code](#quick-start-code) · [Useful repos](#useful-repos)
+
+---
+
+## September 2026 free wave (start here)
+
+> Checked against live pages on 29 Sep 2026 unless marked. Free promos rotate weekly — treat every
+> quota as a snapshot. Stealth and "free" models often log or train on your prompts: keep secrets out.
+
+### How to use all of this: OpenCode + any OpenAI-compatible key
+
+**OpenCode is the best harness for free models** — it takes any OpenAI-compatible base URL + key,
+ships with 75+ providers (TokenRa, OpenRouter, Groq, etc. via `/connect`), and has its own Zen free
+models. Put a free key from the tables below into OpenCode (or Cline / Kilo) and swap models per task.
+
+```jsonc
+// opencode.json — any OpenAI-compatible free endpoint
+{
+  "provider": {
+    "tokenharbor": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": { "baseURL": "https://tokenharbor.ai/v1", "apiKey": "{env:TOKENHARBOR_API_KEY}" },
+      "models": { "deepseek-v4.1-flash:free": {}, "qwen3.8-flash:free": {}, "mimo-v2.6-flash:free": {} }
+    }
+  }
+}
+```
+
+### Free coding agents with free models built in
+
+| Tool | Free models (Sept 2026) | Limits | Catch |
+|---|---|---|---|
+| ★ **Cline** (VS Code / JetBrains / CLI / **Cline Desktop**) | DeepSeek V4.1 Flash, Muse Spark 1.3 (contributor), GLM-5.3-Flash, Solar Pro 4, Laguna S 2.1 — plus **Kimi K3 free in Cline Desktop** since Sept 18 | Per-model quota; the picker shows "(free)" and a reset time when you run out | Rotating promos, not available through the Cline API. Muse "contributor" tier = Meta keeps your data. ClinePass $9.99/mo raises quotas 2–5× |
+| ★ **Freebuff** (`npm i -g freebuff`) | 100 "Freebucks"/day: GLM-5.3 Flash 20 h · Solar Mini 4 20 h · MiMo 2.6 Flash 10 h · Solar Pro 4 10 h · **DeepSeek V4.1 Flash 6 h** · **GPT-6 Luna 5 h** · MiMo 2.6 Pro 3 h · Space Bunny Alpha unlimited | Daily allowance | Text ads in the UI. Gemini 3.8 Flash and Muse Spark are paid-plan only. Apache 2.0, Codebuff team (YC) |
+| **OpenCode Zen** | Big Pickle (stealth, 200K), Nemotron 3 Super Free, MiMo Flash Free, MiniMax Free, GPT-5 Nano | Rotating | Free models may train on your data. ⚠️ OpenCode V2 can't reach Zen free models yet (issue #49908) — stay on V1 for them |
+| **Kilo Code** | `kilo-auto/free` auto-router; Space Bunny Alpha, Laguna M.1, Nemotron 3 Ultra, Step 3.7 Flash, MiniMax/GLM free models | Anonymous 200 req/h per IP | Free models rotate; some log prompts |
+| **GitHub Copilot Free** | Haiku 4.5, GPT-5 mini and a few more; agent mode, Copilot CLI, MCP | 2,000 completions/mo + small AI-credit allowance | Opus 5.5 / GPT-6 Sol need Pro+ ($39) |
+| **Codex / ChatGPT Free & Go** | GPT-6 Luna (desktop app) | Plan limits | Sol/Astra need Plus or higher |
+| **Antigravity** (Google) | Gemini 3.8 / 3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6, gpt-oss-120b | Weekly agent limits; Tab + Command unlimited | Replaced Gemini CLI's free tier on June 18 |
+| **Muse Code** / **MiniMax Code** / **Grok Build** | Muse Spark 1.3 · M3.1-Flash-Preview (double sign-in credits Sept 28–Oct 7) · Grok 4.7 | Varies | Vendor lock-in; free tiers are promotional |
+
+### Free models over an API
+
+| Where | Free models | Limits / catch |
+|---|---|---|
+| ★ **Google AI Studio** | **Gemini 3.8 Flash (Sept 2)**, 3.7 Flash, 3.1 Flash, Flash Lite | ~15 | ~1,500 | ~750K | **Best free tier, no card.** Multimodal, 1M ctx. Free-tier prompts are used to improve Google products. Not available EU/UK. RPM/RPD/token numbers are from a prior pass — check aistudio.google.com/rate-limit |
+| ★ **OpenRouter free collection** | **Space Bunny Alpha** (stealth, 1M ctx, 524K out, multimodal — probably MiniMax M3.1, unconfirmed), **Nemotron 3 Ultra** (1M), **Laguna S 2.1** (262K) + **Laguna XS 2.1**, **Inkling** + **Inkling Small** (1.05M), **Qwen3.8 27B**, Nemotron 3.5 Lightning, Nemotron 3 Super, Nemotron 3 Nano Omni, Dots3-Note Preview (512K), Ling 3.0 Flash, Cohere North Mini Code, LFM2.5-2.6B | 50 req/day under $10 lifetime spend, 1,000/day at $10+. Laguna, Liquid and stealth providers may train on inputs |
+| **TokenRa** (tokenra.io) | **Union Alpha** (`union-alpha`, 262K, text+image) · **Ox Alpha** (1M ctx, 128K out, text+image+video) | $0 today, "may change". Anonymous providers on shared capacity — Union Alpha ~17 s P50, ~14 tok/s, so batch jobs only. Built into OpenCode (`/connect` → TokenRa) and Cline. Keys start `sk-or-v1-` |
+| **TokenRouter** | `deepseek/deepseek-v4-pro-0813-free`, `qwen/qwen3.8-max-free`, `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` | "Free compute capacity is limited; stability and concurrency not guaranteed." Paid models billed at list with no markup |
+| ★ **Token Harbor** (tokenharbor.ai) | **`deepseek-v4.1-flash:free`** (1M ctx, 128K out, text+image) · **`qwen3.8-flash:free`** (984K ctx) · **`mimo-v2.6-flash:free`** | Free-tier IDs "use the free allowance and are never billed". Base URL `https://tokenharbor.ai/v1`, OpenAI- and Anthropic-compatible. Review sites report 20 RPM / 150 req/day (1,500 with $10+ balance) and a $5 signup credit — not on its own site. Singapore company (Token Harbor PTE. LTD.) |
+| **Groq** | Qwen 3.8 27B added: 30 RPM, 1,000 req/day, 200K tokens/day | Per-model limits, check the live table |
+| **Venice.ai** | Free daily allowance + 500 welcome credits, no card; lists Opus 5.5 among paid models | Credits run out fast on frontier models |
+| **Kimi K3** | Free on kimi.com (chat) and in Cline Desktop | API itself is $3/$15 |
+| **GPT-6 Luna** | Free/Go ChatGPT users in the desktop app; 5 h/day in Freebuff | API $0.10/$0.50 — nearly free anyway |
+
+### Community-reported (⚠️ unverified — leads from social media, check before use)
+
+| Name | Claim | Source |
+|---|---|---|
+| **TabiToken** | $120 signup credit via referral (GitHub account 1+ year old), $20 per referral | gist Soheel-1 (Aug 29) |
+| **JustWoker** | $70–100 credit | same gist |
+| **VyceAI** | $40 credit | same gist |
+| **AgentRouter** | Now reported as $50 (was $100–200) | same gist — amounts keep shrinking |
+| **AtomCode** (AtomGit) | Free 30-day coding plan, 5-hour quota windows, 1,000 claims/day | mvalentsev/awesome-free-ai-coding |
+| **Autohand Code** | Free plan on its own coding model, no card | same list |
+| **CodeCraft API** | "Free 1M tokens of Opus 5.5" | YouTube only — treat as bait until proven |
+
+> Commenters on these gists warn that paid token prices on several of these gateways are high once the free credit runs out. Never give them a key or repo you care about.
+
+### Cheapest paid (when free runs out)
+
+| Model | $/1M in / out | Why |
+|---|---|---|
+| **DeepSeek V4.1 Flash** | $0.15 / $0.60 off-peak (peak Mon–Fri 01–04 & 06–10 UTC: $0.30 / $1.20) | 1M ctx, vision, beats V4-Pro on vendor benches |
+| **GPT-6 Luna** | $0.10 / $0.50 | Cheapest frontier-lab model |
+| **MiMo-V2.6 Flash** | $0.14 / $0.28 | MIT, open weights |
 
 ---
 
@@ -33,7 +110,6 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | ★ **NVIDIA NIM** | Nemotron 3 Super, Nemotron 3 Ultra, DeepSeek-R1, Llama 405B, MiniMax M2.7, 100+ | ~40 | — | — | build.nvidia.com. NVIDIA Dev Program |
 | ★ **GitHub Models** | gpt-5, gpt-4.1, gpt-4o, o4-mini, Llama 4 Scout, DeepSeek-R1, 45+ | 10–15 | 50–150 | — | GitHub account only. 8K in / 4K out per req |
 | ★ **Z.AI** | GLM-4.7-Flash, GLM-4.6V-Flash (vision) | 1 concurrent | — | — | open.bigmodel.cn. Permanent free |
-| ★ **ZCode (Z.ai)** | **GLM-5.3 free right now**, GLM-5.2 | — | — | — | Free desktop coding agent (not an API) from Z.AI, launched Jul 2, 2026 — plan/code/review/deploy workflow around the GLM line. GLM-5.3 (released Aug 14) is currently **only** available through ZCode / the GLM Coding Plan, and it's free on ZCode as of Aug 16-17 (community-confirmed; API + open weights coming in ~2 weeks). Desktop app (Win/macOS/Linux) · zcode.z.ai |
 | ★ **Mistral** | Mistral Medium 3.5 (128B), Mistral Small 4, Codestral | ~1 RPS | — | 500K | Non-commercial, EU-hosted. The "~1B tokens/month" Experiment-tier figure is unverified — only partially confirmed by a primary source (the free chat plan with $10/mo API credit is real; the exact monthly token ceiling is not), don't treat it as a fixed number |
 | ★ **SambaNova** | DeepSeek-V3.1/V3.2, Llama 3.3 70B, gpt-oss-120b, MiniMax M2.7, Gemma 4 31B | 20 | 20 | 200K | RDU hardware. Ultra-fast. No card required |
 | ★ **HuggingFace Inference Providers** | 200+ open models via Fireworks/Together/Hyperbolic/DeepInfra — DeepSeek V4 (incl. DSpark), Qwen, Llama, Kimi, Gemma | Credit-metered | — | **$0.10/mo free credits** (free users; PRO $2/mo; Team/Enterprise $2/seat) | Corrected this pass: the prior "100K credits/mo" was stale — current official pricing is $0.10 monthly credits for free users (huggingface.co/docs/inference-providers/en/pricing). No markup, routes to best provider automatically; pay-as-you-go past the credits. **DeepSeek DSpark** (V4-Pro/V4-Flash-DSpark) is also served — same model + speculative-decoding module, 50-600% faster |
@@ -52,7 +128,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Cohere** | Command A+ (218B), Command A (111B), Command R+ | 20 | 1,000 calls/mo | — | 256K ctx on Command A. Non-commercial |
 | **NLP Cloud** | Open + proprietary models (gen, NER, classification, embeddings) | limited | — | — | Free dev tier; production-NLP focus |
 | **Cerebras** ⚠️ trial | Cerebras-hosted models | — | — | **$5 signup credit** | This is a free trial, not a permanent 1M-token/day allocation. Current pricing does not publish a lasting free-plan token quota; check the dashboard before building around it |
-| **TokenRouter** ⚠️ caveat | 300+ text, image, video, and audio models | dashboard | dashboard | credit amount not published | Hosted multi-provider gateway. Its site has a “Claim Free Credits” call-to-action, but no public credit amount was found. It charges actual model usage from balance even though it says it has no separate platform fee—treat it as a paid gateway with a possible unquantified signup credit, not a free-model provider |
+| **TokenRouter** ⚠️ caveat | 300+ models; **$0 IDs:** `deepseek/deepseek-v4-pro-0813-free`, `qwen/qwen3.8-max-free`, `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` | dashboard | dashboard | limited free capacity | Hosted gateway, no markup on paid models. Free models exist but "stability and concurrency are not guaranteed" |
 | **TokenLB** ⚠️ unverified | Claude Opus 4.8, GPT-5.5, DeepSeek, Qwen, 40+ providers (vendor-claimed) | — | — | — | Site returned a 401 this pass — treat as unverified. See caveat section below, not a confirmed free tier |
 
 > **★ = best first — the rows you should actually build on.** Ordering is by usefulness, not by trust tier: a caveated or unverified provider can rank high, but it keeps its ⚠️ marker right in its row. TokenRouter/TokenLB sit at the bottom because they are paid/unverified gateways, not free tiers.
@@ -70,7 +146,6 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | ★ **Pollinations.ai** | Free, server keys unmetered | Text + image + audio + video, single API | Client keys 1 req/hr/IP; server-side keys no rate limit | pollinations.ai |
 | ★ **NaraRouter** | **~5–7M free tokens/day**, resets daily (07:00 WIB, UTC+7) · ~10 RPM | Open-source + hosted models (Claude, GPT, Gemini, DeepSeek, Qwen via gateway) | OpenAI-compatible AI gateway; signup with Google, no credit card. Trending hard across YouTube/studentoffers/community lists in Aug 2026. Numbers differ by source (5M vs 7M/day) — treat as approximate | router.bynara.id |
 | ★ **LongCat-2.0** | Free API quota on application; ~50M tokens/day free tier is claimed on third-party router dashboards (unverified) | Meituan LongCat-2.0 (1.6T MoE, 1M ctx) | Open-source (MIT, open weights), agent-native coding model; integrates with Claude Code/OpenClaw. Also on OpenRouter ($0.30/$0.90). The "50M/day" figure comes from OmniRoute's free-tier dashboard, not Meituan — treat as unverified | longcat.ai · longcatai.org |
-| **aerolink.lat** ⚠️ caveat | **~$35/week free credits** (first month claim), paid credits ~94% cheaper than list | Claude (Opus 4.8/5, Sonnet 5), GPT, Gemini — credit gateway | Confirmed real and working per multiple independent sources (YouTube walkthroughs, community gist updated Aug 11, Threads/Instagram posts); the site itself returns 403 to non-browser clients. Telegram verification required. Community-reported numbers only — treat the exact credit amounts as volatile, not a contract. ⚠️ **Multi-account ban risk (user-reported):** signing into several aerolink accounts from the *same device* reportedly triggers a ban and can cost you the balances — reportedly device-fingerprinted (MAC / device model; mechanism unconfirmed). If you run multiple accounts, use separate devices or an Android Studio emulator per account, and do **not** spam signups | aerolink.lat/r |
 | **AgentRouter** ⚠️ caveat | $100 signup credit ($200 via referral; a community list reports $150 + daily-relogin bonus — amounts vary by source/promo) | Claude (incl. Opus/Sonnet 5), GPT-5.x, GLM-4.x/5.x, DeepSeek — OpenAI-compatible gateway | Confirmed this pass: launched Oct 2025, self-described non-profit/"public-welfare" gateway. **GitHub account required, and it must be 1+ year old (operator condition, user-confirmed).** OpenAI- and Anthropic-wire compatible — works w/ Claude Code, Codex, Gemini CLI, Roo, Kilo, and **Cline**: add your AgentRouter key as a custom OpenAI-compatible provider in the **Cline VS Code extension** (Settings → API Provider → OpenAI Compatible, base URL = AgentRouter endpoint) for free Claude/GPT inside the IDE. No markup claim (retail provider rates). Not for production uptime; free quota can end anytime. Operator still not independently audited — treat as caveat, not a confirmed free tier | agentrouter.org |
 | **Bluesminds** ⚠️ caveat | Signup credits (amounts conflict across sources: $100 per studentoffers/YouTube walkthroughs, 500 credits per a community list) · ~20 RPM · ~300 req/day free | GPT-5.x/4o, Gemini, Claude 4.x, Kimi K2.x, DeepSeek, Qwen | Unified gateway (OpenAI/Claude/Gemini-compatible), **GitHub login required — account 1+ year old (operator condition, user-confirmed)**, no card. Claude Code + Codex support. No independent verification of the operator — treat as caveat, not a confirmed free tier | api.bluesminds.com |
 | **Voyage AI** | 50M tokens/mo free | Embeddings + rerankers (RAG-tuned) | MongoDB-owned. Generous free tier, OpenAI-compatible | voyageai.com |
@@ -89,7 +164,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | **Tokeness** ⚠️ unverified | ~¥5 free + check-in bonus; paid credits cheap | DeepSeek + multi-model | Community-reported (gist, Aug 2026), described as stable. No live page verified this pass — treat as unverified | — |
 | **CatAPI** ⚠️ | Signup credits (unverified) | Multi-model via a **"New API"** gateway panel (OpenAI-compatible reseller front-end) | Self-hosted New-API-style aggregator; not an official provider — verify before funding, treat keys as untrusted | catapi.ai |
 
-> ★ = best of the hidden gems first. Ordering by usefulness, not trust tier — caveated rows (aerolink, AgentRouter, Bluesminds) sit high because they work, and keep their ⚠️ markers.
+> ★ = best of the hidden gems first. Ordering by usefulness, not trust tier — caveated rows (AgentRouter, Bluesminds) sit high because they respond, and keep their ⚠️ markers. aerolink was removed in Sept 2026 for serving Qwen instead of the Claude models it bills for.
 
 ### Aggregators (route across many free tiers with one key)
 
@@ -106,6 +181,17 @@ All endpoints are OpenAI SDK-compatible unless noted.
 > Combine the multi-provider free tiers (Groq + Cerebras + Google AI Studio + Chutes + Nineteen + OpenRouter `:free`) behind LiteLLM/free-llm-gateway → effectively continuous free inference.
 
 ### Chinese credit-routers / gateways (community-reported, ⚠️ all unverified)
+
+> ⛔ **Model substitution — read before using any credit gateway (user-tested, Sept 2026).**
+> Several "cheap Claude/GPT" gateways do not serve the model they bill for. Tested: **aerolink.lat**
+> answers "Opus/Sonnet" requests with **Qwen**; **lumosel.vip** answers with **DeepSeek**. Both show
+> token counters that don't match real Opus/Sonnet pricing (credits "last" far longer than real Opus
+> would), and both describe themselves as Chinese grey-market ("black-market") proxies. The same
+> pattern applies to many of the Chinese credit routers below. How to check any gateway yourself:
+> ask it for its model id and knowledge cutoff, run one prompt you've already run on the real
+> model and compare, and compare its token count to the official tokenizer for the same text. If
+> credits last "too long", you're not getting the model you think. Never send code, keys or
+> personal data through these.
 
 > Single source: a community gist updated 11 Aug 2026 ([almahmudbd/...free-apis](https://gist.github.com/almahmudbd/2f35cc768eae59117e8a0ce59beccca3)). None of these had a live page verified this pass — treat every number as a claim, and remember these gateways route your keys through third-party operators. `api.hcnsec.cn` is the Chinese-router lead from MASTER_PROMPT.md. Add in small batches; check-in bonuses and free quotas change weekly.
 
@@ -156,7 +242,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 ## How to Access Claude Opus 5 For Free
 
-> **Corrected 17 Aug 2026:** Opus is **not** on the Claude.ai free plan — the free tier is Sonnet 5 (daily-capped) plus Haiku. Opus 5 (current flagship, Jul 24, $5/$25) needs Pro/Max, an API trial, or cloud credits. The old "Opus 4.8 on the free plan" claim was wrong and has been removed; 4.8 is superseded history (still scored 88.6% SWE-bench).
+> **Updated 29 Sep 2026:** the current Opus is **Opus 5.5** (Sept 22, $4/$20). Opus is **not** on the Claude.ai free plan — free is Sonnet 5 (daily-capped) plus Haiku. Opus needs Pro/Max, an API trial, or cloud credits. GitHub Copilot Pro+ ($39) also includes Opus 5.5. The old "Opus 4.8 on the free plan" claim was wrong and has been removed; 4.8 is superseded history (still scored 88.6% SWE-bench).
 
 ### Ongoing Access
 
@@ -216,12 +302,13 @@ print(r.choices[0].message.content)
 | Best free trial quality | Kimi K2.6 | Moonshot trial | 80.2% SWE-bench |
 | Fastest inference | Llama 3.3 70B | Groq | ~60%, 320 tok/sec |
 | Fast trial for open models | Cerebras-hosted models | Cerebras | $5 signup credit; current sustained-free quota not published |
-| Free frontier coding (new) | **GLM-5.3** | **ZCode (free, since Aug 16-17)** | Vendor claims top Kimi K3 / near Fable 5 — free only via the coding plan for now |
+| Free frontier coding | **DeepSeek V4.1 Flash / Kimi K3 / GLM-5.3-Flash** | **Cline** (free models) · **Freebuff** (6 h/day V4.1 Flash) | ⛔ Not via ZCode — it uploaded users' repos |
 | Free 1M ctx chat | GLM-5.2 | chat.z.ai | ~72% SWE-bench |
-| Cheapest paid production | DeepSeek V4 Flash | DeepSeek API | 72%, **$0.66/M out off-peak** ($1.32 peak, since Aug 16) |
-| Google ecosystem | Gemini 3.1 Flash (or the new 3.7 Flash, free on AI Studio) | Google AI Studio | 74% SWE-bench |
+| Cheapest paid production | DeepSeek V4.1 Flash | DeepSeek API | **$0.60/M out off-peak**, 1M ctx, vision |
+| Google ecosystem | Gemini 3.8 Flash | Google AI Studio | 1M ctx, free tier |
 | Multi-model single key | Any `:free` | OpenRouter | Varies |
-| New free-AI wave (Aug 2026) | OmniRoute (1.5B tok/mo pooled) · NaraRouter (5-7M tok/day) · aerolink ($35/wk) | See Table 1B | Community-verified — check each live before relying |
+| Huge free context | Space Bunny Alpha (1M) · Ox Alpha (1M) | OpenRouter · TokenRa | Stealth — may log prompts |
+| Free-AI routers (Aug 2026) | OmniRoute (1.5B tok/mo pooled) · NaraRouter (5-7M tok/day) | See Table 1B | ⛔ Not aerolink / lumosel — they swap in Qwen/DeepSeek |
 
 ---
 

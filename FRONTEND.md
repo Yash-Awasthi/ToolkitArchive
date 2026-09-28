@@ -106,6 +106,9 @@
 | **Reflex** | Full-stack web apps in pure Python | Apache 2.0 | ~29K | Free | reflex.dev |
 | **Refine** | Data-rich React apps framework | MIT | ~35K | Free | refine.dev |
 | **Silex** | Open visual website builder | AGPL 3.0 | ~2.9K | Free | silex.me |
+| **Open Lovable** | Clone any site into a React/Next + Tailwind app (Firecrawl + any model), self-host | MIT | rising | Free (BYOK) | open-lovable.com |
+| **Creable** | Open Lovable alternative: prompt → full-stack Next.js with DB, auth, visual editor, GitHub sync | MIT | rising | Free self-host (50 free credits hosted) | — |
+| **Penpot** | Open-source Figma alternative (design + prototyping), self-host or free cloud | MPL 2.0 | high | Free | penpot.app |
 | **Pythagora** | AI full-stack app dev (GPT Pilot lineage) | — | high | Free (BYOK) | pythagora.ai |
 | **Cloudflare VibeSDK** | Deploy your *own* vibe-coding platform in 1 click — per-user sandboxes, live preview, Workers deploy. React/TS/Tailwind output, Gemini default via AI Gateway | MIT | rising | Free (self-host on Cloudflare) | github.com/cloudflare/vibesdk |
 | **SuperDesign** | UI design agent inside your IDE — only OSS IDE-native option, 10+ variants locally, BYO model | MIT | rising | Free (BYOK) | superdesign.dev |

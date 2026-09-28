@@ -1,9 +1,10 @@
-# Agentic Coding Tools — Full Reference (re-checked 17 August 2026)
+# Agentic Coding Tools — Full Reference (re-checked 29 September 2026)
 
 > TB 2.1 = Terminal-Bench 2.1 from tbench.ai. `[est]` = estimated from SWE-bench + community data.
 > **Benchmark rule:** TB rows measure an agent + model + effort configuration, not an agent in
 > isolation. The official TB 2.1 leaderboard was checked on 17 August; it uses five trials and
 > forbids submissions from changing timeouts or resources.
+> 🔄 **29 Sep 2026 pass:** Terminal-Bench 4.0 section added (TB 2.1 is saturated), Claude Code / Codex / Cursor / Copilot / Cline / Grok Build / Muse Code rows updated to the September models, **ZCode flagged as unsafe** (silent repo uploads), and the Gemini CLI retirement is **restored** — Google's own blog confirms free and Pro/Ultra users were cut off June 18 and moved to Antigravity CLI; the Aug pass wrongly called that unverified. Parts 6–14 still June-era.
 > ℹ️ **What was refreshed on 17 Aug 2026:** Parts 1 (CLI agents — added Grok Build, Muse Code;
 > corrected DeepSeek pricing), 2 (IDEs — added Codex IDE, Qoder, ZCode), 4 (chat interfaces —
 > current flagship models), 5 (infra — OmniRoute added), 5A (TB snapshot — Terminus-2 note;
@@ -41,15 +42,15 @@
 
 | Agent | By | TB 2.1 | License | Price | Model | BYOK | Stars |
 |---|---|---|---|---|---|---|---|
-| **Claude Code** | Anthropic | **83.8%** | Proprietary | Pro $17 · Max 5x $100 · a higher usage tier exists above Max 5x, but this pass found no confirmed price for it — the $200 figure previously here was not re-verified · API PAYG | Fable 5, xhigh | API only | — |
+| **Claude Code** | Anthropic | **83.8%** | Proprietary | Pro $17/mo annual ($20 monthly) · Max 5x $100 · Max 20x $200 · API PAYG | Fable 5, xhigh (TB 2.1 run) · now defaults to **Opus 5.5** | API only | — |
 
 > **Skills:** Claude Code, OpenCode, Codex, Cursor, Gemini CLI/Antigravity, and Qoder all support the open Agent Skills standard (lazy-loaded `SKILL.md` folders). Full skill ecosystem, install paths, and security bundles → [SKILLS.md](./SKILLS.md).
-| **Codex CLI** | OpenAI | **83.1%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5, xhigh | Yes | 93K |
+| **Codex CLI** | OpenAI | **83.1%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5, xhigh (TB 2.1 run) · now GPT-6 Sol / Astra | Yes | 93K |
 | **OpenHands** | All-Hands AI | **77.6%** | MIT | Free / cloud plans | Any (LiteLLM 100+ providers) | Yes | 78K |
 | **MiMo Code** | Xiaomi | ~73% [V] | MIT | Free (bundled MiMo V2.5 Pro) | MiMo V2.5 Pro | Yes | 5.6K |
 | **Verdent AI** | Verdent | ~71% [est] | Proprietary | Credit-based PAYG | Any (Quality/Speed modes) | Yes | — |
 | **Antigravity CLI** | Google | ~70.7% | Proprietary | Free preview · Pro $19.99 · Ultra $99.99/mo | Gemini 3.1 Pro | Yes | — |
-| **Grok Build** | xAI (SpaceXAI) | ~[V] | OSS harness (xai-org/grok-build) · proprietary models | **Free tier** (opened ~Jul 2026) · Heavy tier up to $299/mo per coverage | Grok 4.6 (Aug 12) / 4.5 | No | — |
+| **Grok Build** | xAI (SpaceXAI) | ~[V] | OSS harness (xai-org/grok-build) · proprietary models | **Free tier** (opened ~Jul 2026) · Heavy tier up to $299/mo per coverage | **Grok 4.7** (Sept 21) / 4.6 | No | — |
 
 > **Grok Build** — SpaceXAI's terminal-first coding agent (full-screen TUI; the harness repo is open-source). Free to try; heavier usage tiers exist. Its coding model `grok-build-0.1` ($1/$2, 256K) is also on OpenRouter/Kilo. TB score not independently confirmed this pass.
 
@@ -84,6 +85,41 @@ spend, rather than a reproduction of these published entries.
 > **86.6** and Gemini 3.7 Flash **85.8**. These are model-level numbers, not agent configurations;
 > treat them as directional, tagged [V] in [MODELS.md](./MODELS.md).
 
+### Terminal-Bench 4.0 — current snapshot (29 Sep 2026)
+
+TB 2.1 is saturated (the top models all land at 88–91% in vendor runs), so vendors now report
+**Terminal-Bench 4.0**: 66 tasks, a flat 8-hour agent timeout, calibrated CPU/memory, 8 saturated or
+leaked tasks removed. The official tbench.ai board renders client-side and couldn't be read this pass,
+so two secondary sources are shown side by side (checked 29 Sep 2026).
+
+| Model | TB 4.0 — vendor/aggregated (llm-stats, Sept 28) | TB 4.0 — independent (Artificial Analysis, mini-swe-agent, pass@1 ×3) |
+|---|---|---|
+| Claude Sonnet 5.5 | **70.6%** | **63.6%** (max effort) |
+| Claude Opus 5.5 | 66.4% | 59.6% (max and xhigh) |
+| Claude Mythos 5.1 | 60.9% | — (trusted access only) |
+| GPT-6 Astra | 57.7% | — |
+| Claude Fable 5.1 | 55.8% | — |
+| Claude Opus 5 | 51.8% | — |
+| Claude Fable 5 | 44.5% | — |
+| GLM-5.3 | 41.8% | — |
+| Grok 4.7 | 38.0% | — |
+| GPT-5.6 Sol | 37.3% | — |
+| MiMo-V2.6-Pro | 34.9% | — |
+| DeepSeek V4.1 Flash | 31.2% | — |
+| MiMo-V2.6-Flash | 28.8% | — |
+| Claude Opus 4.8 | 23.6% | — |
+| GPT-5.6 Terra | 21.5% | — |
+| Grok 4.6 | 20.3% | — |
+| Gemini 3.8 Flash | 19.1% | — |
+| GPT-5.6 Luna | 17.3% | — |
+| Claude Sonnet 5 · Grok 4.5 | 12.4% | — |
+
+> The independent run scores Anthropic's models ~7 points lower than their own launch numbers — same
+> ordering, different harness. Compare within a column, never across. GPT-6 Sol/Luna, Kimi K3 and
+> Qwen have no TB 4.0 entry on either board yet. Free stealth model **Union Alpha** is claimed at
+> ~50–60% by its fan site — unverified.
+> Full per-benchmark charts: [benchmarks.html](./benchmarks.html). Official board: tbench.ai/leaderboard/terminal-bench/4.0.
+
 ---
 
 ### Tier 2 — Open Source Power
@@ -95,7 +131,7 @@ spend, rather than a reproduction of these published entries.
 | **OpenCode** | anomalyco (sst) | ~71.5% [est] | MIT | Free BYOK · a paid Go/Black tier is rumored ($10/mo, $200/mo) but only sourced from an aggregator, not OpenCode's own pricing page — unverified | 177K (also seen as 165K elsewhere in this archive, neither re-verified this pass) |
 | **Pi (OH-MY-PI)** | Community | ~68% [est] | MIT | Free BYOK | 65K |
 | **Open Interpreter** | OpenInterpreter | ~62% [est] | MIT | Free BYOK | 64K |
-| **Cline** | cline | ~65% [est] | Apache 2.0 | Free BYOK | 63K |
+| **Cline** | cline | ~65% [est] | Apache 2.0 | Free BYOK · **free rotating models** · ClinePass $9.99/mo (13 open-weight models) | 63K |
 | **Goose** | Block / Linux Fdn | ~55% [est] | Apache 2.0 | Free BYOK | 50K |
 | **Aider** | aider-AI | ~60% [est] | Apache 2.0 | Free BYOK | ~44K (Aug 2026) |
 | **Continue** | Continue.dev | ~58% [est] | Apache 2.0 | Free BYOK | 34K |
@@ -106,7 +142,7 @@ spend, rather than a reproduction of these published entries.
 | **Plandex** | Plandex | ~58% [est] | AGPL 3.0 | Free BYOK | 15.5K |
 | **SWE-agent** | Princeton NLP | ~55% [est] | MIT | Free BYOK | 19.6K |
 | **Trae Agent** | ByteDance | ~60% [est] | MIT | Free BYOK | 11.7K |
-| **Kimi CLI** | Moonshot AI | ~65% [est] | Apache 2.0 | Free BYOK | 9K |
+| **Kimi Code CLI** | Moonshot AI | ~65% [est] | Apache 2.0 | Free BYOK · v2.1.0 Sept 23, pairs with Kimi K3 | 9K |
 | **Free Code** | Community | ~70% [est] | MIT | Free BYOK | 8.5K |
 | **DeepSeek Harness** | DeepSeek AI | — [V] | MIT | Free BYOK | rising |
 | **Claurst** | Community | ~68% [est] | MIT | Free BYOK | 9.8K |
@@ -122,7 +158,7 @@ spend, rather than a reproduction of these published entries.
 
 | Agent | By | Lang | License | What | Stars |
 |---|---|---|---|---|---|
-| **Muse Code** ⚠️ | **Meta** | — | Proprietary (beta) | **Meta's first coding agent** — terminal, multi-agent by default (parallel agents + self-verification), one-command install (macOS/Linux). Powered by **Muse Spark 1.2** (Aug 5, 2026). Tiered pricing; Spark 1.2 also on the Meta Model API. No TB 2.1 / SWE-bench published yet — beta, watch | — |
+| **Muse Code** ⚠️ | **Meta** | — | Proprietary (beta) | **Meta's first coding agent** — terminal, multi-agent by default (parallel agents + self-verification), one-command install (macOS/Linux). Launched Aug 5 on Muse Spark 1.2; **now runs Muse Spark 1.3** (Sept 2, max reasoning — ~20% fewer tool calls, ~25% fewer tokens). Spark 1.3 on the Meta Model API at $1.25/$4.25; a cheaper "contributor" tier lets Meta keep your data. No TB 2.1 / SWE-bench published yet — beta, watch | — |
 | **Nanocoder** | Nano Collective | TS | MIT | Local-first (Ollama/LM Studio/llama.cpp/MLX), cloud opt-in | ~2K |
 | **claw-code-agent** | Community | Python | MIT | Pure-Python Claude Code rewrite, zero deps (from Mar-2026 leak) | ~517 |
 | **g3** | Community | Rust | MIT | Tool-running, repo interaction, skills, provider abstraction | ~515 |
@@ -133,7 +169,7 @@ spend, rather than a reproduction of these published entries.
 
 > **DeepSeek Harness (`dsh`)** — open-source agent harness, **open-sourced Aug 14, 2026** (developer preview). "Everything is a plugin": models, tools, skills, and UI are all plugins, powered by the Cordis meta-framework (Node.js). It is the harness behind DeepSeek's own TB 2.1 runs (V4 Pro 0813 = 87.9, vendor-reported). MIT. [github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) — see also [REFERENCES.md](./REFERENCES.md).
 
-> ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode feuded with Anthropic over subscription login. **Gemini CLI retirement, corrected this pass:** a prior version of this archive stated Gemini CLI was retired June 18 — that was wrong. The repo is live, Apache 2.0, ~106K stars, with a free tier of 60 req/min and 1,000 req/day. The "migrate to Antigravity" claim traced back to an aggregator, not a Google announcement, and could not be confirmed — treat it as unverified, not fact. Star count for OpenCode also has two conflicting figures in this archive (165K vs 177K elsewhere) — neither re-verified this pass, don't trust either to the digit.
+> ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode feuded with Anthropic over subscription login, **Cursor was bought by SpaceX** (Aug 14), and **Gemini CLI stopped serving free and AI Pro/Ultra users on June 18, 2026** (Google Developers Blog, May 19) — those users moved to Antigravity CLI; Gemini CLI now only works with paid Gemini API keys or enterprise licences. The Aug pass wrongly called this unverified. Star count for OpenCode also has two conflicting figures in this archive (165K vs 177K elsewhere) — neither re-verified this pass, don't trust either to the digit.
 
 ### Proxy / Router Tools (free + cheaper model access in your existing agent)
 
@@ -162,6 +198,7 @@ Self-improving agent with a closed learning loop. Creates skills from experience
 - **Sandboxed execution** — Unix socket RPC for safe code runs
 - **Multi-platform** — Telegram, Slack, Discord, WhatsApp integrations
 - **Status:** Fastest-growing agent after Claude Code and Claw Code
+- **Sept 2026 (v0.21.x):** native desktop app, Bot Mode, group chats between agents, 27+ messaging integrations, A2A support
 
 #### Claw Code — 194K stars
 Clean-room Python/Rust rewrite of Claude Code architecture. Born from the March 2026 Claude Code source leak (oh-my-codex). Fastest repo in GitHub history to 100K stars.
@@ -204,9 +241,9 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 | Agent | By | TB 2.1 | Price | BYOK |
 |---|---|---|---|---|
-| **Cursor** | Cursor | ~72% [est] | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | Yes |
-| **FreeBuff** | Codebuff / YC | ~70% [est] | Free ad-supported (5hr/day on V4 Flash) | Partial |
-| **GitHub Copilot** | Microsoft | ~65% [est] | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo | Partial |
+| **Cursor** | Cursor (**SpaceX-owned** since Aug 14) | ~72% [est] | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom. Usage split into two pools: first-party (Grok 4.5–4.7, Composer 2.5, Auto) and third-party (Claude/GPT/Gemini) | Yes |
+| **FreeBuff** | Codebuff / YC | ~70% [est] | Free, ad-supported: 100 "Freebucks"/day — DeepSeek V4.1 Flash 6 h, GPT-6 Luna 5 h, GLM-5.3 Flash 20 h, MiMo 2.6 Pro 3 h, Space Bunny Alpha unlimited. CLI + desktop + web builder + cloud IDE | Partial |
+| **GitHub Copilot** | Microsoft | ~65% [est] | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo. Sept: Opus 5.5 + GPT-6 Sol (Pro+ and up), GPT-6 Luna + Grok 4.7 (Pro and up) | Partial |
 | **Kiro** | AWS | N/A | Free 50cr · Pro $10 · Pro+ $20/mo | Yes |
 | **Qwen Code** | Alibaba | N/A | Free BYOK | Yes |
 | **Amp** | Sourcegraph | ~68% [est] | Free tier is ad-supported, no hard token cap · Megawatt $20/mo · Gigawatt $200/mo · Unconstrained PAYG | Yes |
@@ -222,7 +259,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 **Sweep AI** — turns GitHub issues directly into PRs. AI generates, tests, and self-reviews. JetBrains-first (4.9 stars, 40K installs). Best for automated issue → PR workflow.
 
-> **Gemini CLI is not retiring, corrected this pass** — the repo is live (Apache 2.0, ~106K★, free tier 60 req/min / 1,000 req/day). Earlier text here claimed a June 18 retirement and told readers to migrate to Antigravity CLI; that claim only traces to an aggregator, not a Google source, and could not be confirmed. Treat "Gemini CLI is gone" as unverified, not fact.
+> **Gemini CLI → Antigravity CLI (confirmed).** Google's Developers Blog (May 19) announced it and it happened June 18: Gemini CLI stopped serving free and AI Pro/Ultra users, who now use **Antigravity CLI** (Go rewrite, async multi-agent, same Skills/Hooks/Subagents; extensions became Antigravity plugins). The repo stays up and still works with paid Gemini API keys and enterprise licences. Antigravity's free Individual plan: unlimited Tab and Command, weekly-limited agent use; Gemini 3.8 Flash added Sept 1.
 
 ---
 
@@ -232,21 +269,22 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 | IDE | By | Price | Agent Features | Privacy | Notes |
 |---|---|---|---|---|---|
-| **Cursor** | Cursor | Free (Hobby) · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | 8 parallel agents, BugBot, Background Agents, Design Mode, multi-repo | Encrypted | Cursor 3 "Glass" rebuild Apr 2. $100M+ ARR |
+| **Cursor** | Cursor (SpaceX) | Free (Hobby) · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom | 8 parallel agents, BugBot, Background Agents, Design Mode, multi-repo | Encrypted | SpaceX closed the $60B acquisition Aug 14. Grok 4.5 was co-trained with SpaceXAI; Grok + Composer 2.5 are the in-house models |
 | **Codex IDE** | OpenAI | Free (limited) · Plus $20 · Pro $200/mo | VS Code extension — Codex cloud coding agent, chat, terminal, PR-to-branch workflow | OpenAI cloud | The GUI home of the Codex CLI agent (TB 2.1 83.1% via Codex + GPT-5.5) |
 | **Kiro** | AWS | Free 50cr · Pro $10 · Pro+ $20/mo | Spec-driven (requirements→code), Hooks | AWS-hosted | "AI IDE for adults." May 7 launch |
 | **Warp** | Warp | Free · Pro $19 · Team $35/mo | Agent Mode, MCP, Cloud Agents (Oz), multi-agent hub | Open-source | Open-source May 28 |
 | **Devin Desktop** | Cognition | $20/mo + $2.25/ACU (official pricing page returned an error twice this pass — treat as unverified, not current) | Devin Local from Jul 1 | Cloud | Formerly Windsurf, rebranded Jun 2 (confirmed: windsurf.com redirects to devin.ai) |
-| **GitHub Copilot** | Microsoft | Free · Pro $10 · Pro+ $39 · Max $100/mo | Workspace, Coding Agent, BugBot, multi-provider | Microsoft | Usage-based credits since Jun 1 |
-| **Antigravity** | Google | Free · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use | Google | Google's newer agentic IDE. Does not replace Gemini CLI — that tool is still live, see Part 1 note |
-| **Gemini CLI** | Google | Free (60 req/min, 1,000 req/day) | Terminal agent | Google | ~106K★, Apache 2.0. A prior retirement claim in this archive was unverified and has been removed |
+| **GitHub Copilot** | Microsoft | Free · Pro $10 · Pro+ $39 · Max $100/mo | Workspace, Coding Agent, BugBot, multi-provider, local agent sandboxing (preview) | Microsoft | Usage-based credits since Jun 1. Auto model selection has efficiency / balance / intelligence tiers (Sept) |
+| **Antigravity** | Google | Free (weekly agent limits) · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use, Antigravity CLI | Google | Replaced Gemini CLI for free and Pro/Ultra users on June 18. Models: Gemini 3.8/3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6, gpt-oss-120b |
+| **Gemini CLI** | Google | Paid Gemini API key only | Terminal agent | Google | ~106K★, Apache 2.0. Free and Pro/Ultra access ended June 18, 2026 — use Antigravity CLI instead |
 | **Trae** | ByteDance | Free · Lite $3 · Pro $10 · Ultra $100/mo | SOLO mode, MCP | **5-yr retention, no opt-out** | VS Code fork |
 | **Qoder** | Alibaba | **Free** (agent platform; ∞ model access per router dashboards) | Agent Autonomous Development platform, Quest mode, context-engineered editor, MCP | Cloud (Aliyun) | Launched Sep 2025 as free AI IDE; **Qoder 1.0 May 15, 2026** upgraded it to an agentic coding platform (Win/macOS/Linux). Pricing details on qoder.com |
-| **ZCode** | Z.AI / Zhipu | **Free** (GLM coding plan; paid plans exist) | Agentic desktop coding env — plan/code/review/deploy, GLM-5.2/5.3 | Cloud (Z.AI) | Launched Jul 2, 2026 as Z.AI's free coding agent vs Cursor/Claude Code/Copilot (VentureBeat). **GLM-5.3 (Aug 14) is free on ZCode right now** — it's the only place GLM-5.3 runs (API + open weights in ~2 weeks); GLM-5.2 was the launch model. zcode.z.ai |
+| ~~**ZCode**~~ ⛔ | Z.AI / Zhipu | Free | Desktop coding agent, GLM-5.x | **Uploaded your repo** | **Do not use.** Disclosed Sept 18: default-on codebase indexing packed whole repos incl. full Git history (old secrets too) and uploaded them, encrypted with a Z.ai-held key, to Alibaba Cloud — no opt-out, not in the privacy policy. Z.ai removed it in v3.14.0 (Sept 21) and open-sourced ZCode with history wiped. Rotate any secret that ever sat in a repo you opened with it. Details in [NEWS.md](./NEWS.md) |
 | **Void** | Void | Free | Agent Mode (multi-file, terminal) | **No telemetry, fully local** | Open-source VS Code fork |
 | **PearAI** | PearAI | Free BYOK | Full agentic, Continue-based | BYOK = local keys | Open-source VS Code fork |
 | **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |
-| **Claude Code** | Anthropic | Pro $17 · Max 5x $100 · a higher usage tier exists above Max 5x, but this pass found no confirmed price for it — the $200 figure previously here was not re-verified | Terminal + VS Code, MCP, parallel subagents | Anthropic cloud | Best MCP + tool-use |
+| **Claude Code** | Anthropic | Pro $17 (annual) / $20 · Max 5x $100 · Max 20x $200 | Terminal, IDEs, desktop, web, Slack, CI; MCP 2.0, plugins, parallel subagents | Anthropic cloud | Opus 5.5 default Opus since Sept 22; 5-hour limits raised Sept 22 |
+| **Cline Desktop** | Cline | Free (open source, beta) + ClinePass $9.99/mo | Imports Claude Code/Codex sessions, cron jobs, parallel sessions, any model incl. local | Local-first | Sept 14. **Kimi K3 free in it** since Sept 18 |
 | **AionUI** | AionUI OSS | Free (Apache 2.0) | Unified desktop dashboard for 20+ CLI agents, built-in agent, Cron scheduler, office editing | 100% local SQLite | 28K+ stars. GUI wrapper for terminal agents |
 | **Eigent** | Eigent AI | Free (OSS) · Pro $? | Multi-agent workforce (Browser/Terminal/Document/Multimodal), CAMEL-based, scheduled tasks | Local-first | 14.4K stars. "Open Source Cowork Desktop" |
 
@@ -342,15 +380,15 @@ brew install aionui
 
 | Interface | By | Best Model | Free | Price | Standout Feature |
 |---|---|---|---|---|---|
-| **Claude.ai** | Anthropic | Sonnet 5 on free (capped) · Opus 5 on Pro/Max | Yes (Sonnet 5, not Opus) | Pro $17/mo | Best reasoning, Artifacts, Projects |
-| **ChatGPT** | OpenAI | GPT-5.6 / GPT-5.5 | Yes | Plus $20/mo | Canvas, code exec, image gen, deep research |
-| **Gemini** | Google | Gemini 3.7 Flash (free) / 3.1 Pro | Yes | AI Pro $19.99/mo | Deep Research, Google Workspace |
+| **Claude.ai** | Anthropic | Sonnet 5 on free (capped) · **Opus 5.5 / Fable 5.1** on Pro/Max | Yes (Sonnet 5, not Opus) | Pro $17/mo | Best reasoning, Artifacts, Projects, Cowork |
+| **ChatGPT** | OpenAI | GPT-6 Astra (Pro/Business) / GPT-6 Sol | Yes (GPT-6 Luna on desktop) | Plus $20/mo | Canvas, code exec, image gen, deep research |
+| **Gemini** | Google | Gemini 3.8 Flash / 3.1 Pro (Gemini 4 Pro expected Oct) | Yes | AI Pro $19.99/mo | Deep Research, Google Workspace |
 | **chat.z.ai** | Z.AI / Zhipu | GLM-5.2 (1M ctx, unverified) | Yes (generous) | Coding $3/mo | Web chat is free; the GLM-5.2 API itself is paid ($1.40/$4.40 per 1M, see [MODELS.md](./MODELS.md)) — don't read "developer API free" from the free web chat. MIT-license claim not confirmed on the official pricing doc |
 | **Qwen Chat** | Alibaba | **Qwen 3.8-Max (free)**, Qwen 3.7 | Yes | Free | Free chat access to Qwen 3.8-Max (2.4T, Aug 2026); also the ModelScope/API route for paid access | chat.qwen.ai |
-| **Grok** | xAI (SpaceXAI) | Grok 4.6 | Yes (on X) | SuperGrok $30/mo | Deep Search, X integration, image gen |
+| **Grok** | xAI (SpaceXAI) | Grok 4.7 | Yes (on X) | SuperGrok $30/mo | Deep Search, X integration, image gen |
 | **Perplexity** | Perplexity | Multiple | Yes | Pro $20/mo | Best for research + citations |
 | **aider.chat** | aider-AI | Claude / GPT / local | N/A | Free (BYOK API) | Web frontend for Aider CLI — same BYOK model |
-| **Kimi** | Moonshot | Kimi K2.6 | Yes (trial) | Pro $20/mo | 80.2% SWE-bench, 256K ctx, 4000+ tool calls |
+| **Kimi** | Moonshot | **Kimi K3 (free)** | Yes | Pro $20/mo | 2.8T open-weight flagship, free on kimi.com, 1M ctx |
 | **Mistral Le Chat** | Mistral | Mistral Medium 3.5 | Yes | Pro $14.99/mo | EU-hosted, GDPR, Canvas mode |
 | **Manus AI** | Manus | Internal + frontier | Yes (300cr/day) | Pro $20/mo | Autonomous agent, not just chat |
 
@@ -371,6 +409,8 @@ brew install aionui
 ---
 
 ## Part 5A — MCP (Model Context Protocol) — Full Reference
+
+> **Sept 2026:** Claude **Plugins** are now Anthropic's main third-party extension format (directory submission portal, auto-validation, publishing controls, analytics) and support MCP 2.0, MCP Apps and Enterprise Managed Auth. If you ship an MCP server for Claude users, package it as a plugin.
 
 > MCP is the USB-C of AI agents — one standard that connects any AI to any tool.
 
@@ -595,8 +635,10 @@ ANTHROPIC_API_KEY=sk-ant-... jcode --host user@remote.server
 | Windsurf | Rebranded June 2 (Cognition/Devin merge, confirmed via windsurf.com → devin.ai redirect) | Devin Desktop |
 | Cascade engine | EOL July 1 (not re-checked this pass) | Devin Local |
 | Amazon Q Developer | Replaced May 2026 (not re-checked this pass) | Kiro |
-
-> Gemini CLI removed from this table — it was previously listed here as "retired June 18," but the repo is live with a free tier (see Part 1). The claim that Antigravity CLI replaces it, or that free Gemini CLI users lose access, only traces to an aggregator and is unverified — don't act on it either direction.
+| Gemini CLI (free, AI Pro/Ultra) | Stopped serving June 18, 2026 (Google Developers Blog); still works with paid API keys | Antigravity CLI |
+| ZCode (Z.ai) | Silent workspace uploads disclosed Sept 18 — see [NEWS.md](./NEWS.md) | Any other agent; GLM via API / OpenCode / Cline |
+| DeepSeek V4 Flash | Retired Sept 10 | DeepSeek V4.1 Flash (`deepseek-flash`) |
+| OpenAI Sora API | Sunset Sept 24, 2026 | Veo 3.1 / Kling 3.0 / Runway Gen-4 |
 
 ---
 
@@ -989,7 +1031,7 @@ Where to find new AI tools before they hit mainstream coverage.
 Recent Reddit discussions and the community gist surfaced free-tier routers and credit-gateway
 signup waves; Instagram reels surfaced OmniRoute, aerolink, Bluesminds, and the DeepSeek V4-Pro
 `0813` launch. The 17 Aug 2026 pass used those as **discovery only** — every recommendation that
-resulted (OmniRoute, NaraRouter, LongCat, aerolink, etc.) was then cross-checked against a live
+resulted (OmniRoute, NaraRouter, LongCat, aerolink — since removed for model substitution, etc.) was then cross-checked against a live
 page, the vendor's GitHub, or a benchmark operator before it was written into a table. No public
 Discord offer independently justified a new entry this pass; the Terminal-Bench Discord is linked
 by the benchmark project for feedback, not used as a score source. Social signals are leads, not

@@ -111,7 +111,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 | **cc-compatible-models** | Configs + pricing to run Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun in Claude Code | Reference guide | github.com/Alorse/cc-compatible-models |
 | **Puter.js** | Keyless access to 400+ models (GPT, Claude, Gemini, Grok, DeepSeek) — **"user-pays"** | Free *for the developer*; end-users cover usage | developer.puter.com |
 
-> ⚠️ `iFlow` and `Qwen` free tiers were **discontinued in 2026** — use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier is not discontinued — a prior version of this line said it was, but the repo is live with a 60 req/min / 1,000 req/day free tier; that discontinuation claim only traced to an aggregator and has been removed.
+> ⚠️ `iFlow` and `Qwen` free tiers were **discontinued in 2026** — use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier **was** discontinued on June 18, 2026 (Google Developers Blog) — free and AI Pro/Ultra users moved to Antigravity CLI, which has its own free Individual plan. An Aug-pass line claiming otherwise was wrong.
 > ⚠️ **ToS warning:** the Copilot/Claude-Code proxies are **unofficial, reverse-engineered** — they may violate provider ToS and risk account suspension. Use on your own accounts at your own risk; not a sanctioned path. CLIProxyAPI and Puter.js are the lowest-risk options.
 
 ---
@@ -174,7 +174,6 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 
 > These have not been independently confirmed. Do not give them a plain entry anywhere else in this archive.
 
-- **Aerolink.lat** — ⚠️ user-reported: multi-account signups from the same device risk a ban and losing balances; use one account per device/emulator, don't spam (see the Table 1B row)
 - **Agentrouter.org** (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
 - **Bluesminds** / api.bluesminds.com (see flagged row in [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1B)
 - **api.hcnsec.cn**
@@ -187,5 +186,7 @@ Arena.ai, Genspark, Hix.ai, Deepgram, Ninjachat.ai, Omniroute, Zenmux.ai, Studen
 
 ### Kept out entirely
 
-- **Lumosel.vip** — confirmed scam. Keep it in this archive only as a warning, never as a usable entry.
+- **Lumosel.vip** — confirmed scam. User-tested Sept 2026: "Opus/Sonnet" requests are answered by **DeepSeek**, the token counter doesn't match real pricing, and it calls itself a Chinese grey-market proxy. Warning only, never a usable entry.
+- **Aerolink.lat** — moved here from Unverified (Sept 2026). User-tested: "Opus/Sonnet" requests are answered by **Qwen**, token counter doesn't match real Opus/Sonnet costs, self-described Chinese grey-market proxy. Earlier it also banned multi-account devices and kept the balances. Warning only.
+- **Chinese credit routers in general** (TabiToken, Tokeness, GoRouter, TokenLayer, yunwu, AiWave and similar) — assume model substitution until you have tested them yourself; see the check in [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers--gateways-community-reported--all-unverified).
 - **Verdant.ai** — the name is shared by four unrelated companies. Whoever writes an entry for it must first identify which company they mean; until then, leave it out.

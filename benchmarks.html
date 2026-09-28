@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frontier model benchmarks, ranked</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f5f4f0;--card:#fff;--ink:#1c1d20;--mute:#686c74;--line:#e2e0da;--track:#ebe9e3}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131417;--card:#1b1d21;--ink:#edece9;--mute:#9b9fa7;--line:#2c2f35;--track:#272a31}}
+:root[data-theme="dark"]{--bg:#131417;--card:#1b1d21;--ink:#edece9;--mute:#9b9fa7;--line:#2c2f35;--track:#272a31}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+main{max-width:1180px;margin:0 auto;padding:28px 16px 56px}
+h1{font:600 clamp(26px,4vw,38px)/1.15 "IBM Plex Serif",Georgia,serif;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--mute);max-width:75ch;margin:0 0 22px}
+.board{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:20px}
+.board h2,.card h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.board p{margin:0 0 12px;color:var(--mute);font-size:13px}
+.wins{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px 28px}
+.verdict{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.verdict div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.verdict b{display:block;font-size:12px;color:var(--mute);font-weight:500}
+.verdict span{font-weight:600}
+.verdict small{display:block;color:var(--mute);font-size:12px}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+button{font:inherit;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px;cursor:pointer}
+button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible{outline:2px solid #3f7fe0;outline-offset:2px}
+.chip i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.note{color:var(--mute);font-size:12px;margin:0 0 10px}
+.r{display:grid;grid-template-columns:128px 1fr 52px;align-items:center;gap:8px;padding:2px 0;font-size:13px;transition:opacity .15s}
+.r.dim{opacity:.22}
+.r .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t{height:9px;background:var(--track);border-radius:5px;overflow:hidden}
+.t b{display:block;height:100%;border-radius:5px}
+.r .v{text-align:right;color:var(--mute)}
+.r.top .n,.r.top .v{font-weight:600;color:var(--ink)}
+footer{color:var(--mute);font-size:12.5px;margin-top:26px;max-width:80ch}
+footer p{margin:0 0 8px}
+@media (prefers-reduced-motion:reduce){.r{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>Frontier model benchmarks, ranked</h1>
+<p class="sub">36 benchmarks, 60+ models, checked 29 September 2026. Scores come from vendor launch tables (Anthropic, OpenAI, Google, Moonshot, DeepSeek, Xiaomi, SpaceXAI), aggregated boards (llm-stats, updated Sept 28), and independent evaluators (Artificial Analysis, LMArena, Vals, Scale). Each chart is sorted best to worst. Tap a company to highlight its models.</p>
+
+<section class="board" aria-labelledby="vh">
+<h2 id="vh">Verdict</h2>
+<p>Computed from head-to-head results: every time two models appear on the same chart, the higher score wins that matchup. A model's rating is its share of matchups won, so it doesn't matter that charts use different scales or that no model appears on every chart. Ranking uses a confidence-adjusted version of that share, so a model tested on only a few charts can't top a list on a lucky streak. Only models with at least 6 charts are ranked overall.</p>
+<div class="verdict" id="verdict"></div>
+</section>
+
+<section class="board" aria-labelledby="oh">
+<h2 id="oh">Overall ranking</h2>
+<p>Share of head-to-head matchups won across all charts (number of charts in brackets). Filter by category with the buttons below — the ranking recomputes for that category.</p>
+<div class="wins" id="overall"></div>
+</section>
+
+<section class="board" aria-labelledby="wh">
+<h2 id="wh">Benchmarks led</h2>
+<p>How many charts below each model tops. Rough guide only — a model can only win charts it was tested on.</p>
+<div class="wins" id="wins"></div>
+</section>
+
+<div class="ctl" id="tabs" role="group" aria-label="Category"></div>
+<div class="ctl" id="chips" role="group" aria-label="Company"></div>
+<div class="grid" id="grid"></div>
+
+<footer>
+<p>Same model, different numbers: Opus 5 scores 52.3, 52.6 or 51.8 on Terminal-Bench 4.0 depending on who ran it, and GPT-5.6 Sol scores 37.3 or 39.9. Artificial Analysis' independent Terminal-Bench 4.0 run (mini-swe-agent) scores Sonnet 5.5 at 63.6 and Opus 5.5 at 59.6, about 7 points under Anthropic's own numbers. AutomationBench is shown twice because Zapier's and DeepSeek's setups produce very different scales.</p>
+<p>Terminal-Bench 2.1 and 4.0 are different tests. SWE-bench Pro mixes vendor runs with Scale's standardized runs, which read about 20 points lower; the Opus 5.5 SWE-bench Pro figure is a self-reported llm-stats entry. SWE-bench Verified is archived at Vals and only covers older models. AIME 2026, MMLU-Pro and AA-LCR mostly have open-model entries — closed labs stopped reporting them.</p>
+<p>The head-to-head rating rewards breadth and doesn't weigh benchmark importance or price. Models that skip hard charts (for example most Chinese labs on Terminal-Bench 4.0) can look better than they are. Read it next to the per-chart detail, not instead of it.</p>
+</footer>
+</main>
+<script>
+const C={Anthropic:'#b8562f',OpenAI:'#1f9d7a',Google:'#3f7fe0',DeepSeek:'#4a5ff0',Moonshot:'#8b5cf6','Z.ai':'#c99512',Alibaba:'#c04fb0',xAI:'#7b8190',Meta:'#1b9ec9',Xiaomi:'#e0703a',Other:'#a3a09a'};
+const co=n=>/Opus|Sonnet|Fable|Haiku|Mythos/.test(n)?'Anthropic':/GPT/.test(n)?'OpenAI':/Gemini|Gemma/.test(n)?'Google':/DeepSeek/.test(n)?'DeepSeek':/Kimi/.test(n)?'Moonshot':/GLM/.test(n)?'Z.ai':/Qwen/.test(n)?'Alibaba':/Grok/.test(n)?'xAI':/Muse/.test(n)?'Meta':/MiMo/.test(n)?'Xiaomi':'Other';
+const G={all:'All',c:'Coding',w:'Work and agents',r:'Reasoning and knowledge',u:'Vision and computer use',p:'Human preference',s:'Security'};
+// USD per 1M output tokens (list price, 29 Sept 2026) — used for the value pick only
+const P={'Opus 5.5':20,'Sonnet 5.5':10,'Fable 5.1':50,'GPT-6 Astra':50,'GPT-6 Sol':10,'GPT-6 Luna':0.5,'Grok 4.7':6,'Gemini 3.8 Flash':3.75,'Muse Spark 1.3':4.25,'DeepSeek V4.1 Flash':0.6,'DeepSeek V4 Pro':1.98,'Kimi K3':15,'GLM-5.3':4.4,'MiMo-V2.6 Pro':0.87,'MiMo-V2.6 Flash':0.28,'Qwen3.8 Max':6,'GPT-5.6 Sol':20,'Opus 5':25,'Grok 4.6':6,'Solar Pro 4':1.2};
+// [group, title, note, rows, isElo]
+const B=[
+['c','Terminal-Bench 4.0','Vendor and aggregated numbers (llm-stats, Sept 28). Opus 5.5 at xhigh. Kimi K3 and V4 Pro from DeepSeek\'s table.',[['Sonnet 5.5',70.6],['Opus 5.5',66.4],['Mythos 5.1',60.9],['GPT-6 Astra',57.9],['Fable 5.1',55.8],['Opus 5',52.3],['Fable 5',44.5],['GLM-5.3',41.8],['Grok 4.7',38],['GPT-5.6 Sol',37.3],['MiMo-V2.6 Pro',34.9],['DeepSeek V4.1 Flash',31.2],['MiMo-V2.6 Flash',28.8],['Opus 4.8',23.6],['GPT-5.6 Terra',21.5],['Grok 4.6',20.3],['Gemini 3.8 Flash',19.1],['GPT-5.6 Luna',17.3],['Kimi K3',12.6],['DeepSeek V4 Pro',12.4],['Grok 4.5',12.4],['Sonnet 5',10.3]]],
+['c','DeepSWE v1.1','Top five within 1.2 points. Mixed OpenAI, Moonshot and DeepSeek sources.',[['DeepSeek V4.1 Flash',74.2],['GPT-6 Astra',74.1],['Opus 5',74],['Gemini 3.8 Flash',73.8],['GPT-5.6 Sol',73],['Fable 5',70],['GPT-6 Sol',68.8],['Kimi K3',67.5],['Fable 5.1',67.4],['GLM-5.3',66.9],['GPT-6 Luna',66.6],['DeepSeek V4 Pro',62.7],['Laguna S 2.1',40.4]]],
+['c','FrontierCode 1.1 Main','Measures whether a change is mergeable. Sonnet 5.5 at xhigh (46.2 at max).',[['Opus 5.5',54.4],['GPT-6 Astra',53.3],['Sonnet 5.5',52.1],['Fable 5.1',50.3],['GPT-6 Sol',49.3],['Opus 5',48],['GPT-5.6 Sol',47.5],['Gemini 3.8 Flash',43.6],['Sonnet 5',42.4]]],
+['c','CursorBench 4.0','Anthropic launch tables plus SpaceXAI for Grok.',[['Opus 5.5',57.8],['Sonnet 5.5',55.5],['Fable 5.1',51.8],['Opus 5',46.6],['Grok 4.7',46.3],['GPT-5.6 Sol',41.7],['Grok 4.6',40.4],['Sonnet 5',34.1]]],
+['c','SWE-bench Pro','Vendor runs plus Scale (Gemini 3.1 Pro, Haiku 4.5) and llm-stats self-reported entries. Not one harness.',[['Opus 5.5',89.9],['Fable 5.1',81.2],['Fable 5',80],['Kimi K3',80],['Opus 4.8',69.2],['Qwen3.8 Max',67.7],['Hy4 Preview',65.7],['Grok 4.5',64.7],['GPT-5.6 Sol',64.6],['GPT-5.6 Terra',63.4],['Sonnet 5',63.2],['GPT-5.6 Luna',62.7],['Qwen3.8-Flash-Next',62.5],['GLM-5.2',62.1],['Qwen3.8 27B',61.7],['Gemini 3.8 Flash',61.6],['Muse Spark 1.1',61.5],['Laguna S 2.1',59.4],['MiniMax M3',59],['Kimi K2.6',58.6],['Gemini 3.1 Pro',46.1],['Haiku 4.5',39.45]]],
+['c','SWE-bench Verified','Vals AI final board (archived Sept 1) plus llm-stats. Older models only.',[['Opus 5',97],['DeepSeek V4 Pro',96.4],['GPT-5.6 Sol',96.2],['Grok 4.6',95.6],['GLM-5.3',95.4],['Fable 5',95],['Kimi K3',93.4],['Opus 4.8',88.6],['Sonnet 5',85.2],['MiniMax M3',80.5],['Inkling-Small',80.2],['MiMo-V2.5 Pro',78.9],['Inkling',77.6]]],
+['c','Terminal-Bench 2.1','Older version of the test, near saturation. llm-stats, Sept 28.',[['DeepSeek V4.1 Flash',90.6],['MiMo-V2.6 Pro',89.9],['Gemini 3.8 Flash',89.4],['Opus 5',89.1],['GPT-5.6 Sol',88.8],['Muse Spark 1.3',88.8],['Kimi K3',88.3],['GLM-5.3',88.2],['DeepSeek V4 Pro',87.9],['MiMo-V2.6 Flash',87.6],['GPT-5.6 Terra',87.4],['Qwen3.8 Max',86.6],['Hy4 Preview',85.4],['GPT-5.6 Luna',84.7],['Fable 5',84.6],['Opus 4.8',84.6],['GLM-5.3-Flash',84.3],['Grok 4.5',83.3],['Qwen3.8 27B',73],['Laguna S 2.1',70.2],['MiniMax M3',66],['Solar Pro 4',57]]],
+['c','FrontierSWE','Moonshot chart, max or xhigh effort.',[['Fable 5',86.6],['Kimi K3',81.2],['GPT-5.6 Sol',71.3],['GLM-5.2',67.3],['Opus 4.8',66.7],['GPT-5.5',64.9]]],
+['c','NL2Repo-Bench','DeepSeek table.',[['Opus 5',75.3],['DeepSeek V4.1 Flash',65.4],['DeepSeek V4 Pro',61.5],['GLM-5.3',58],['Kimi K3',58],['GPT-5.6 Sol',56.8]]],
+['c','ProgramBench','Moonshot chart.',[['Kimi K3',77.8],['GPT-5.6 Sol',77.6],['Fable 5',76.8],['Opus 4.8',71.9],['GPT-5.5',70.8],['GLM-5.2',63.7]]],
+['c','SWE Marathon','Moonshot chart. Long-horizon tasks.',[['Kimi K3',42],['Opus 4.8',40],['GPT-5.6 Sol',39],['Fable 5',35],['GPT-5.5',14],['GLM-5.2',13]]],
+['p','LMArena WebDev (Elo)','Human votes on generated web apps, Sept 25. Best configuration per model.',[['Opus 5.5',1827],['GPT-6 Astra',1792],['Fable 5.1',1751],['Opus 5',1693],['GPT-6 Sol',1681],['Qwen3.8 Max',1672],['Kimi K3',1660],['Muse Spark 1.3',1656],['Qwen3.8-Flash-Next',1636],['Hy4 Preview',1631],['Grok 4.7',1629],['Fable 5',1627],['DeepSeek V4.1 Flash',1621],['Grok 4.6',1621],['GLM-5.3',1619],['MiMo-V2.6 Pro',1618],['GPT-5.6 Sol',1617]],1],
+['p','LMArena Text (Elo)','Human preference in chat, Sept 25, 8.5M votes. Top 30 are within ~35 Elo — close to noise.',[['Opus 5.5',1509],['Opus 4.6',1505],['Fable 5',1504],['Opus 4.7',1502],['Fable 5.1',1501],['Muse Spark 1.2',1496],['Muse Spark 1.3',1494],['Gemini 3.8 Flash',1492],['Opus 5',1491],['Kimi K3',1488],['Gemini 3.1 Pro',1487],['GPT-5.6 Sol',1483],['GPT-5.5',1481],['Opus 4.8',1480],['MiMo-V2.6 Pro',1480],['GLM-5.3',1480],['Qwen3.8 Max',1479],['GPT-6 Astra',1478],['DeepSeek V4.1 Flash',1477]],1],
+['r','AA Intelligence Index','Artificial Analysis v4.3, independent. Best effort setting per model.',[['Opus 5.5',58],['Sonnet 5.5',56],['Fable 5.1',53],['GPT-6 Astra',53],['Muse Spark 1.3',48],['GPT-6 Sol',48],['Grok 4.7',46],['MiMo-V2.6 Pro',46],['Qwen3.8 Max',45],['GLM-5.3',45],['Grok 4.6',44],['Step 5 Preview',44],['Kimi K3',44],['GPT-5.6 Terra',42],['GLM-5.3-Flash',42],['Solar Pro 4',42],['Inkling',42],['Gemini 3.8 Flash',41],['Qwen3.8-Flash-Next',40]]],
+['w','GDPval-AA v2.1 (Elo)','Real work across 44 occupations.',[['Opus 5.5',1846],['Sonnet 5.5',1844],['Fable 5.1',1735],['Opus 5',1708],['GPT-5.6 Sol',1588],['GPT-6 Astra',1542],['GPT-6 Sol',1487],['Sonnet 5',1449]],1],
+['w','AA-Briefcase v1.1 (Elo)','Long-horizon knowledge work.',[['Opus 5.5',1822],['Sonnet 5.5',1811],['GPT-6 Sol',1483],['Sonnet 5',1359]],1],
+['w','AutomationBench (Zapier)','Anthropic and OpenAI launch numbers.',[['GPT-6 Astra',41.4],['Opus 5.5',40],['GPT-6 Sol',33.2],['Fable 5.1',31.4],['GPT-5.6 Sol',28.8],['Opus 5',26.9]]],
+['w','AutomationBench (DeepSeek setup)','Different scale from the chart above. Do not mix the two.',[['DeepSeek V4.1 Flash',54.8],['Opus 5',50.3],['GLM-5.3',48.8],['Kimi K3',46.7],['GPT-5.6 Sol',45.8],['DeepSeek V4 Pro',43.2]]],
+['w','Agents\' Last Exam','OpenAI launch tables.',[['GPT-6 Astra',59.3],['GPT-6 Sol',56.4],['Opus 5',55.5],['GPT-5.6 Sol',53.6],['Fable 5',48.7]]],
+['w','BrowseComp','Mixed vendor sources plus llm-stats.',[['Atria Dawn Preview',92.5],['GPT-6 Astra',91.5],['Kimi K3',91.2],['Opus 5',90.8],['GPT-5.6 Sol',90.4],['GPT-5.5 Pro',90.1],['Fable 5',88],['GPT-5.6 Terra',87.5],['Seed 2.1 Pro',86.2],['Gemini 3.1 Pro',85.9],['Sonnet 5',84.7],['GPT-5.5',84.4],['Opus 4.8',84.3],['MiniMax M3',83.5],['GPT-5.6 Luna',83.3],['Inkling-Small',77.4]]],
+['w','Toolathlon','Tool use across real apps. llm-stats, mostly self-reported by open labs.',[['GLM-5.3-Flash',78.4],['Muse Spark 1.1',75.6],['DeepSeek V4 Pro',74.1],['Hy4 Preview',74.1],['Qwen3.8-Flash-Next',73.5],['Kimi K3',73.2],['GLM-5.3',73],['Qwen3.8 Max',72.5],['Opus 4.8',59.9],['GPT-5.6 Sol',58],['Inkling-Small',54.4],['Sonnet 5',54.3],['GPT-5.6 Luna',53.4],['Laguna S 2.1',49.7]]],
+['r','GPQA Diamond','Saturating: the top 15 are within 4 points.',[['GPT-6 Astra',96],['Gemini 3.8 Flash',95.3],['GPT-5.6 Sol',94.6],['Mythos Preview',94.6],['Gemini 3.1 Pro',94.3],['Fable 5.1',93.7],['Opus 5',93.7],['Opus 4.8',93.6],['GPT-5.5',93.6],['Grok 4.5',93],['Kimi K3',92.9],['GPT-5.6 Terra',92.9],['Qwen3.8 Max',92.6],['Fable 5',92.6],['DeepSeek V4 Pro',92.4],['Hy4 Preview',92.3],['GPT-5.6 Luna',92.3],['Qwen3.8-Flash-Next',91.7],['GLM-5.2',91.2],['DeepSeek V4.1 Flash',90.9],['GLM-5.3',88.1]]],
+['r','Humanity\'s Last Exam (with tools)','Anthropic, OpenAI and DeepSeek tables.',[['Opus 5.5',67.7],['Fable 5.1',65.6],['Sonnet 5.5',64.5],['DeepSeek V4.1 Flash',63.9],['Fable 5',63.8],['Opus 5',63.6],['GLM-5.3',62.5],['Kimi K3',59.8],['GPT-6 Astra',57.2],['Sonnet 5',54.9]]],
+['r','Terminal-Bench-Science 0.1','Scientific research workflows in a terminal.',[['GPT-6 Astra',64.6],['Opus 5.5',58.7],['Fable 5.1',52.6],['Opus 5',29],['GPT-5.6 Sol',22.4]]],
+['r','FrontierMath Tier 4 (v2)','OpenAI launch table.',[['GPT-6 Astra',97.6],['Fable 5',90.2],['Fable 5.1',87.8],['GPT-5.6 Sol',83],['Opus 5',73.2]]],
+['r','AIME 2026','Competition math. Mostly open-model entries (llm-stats).',[['GLM-5.2',99.2],['Inkling',97.1],['Sakana Namazu',96.7],['Kimi K2.6',96.4],['Inkling-Small',95.5],['Solar Pro 4',95.3],['MAI-Thinking-1',94.5],['Gemma 4 31B',89.2]]],
+['r','MMLU-Pro','Broad knowledge. Closed labs stopped reporting it (llm-stats).',[['Sakana Namazu',90.3],['Qwen3.7 Max',89.6],['DeepSeek V4 Pro',87.5],['Nemotron 3 Ultra',86.8],['Solar Pro 4',86.3],['Gemma 4 31B',85.2],['MAI-Thinking-1',85]]],
+['r','AA-LCR (long context)','Long-context reasoning, Artificial Analysis via llm-stats.',[['Hy3',73.4],['Solar Pro 4',71],['Nemotron 3 Ultra',65.4],['Ling 3.0 Flash',65.1]]],
+['u','OSWorld 2.1 (partial credit)','Anthropic launch tables.',[['Opus 5.5',81.8],['Fable 5.1',80.7],['Sonnet 5.5',80.1],['Opus 5',74],['Sonnet 5',57]]],
+['u','OSWorld 2.0 offline (partial credit)','OpenAI launch tables. Different version from 2.1.',[['GPT-6 Astra',72.6],['Opus 5',70.2],['GPT-5.6 Sol',65.7],['GPT-6 Sol',60.5]]],
+['u','Chartography (no tools)','Chart reading. Anthropic launch tables.',[['Opus 5.5',64.4],['Sonnet 5.5',61.6],['GPT-6 Sol',53.6],['Sonnet 5',15.6]]],
+['u','MMMU-Pro','Multimodal understanding (llm-stats).',[['Gemini 3.5 Flash',83.6],['GPT-5.5',83.2],['GPT-5.6 Sol',83],['Seed 2.1 Pro',82.7],['Qwen3.8 Max',82.3],['Kimi K3',81.6],['GPT-5.6 Terra',80.7],['Gemini 3.1 Pro',80.5],['Muse Spark 1.1',80.4],['GPT-5.6 Luna',78.4],['MiniMax M3',78.1]]],
+['s','ExploitGym','OpenAI launch table, run without safeguards.',[['GPT-6 Astra',42.4],['Fable 5.1',30.4],['GPT-5.6 Sol',30.3],['Fable 5',28.4],['Opus 5',22]]],
+['s','CyberGym','DeepSeek table.',[['DeepSeek V4.1 Flash',88.1],['GLM-5.3',84.5],['GPT-5.6 Sol',84.5],['DeepSeek V4 Pro',83.3],['Kimi K3',80]]]
+];
+let g='all',f=null;
+const $=id=>document.getElementById(id);
+const MIN_ALL=6,MIN_CAT=2;
+function rate(list){
+  const s={};
+  list.forEach(b=>{
+    const r=b[3];
+    r.forEach(a=>{const o=s[a[0]]||(s[a[0]]={w:0,n:0,k:0});o.k++;
+      r.forEach(x=>{if(x===a)return;o.n++;if(a[1]>x[1])o.w++;else if(a[1]===x[1])o.w+=.5;});});
+  });
+  // sort key: Wilson lower bound, so a model with few matchups can't top a category on a lucky 2-for-2
+  return Object.entries(s).map(([n,o])=>{const p=o.n?o.w/o.n:0,z=1.96,d=1+z*z/o.n;
+    return {n,r:p,k:o.k,m:o.n,lb:o.n?(p+z*z/(2*o.n)-z*Math.sqrt(p*(1-p)/o.n+z*z/(4*o.n*o.n)))/d:0}});
+}
+function ranked(list,min){return rate(list).filter(x=>x.k>=min).sort((a,b)=>b.lb-a.lb||b.k-a.k)}
+function row(n,v,w,label,top){const c=co(n);return `<div class="r${top?' top':''}${f&&f!==c?' dim':''}" style="grid-template-columns:150px 1fr 70px"><span class="n" title="${n}">${n}</span><span class="t"><b style="width:${w}%;background:${C[c]}"></b></span><span class="v">${label}</span></div>`}
+function bar(b){
+  const rows=[...b[3]].sort((x,y)=>y[1]-x[1]),m=rows[0][1],lo=Math.min(...rows.map(r=>r[1]));
+  return `<article class="card"><h3>${b[1]}</h3><p class="note">${b[2]}</p>`+rows.map((r,i)=>{
+    const c=co(r[0]),w=b[4]?Math.max(6,(r[1]-lo+20)/(m-lo+20)*100):r[1]/m*100;
+    return `<div class="r${i?'':' top'}${f&&f!==c?' dim':''}"><span class="n" title="${r[0]}">${r[0]}</span><span class="t"><b style="width:${w}%;background:${C[c]}"></b></span><span class="v">${b[4]?r[1]:r[1].toFixed(1)}</span></div>`;
+  }).join('')+'</article>';
+}
+function verdict(){
+  const best=(grp)=>{const l=ranked(B.filter(b=>b[0]===grp),MIN_CAT);return l[0]};
+  const all=ranked(B,MIN_ALL),top=all[0];
+  const val=all.filter(x=>P[x.n]!=null&&x.r>=.5).sort((a,b)=>P[a.n]-P[b.n])[0];
+  const open=all.find(x=>/DeepSeek|Kimi|GLM|MiMo|Qwen|Laguna|Inkling|MiniMax/.test(x.n));
+  const cards=[['Best overall',top],['Best for coding',best('c')],['Best for agents and work',best('w')],['Best reasoning and knowledge',best('r')],['Best vision and computer use',best('u')],['Humans prefer',best('p')],['Best open-weight',open],['Best value (wins half its matchups, lowest output price)',val]];
+  $('verdict').innerHTML=cards.filter(c=>c[1]).map(([t,x])=>`<div><b>${t}</b><span>${x.n}</span><small>${Math.round(x.r*100)}% of matchups won · ${x.k} charts${P[x.n]!=null?` · $${P[x.n]}/M out`:''}</small></div>`).join('');
+}
+function overall(){
+  const list=g==='all'?B:B.filter(b=>b[0]===g),l=ranked(list,g==='all'?MIN_ALL:MIN_CAT).slice(0,24);
+  $('overall').innerHTML=l.map((x,i)=>row(x.n,x.r,x.r*100,`${Math.round(x.r*100)}% (${x.k})`,!i)).join('')||'<p>Not enough overlapping data in this category.</p>';
+}
+function wins(){
+  const w={};
+  B.forEach(b=>{const m=Math.max(...b[3].map(r=>r[1]));b[3].forEach(r=>{if(r[1]===m)w[r[0]]=(w[r[0]]||0)+1})});
+  const l=Object.entries(w).sort((a,b)=>b[1]-a[1]),mx=l[0][1];
+  $('wins').innerHTML=l.map(([n,v])=>`<div class="r" style="grid-template-columns:150px 1fr 26px"><span class="n">${n}</span><span class="t"><b style="width:${v/mx*100}%;background:${C[co(n)]}"></b></span><span class="v">${v}</span></div>`).join('');
+}
+function draw(){
+  $('tabs').innerHTML=Object.entries(G).map(([k,v])=>`<button aria-pressed="${k===g}" data-g="${k}">${v}</button>`).join('');
+  $('chips').innerHTML=Object.entries(C).map(([k,v])=>`<button class="chip" aria-pressed="${k===f}" data-f="${k}"><i style="background:${v}"></i>${k}</button>`).join('');
+  $('grid').innerHTML=B.filter(b=>g==='all'||b[0]===g).map(bar).join('');
+  overall();
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button');if(!t)return;
+  if(t.dataset.g)g=t.dataset.g;
+  if(t.dataset.f)f=f===t.dataset.f?null:t.dataset.f;
+  draw();
+});
+verdict();wins();draw();
+</script>
+</body>
+</html>

@@ -4,8 +4,57 @@
 > **Video, music, and UI-design AI live in [AGENTS.md](./AGENTS.md) Parts 12–14.** Free tiers verified ~June 2026.
 > ℹ️ **17 Aug 2026:** **Part 1 (image-gen) was re-checked this pass** — all Google Imagen models shut down Aug 17 and were replaced by Gemini 3.1 Flash Image (see the ⛔/🆕 rows below). **Parts 2–4 (voice, LLMOps, docs) were not re-verified this pass** — treat their free tiers, prices, and arena scores as June-era until re-checked (the TTS arena rankings in particular move fast).
 
-**Contents:** [Part 1 image gen](#part-1--image-generation) · [Part 2 voice/audio](#part-2--voice--audio-tts--stt--music) ·
+**Contents:** [Free / open-source media (Sept 2026)](#free--open-source-media-sept-2026) · [Part 1 image gen](#part-1--image-generation) · [Part 2 voice/audio](#part-2--voice--audio-tts--stt--music) ·
 [Part 3 LLMOps](#part-3--llmops-observability--eval--gateways) · [Part 4 docs/devrel](#part-4--docs--devrel--knowledge)
+
+---
+
+## Free / open-source media (Sept 2026)
+
+> Everything here runs locally for free or has a real free tier. Checked 29 Sep 2026. Local models
+> need a GPU for speed (small TTS models run on CPU). Licences differ — check before commercial use.
+
+### Voice / TTS (ElevenLabs replacements)
+
+| Tool | Why | Runs on | Licence |
+|---|---|---|---|
+| ★ **Qwen3-TTS** (Alibaba, Jan 2026) | Lowest word-error rate in 6 of 10 languages vs ElevenLabs Multilingual v2 | GPU | Open weights |
+| ★ **Chatterbox** (Resemble AI) | 63.8% of listeners preferred it over ElevenLabs in a blind test; voice cloning | GPU / fast CPU | MIT |
+| ★ **Kokoro** | 82M params, runs on CPU, good default voices | CPU | Apache 2.0 |
+| **Breeze TTS 2** | Voice cloning + voice design + direction; AA TTS arena Elo 1215 | GPU | Open |
+| **F5-TTS · GPT-SoVITS · OpenVoice** | Clone a voice from a few seconds of audio | GPU | Open |
+| **Kyutai Pocket TTS · Hume TADA · Mistral Voxtral** | See Part 2 below (CPU/browser, MIT, open-weight) | — | — |
+| ★ **VoiceStudio** | Desktop app: 16 TTS engines, 646 languages, voice cloning, video dubbing, local speech-to-text. Trended Sept 2026 (+3K★ in a day) | Local | Open source |
+| **Whisper** / Groq Whisper | Speech-to-text, free locally or on Groq's free tier | CPU/GPU | MIT |
+
+### Music (Suno replacements)
+
+| Tool | Why | Licence |
+|---|---|---|
+| ★ **ACE-Step 1.5** + **ace-step-ui** (github.com/fspecii/ace-step-ui) | Full songs with vocals, local and unlimited, polished UI | Open |
+| **YuE2 · DiffRhythm** | Lyrics-to-song | Open |
+| **Stable Audio Open · MusicGen · Bark** | Instrumentals, SFX, royalty-safe | Open (check each) |
+
+> Honest take: open music models still trail Suno v5 on most prompts. For Suno itself, use its free daily credits (non-commercial).
+
+### Video (Veo / Runway / Kling replacements)
+
+| Tool | Why | Needs |
+|---|---|---|
+| ★ **LTX-2.3** (Lightricks) | 4K + audio, Apache 2.0. **LTX-2.5** (Aug 2026) adds world-model features | Consumer GPU |
+| ★ **Wan 2.7** (Alibaba) | Leads its own benchmark; strong motion | GPU |
+| **HunyuanVideo 1.5** (Tencent) | ~75 s per clip on one RTX 4090 | High-end GPU |
+| **Kling / Pika / Hailuo free credits** | Browser, no GPU; daily free credits | Account |
+
+> OpenAI's Sora API shut down Sept 24, 2026. Closed video arena (Sept): Kling v3 > Happy Horse 1.0 (Alibaba) > Seedance 2.0 Fast.
+
+### Images
+
+| Tool | Why | Licence |
+|---|---|---|
+| **Gemini / ChatGPT free tiers** | Best free quality in a browser | — |
+| ★ **Qwen-Image-2.1** (Sept 20) | 7B, native transparent PNGs, generate + edit in one model | Non-commercial |
+| **FLUX (dev/schnell) · SD 3.5** | Mature local ecosystems (ComfyUI) | Varies |
 
 ---
 

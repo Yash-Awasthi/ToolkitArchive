@@ -1,4 +1,4 @@
-# References — Runnable Repos & Source Tools (re-checked 17 August 2026)
+# References — Runnable Repos & Source Tools (re-checked 29 September 2026)
 
 > Actual runnable tools, libraries, SDKs, and the proxy/router projects this archive relies on.
 > (Replaces the old `references/` directory — clone any repo directly from its link.)
@@ -19,6 +19,11 @@
 | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) | 25K+ | AI orchestration SDK (C# / Python / Java) |
 | [browserbase/stagehand](https://github.com/browserbase/stagehand) | 12K+ | Natural-language browser control (act/extract/observe/agent) |
 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | rising | **DeepSeek Harness (`dsh`)** — MIT agent harness, open-sourced Aug 14 2026, "everything is a plugin" (models/tools/skills/UI), Cordis meta-framework. The harness behind DeepSeek's TB 2.1 runs |
+| [CodebuffAI/freebuff](https://github.com/CodebuffAI/freebuff) | 8K+ | **Freebuff** — free, ad-supported coding agent (CLI, desktop, web builder, cloud IDE) from the Codebuff team. Apache 2.0, `npm i -g freebuff`. Daily "Freebucks" pay for DeepSeek V4.1 Flash, GPT-6 Luna, GLM-5.3 Flash and more |
+| [cline.bot — Cline Desktop](https://cline.bot/blog/cline-desktop-an-open-source-app-for-open-weight-models) | 63K (cline) | Open-source desktop app (Sept 14, 2026 beta): imports Claude Code/Codex sessions, cron jobs, parallel sessions, free rotating models, ClinePass $9.99/mo |
+| [mizorewww/laya-mlx](https://github.com/mizorewww/laya-mlx) | ~6.6K | MLX runtime for Convai's **Laya** typed-decision models — 7–14 ms decisions on Apple Silicon, no PyTorch or cloud. Apache-2.0. Sibling: [laya-coreml](https://github.com/mizorewww/laya-coreml) |
+| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | — | Source-backed guide to TypeSafe's **Jev** typed decision model (SDKs, demos, independent evals). SDKs: `pip install typesafe-sdk`, `npm i @typesafe-ai/sdk` |
+| [MoonshotAI/Kimi-K3](https://github.com/MoonshotAI/Kimi-K3) | — | Kimi K3 (2.8T) open weights + model card; modified-MIT licence with a $20M MaaS revenue clause |
 
 ---
 

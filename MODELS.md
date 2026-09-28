@@ -1,4 +1,4 @@
-# AI Models — Full Reference (re-checked 17 August 2026)
+# AI Models — Full Reference (re-checked 29 September 2026)
 
 > `[open]` = public leaderboard · `[V]` = vendor-reported (10-20pt inflated) · `[C]` = closed
 > **Data source:** all charts + the tables below derive from [`data/models.json`](./data/models.json) — edit there, then run `python3 charts/gen_charts.py`.
@@ -10,12 +10,103 @@
 
 ---
 
-**Contents:** [SWE-bench leaderboard](#swe-bench-leaderboard) · [Charts](#price-vs-performance-scatter) ·
+**Contents:** [Current lineup (Sept 2026)](#current-lineup--29-september-2026) · [Typed decision models](#typed-decision-models-new-category) · [SWE-bench leaderboard](#swe-bench-leaderboard) · [Charts](#price-vs-performance-scatter) ·
 [Table 1 premium API models](#table-1--premium--paid-api-models) · [Sweet spot](#sweet-spot-analysis) ·
 [Table 2 free/near-free](#table-2--free-tier--near-free-models) · [Provider breakdown](#provider-breakdown) ·
 [Context windows](#context-window-reference) · [Scale SEAL vs vendor](#scale-seal-vs-vendor-reported) ·
 [Upcoming models](#upcoming--early-stage-models) · [On-device models](#consumer--on-device-not-api-accessible) ·
 [Access routes](#access-routes--get-frontier-models-free--cheap) · [Release timeline](#release-timeline-2026)
+
+---
+
+## Current Lineup — 29 September 2026
+
+> Everything released or repriced since the 17 Aug pass. Prices are official list prices per 1M tokens.
+> Benchmark numbers are vendor launch tables unless marked; per-benchmark rankings with sources are in
+> [benchmarks.html](./benchmarks.html). **SWE-bench Verified is retired** (Vals archived its board Sept 1)
+> — the charts below still plot it, so treat them as history.
+
+### Frontier (closed)
+
+| Model | Released | In $/1M | Out $/1M | Context | Best at (vendor-reported) |
+|---|---|---|---|---|---|
+| **Claude Opus 5.5** | Sept 22 | $4 | $20 | 1M / 128K out | Terminal-Bench 4.0 66.4 (xhigh), FrontierCode 1.1 54.4 (#1), CursorBench 4.0 57.8 (#1), GDPval-AA 1846 (#1), OSWorld 2.1 81.8, HLE+tools 67.7. Anthropic: Fable-5.1-level on most work |
+| **Claude Sonnet 5.5** | Sept 28 | $2 | $10 | 1M | Terminal-Bench 4.0 **70.6** (highest published), CursorBench 4.0 55.5, OSWorld 2.1 80.1. 30%+ faster than Sonnet 5 |
+| **Claude Fable 5.1** | Sept 2 | $10 | $50 | 1M | SWE-bench Pro 81.2, TB 4.0 55.8. Cache reads $0.25 (−75%). Mythos 5.1 = same model, trusted-access only |
+| **GPT-6 Astra** | Sept 3 | $10 | $50 | 1.1M | GPQA 96.0, FrontierMath T4 97.6, BrowseComp 91.5, AutomationBench 41.4, TB 4.0 57.9. Cached input $1 |
+| **GPT-6 Sol** | Sept 22 | $2 | $10 | — | AutomationBench 33.2 at $0.27/task. Half the price GPT-5.6 Sol carried going into launch ($4/$20) |
+| **GPT-6 Luna** | Sept 22 | $0.10 | $0.50 | — | Cheapest OpenAI tier; Free/Go ChatGPT desktop users get it. Luna Pro variant on OpenRouter |
+| **Grok 4.7** (SpaceXAI) | Sept 21 | $2 | $6 | 500K | CursorBench 4.0 46.3, TB 4.0 38. Larger base than 4.6 |
+| **Gemini 3.8 Flash** | Sept 2 | $0.75 | $3.75 | 1M / 64K out | Intro price to Dec 31 (then $1.50/$7.50). GPQA 95.3, TB 2.1 89.4. **Free on AI Studio** |
+| **Muse Spark 1.3** (Meta) | Sept 2 | $1.25 | $4.25 | 1M | AA Intelligence Index #6. Cheaper "contributor" tier lets Meta keep your data |
+
+### Open-weight / value tier
+
+| Model | Released | In $/1M | Out $/1M | Context | Notes |
+|---|---|---|---|---|---|
+| **DeepSeek V4.1 Flash** | Sept 10 | **$0.15** off-peak ($0.30 peak) | **$0.60** off-peak ($1.20 peak) | 1M / 384K out | 552B MoE, 8B active in / 16B out, native vision, MIT. Id `deepseek-flash`. TB 2.1 90.6, DeepSWE 74.2, CyberGym 88.1 (vendor). Replaces V4 Flash. **Best price/performance in the archive** |
+| **Kimi K3** | Jul 16 (weights Jul 27) | $3 | $15 | 1M | 2.8T params, largest open model. Modified-MIT with $20M MaaS revenue clause. Free on kimi.com and (for now) in Cline Desktop |
+| **GLM-5.3** | Aug 14 (weights Aug 28) | $1.40 | $4.40 | — | TB 2.1 88.2, SWE-bench Verified 95.4 (Vals). Licence needs a security review for providers >$10B revenue. ⚠️ Don't use it via ZCode — see [NEWS.md](./NEWS.md) |
+| **MiMo-V2.6 Pro / Flash** | Sept 21 | Pro $0.435 · Flash $0.14 | Pro $0.87 · Flash $0.28 | — | MIT, omnimodal. Pro ≈ Opus 5 on agent benches (vendor). AA Index 46 |
+| **Qwen 3.8-Max** | Aug 2 | $2 | $6 | 1M | SWE-bench Pro 67.7. Free on Qwen Chat |
+| **Qwen3.8-Flash-Next** | Aug 26 | open weights | — | 262K (1M YaRN) | 125B / 6B active, Qwen 4 architecture preview. Runs locally (Unsloth GGUF) |
+| **Laguna S 2.1 / XS 2.1** (Poolside) | Jul 21 / Jul 2 | free on OpenRouter | — | 1M / 262K | S 118B/8B active, TB 2.1 70.2. XS 33B/3B active — local. OpenMDW-1.1 |
+| **Inkling / Inkling-Small** (Thinking Machines) | Jul 15 / Jul 31 | free on OpenRouter | — | 1M | 975B/41B and 276B/12B, Apache 2.0 |
+| **Solar Pro 4** (Upstage) | Aug 10 | $0.30 | $1.20 | 524K | TB 2.1 57. Free in Cline and Freebuff |
+| **MiniMax M3.1-Flash-Preview** | Sept 27 | not priced | — | 1M | Only inside MiniMax Code so far |
+
+### Who's actually best — head-to-head across 36 benchmarks
+
+[benchmarks.html](./benchmarks.html) now covers 36 benchmarks (Terminal-Bench 4.0 and 2.1, SWE-bench
+Pro/Verified, DeepSWE, FrontierCode, CursorBench, GPQA, HLE, FrontierMath, AIME 2026, MMLU-Pro,
+BrowseComp, Toolathlon, GDPval, OSWorld, MMMU-Pro, LMArena Text + WebDev, the Artificial Analysis
+Intelligence Index and more) and 60+ models. Every time two models appear on the same chart, the
+higher score wins that matchup; the rating is the share of matchups won (confidence-adjusted, models
+need 6+ charts to rank overall). Result on 29 Sep 2026:
+
+| # | Model | Matchups won | Charts | Out $/1M |
+|---|---|---|---|---|
+| 1 | **Claude Opus 5.5** | 98% | 14 | $20 |
+| 2 | Claude Sonnet 5.5 | 86% | 9 | $10 |
+| 3 | GPT-6 Astra | 76% | 16 | $50 |
+| 4 | Claude Fable 5.1 | 75% | 16 | $50 |
+| 5 | Claude Opus 5 | 66% | 21 | $25 |
+| 6 | Claude Fable 5 | 58% | 16 | — |
+| 7 | **Kimi K3** (best open-weight) | 55% | 19 | $15 |
+| 8 | GPT-5.6 Sol | 53% | 26 | — |
+| 9 | GPT-6 Sol | 56% | 10 | $10 |
+| 10 | Gemini 3.8 Flash | 51% | 8 | $3.75 |
+| 11 | **DeepSeek V4.1 Flash** (best value) | 51% | 10 | $0.60 |
+| 12 | Qwen3.8 Max | 50% | 8 | $6 |
+| 13–16 | Opus 4.8 · GPT-5.6 Terra · DeepSeek V4 Pro · GLM-5.3 | 41–44% | 7–13 | — |
+
+**Verdict:**
+- **Best overall and best for coding: Claude Opus 5.5.** It tops FrontierCode, CursorBench, GDPval, AA-Briefcase, OSWorld 2.1, HLE (with tools), Chartography, the AA Intelligence Index and both LMArena boards, and places #2 on Terminal-Bench 4.0. Sonnet 5.5 is a close second at half the price and scores higher on Terminal-Bench 4.0 itself.
+- **Hardest math and science: GPT-6 Astra.** It wins GPQA (96.0), FrontierMath Tier 4 (97.6), Terminal-Bench-Science and BrowseComp. Opus 5.5 hasn't published GPQA or FrontierMath, so this is the one area where the head-to-head can't settle it.
+- **Best open-weight: Kimi K3**, with GLM-5.3, Qwen3.8 Max and MiMo-V2.6 Pro close behind on the charts they report.
+- **Best value: DeepSeek V4.1 Flash.** It wins half its matchups (incl. #1 on Terminal-Bench 2.1, DeepSWE and CyberGym) at $0.60/M output — 33× cheaper than Opus 5.5.
+- **Caveat:** Chinese labs mostly skip Terminal-Bench 4.0 and OSWorld, and closed labs skip AIME/MMLU-Pro, so every model is judged on the charts it chose to report. Read the per-chart detail in the HTML before a big decision.
+
+### Pick one
+
+| Need | Pick |
+|---|---|
+| Best overall / coding-agent model | **Claude Opus 5.5** ($4/$20) — #1 head-to-head; Sonnet 5.5 ($2/$10) for half the price |
+| Hardest reasoning / math / research | GPT-6 Astra |
+| Cheap and strong | DeepSeek V4.1 Flash ($0.60/M out off-peak) · MiMo-V2.6 Flash ($0.28) · GPT-6 Luna ($0.50) |
+| Best open weights to self-host | Kimi K3 (huge) · GLM-5.3 · MiMo-V2.6 Pro · Qwen3.8-Flash-Next / Laguna XS 2.1 (single GPU) |
+| Free | Gemini 3.8 Flash (AI Studio) · OpenRouter free list · Cline/Freebuff free models — see [FREE-ACCESS.md](./FREE-ACCESS.md) |
+
+---
+
+## Typed Decision Models (new category)
+
+Not chat models. They answer a typed question about a state with a calibrated probability, without generating text.
+
+| Model | By | Speed | Price / license | Use it for |
+|---|---|---|---|---|
+| **Jev** | TypeSafe AI (early access Sept 15) | 70–500 ms | $0.042/M input, output free. `pip install typesafe-sdk` · `npm i @typesafe-ai/sdk` · also on Vercel AI Gateway | Routing, classification, "should the agent do X?" guardrails. Question types: Choice (≤255 options), Score (2–10 levels), Noul (yes/no). Weak at arithmetic and dates |
+| **Laya** (via [laya-mlx](https://github.com/mizorewww/laya-mlx)) | Convai Innovations; community MLX port | 7–14 ms on M3 Max | Apache-2.0, local | Same job, fully on-device on Apple Silicon (`pip install laya-mlx`, macOS 14+). ~6.6K★. Core ML sibling: laya-coreml (~5 ms) |
 
 ---
 
@@ -46,6 +137,8 @@
 
 ## Table 1 — Premium / Paid API Models
 
+> **Aug 2026 snapshot.** Kept as reference for older models; Sept releases and price cuts are in [Current Lineup](#current-lineup--29-september-2026) above. Per Sept 22 launch coverage GPT-5.6 Sol/Luna were at $4/$20 and $0.20/$1.20 before GPT-6 Sol/Luna replaced them, so the $5/$30 and $1/$6 rows below are stale; DeepSeek V4 Flash is retired (replaced by V4.1 Flash).
+
 | Model | Company | SWE-bench | Src | In $/1M | Out $/1M | Context | Notes |
 |---|---|---|---|---|---|---|---|
 | **Claude Opus 5** | Anthropic | — | $5 | $25 | 1M | Released Jul 24, 2026 at Opus 4.8 pricing ($5/$25). Price + date confirmed from anthropic.com/news/claude-opus-5 this pass; no public SWE-bench number yet |
@@ -69,7 +162,7 @@
 | Qwen 3.7 Plus | Alibaba | ~78% | open | $0.50 | $2.00 | 1M | Reasoning model, 1M ctx |
 | Kimi K2.6 | Moonshot | 80.2% | open | $0.95 | **$1.50** | 256K | 4,000+ tool calls/session. Sweet spot |
 | **Kimi K2.7-Code** | Moonshot | ~80%[est] | open | $0.95 | **$4** | 256K | Jun 12. 1T MoE/32B active, forced thinking. +21.8% Kimi Code Bench v2 vs K2.6, -30% reasoning tokens. Modified MIT. Vendor benches only |
-| **Kimi K3** | Moonshot | ~93.4% (vals harness) / 80.0% SWE-bench Pro | [V] | — | — | 1M | Confirmed live on platform.kimi.ai, "most capable to date". SWE-bench figures added this pass from vals.ai (93.4%, harness-sensitive ceiling) and SWE-bench Pro (80.0% — per launch coverage); no official API price published yet. Moved up from the Upcoming table now that it has shipped |
+| **Kimi K3** | Moonshot | ~93.4% (vals harness) / 80.0% SWE-bench Pro | [V] | $3 | $15 | 1M | Confirmed live on platform.kimi.ai, "most capable to date". SWE-bench figures added this pass from vals.ai (93.4%, harness-sensitive ceiling) and SWE-bench Pro (80.0% — per launch coverage); official API price $3/$15 ($0.30 cache hit), free on kimi.com, 2.8T open weights since Jul 27. Moved up from the Upcoming table now that it has shipped |
 | Grok 4.3 | xAI | ~78% | [C] | $3 | $15 | 1M | Closed eval. Context corrected from a prior 128K error — docs.x.ai states 1M |
 | Gemini 3.5 Flash | Google | 78.8% | open | $1.50 | $9 | 1M | **Superseded** — Gemini 3.7 Flash (below) is now the workhorse tier, kept here as history |
 | **Gemini 3.7 Flash** | Google | — | — | $0.75 | $3.75 | 1M | Released **Aug 13, 2026**; "most intelligent workhorse model yet" for coding/agents. Intro pricing $0.75/$3.75 through end of 2026 (half the previous workhorse price). TB 2.1 85.8% (standardized-harness aggregator figure, not official leaderboard). No public SWE-bench number yet — text row only, not in charts |
@@ -158,7 +251,7 @@
 ### Z.AI (Zhipu)
 | Model | SWE-bench | In/Out $/1M | Context | Access |
 |---|---|---|---|---|
-| GLM-5.3 | — | — | — | **Released Aug 14, 2026** — same GLM-5.2 base, gains entirely from extended post-training (~750B, a third of Kimi K3's size). "Built to Code. Ready for Cyber Defense" — Z.AI reports it tops Kimi K3 on many benchmarks and some scores above Claude Fable 5 / GPT-5.6-Sol (vendor claims, not independently reproduced). **Currently free via ZCode / GLM Coding Plan** (the only availability — no public API price yet); API + open weights on HF coming (~2 weeks per Interconnects). Staged security release: selected partners first, then API, then full weights (cyber-defense capabilities, dual-use). Id confirmed live on docs.z.ai llms.txt |
+| GLM-5.3 | 95.4% (Vals, archived) | $1.40/$4.40 | — | **Released Aug 14, 2026**; open weights on HF Aug 28 after a ~2-week cyber-capability review; GLM-5.3-Flash (first natively multimodal GLM-5, open) Aug 26. Licence no longer MIT: providers above $10B revenue need a security review. ⚠️ **Do not use it through ZCode** — the ZCode client silently uploaded users' repositories (Sept 18 disclosure, see [NEWS.md](./NEWS.md)). Use the API, chat.z.ai, or self-host |
 | GLM-5.2 | ~72% [V] | $1.40/$4.40 | 1M (unverified) | Corrected from a prior $0.14/$0.28 (10x error). API is paid — chat.z.ai and Puter.js are free front-ends, not a free API tier |
 | GLM-5.1 | 81.0% [V] | $1.40/$4.40 | 200K (unverified) | API paid. Context not on the official pricing doc |
 | GLM-5 | — | — | — | Id + price ($1.00/$3.20) confirmed on docs.z.ai llms.txt; no SWE-bench or context published there |
@@ -169,9 +262,12 @@
 | Model | SWE-bench | In/Out $/1M | Context |
 |---|---|---|---|
 | V4 Pro (0813, GA Aug 13) | 80.6% (preview SWE-bench) | Peak $1.32/$3.96 · off-peak $0.66/$1.98 (cache hit $0.022-0.044/M) | 1M |
-| V4 Flash (0731, official Jul 31) | 72.0% (preview SWE-bench) | Peak $0.44/$1.32 · off-peak $0.22/$0.66 (cache hit $0.007-0.014/M) | 1M |
+| **V4.1 Flash** (`deepseek-flash`, Sept 10) | — (TB 2.1 90.6 vendor) | Peak $0.30/$1.20 · off-peak $0.15/$0.60 (cache hit $0.003-0.006/M) | 1M / 384K out, vision |
+| ~~V4 Flash (0731)~~ | 72.0% | Retired Sept 10 — old ids route to V4.1 Flash | 1M |
 
-> Pricing above was re-checked against DeepSeek's live API documentation on 17 August 2026. The
+> Pricing re-checked against DeepSeek's live pricing page on 29 September 2026. V4-Pro was due to be folded into V4.1 Flash on Sept 14; DeepSeek reversed that on Sept 11 and V4-Pro stays live at the same billing. Peak hours are Mon–Fri only.
+>
+> Earlier note (17 Aug): The
 > provider changed to peak/off-peak pricing effective Aug 16, 2026 (off-peak = half of peak; peak
 > hours 01-04 and 06-10 UTC) — the old flat preview prices ($0.435/$0.87 and $0.14/$0.28) are gone.
 > Use the pricing page—not a cached table—for purchasing decisions.
@@ -189,9 +285,11 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 
 | Context | Models |
 |---|---|
+| 1.1M | GPT-6 Astra |
 | 1.05M | GPT-5.6 Sol, Terra, Luna |
-| 1M | Opus 5, Sonnet 5, Kimi K3, GPT-5.5, GPT-5.4, GPT-5.3, Opus 4.8, Sonnet 4.6, Fable 5, DeepSeek V4 Pro/Flash, MiniMax M3, Qwen 3.7 Max (unverified), **Qwen 3.8-Max**, **Gemini 3.7 Flash**, Qwen3-Coder 480B, Llama 4 Mav, Gemini 3.x, MiMo V2.5 Pro, Nemotron 3, GLM-5.2 (unverified), Grok 4.3 |
-| 500K | Grok 4.6, Grok 4.5 |
+| 1M | **Opus 5.5, Sonnet 5.5, Fable 5.1, DeepSeek V4.1 Flash, Gemini 3.8 Flash, Muse Spark 1.3, Laguna S 2.1, Inkling**, Opus 5, Sonnet 5, Kimi K3, GPT-5.5, GPT-5.4, GPT-5.3, Opus 4.8, Sonnet 4.6, Fable 5, DeepSeek V4 Pro/Flash, MiniMax M3, Qwen 3.7 Max (unverified), **Qwen 3.8-Max**, **Gemini 3.7 Flash**, Qwen3-Coder 480B, Llama 4 Mav, Gemini 3.x, MiMo V2.5 Pro, Nemotron 3, GLM-5.2 (unverified), Grok 4.3 |
+| 524K | Solar Pro 4 |
+| 500K | Grok 4.7, Grok 4.6, Grok 4.5 |
 | 256K | Kimi K2.6, Kimi K2.7-Code, Grok Build 0.1, Mistral Medium 3.5, Devstral 2, Laguna M.1, Step 3.7 Flash |
 | 200K | GLM-5.1 (unverified), Claude Haiku 4.5 |
 | 64K | GPT-oss-20b |
@@ -216,7 +314,10 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 
 | Model | Company | Status |
 |---|---|---|
-| **Gemini 3.5 Pro** | Google | Announced Google I/O (May 19), **still not GA as of Aug 12, 2026** — promised June, then Jul 17, then a rumored Aug 12 date that also passed. Google DeepMind says only "coming soon". ~$15/$60 expected, **2M ctx**, Deep Think mode |
+| **Gemini 4 Pro** | Google | In post-training; checkpoints tested as "Argon" since mid-Sept. Google (Sept 24): "as soon as possible", October expected. **Gemini 3.5 Pro was cancelled** and never shipped |
+| **Claude Haiku 5.5** | Anthropic | Announced with Opus/Sonnet 5.5 for "the coming weeks" |
+| **Qwen 4** | Alibaba | "Very soon" (Apsara, Sept). Qwen3.8-Flash-Next previews the architecture |
+| **MiniMax M3.1** | MiniMax | Flash-Preview live in MiniMax Code Sept 27; API not priced |
 | **Fable 5** | Anthropic | Mythos-class (95%), GA Jun 9 → **export-suspended Jun 12** (US controls). Now in Table 1. Only its context was re-confirmed this pass; the rest is a prior-pass claim |
 | **DeepSeek V5** | DeepSeek | Rumored Q2–Q3 2026 — expected to push Tier-1 capability + drop cost further |
 | **MAI-Thinking-1** | Microsoft | Flagship reasoning, private preview via Foundry (Build 2026, Jun 2). 35B MoE, 97% AIME 2025, 53% SWE-bench Pro, 256K ctx. Trained no-distillation, preferred over Sonnet 4.6 in blind evals |
@@ -254,9 +355,9 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 | **Tier-routing** | Cheap model for 95% traffic, Opus for the hard 5% | [Alorse/cc-compatible-models](https://github.com/Alorse/cc-compatible-models) |
 | **Ollama Cloud** | `glm-5.1:cloud`, `kimi-k2.5:cloud`, `qwen3.5:cloud` | ollama.com |
 
-> ⚠️ Subscription proxies are reverse-engineered — ToS/account-ban risk. `iFlow` and `Qwen` free tiers were **discontinued in 2026**; use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier is still live (60 req/min, 1,000 req/day) — a discontinuation claim here in a prior pass was unverified and has been removed. See [AGENTS.md](./AGENTS.md) Part 1.
+> ⚠️ Subscription proxies are reverse-engineered — ToS/account-ban risk. `iFlow` and `Qwen` free tiers were **discontinued in 2026**; use Kiro / OpenCode-Free / Vertex instead. Gemini CLI stopped serving free and AI Pro/Ultra users on June 18, 2026 (Google Developers Blog) — those users moved to Antigravity CLI; Gemini CLI now needs a paid Gemini API key. An Aug-pass "correction" saying otherwise was wrong.
 
-**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ≈70% → DeepSeek V4 Flash ($0.66/M out off-peak — GA pricing since Aug 16) · Tier 2 ≈25% → Kimi K2.6 / GLM-5.1 (≈$1/M) · Tier 3 ≈5% → Opus 5. Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
+**Multi-tier routing (the dominant 2026 production pattern):** Tier 1 ≈70% → DeepSeek V4.1 Flash ($0.60/M out off-peak) or GPT-6 Luna ($0.50) · Tier 2 ≈25% → Sonnet 5.5 / GPT-6 Sol ($10) or MiMo-V2.6 Pro ($0.87) · Tier 3 ≈5% → Opus 5.5 ($20). Saves **85–95%** on coding-API cost vs all-Opus, <10% quality loss.
 
 ---
 
@@ -292,3 +393,12 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 | Aug 12 | Qwen3.8-2.4T-A95B **open weights** (text-only, no vision/1M-ctx); Grok 4.6 — $2/$6, 500K ctx; xAI rebrands to **SpaceXAI** |
 | Aug 13 | **DeepSeek V4 Pro GA** (0813) — TB 2.1 87.9 (vendor harness), Responses API, thinking effort levels; **Gemini 3.7 Flash** — $0.75/$3.75 through 2026 |
 | Aug 16 | DeepSeek switches to peak/off-peak API pricing (off-peak = half; old flat preview prices retired) |
+| Aug 26–28 | Qwen3.8-Flash-Next (open, Qwen 4 preview) · GLM-5.3-Flash open · GLM-5.3 weights on HF |
+| Sept 2 | Claude Fable 5.1 / Mythos 5.1 · Gemini 3.8 Flash + Flash Cyber · Muse Spark 1.3 |
+| Sept 3 | **GPT-6 Astra** — $10/$50, 1.1M ctx |
+| Sept 10 | **DeepSeek V4.1 Flash** — $0.15/$0.60 off-peak, vision, replaces V4 Flash |
+| Sept 15 | TypeSafe **Jev** early access (typed decision model) |
+| Sept 21 | Grok 4.7 · MiMo-V2.6 Pro/Flash (MIT) |
+| Sept 22 | **Claude Opus 5.5** ($4/$20) · **GPT-6 Sol/Luna** ($2/$10, $0.10/$0.50) |
+| Sept 27 | MiniMax M3.1-Flash-Preview (MiniMax Code only) |
+| Sept 28 | **Claude Sonnet 5.5** ($2/$10) |

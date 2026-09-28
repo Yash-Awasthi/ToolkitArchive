@@ -1,14 +1,63 @@
-# Claude Skills Ecosystem — Reference (June 2026)
+# Skills, Plugins & MCP — Directory and Reference (updated 29 September 2026)
 
 > Skills extend Claude agents with reusable, callable capabilities. Each skill is a discrete unit of functionality — invoked by name, loaded lazily into context.
 > ✅ **Verified June 27, 2026** — repo star counts drift; confirm on GitHub.
+> 🔄 **29 Sep 2026:** added the skill/plugin directory list and install commands below, plus Claude's new plugin directory. The older sections are still June-era.
 > ℹ️ **17 Aug 2026:** a dead `Claude-skill` link was removed (see below) and a redirecting skills URL was updated, but the *content* of this file was **not** re-verified this pass — treat skill counts, star counts, and builder-setup numbers as June-era unless you re-check them.
 
-**Contents:** [Overview](#overview) · [What is MCP?](#what-is-mcp-60-second-primer) · [How to use skills](#how-to-use-skills-by-platform) ·
+**Contents:** [Skill directories](#skill-directories-where-to-find-skills) · [Install in 60 seconds](#install-a-skill-or-plugin-in-60-seconds) · [Overview](#overview) · [What is MCP?](#what-is-mcp-60-second-primer) · [How to use skills](#how-to-use-skills-by-platform) ·
 [Skill categories](#skill-categories) · [Notable deep dives](#notable-skills-deep-dive) · [Skill access](#skill-access) ·
 [Creating skills](#creating-custom-skills) · [Builders' setups](#notable-builders-setups-skills--workflows) ·
 [Security bundles](#security--red-team-skill-bundles) · [Dev packs](#dev--engineering-skill-packs) ·
 [Skill repos](#skill-repositories) · [Counts](#skill-count-by-category-june-2026)
+
+---
+
+## Skill directories (where to find skills)
+
+> A **skill** is a portable folder with a `SKILL.md` — the same one works in Claude Code, claude.ai,
+> Codex, OpenCode, Cursor and Antigravity. A **plugin** is a Claude Code bundle (skills + commands +
+> hooks + MCP). ⚠️ Read every `SKILL.md` and script before installing — it's instructions your agent will follow.
+
+| Directory | Type | Best for | Link |
+|---|---|---|---|
+| ★ **anthropics/skills** | Official repo | First-party skills (docx, pdf, pptx, xlsx, skill-creator, webapp-testing) and the reference format | github.com/anthropics/skills |
+| ★ **Claude plugin directory** | Official directory (Sept 2026) | Reviewed third-party plugins with MCP 2.0 / MCP Apps support; submission portal for your own | Claude Code `/plugin` |
+| ★ **skills.sh** | Leaderboard | What's popular right now, by install count | skills.sh |
+| **localskills.sh** | Registry (npm-style) | Versioned, private and team skills; installs one skill into Claude Code, Cursor and Windsurf at once | localskills.sh |
+| **SkillsMP** | Aggregator | Searches every skill on GitHub — huge, unreviewed | skillsmp.com |
+| **claudemarketplaces.com** | Directory | Plugins, skills and MCP servers in one place | claudemarketplaces.com |
+| **aitmpl.com** | Directory | Plugin collections and marketplaces | aitmpl.com/plugins |
+| **awesomeclaude.ai** | Curated list | Human-picked skills by category | awesomeclaude.ai/awesome-claude-skills |
+| **alirezarezvani/claude-skills** | Collection | 345 skills as installable plugins by domain (engineering, marketing, devops) | github.com/alirezarezvani/claude-skills |
+| **mhattingpete/claude-skills-marketplace** | Plugin marketplace | Git automation, testing, code review | github.com/mhattingpete/claude-skills-marketplace |
+| **ClawHub** | Agent registry | OpenClaw skills — review each, third-party skills have shipped malware | — |
+| **cursor.directory** | Rules directory | Cursor rules | cursor.directory |
+| **Awesome lists** | Link collections | ComposioHQ, travisvn, BehiSecc (see Skill Repositories below) | — |
+
+## Install a skill or plugin in 60 seconds
+
+```bash
+# Claude Code — a skill is just a folder
+git clone https://github.com/anthropics/skills /tmp/skills
+cp -r /tmp/skills/skills/pdf ~/.claude/skills/        # personal, all projects
+# or copy into .claude/skills/ in a repo and commit it for your team
+
+# Claude Code — plugins from a marketplace
+/plugin marketplace add <owner>/<repo>                # any GitHub repo with a marketplace.json
+/plugin install <plugin-name>
+
+# One skill into several agents at once
+npm install -g @localskills/cli
+localskills install <owner>/<skill> --target claude cursor windsurf
+
+# MCP server (tools/data) into Claude Code
+claude mcp add github -- npx -y @modelcontextprotocol/server-github
+```
+
+- **claude.ai:** Settings → Capabilities → Skills → upload the skill folder as a zip.
+- **Codex / OpenCode / Antigravity:** point them at the same skills folder (each has a skills path in its config).
+- **Write your own:** ask Claude to use the `skill-creator` skill, or copy an existing `SKILL.md` and edit the name, one-line description and steps. Keep the description specific — it decides when the skill loads.
 
 ---
 
