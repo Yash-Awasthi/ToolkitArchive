@@ -38,7 +38,7 @@
 
 | You'd normally pay for | Free alternative | Catch |
 |---|---|---|
-| Claude Pro / Max ($17–200) | Claude.ai free (Sonnet 5) · Opus 5.5 via $5 API trial · Kimi K3 free on kimi.com · Qwen 3.8-Max free on Qwen Chat | Free Claude has daily caps and no Opus |
+| Claude Pro / Max ($17–200) | Claude.ai free (Sonnet 5) · Opus 5.5 via the small Anthropic API trial credit · Kimi K3 free on kimi.com · Qwen 3.8-Max free on Qwen Chat | Free Claude has daily caps and no Opus |
 | ChatGPT Plus ($20) | ChatGPT free (GPT-6 Luna on desktop) · **4 months Plus free for US college students** (until Oct 31, card needed) | Cancel before it bills |
 | Gemini AI Pro ($19.99) | Gemini free (3.8 Flash) · **AI Pro free for 12 months** (US college students 18+) · **AI Plus free for 12 months** in 140+ other markets | School verification |
 | Perplexity Pro | Gemini Deep Research (free tier) · ChatGPT search · Perplexity free | |
