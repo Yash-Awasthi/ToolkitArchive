@@ -128,27 +128,27 @@ All OpenAI-SDK-compatible unless noted. Limits read from each provider's page on
 
 | Provider | Free access | Notes | Link |
 |---|---|---|---|
-| **Voyage AI** (MongoDB) | **200M free tokens** for voyage-4 embeddings/rerank; 50M for domain models | Best free embeddings | voyageai.com |
-| **Jina AI** | Free trial tokens | Embeddings, reranker, Reader (URL → LLM text) | jina.ai |
-| **ArliAI** | Free tier (12K context, 1 request at a time) | Fine-tunes; Starter $10/mo | arliai.com |
-| **OpenCode Zen** | Free stealth/experimental models (Big Pickle etc.); otherwise pay-as-you-go | ⚠️ Free models may train on your code | opencode.ai/zen |
-| **Chutes** (Bittensor) | No free tier now — Plus $10/mo or per-token | Open models minutes after release | chutes.ai |
-| **DeepInfra** | No free tier; small HF-routed quota | Cheap per-token hosting | deepinfra.com |
-| **Sarvam AI** | Signup credit | Indic languages, STT/TTS | sarvam.ai |
-| **LongCat** (Meituan) | Chat app is now paid (Basic $15/mo); open weights on Hugging Face | Earlier free API quota no longer visible | longcat.chat |
-| **AgentRouter** ⚠️ | Referral credit (reported $50–$200, shrinking); GitHub account 1+ year old | Unaudited reseller — see check below | agentrouter.org |
-| **Bluesminds** ⚠️ | Signup credits reported; paid from $75 | Unaudited reseller | api.bluesminds.com |
+| **Voyage AI** (MongoDB) | **200M free tokens** for voyage-4 embeddings/rerank; 50M for domain models | Best free embeddings | [voyageai.com](https://voyageai.com) |
+| **Jina AI** | Free trial tokens | Embeddings, reranker, Reader (URL → LLM text) | [jina.ai](https://jina.ai) |
+| **ArliAI** | Free tier (12K context, 1 request at a time) | Fine-tunes; Starter $10/mo | [arliai.com](https://arliai.com) |
+| **OpenCode Zen** | Free stealth/experimental models (Big Pickle etc.); otherwise pay-as-you-go | ⚠️ Free models may train on your code | [opencode.ai/zen](https://opencode.ai/zen) |
+| **Chutes** (Bittensor) | No free tier now — Plus $10/mo or per-token | Open models minutes after release | [chutes.ai](https://chutes.ai) |
+| **DeepInfra** | No free tier; small HF-routed quota | Cheap per-token hosting | [deepinfra.com](https://deepinfra.com) |
+| **Sarvam AI** | Signup credit | Indic languages, STT/TTS | [sarvam.ai](https://sarvam.ai) |
+| **LongCat** (Meituan) | Chat app is now paid (Basic $15/mo); open weights on Hugging Face | Earlier free API quota no longer visible | [longcat.chat](https://longcat.chat) |
+| **AgentRouter** ⚠️ | Referral credit (reported $50–$200, shrinking); GitHub account 1+ year old | Unaudited reseller — see check below | [agentrouter.org](https://agentrouter.org) |
+| **Bluesminds** ⚠️ | Signup credits reported; paid from $75 | Unaudited reseller | [api.bluesminds.com](https://api.bluesminds.com) |
 
 ### Aggregators (one key over many free tiers)
 
 | Tool | What | ⭐ (live) | Link |
 |---|---|---|---|
-| ★ **OmniRoute** | Self-hosted gateway over 340 providers (90+ free), quota-aware fallback. ⚠️ CVE-2026-49352 reported | 71K | github.com/diegosouzapw/OmniRoute |
-| ★ **FreeLLMAPI** | Self-hosted proxy stacking 16 providers' free tiers; router free forever (catalog updates $19/yr) | 29K | github.com/tashfeenahmed/freellmapi |
-| **LiteLLM** | Open-source router/proxy, free self-hosted | 60K | github.com/BerriAI/litellm |
-| **OrcaRouter** | Free models at $0 (10 RPM, 50 req/day), vouchers and student credits | — | orcarouter.ai/offers |
-| **freellm.net** | Directory of free models, daily live-verified; Plus $4.99/30 days | — | freellm.net |
-| **Vercel AI Gateway** | One key over many providers, no markup | — | vercel.com/ai-gateway |
+| ★ **OmniRoute** | Self-hosted gateway over 340 providers (90+ free), quota-aware fallback. ⚠️ CVE-2026-49352 reported | 71K | [github.com/diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
+| ★ **FreeLLMAPI** | Self-hosted proxy stacking 16 providers' free tiers; router free forever (catalog updates $19/yr) | 29K | [github.com/tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) |
+| **LiteLLM** | Open-source router/proxy, free self-hosted | 60K | [github.com/BerriAI/litellm](https://github.com/BerriAI/litellm) |
+| **OrcaRouter** | Free models at $0 (10 RPM, 50 req/day), vouchers and student credits | — | [orcarouter.ai/offers](https://orcarouter.ai/offers) |
+| **freellm.net** | Directory of free models, daily live-verified; Plus $4.99/30 days | — | [freellm.net](https://freellm.net) |
+| **Vercel AI Gateway** | One key over many providers, no markup | — | [vercel.com/ai-gateway](https://vercel.com/ai-gateway) |
 
 ### Chinese credit routers (community-reported, ⚠️ unverified)
 
@@ -177,18 +177,18 @@ All OpenAI-SDK-compatible unless noted. Limits read from each provider's page on
 
 | Provider | Credit | Validity | Link |
 |---|---|---|---|
-| **Google Cloud (Vertex)** | $300 | Trial period | cloud.google.com/free |
-| **Oracle Cloud** | $300 | 30 days (+ Always Free) | oracle.com/cloud/free |
-| **AWS (Bedrock)** | **Up to $200** | 6 months | aws.amazon.com/free |
-| **Azure (AI Foundry)** | $200 | 30 days | azure.microsoft.com/free |
-| **AI21** | $10, no card | 7 days | ai21.com/pricing |
-| **Cerebras** | $5 | — | cerebras.ai/pricing |
-| **Fireworks AI** | $1 | — | fireworks.ai/pricing |
-| **SiliconFlow** | $1 | — | siliconflow.com/pricing |
-| **Anthropic API** | Small new-account credit (commonly $5) | — | console.anthropic.com |
-| **xAI / SpaceXAI** | Signup credit; extra monthly credit for data-sharing opt-in (irreversible — avoid for sensitive data) | — | console.x.ai |
-| **Nebius AI Builder Program** | $400+ credits and discounts | Apply | nebius.com |
-| **Upstage** | Free Solar Pro for education/public-interest orgs (1 year); 50% off until Oct 22 | — | upstage.ai/pricing |
+| **Google Cloud (Vertex)** | $300 | Trial period | [cloud.google.com/free](https://cloud.google.com/free) |
+| **Oracle Cloud** | $300 | 30 days (+ Always Free) | [oracle.com/cloud/free](https://oracle.com/cloud/free) |
+| **AWS (Bedrock)** | **Up to $200** | 6 months | [aws.amazon.com/free](https://aws.amazon.com/free) |
+| **Azure (AI Foundry)** | $200 | 30 days | [azure.microsoft.com/free](https://azure.microsoft.com/free) |
+| **AI21** | $10, no card | 7 days | [ai21.com/pricing](https://ai21.com/pricing) |
+| **Cerebras** | $5 | — | [cerebras.ai/pricing](https://cerebras.ai/pricing) |
+| **Fireworks AI** | $1 | — | [fireworks.ai/pricing](https://fireworks.ai/pricing) |
+| **SiliconFlow** | $1 | — | [siliconflow.com/pricing](https://siliconflow.com/pricing) |
+| **Anthropic API** | Small new-account credit (commonly $5) | — | [platform.claude.com](https://platform.claude.com) |
+| **xAI / SpaceXAI** | Signup credit; extra monthly credit for data-sharing opt-in (irreversible — avoid for sensitive data) | — | [console.x.ai](https://console.x.ai) |
+| **Nebius AI Builder Program** | $400+ credits and discounts | Apply | [nebius.com](https://nebius.com) |
+| **Upstage** | Free Solar Pro for education/public-interest orgs (1 year); 50% off until Oct 22 | — | [upstage.ai/pricing](https://upstage.ai/pricing) |
 
 > **Stack:** GCP $300 + Oracle $300 + AWS $200 + Azure $200 ≈ **$1,000** to run Claude (Bedrock/Vertex), Gemini, GPT (Azure) and open models for free for weeks. Student programs → [CREDITS.md](./CREDITS.md#part-2--student-programs).
 
@@ -256,4 +256,3 @@ const reply = await puter.ai.chat("Write binary search in Python");
 | [mvalentsev/awesome-free-ai-coding](https://github.com/mvalentsev/awesome-free-ai-coding) | — | Free AI coding tools and plans (updated Sept 2026) |
 | [findaicredits.com](https://www.findaicredits.com/) | — | Free credits and student deals directory |
 | [aifree.dev/student-ai-deals](https://aifree.dev/student-ai-deals) | — | Student deals, checked weekly |
-| [almahmudbd free-apis gist](https://gist.github.com/almahmudbd/2f35cc768eae59117e8a0ce59beccca3) | — | Community list of credit gateways — every number is a claim |

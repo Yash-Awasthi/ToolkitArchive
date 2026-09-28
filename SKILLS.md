@@ -73,19 +73,19 @@
 
 | Tool | What it does | Link |
 |---|---|---|
-| ★ **claude-mem** | Captures each Claude Code session and feeds relevant context into later ones; local. 95K★ | github.com/thedotmack/claude-mem |
-| **Hindsight** (Vectorize) | Memory split into four networks (facts, experiences, entities, beliefs); 91% on its memory benchmark; plugin for Paperclip | github.com/vectorize-io/hindsight |
-| **OpenMemory MCP** (Mem0) | Local memory layer shared across Cursor, VS Code, Claude and any MCP client | mem0.ai/openmemory |
+| ★ **claude-mem** | Captures each Claude Code session and feeds relevant context into later ones; local. 95K★ | [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
+| **Hindsight** (Vectorize) | Memory split into four networks (facts, experiences, entities, beliefs); 91% on its memory benchmark; plugin for Paperclip | [github.com/vectorize-io/hindsight](https://github.com/vectorize-io/hindsight) |
+| **OpenMemory MCP** (Mem0) | Local memory layer shared across Cursor, VS Code, Claude and any MCP client | [mem0.ai/openmemory](https://mem0.ai/openmemory) |
 | Claude Code auto-memory | Built in since 2.1 — preferences and patterns persist automatically | — |
 
 ### Orchestration & agent runtimes
 
 | Tool | What it does | Link |
 |---|---|---|
-| **Paperclip** | Node server + React UI that runs a "company" of AI agents: bring your own agents, assign goals, track work. 93K★ | github.com/paperclipai/paperclip |
-| **google/ax + Agent Executor** | Google's open agent orchestration runtime (Go, Kubernetes-style): durable, resumable agents, sandboxing, trajectory branching | github.com/google/ax |
-| **Sakana Fugu Ultra v2** (Sept 11) | Not a tool but an API: one endpoint that orchestrates a pool of frontier models. $5/$30, 1M ctx, DeepSWE 74.3 | openrouter.ai/sakana/fugu-ultra-v2 |
-| **AgentCrafters.ai** | No-code: build agents in plain English connected to 36 everyday tools (email, reports, reminders). Early-stage (India, 2026) | agentcrafters.ai |
+| **Paperclip** | Node server + React UI that runs a "company" of AI agents: bring your own agents, assign goals, track work. 93K★ | [github.com/paperclipai/paperclip](https://github.com/paperclipai/paperclip) |
+| **google/ax + Agent Executor** | Google's open agent orchestration runtime (Go, Kubernetes-style): durable, resumable agents, sandboxing, trajectory branching | [github.com/google/ax](https://github.com/google/ax) |
+| **Sakana Fugu Ultra v2** (Sept 11) | Not a tool but an API: one endpoint that orchestrates a pool of frontier models. $5/$30, 1M ctx, DeepSWE 74.3 | [openrouter.ai/sakana/fugu-ultra-v2](https://openrouter.ai/sakana/fugu-ultra-v2) |
+| **AgentCrafters.ai** | No-code: build agents in plain English connected to 36 everyday tools (email, reports, reminders). Early-stage (India, 2026) | [agentcrafters.ai](https://agentcrafters.ai) |
 
 ### Research & search MCPs
 
@@ -106,18 +106,18 @@
 
 | Directory | Type | Best for | Link |
 |---|---|---|---|
-| ★ **anthropics/skills** | Official repo | First-party skills (docx, pdf, pptx, xlsx, skill-creator, webapp-testing) and the reference format | github.com/anthropics/skills |
+| ★ **anthropics/skills** | Official repo | First-party skills (docx, pdf, pptx, xlsx, skill-creator, webapp-testing) and the reference format | [github.com/anthropics/skills](https://github.com/anthropics/skills) |
 | ★ **Claude plugin directory** | Official directory (Sept 2026) | Reviewed third-party plugins with MCP 2.0 / MCP Apps support; submission portal for your own | Claude Code `/plugin` |
-| ★ **skills.sh** | Leaderboard | What's popular right now, by install count | skills.sh |
-| **localskills.sh** | Registry (npm-style) | Versioned, private and team skills; installs one skill into Claude Code, Cursor and Windsurf at once | localskills.sh |
-| **SkillsMP** | Aggregator | Searches every skill on GitHub — huge, unreviewed | skillsmp.com |
-| **claudemarketplaces.com** | Directory | Plugins, skills and MCP servers in one place | claudemarketplaces.com |
-| **aitmpl.com** | Directory | Plugin collections and marketplaces | aitmpl.com/plugins |
-| **awesomeclaude.ai** | Curated list | Human-picked skills by category | awesomeclaude.ai/awesome-claude-skills |
-| **alirezarezvani/claude-skills** | Collection | 345 skills as installable plugins by domain (engineering, marketing, devops) | github.com/alirezarezvani/claude-skills |
-| **mhattingpete/claude-skills-marketplace** | Plugin marketplace | Git automation, testing, code review | github.com/mhattingpete/claude-skills-marketplace |
+| ★ **skills.sh** | Leaderboard | What's popular right now, by install count | [skills.sh](https://skills.sh) |
+| **localskills.sh** | Registry (npm-style) | Versioned, private and team skills; installs one skill into Claude Code, Cursor and Windsurf at once | [localskills.sh](https://localskills.sh) |
+| **SkillsMP** | Aggregator | Searches every skill on GitHub — huge, unreviewed | [skillsmp.com](https://skillsmp.com) |
+| **claudemarketplaces.com** | Directory | Plugins, skills and MCP servers in one place | [claudemarketplaces.com](https://claudemarketplaces.com) |
+| **aitmpl.com** | Directory | Plugin collections and marketplaces | [aitmpl.com/plugins](https://aitmpl.com/plugins) |
+| **awesomeclaude.ai** | Curated list | Human-picked skills by category | [awesomeclaude.ai/awesome-claude-skills](https://awesomeclaude.ai/awesome-claude-skills) |
+| **alirezarezvani/claude-skills** | Collection | 345 skills as installable plugins by domain (engineering, marketing, devops) | [github.com/alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) |
+| **mhattingpete/claude-skills-marketplace** | Plugin marketplace | Git automation, testing, code review | [github.com/mhattingpete/claude-skills-marketplace](https://github.com/mhattingpete/claude-skills-marketplace) |
 | **ClawHub** | Agent registry | OpenClaw skills — review each, third-party skills have shipped malware | — |
-| **cursor.directory** | Rules directory | Cursor rules | cursor.directory |
+| **cursor.directory** | Rules directory | Cursor rules | [cursor.directory](https://cursor.directory) |
 | **Awesome lists** | Link collections | ComposioHQ, travisvn, BehiSecc (see Skill Repositories below) | — |
 
 ## Install a skill or plugin in 60 seconds

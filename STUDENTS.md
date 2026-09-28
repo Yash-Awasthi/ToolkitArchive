@@ -66,17 +66,17 @@
 
 | Program | What you get | Who | Link |
 |---|---|---|---|
-| **GitHub Student Developer Pack** | Copilot Student, free GitHub Pro, **Azure $100 (12 months, no card)** + 25 free Azure services, JetBrains IDEs and many partner offers | Verified students 18+ | education.github.com/pack |
+| **GitHub Student Developer Pack** | Copilot Student, free GitHub Pro, **Azure $100 (12 months, no card)** + 25 free Azure services, JetBrains IDEs and many partner offers | Verified students 18+ | [education.github.com/pack](https://education.github.com/pack) |
 | **ChatGPT Plus for students** | 4 months free ($80) | US college, **deadline Oct 31, 2026**, card required | chatgpt.com (students page) |
-| **Codex for Students** | $100 ChatGPT credits for Codex | US/Canada university students | chatgpt.com/codex/students |
-| **Google AI Pro for students** | 12 months free (US college students 18+); **Google AI Plus** free for 12 months in 140+ other markets | School verification | gemini.google/students |
-| **Zed Education** | Zed Pro 12 months + $10/mo AI credit | edu email + GitHub 30+ days | zed.dev/education |
-| **Kiro for Students** | 1,000 credits/mo for 12 months | Verified enrollment | kiro.dev |
-| **JetBrains Student Pack** | All IDEs free | Students | jetbrains.com/student |
-| **Microsoft 365** | 1 free year incl. Copilot in Office | Eligible US college students | microsoft.com |
-| **YC AI Student Starter Pack** | ~$25K of AI credits | Attend a YC university event | ycombinator.com |
-| **Anthropic AI for Science** | API credits for research | Researchers (apply) | anthropic.com |
-| **Claude Campus Ambassadors** | $3,600 stipend | Applications closed Sept 12 — watch for the next round | anthropic.com |
+| **Codex for Students** | $100 ChatGPT credits for Codex | US/Canada university students | [chatgpt.com/codex/students](https://chatgpt.com/codex/students) |
+| **Google AI Pro for students** | 12 months free (US college students 18+); **Google AI Plus** free for 12 months in 140+ other markets | School verification | [gemini.google/students](https://gemini.google/students) |
+| **Zed Education** | Zed Pro 12 months + $10/mo AI credit | edu email + GitHub 30+ days | [zed.dev/education](https://zed.dev/education) |
+| **Kiro for Students** | 1,000 credits/mo for 12 months | Verified enrollment | [kiro.dev](https://kiro.dev) |
+| **JetBrains Student Pack** | All IDEs free | Students | [jetbrains.com/academy/student-pack](https://www.jetbrains.com/academy/student-pack/) |
+| **Microsoft 365** | 1 free year incl. Copilot in Office | Eligible US college students | [microsoft.com](https://microsoft.com) |
+| **YC AI Student Starter Pack** | ~$25K of AI credits | Attend a YC university event | [ycombinator.com](https://ycombinator.com) |
+| **Anthropic AI for Science** | API credits for research | Researchers (apply) | [anthropic.com](https://anthropic.com) |
+| **Claude Campus Ambassadors** | $3,600 stipend | Applications closed Sept 12 — watch for the next round | [anthropic.com](https://anthropic.com) |
 | **Figma Education · Notion Education Plus · Cloudflare Workers for Students** | Free plans | edu email | see [CREDITS.md](./CREDITS.md) Part 2 |
 
 > There's **no public Claude Pro student discount** as of Sept 2026. Most programs verify via school

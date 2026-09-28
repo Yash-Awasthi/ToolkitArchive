@@ -8,7 +8,7 @@
 > agent on its own.
 
 > [!WARNING]
-> **Changed since the last pass:** **Roo Code** and **Void** are archived · **Flowise** repo archived (Aug 2026) · **Plandex**, **Trae Agent**, **Sweep** (open-source repo) and **GPT4All** have gone quiet · **ZCode** uploaded users' repos — don't use it · **Gemini CLI** free/Pro access ended June 18 → Antigravity CLI · **Cursor** is owned by SpaceX · **Kiro** is now Pro $20 / Pro+ $40 / Pro Max $100 / Power $200 · **Devin** Pro $20 (Max $200) · **Warp** Build $18 · **Qoder** is no longer free (2-week trial, Pro $20).
+> **Changed since the last pass:** **Roo Code** and **Void** are archived · **Flowise** repo archived (Aug 2026) · **Plandex**, **Trae Agent** and **GPT4All** have gone quiet · **Sweep** shut down (Apr 9, 2026) · **ZCode** uploaded users' repos — don't use it · **Gemini CLI** free/Pro access ended June 18 → Antigravity CLI · **Cursor** is owned by SpaceX · **Kiro** is now Pro $20 / Pro+ $40 / Pro Max $100 / Power $200 · **Devin** Pro $20 (Max $200) · **Warp** Build $18 · **Qoder** is no longer free (2-week trial, Pro $20).
 
 **Contents:** [Terminal-Bench 4.0](#terminal-bench-40) · [CLI agents](#part-1--cli--terminal-coding-agents) · [IDEs](#part-2--agentic-ides--desktop-apps) · [Autonomous agents](#part-3--autonomous--web-agents) · [Chat apps](#part-4--ai-chat-apps) · [Infrastructure](#part-5--infrastructure--protocols) · [MCP](#part-5a--mcp-model-context-protocol) · [BYOK recipes](#byok-recipes) · [Deprecated](#deprecated--retiring) · [Deploy & CI](#part-7--deployment--cicd) · [Code quality](#part-8--code-quality-ai-review--security) · [Frameworks](#part-9--agent-builders-frameworks--browser-agents) · [Local runners](#part-10--local-model-runners) · [Social discovery](#part-11--social-discovery)
 
@@ -108,12 +108,11 @@ TB 2.1 is saturated (top models land at 88–91% in vendor runs), so labs now re
 
 | Agent | Free | Paid | Link |
 |---|---|---|---|
-| **Cursor** (SpaceX) | Hobby: limited agent requests + Composer | Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/user | cursor.com/pricing |
-| **GitHub Copilot** | 2,000 completions/mo, Haiku 4.5, GPT-5 mini, agent mode, CLI | Pro $10 · Pro+ $39 · Max $100 | github.com/features/copilot/plans |
-| **Kiro** (AWS) | 50 credits/mo incl. Claude Sonnet 4.5 + open models | Pro $20 · Pro+ $40 · Pro Max $100 · Power $200 | kiro.dev/pricing |
-| **Augment Code** | — | Standard $20 · Business $100 | augmentcode.com/pricing |
-| **Zencoder** | 7-day Pro trial | Pro $40/user (annual) | zencoder.ai/pricing |
-| **Sweep** (JetBrains plugin) | Trial: 1,000 autocompletes + $5 API credit | Basic $10 · Pro $20 · Ultra $60 | sweep.dev |
+| **Cursor** (SpaceX) | Hobby: limited agent requests + Composer | Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/user | [cursor.com/pricing](https://cursor.com/pricing) |
+| **GitHub Copilot** | 2,000 completions/mo, Haiku 4.5, GPT-5 mini, agent mode, CLI | Pro $10 · Pro+ $39 · Max $100 | [github.com/features/copilot/plans](https://github.com/features/copilot/plans) |
+| **Kiro** (AWS) | 50 credits/mo incl. Claude Sonnet 4.5 + open models | Pro $20 · Pro+ $40 · Pro Max $100 · Power $200 | [kiro.dev/pricing](https://kiro.dev/pricing) |
+| **Augment Code** | — | Standard $20 · Business $100 | [augmentcode.com/pricing](https://augmentcode.com/pricing) |
+| **Zencoder** | 7-day Pro trial | Pro $40/user (annual) | [zencoder.ai/pricing](https://zencoder.ai/pricing) |
 
 ### Proxy / router tools
 
@@ -326,6 +325,8 @@ OPENAI_BASE_URL=https://api.deepseek.com OPENAI_API_KEY=sk-... aider --model ope
 | Google Imagen | Shut down Aug 17 | Nano Banana 2 (Gemini 3.1 Flash Image) |
 | InstantDB cloud | Acquired by OpenAI; closes Aug 31, 2027 | Self-host / Convex / Supabase |
 | Mocha · Motiff | Shut down / discontinued | See [FRONTEND.md](./FRONTEND.md) |
+| Sweep (AI coding plugin) | Shut down Apr 9, 2026 | Kilo Code / Cline / JetBrains AI |
+| Code Climate Quality | Became Qlty | Qlty |
 
 ---
 
@@ -343,22 +344,22 @@ Managed hosting (Vercel, Cloudflare, Netlify, Render, Railway, Fly.io, Sevalla, 
 
 | Platform | ⭐ Stars (live) | What | Cost | Link |
 |---|---|---|---|---|
-| ★ **Coolify** | 62K | Heroku/Vercel-style UI, REST API, 280+ one-click services | Free self-hosted (all features) · Cloud $5/mo | coolify.io |
-| **Dokploy** | 38K | Docker Compose + Swarm, fast UI | Self-host free · Cloud from $4.50/mo per server | dokploy.com |
-| **Dokku** | 32K | Git-push PaaS, Heroku buildpacks, CLI-driven | Free (Dokku Pro from $10/mo) | dokku.com |
-| **CapRover** | 15K | Docker Swarm, one-click app store, automatic HTTPS | Free | caprover.com |
-| **Kamal** (Basecamp) | 15K | Deploy Docker containers to any server over SSH | Free | kamal-deploy.org |
+| ★ **Coolify** | 62K | Heroku/Vercel-style UI, REST API, 280+ one-click services | Free self-hosted (all features) · Cloud $5/mo | [coolify.io](https://coolify.io) |
+| **Dokploy** | 38K | Docker Compose + Swarm, fast UI | Self-host free · Cloud from $4.50/mo per server | [dokploy.com](https://dokploy.com) |
+| **Dokku** | 32K | Git-push PaaS, Heroku buildpacks, CLI-driven | Free (Dokku Pro from $10/mo) | [dokku.com](https://dokku.com) |
+| **CapRover** | 15K | Docker Swarm, one-click app store, automatic HTTPS | Free | [caprover.com](https://caprover.com) |
+| **Kamal** (Basecamp) | 15K | Deploy Docker containers to any server over SSH | Free | [kamal-deploy.org](https://kamal-deploy.org) |
 
 ### CI/CD
 
 | Tool | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|
-| ★ **GitHub Actions** | Free for public repos; included minutes on private | Per-minute | github.com/features/actions |
-| **GitLab CI** | Free tier (400 compute minutes/mo, 5 users/group) | Premium $29/user/mo | gitlab.com/pricing |
-| **CircleCI** | **6,000 build minutes/mo**, 5 active users; OSS up to 400K credits/mo | Performance $15/mo | circleci.com/pricing |
-| **Buildkite** | Up to 5 users, 10 concurrent jobs, 2,000 Linux vCPU min | Pro $30/active user/mo | buildkite.com/pricing |
-| **Depot** | 7-day trial | Developer $20/mo | depot.dev/pricing |
-| ~~Earthly~~ | Repo inactive since Oct 2025 | — | github.com/earthly/earthly |
+| ★ **GitHub Actions** | Free for public repos; included minutes on private | Per-minute | [github.com/features/actions](https://github.com/features/actions) |
+| **GitLab CI** | Free tier (400 compute minutes/mo, 5 users/group) | Premium $29/user/mo | [gitlab.com/pricing](https://gitlab.com/pricing) |
+| **CircleCI** | **6,000 build minutes/mo**, 5 active users; OSS up to 400K credits/mo | Performance $15/mo | [circleci.com/pricing](https://circleci.com/pricing) |
+| **Buildkite** | Up to 5 users, 10 concurrent jobs, 2,000 Linux vCPU min | Pro $30/active user/mo | [buildkite.com/pricing](https://buildkite.com/pricing) |
+| **Depot** | 7-day trial | Developer $20/mo | [depot.dev/pricing](https://depot.dev/pricing) |
+| ~~Earthly~~ | Repo inactive since Oct 2025 | — | [github.com/earthly/earthly](https://github.com/earthly/earthly) |
 
 ### Deploy via API — quick reference
 
@@ -369,7 +370,7 @@ curl -X POST https://api.vercel.com/v13/deployments \
   -d '{"name":"my-app","gitSource":{"type":"github","repoId":"...","ref":"main"}}'
 
 # Railway (GraphQL)
-curl -X POST https://backboard.railway.app/graphql/v2 \
+curl -X POST https://backboard.railway.com/graphql/v2 \
   -H "Authorization: Bearer $RAILWAY_TOKEN" \
   -d '{"query":"mutation { deploymentTrigger(input:{serviceId:\"...\"}){id} }"}'
 
@@ -389,34 +390,33 @@ curl -X POST "https://api.render.com/deploy/$RENDER_DEPLOY_HOOK_ID?key=$RENDER_D
 
 | Tool | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|
-| ★ **SonarQube Cloud** | Free up to 50K lines of code (private too) | Team $34/mo | sonarcloud.io/pricing |
-| **Qlty** | Free $0; **free for K-12 & universities** | Pro $20/contributor/mo | qlty.sh/pricing |
-| **Code Climate** | 1,000 analysis minutes + 100 AI autofixes/mo; free for schools | Pro $20/contributor/mo | codeclimate.com/pricing |
-| **Codacy** | Free forever for open source | Paid plans | codacy.com/pricing |
-| **DeepSource** | 14-day trial + $50 AI review credits | Team $24/user/mo | deepsource.com/pricing |
-| **Qodana** (JetBrains) | Free for open source; 30-day trial | Standard $5/developer | jetbrains.com/qodana |
+| ★ **SonarQube Cloud** | Free up to 50K lines of code (private too) | Team $34/mo | [sonarsource.com/plans-and-pricing](https://www.sonarsource.com/plans-and-pricing/) |
+| **Qlty** (Code Climate Quality spun out into Qlty) | Free $0; **free for K-12 & universities** | Pro $20/contributor/mo | [qlty.sh/pricing](https://qlty.sh/pricing) |
+| **Codacy** | Free forever for open source | Paid plans | [codacy.com/pricing](https://codacy.com/pricing) |
+| **DeepSource** | 14-day trial + $50 AI review credits | Team $24/user/mo | [deepsource.com/pricing](https://deepsource.com/pricing) |
+| **Qodana** (JetBrains) | Free for open source; 30-day trial | Standard $5/developer | [jetbrains.com/qodana](https://jetbrains.com/qodana) |
 
 ### AI code review
 
 | Tool | Free | Paid | Link |
 |---|---|---|---|
-| ★ **CodeRabbit** | 14-day trial; free education plan for public repos | Essentials $24/mo | coderabbit.ai/pricing |
-| **Greptile** | Free for 1 developer (50 credits/mo); free for MIT/Apache non-commercial projects | Pro $30/seat/mo | greptile.com/pricing |
-| **Graphite** | Hobby free | Starter $20/user/mo | graphite.dev/pricing |
-| **Sourcery** | Free forever for public repos | Pro $12/dev/mo | sourcery.ai/pricing |
+| ★ **CodeRabbit** | 14-day trial; free education plan for public repos | Essentials $24/mo | [coderabbit.ai/pricing](https://coderabbit.ai/pricing) |
+| **Greptile** | Free for 1 developer (50 credits/mo); free for MIT/Apache non-commercial projects | Pro $30/seat/mo | [greptile.com/pricing](https://greptile.com/pricing) |
+| **Graphite** | Hobby free | Starter $20/user/mo | [graphite.com/pricing](https://graphite.com/pricing) |
+| **Sourcery** | Free forever for public repos | Pro $12/dev/mo | [sourcery.ai/pricing](https://sourcery.ai/pricing) |
 | **Claude Code / Codex / Copilot review** | Built into those agents (`/review`, PR review) | Your plan | — |
 
 ### Security scanners
 
 | Tool | ⭐ (live) | Free | Link |
 |---|---|---|---|
-| ★ **Semgrep** | 17K | Community Edition free | semgrep.dev |
-| ★ **Trivy** | 38K | Open source (containers, IaC, SBOM) | trivy.dev |
-| ★ **Gitleaks** | 30K | Open source secrets scanner | gitleaks.io |
-| **TruffleHog** | 28K | Open source; Enterprise paid | trufflesecurity.com |
+| ★ **Semgrep** | 17K | Community Edition free | [semgrep.dev](https://semgrep.dev) |
+| ★ **Trivy** | 38K | Open source (containers, IaC, SBOM) | [trivy.dev](https://trivy.dev) |
+| ★ **Gitleaks** | 30K | Open source secrets scanner | [gitleaks.io](https://gitleaks.io) |
+| **TruffleHog** | 28K | Open source; Enterprise paid | [trufflesecurity.com](https://trufflesecurity.com) |
 | **Snyk** | — | Free plan (SCA, SAST, IaC, container) | snyk.io/pricing (Team $25/mo) |
 | **Aikido** | — | Developer: free forever, 2 users | aikido.dev/pricing (Basic $350/mo) |
-| **OWASP Dependency-Check** | — | Open source SCA | owasp.org/www-project-dependency-check |
+| **OWASP Dependency-Check** | — | Open source SCA | [owasp.org/projects/dependency-check](https://owasp.org/projects/dependency-check) |
 
 ### Language linters (all free & open source)
 
@@ -460,16 +460,16 @@ jobs:
 
 | Platform | ⭐ (live) | Free tier (29 Sep 2026) | Paid | Link |
 |---|---|---|---|---|
-| ★ **n8n** | 206K | Community Edition free self-hosted | Cloud Starter $20/mo (50% off for startups <20 staff) | n8n.io/pricing |
-| ★ **Dify** | 157K | Sandbox: 200 message credits, 5 apps; self-host free | Paid cloud plans | dify.ai/pricing |
-| ★ **Langflow** | 155K | Free (open source + cloud) | — | langflow.org |
-| **Activepieces** | 25K | **100 credits/day, free forever**, no card | Plus $20/mo | activepieces.com/pricing |
-| **Zapier** | — | 100 tasks/mo (AI steps use the same tasks) | Professional $19.99/mo | zapier.com/pricing |
-| **Stack AI** | — | 500 runs/mo, 2 projects | Enterprise | stack-ai.com/pricing |
-| **Gumloop** | — | 14-day trial | Pro $37/mo | gumloop.com/pricing |
-| **Lindy** | — | 7-day trial | Plus $29.99/mo | lindy.ai/pricing |
-| **AgentCrafters.ai** | — | Plain-English agents on 36 everyday tools (early-stage) | — | agentcrafters.ai |
-| ~~Flowise~~ | 55K | **Repository archived (Aug 2026)** — migrate to Langflow or n8n | — | github.com/FlowiseAI/Flowise |
+| ★ **n8n** | 206K | Community Edition free self-hosted | Cloud Starter $20/mo (50% off for startups <20 staff) | [n8n.io/pricing](https://n8n.io/pricing) |
+| ★ **Dify** | 157K | Sandbox: 200 message credits, 5 apps; self-host free | Paid cloud plans | [dify.ai/pricing](https://dify.ai/pricing) |
+| ★ **Langflow** | 155K | Free (open source + cloud) | — | [langflow.org](https://langflow.org) |
+| **Activepieces** | 25K | **100 credits/day, free forever**, no card | Plus $20/mo | [activepieces.com/pricing](https://activepieces.com/pricing) |
+| **Zapier** | — | 100 tasks/mo (AI steps use the same tasks) | Professional $19.99/mo | [zapier.com/pricing](https://zapier.com/pricing) |
+| **Stack AI** | — | 500 runs/mo, 2 projects | Enterprise | [stackai.com/pricing](https://www.stackai.com/pricing) |
+| **Gumloop** | — | 14-day trial | Pro $37/mo | [gumloop.com/pricing](https://gumloop.com/pricing) |
+| **Lindy** | — | 7-day trial | Plus $29.99/mo | [lindy.ai/pricing](https://lindy.ai/pricing) |
+| **AgentCrafters.ai** | — | Plain-English agents on 36 everyday tools (early-stage) | — | [agentcrafters.ai](https://agentcrafters.ai) |
+| ~~Flowise~~ | 55K | **Repository archived (Aug 2026)** — migrate to Langflow or n8n | — | [github.com/FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise) |
 
 ### Code-level agent frameworks
 
@@ -499,10 +499,10 @@ jobs:
 
 | Tool | ⭐ (live) | Free | Link |
 |---|---|---|---|
-| ★ **Browser Use** | 117K | Open source; cloud $15 free credits, then model cost + 20% | browser-use.com |
-| ★ **Playwright MCP / CLI** | 38K | Free (ships inside Playwright) | github.com/microsoft/playwright-mcp |
-| **Vercel agent-browser** | 43K | Free CLI | agent-browser.dev |
-| **Stagehand v3** (Browserbase) | 25K | Free SDK | stagehand.dev |
+| ★ **Browser Use** | 117K | Open source; cloud $15 free credits, then model cost + 20% | [browser-use.com](https://browser-use.com) |
+| ★ **Playwright MCP / CLI** | 38K | Free (ships inside Playwright) | [github.com/microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) |
+| **Vercel agent-browser** | 43K | Free CLI | [agent-browser.dev](https://agent-browser.dev) |
+| **Stagehand v3** (Browserbase) | 25K | Free SDK | [stagehand.dev](https://stagehand.dev) |
 | **Skyvern** | 23K | 5,000 credits free | skyvern.com/pricing (Hobby $29/mo) |
 | **Browser Harness** · **Agent-Reach** · **Chrome DevTools MCP** | 18K · 86K · 53K | Free | see [SKILLS.md](./SKILLS.md#browsing--web-access-for-agents) |
 

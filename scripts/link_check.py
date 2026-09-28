@@ -13,7 +13,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 URL_RE = re.compile(r'https?://[^\s)>\]"\']+')
 TIMEOUT = 10
 WORKERS = 16
-HEADERS = {"User-Agent": "Mozilla/5.0 (ToolkitArchive link-check)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"}
+CODE_BLOCK = re.compile(r"```.*?```", re.S)
+INLINE_CODE = re.compile(r"`[^`\n]*`")
+# sites that refuse scripted requests; the page usually exists
+BLOCKED = {401, 403, 429, 999}
 
 # Template/placeholder URLs used in docs as fill-in-the-blank examples, not real
 # links. They will never resolve and aren't dead links to report.
@@ -31,6 +35,9 @@ def find_urls():
     for path in sorted(glob.glob(os.path.join(ROOT, "**", "*.md"), recursive=True)):
         with open(path, encoding="utf-8") as f:
             text = f.read()
+        # code samples contain API endpoints that reject bare GETs; they aren't links
+        text = CODE_BLOCK.sub("", text)
+        text = INLINE_CODE.sub("", text)
         urls = list(dict.fromkeys(m.rstrip(".,;:") for m in URL_RE.findall(text)))
         urls = [u for u in urls if not any(p.search(u) for p in IGNORE_PATTERNS)]
         if urls:
@@ -46,7 +53,9 @@ def check(url):
             r = requests.get(url, timeout=TIMEOUT, allow_redirects=True, headers=HEADERS)
     except requests.RequestException as e:
         return url, "error", type(e).__name__
-    if r.status_code >= 400:
+    if r.status_code in BLOCKED:
+        status = "blocked"
+    elif r.status_code >= 400:
         status = "dead"
     elif r.history:
         status = "redirected"
@@ -66,7 +75,7 @@ def main():
         for url, status, detail in ex.map(check, all_urls):
             results[url] = (status, detail)
 
-    dead, redirected = {}, {}
+    dead, redirected, blocked = {}, {}, {}
     for path, urls in by_file.items():
         for url in urls:
             status, detail = results[url]
@@ -74,6 +83,8 @@ def main():
                 dead.setdefault(path, []).append((url, detail))
             elif status == "redirected":
                 redirected.setdefault(path, []).append((url, detail))
+            elif status == "blocked":
+                blocked.setdefault(path, []).append((url, detail))
 
     if dead:
         print("\n=== dead links (4xx / 5xx / timeout / connection error) ===")
