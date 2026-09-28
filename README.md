@@ -4,8 +4,7 @@
 
 **Every AI model, coding agent, free tier, skill and benchmark worth knowing — verified 29 September 2026.**
 
-[![Open the interactive explorer](https://img.shields.io/badge/🔎_Open_the_interactive_explorer-search_%26_filter_everything-d97757?style=for-the-badge)](https://yash-awasthi.github.io/ToolkitArchive/)
-[![Benchmarks](https://img.shields.io/badge/📊_Benchmarks-38_charts_·_99_models-4285f4?style=for-the-badge)](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html)
+[![Benchmarks](https://img.shields.io/badge/📊_Benchmarks-38_charts_·_99_models-4285f4?style=for-the-badge)](./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks)
 
 ![updated](https://img.shields.io/badge/updated-2026--09--29-10a37f) ![stars](https://img.shields.io/badge/GitHub_stars-live_from_API-8b5cf6) ![charts](https://img.shields.io/badge/charts-regenerated_from_data-ff6a00) ![free](https://img.shields.io/badge/built_for-%240_budgets-2ecc71)
 
@@ -68,8 +67,11 @@ flowchart LR
 
 ## 📊 Charts
 
+> [!TIP]
+> Want the interactive version (filter by company and category, recomputed rankings)? Download [`benchmarks.html`](./benchmarks.html) and open it in your browser — it works offline.
+
 > [!NOTE]
-> Built from [`data/`](./data) with `python charts/gen_charts.py`. Star counts come live from the GitHub API (`python scripts/update_stars.py`); head-to-head ratings from [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) (`node scripts/headtohead.js`).
+> Built from [`data/`](./data) with `python charts/gen_charts.py`. Star counts come live from the GitHub API (`python scripts/update_stars.py`); head-to-head ratings from [benchmarks.html](./benchmarks.html) (`node scripts/headtohead.js`).
 
 | | |
 |:--:|:--:|
@@ -88,7 +90,7 @@ flowchart LR
 
 - **Prices fell hard at the top.** Opus 5.5 is better than Opus 5 and 20% cheaper per token ($4/$20); Sonnet 5.5 and GPT-6 Sol both sit at $2/$10; GPT-6 Luna is $0.10/$0.50. A frontier-quality coding agent now costs roughly what a mid-tier model cost in June. [MODELS.md](./MODELS.md#current-lineup--29-september-2026)
 - **DeepSeek V4.1 Flash is the new default cheap model.** $0.60/M output off-peak, 1M context, vision, MIT weights, and it beats DeepSeek's own V4-Pro on most of their benches. Route most traffic here and escalate the hard 5% to Opus/Sonnet 5.5.
-- **Benchmarks moved.** SWE-bench Verified and Terminal-Bench 2.1 are saturated (everyone scores 88–97%). Read **Terminal-Bench 4.0**, SWE-bench Pro, FrontierCode and CursorBench instead — and never compare numbers across harnesses. [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html)
+- **Benchmarks moved.** SWE-bench Verified and Terminal-Bench 2.1 are saturated (everyone scores 88–97%). Read **Terminal-Bench 4.0**, SWE-bench Pro, FrontierCode and CursorBench instead — and never compare numbers across harnesses. [benchmarks.html](./benchmarks.html)
 - **Free coding got better, via agents rather than APIs.** Cline hands out DeepSeek V4.1 Flash, Kimi K3 (Desktop), GLM-5.3-Flash and Laguna S 2.1 for free; Freebuff gives 6 h/day of V4.1 Flash and 5 h of GPT-6 Luna, paid for by ads; OpenRouter's free list now includes 1M-context stealth models. [FREE-ACCESS.md](./FREE-ACCESS.md#september-2026-free-wave-start-here)
 - **Free tools can cost you your code.** ZCode quietly uploaded whole repositories (including Git history with old secrets) to its vendor's cloud. Stealth models on OpenRouter/TokenRa also log prompts. Keep secrets out of anything free, and rotate credentials if you used ZCode. [NEWS.md](./NEWS.md)
 - **A new kind of model.** Jev and Laya don't write text — they answer typed questions (pick one, score it, yes/no) with calibrated probabilities in milliseconds. Useful as a fast router or guardrail inside an agent. [MODELS.md](./MODELS.md#typed-decision-models-new-category)

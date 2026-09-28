@@ -1,10 +1,10 @@
 # 📰 Latest News — re-checked 29 September 2026
 
-<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
 
 > What changed between 17 August and 29 September 2026, distilled. Vendor-reported numbers are
-> labelled as such. Full benchmark tables live in [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html).
+> labelled as such. Full benchmark tables live in [benchmarks.html](./benchmarks.html).
 > See also [MODELS.md](./MODELS.md).
 
 **Contents:** [⚠️ Security alert](#security-alert-do-not-use-zcode) · [Frontier models](#frontier-model-releases) ·
@@ -179,4 +179,4 @@ Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--m
   working only with paid Gemini API keys and enterprise licences. Fixed across the archive.
 - **Claude Max 20x is $200/mo** — confirmed by multiple Sept pricing write-ups; the "unverified" hedge is gone.
 - **SWE-bench Verified is archived** — Vals froze its board Sept 1. The model charts in this repo still
-  plot SWE-bench Verified; treat them as history and use [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) for current rankings.
+  plot SWE-bench Verified; treat them as history and use [benchmarks.html](./benchmarks.html) for current rankings.

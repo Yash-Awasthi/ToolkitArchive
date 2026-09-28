@@ -1,6 +1,6 @@
 # 💰 Credits, Student & Startup Programs, Free GPU, Trust List (verified 29 September 2026)
 
-<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
 > [!NOTE]
 > Trial credits, student and startup programs, subscription-as-API tools, free GPU, and the archive's

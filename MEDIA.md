@@ -1,6 +1,6 @@
 # 🎬 Media — Image, Voice, Video, Music, LLMOps & Docs (verified 29 September 2026)
 
-<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
 > [!NOTE]
 > Free/open-source first, then paid tools. Every free tier and price was read from the vendor's
@@ -60,7 +60,7 @@
 
 ## Image & video leaderboards (29 Sep 2026)
 
-Interactive charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) → "Image generation" / "Video generation".
+Interactive charts: [benchmarks.html](./benchmarks.html) → "Image generation" / "Video generation".
 
 | Text-to-image arena | Text-to-video arena |
 |:--:|:--:|

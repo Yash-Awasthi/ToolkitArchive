@@ -1,6 +1,6 @@
 # 🧠 AI Models — Current Lineup (verified 29 September 2026)
 
-<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
 
 > [!NOTE]
@@ -12,7 +12,7 @@
 > [!IMPORTANT]
 > **Benchmark hygiene:** Terminal-Bench, SWE-bench, GPQA and the arenas measure different things,
 > and the same model scores differently under different harnesses. Compare within one chart, never
-> across. Interactive per-benchmark rankings: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html).
+> across. Interactive per-benchmark rankings: [benchmarks.html](./benchmarks.html).
 
 **Contents:** [Current lineup](#current-lineup--29-september-2026) · [Head-to-head verdict](#whos-actually-best--head-to-head-across-34-benchmarks) · [Pick one](#pick-one) · [Diffusion LLMs](#diffusion-llms-new-category) · [Typed decision models](#typed-decision-models-new-category) · [Charts](#charts) · [Superseded models](#superseded-models) · [Upcoming](#upcoming--early-stage-models) · [Release timeline](#release-timeline-2026)
 
@@ -22,7 +22,7 @@
 
 > Everything released or repriced since the 17 Aug pass. Prices are official list prices per 1M tokens.
 > Benchmark numbers are vendor launch tables unless marked; per-benchmark rankings with sources are in
-> [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html). **SWE-bench Verified is retired** (Vals archived its board Sept 1)
+> [benchmarks.html](./benchmarks.html). **SWE-bench Verified is retired** (Vals archived its board Sept 1)
 > — the charts below still plot it, so treat them as history.
 
 ### Frontier (closed)
@@ -56,7 +56,7 @@
 
 ### Who's actually best — head-to-head across 34 benchmarks
 
-[benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) now covers 34 model benchmarks (Terminal-Bench 4.0 and 2.1, SWE-bench
+[benchmarks.html](./benchmarks.html) now covers 34 model benchmarks (Terminal-Bench 4.0 and 2.1, SWE-bench
 Pro/Verified, DeepSWE, FrontierCode, CursorBench, GPQA, HLE, FrontierMath, AIME 2026, MMLU-Pro,
 BrowseComp, Toolathlon, GDPval, OSWorld, MMMU-Pro, LMArena Text + WebDev, the Artificial Analysis
 Intelligence Index and more) and 58 language models, plus 4 image and video arenas. Every time two models appear on the same chart, the

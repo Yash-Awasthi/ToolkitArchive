@@ -1,6 +1,6 @@
 # 🤖 Agents — CLI Agents, IDEs, Chat Apps, MCP & Tooling (verified 29 September 2026)
 
-<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
 
 > [!NOTE]
 > Every price was read from the vendor's live pricing page and every star count comes from the GitHub
@@ -37,7 +37,7 @@ TB 2.1 is saturated (top models land at 88–91% in vendor runs), so labs now re
 | MiMo-V2.6-Flash | 28.8% | — |
 | Gemini 3.8 Flash | 19.1% | — |
 
-> Compare within a column, never across. Every benchmark and the head-to-head verdict: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html).
+> Compare within a column, never across. Every benchmark and the head-to-head verdict: [benchmarks.html](./benchmarks.html).
 
 <details>
 <summary><b>Older: Terminal-Bench 2.1 official leaderboard snapshot (17 Aug 2026)</b></summary>
