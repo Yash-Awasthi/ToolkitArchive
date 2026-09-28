@@ -6,7 +6,7 @@
 
 **Contents:** [⚠️ Security alert](#security-alert-do-not-use-zcode) · [Frontier models](#frontier-model-releases) ·
 [Open-weight models](#open-weight--cheap-models) · [Agents & tools](#coding-agents--tools) ·
-[Free access](#free-ai-access-news) · [New categories](#new-category-typed-decision-models) · [Corrections](#corrections-to-earlier-passes)
+[Free access](#free-ai-access-news) · [Tools wave](#tools-skills--mcps-wave) · [New categories](#new-category-typed-decision-models) · [Corrections](#corrections-to-earlier-passes)
 
 ---
 
@@ -119,6 +119,21 @@ Sources: api-docs.deepseek.com (changelog + pricing) · siliconangle.com (Sept 1
 ---
 
 > **Best way to use free models:** OpenCode with any OpenAI-compatible key (Token Harbor, TokenRa, OpenRouter, Groq) — see [FREE-ACCESS.md](./FREE-ACCESS.md#how-to-use-all-of-this-opencode--any-openai-compatible-key).
+
+## Tools, skills & MCPs wave
+
+Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--mcps--sept-2026-wave).
+
+- **Design taste skills went mainstream:** Impeccable (~63K★), Taste Skill (~77K★), Emil Kowalski's skills, UI UX Pro Max, and `DESIGN.md` (Google Stitch's open format; VoltAgent's awesome-design-md has files from 59+ real sites).
+- **Design tools opened to agents:** Figma MCP can now write to the canvas (beta, paid seats); Paper and Pencil are agent-native design canvases; Claude Design (Anthropic Labs) makes prototypes and slides.
+- **Motion:** official Motion AI Kit (skill + MCP) and GSAP skills; Remotion skills for video-from-code; Anime.js and Three.js skills.
+- **Browsing:** Playwright MCP + CLI now ship inside Playwright itself; Chrome DevTools MCP attaches to your live Chrome; Browser Harness (self-healing CDP harness); Agent-Reach (~85K★, free Twitter/Reddit/YouTube/XiaoHongShu access); Vercel agent-browser; Stagehand v3.
+- **Dev & memory:** Context7 and Serena MCPs, ECC (~82K★), GSD (~59K★), claude-mem (~46K★), Hindsight, OpenMemory; Paperclip (~84K★) runs a company of agents; Google open-sourced `ax` / Agent Executor.
+- **New model types:** Mercury 2.5 diffusion LLM (Sept 8, ~1,000 tok/s, $0.20/$0.75) and Jev typed decisions — see [MODELS.md](./MODELS.md#diffusion-llms-new-category).
+- **Local:** LM Studio **Bionic** — a free agent app for open models (code + documents + transcription).
+- **Media:** GPT Image 2.5 (Sept 8) in ChatGPT free; Sakana Fugu Ultra v2 (Sept 11) orchestrates many models behind one API.
+
+---
 
 ## New category: typed decision models
 

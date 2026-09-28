@@ -285,6 +285,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 | **Zed** | Zed Industries | Personal free (2,000 edit predictions/mo, unlimited with your own key) · Pro $10 · Business $30/seat | ACP — run any agent natively | Open-source | Open agent ecosystem |
 | **Claude Code** | Anthropic | Pro $17 (annual) / $20 · Max 5x $100 · Max 20x $200 | Terminal, IDEs, desktop, web, Slack, CI; MCP 2.0, plugins, parallel subagents | Anthropic cloud | Opus 5.5 default Opus since Sept 22; 5-hour limits raised Sept 22 |
 | **Cline Desktop** | Cline | Free (open source, beta) + ClinePass $9.99/mo | Imports Claude Code/Codex sessions, cron jobs, parallel sessions, any model incl. local | Local-first | Sept 14. **Kimi K3 free in it** since Sept 18 |
+| **LM Studio Bionic** | LM Studio | Free (local inference free) | Agent app for open models: Code Projects (edit/debug a local folder with inline diffs), Work Projects (PDFs, decks, sheets in a sandbox), web search, checkpoints, live meeting transcription | Local-first, zero data retention for cloud fallback | Jul 16 preview (macOS first) |
 | **AionUI** | AionUI OSS | Free (Apache 2.0) | Unified desktop dashboard for 20+ CLI agents, built-in agent, Cron scheduler, office editing | 100% local SQLite | 28K+ stars. GUI wrapper for terminal agents |
 | **Eigent** | Eigent AI | Free (OSS) · Pro $? | Multi-agent workforce (Browser/Terminal/Document/Multimodal), CAMEL-based, scheduled tasks | Local-first | 14.4K stars. "Open Source Cowork Desktop" |
 

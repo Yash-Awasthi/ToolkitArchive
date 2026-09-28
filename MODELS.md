@@ -10,7 +10,7 @@
 
 ---
 
-**Contents:** [Current lineup (Sept 2026)](#current-lineup--29-september-2026) · [Typed decision models](#typed-decision-models-new-category) · [SWE-bench leaderboard](#swe-bench-leaderboard) · [Charts](#price-vs-performance-scatter) ·
+**Contents:** [Current lineup (Sept 2026)](#current-lineup--29-september-2026) · [Typed decision models](#typed-decision-models-new-category) · [Diffusion LLMs](#diffusion-llms-new-category) · [SWE-bench leaderboard](#swe-bench-leaderboard) · [Charts](#price-vs-performance-scatter) ·
 [Table 1 premium API models](#table-1--premium--paid-api-models) · [Sweet spot](#sweet-spot-analysis) ·
 [Table 2 free/near-free](#table-2--free-tier--near-free-models) · [Provider breakdown](#provider-breakdown) ·
 [Context windows](#context-window-reference) · [Scale SEAL vs vendor](#scale-seal-vs-vendor-reported) ·
@@ -96,6 +96,21 @@ need 6+ charts to rank overall). Result on 29 Sep 2026:
 | Cheap and strong | DeepSeek V4.1 Flash ($0.60/M out off-peak) · MiMo-V2.6 Flash ($0.28) · GPT-6 Luna ($0.50) |
 | Best open weights to self-host | Kimi K3 (huge) · GLM-5.3 · MiMo-V2.6 Pro · Qwen3.8-Flash-Next / Laguna XS 2.1 (single GPU) |
 | Free | Gemini 3.8 Flash (AI Studio) · OpenRouter free list · Cline/Freebuff free models — see [FREE-ACCESS.md](./FREE-ACCESS.md) |
+
+---
+
+## Diffusion LLMs (new category)
+
+Instead of writing one token at a time, a diffusion LLM drafts the whole answer and refines it in
+parallel — much faster output at similar quality to small frontier models.
+
+| Model | By | Speed | Price in/out per 1M | Notes |
+|---|---|---|---|---|
+| **Mercury 2.5** (Sept 8) | Inception Labs | ~785–1,100 tok/s | $0.20 / $0.75 (launch promo $0.04 / $0.15) | 260K ctx, 65K out. ~40% smarter than Mercury 2; comparable to GPT-5.6 Luna (low), Gemini 3.5 Flash-Lite, Haiku 4.5. On OpenRouter (`inception/mercury-2.5`) |
+| **Mercury 2** | Inception Labs | sub-300 ms first token | — | First reasoning dLLM; still on OpenRouter |
+| **Open dLLMs** | Research labs | — | free weights | dLLM framework (arXiv 2602.22661), Open-dLLM, LLaDA line; list at github.com/VILA-Lab/Awesome-DLMs |
+
+Use them for autocomplete, fast edits, voice agents and anything latency-bound. For hard reasoning, stay on autoregressive frontier models.
 
 ---
 

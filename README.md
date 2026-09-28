@@ -25,7 +25,7 @@
 | 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | Sept free wave + 28 no-card tiers + hidden gems + aggregators · credit-stacking, student/startup, sub-as-API, free GPU | ✅ 29 Sep 2026 (CREDITS Parts 1–5 ⏳ June-era) |
 | 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, Terminal-Bench 4.0, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality | ✅ 29 Sep 2026 (Parts 6–14 ⏳ June-era) |
 | 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | **Free/open TTS, music, video, image (Sept 2026)**, paid image/voice gen, LLMOps, docs | ✅ free-media section 29 Sep · rest ⏳ June-era |
-| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | **Skill/plugin directories + 60-second install**, what MCP is, skills per IDE/CLI, skill repos | ✅ directory 29 Sep · rest ⏳ June-era |
+| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | **Sept 2026 wave (design, motion, browsing, memory, dev MCPs) + skill/plugin directories + 60-second install**, what MCP is, skills per IDE/CLI, skill repos | ✅ directory 29 Sep · rest ⏳ June-era |
 | 📚 **Source repos** | [REFERENCES.md](./REFERENCES.md) | Runnable tools + proxy/router projects + merged awesome-lists | ✅ 17 Aug 2026 |
 
 > **Freshness legend:** ✅ = re-checked 29 Sep 2026 (or 17 Aug where the row says so) · ⏳ = June-2026 content, treated as unverified until its own pass (reasons vary: never refreshed, or only link/count fixes). Every file carries a matching banner at its top. plan.md is the living status doc — it logs every pass and the still-open verify list.

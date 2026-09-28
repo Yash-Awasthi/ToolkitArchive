@@ -25,6 +25,8 @@
 | **F5-TTS · GPT-SoVITS · OpenVoice** | Clone a voice from a few seconds of audio | GPU | Open |
 | **Kyutai Pocket TTS · Hume TADA · Mistral Voxtral** | See Part 2 below (CPU/browser, MIT, open-weight) | — | — |
 | ★ **VoiceStudio** | Desktop app: 16 TTS engines, 646 languages, voice cloning, video dubbing, local speech-to-text. Trended Sept 2026 (+3K★ in a day) | Local | Open source |
+| **VibeVoice-Realtime-0.5B** (Microsoft) | Streaming TTS, ~300 ms to first audio — for voice agents | GPU | Open |
+| **Moonshine v2** | Real-time speech recognition on small devices | CPU/edge | Open |
 | **Whisper** / Groq Whisper | Speech-to-text, free locally or on Groq's free tier | CPU/GPU | MIT |
 
 ### Music (Suno replacements)
@@ -36,6 +38,10 @@
 | **Stable Audio Open · MusicGen · Bark** | Instrumentals, SFX, royalty-safe | Open (check each) |
 
 > Honest take: open music models still trail Suno v5 on most prompts. For Suno itself, use its free daily credits (non-commercial).
+
+### Video from code
+
+**Remotion** + its agent skills (`npx skills add remotion-dev/skills`) — describe a video, the agent writes React, Remotion renders it. Free for individuals.
 
 ### Video (Veo / Runway / Kling replacements)
 
@@ -52,7 +58,7 @@
 
 | Tool | Why | Licence |
 |---|---|---|
-| **Gemini / ChatGPT free tiers** | Best free quality in a browser | — |
+| **Gemini / ChatGPT free tiers** | Best free quality in a browser. ChatGPT now runs **GPT Image 2.5** (Sept 8) on free and paid: `@Sketch` turns drawings into images, ~50% lower latency. API variants: Flare (fast) and Sunburst (precise edits) | — |
 | ★ **Qwen-Image-2.1** (Sept 20) | 7B, native transparent PNGs, generate + edit in one model | Non-commercial |
 | **FLUX (dev/schnell) · SD 3.5** | Mature local ecosystems (ComfyUI) | Varies |
 
