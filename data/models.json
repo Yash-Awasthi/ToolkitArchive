@@ -19,7 +19,7 @@
     {"name": "DeepSeek V4.1 Flash", "company": "DeepSeek",  "in": 0.30,  "out": 1.20, "ctx_k": 1000, "aa": 39,   "tb4": 31.2, "open": true},
     {"name": "DeepSeek V4 Pro",     "company": "DeepSeek",  "in": 1.32,  "out": 3.96, "ctx_k": 1000, "aa": null, "tb4": 12.4, "open": true},
     {"name": "Solar Pro 4",         "company": "Upstage",   "in": 0.30,  "out": 1.20, "ctx_k": 524,  "aa": 42,   "tb4": null, "open": false},
-    {"name": "Mercury 2.5",         "company": "Inception", "in": 0.20,  "out": 0.75, "ctx_k": 260,  "aa": null, "tb4": null, "open": false},
+    {"name": "Mercury 2.5",         "company": "Inception", "in": 0.25,  "out": 0.75, "ctx_k": 260,  "aa": 12,   "tb4": null, "open": false},
     {"name": "Grok 4.6",            "company": "xAI",       "in": 2.00,  "out": 6.0,  "ctx_k": 500,  "aa": 44,   "tb4": 20.3, "open": false}
   ],
   "tb4_independent": {

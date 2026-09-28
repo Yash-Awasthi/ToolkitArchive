@@ -152,7 +152,7 @@ Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--m
 - **Motion:** official Motion AI Kit (skill + MCP) and GSAP skills; Remotion skills for video-from-code; Anime.js and Three.js skills.
 - **Browsing:** Playwright MCP + CLI now ship inside Playwright itself; Chrome DevTools MCP attaches to your live Chrome; Browser Harness (self-healing CDP harness); Agent-Reach (86K★, free Twitter/Reddit/YouTube/XiaoHongShu access); Vercel agent-browser; Stagehand v3.
 - **Dev & memory:** Context7 and Serena MCPs, ECC (269K★), GSD (64K★), claude-mem (95K★), Hindsight, OpenMemory; Paperclip (93K★) runs a company of agents; Google open-sourced `ax` / Agent Executor.
-- **New model types:** Mercury 2.5 diffusion LLM (Sept 8, ~1,000 tok/s, $0.20/$0.75) and Jev typed decisions — see [MODELS.md](./MODELS.md#diffusion-llms-new-category).
+- **New model types:** Mercury 2.5 diffusion LLM (Sept 8, ~760 tok/s measured, $0.25/$0.75, AA Index 12) and Jev typed decisions — see [MODELS.md](./MODELS.md#diffusion-llms-new-category).
 - **Local:** LM Studio **Bionic** — a free agent app for open models (code + documents + transcription).
 - **Media:** GPT Image 2.5 (Sept 8) in ChatGPT free; Sakana Fugu Ultra v2 (Sept 11) orchestrates many models behind one API.
 

@@ -105,11 +105,11 @@ parallel — much faster output at similar quality to small frontier models.
 
 | Model | By | Speed | Price in/out per 1M | Notes |
 |---|---|---|---|---|
-| **Mercury 2.5** (Sept 8) | Inception Labs | ~785–1,100 tok/s | $0.20 / $0.75 (launch promo $0.04 / $0.15) | 260K ctx, 65K out. ~40% smarter than Mercury 2; comparable to GPT-5.6 Luna (low), Gemini 3.5 Flash-Lite, Haiku 4.5. On OpenRouter (`inception/mercury-2.5`) |
-| **Mercury 2** | Inception Labs | sub-300 ms first token | — | First reasoning dLLM; still on OpenRouter |
+| **Mercury 2.5** (Sept 8) | Inception Labs | ~760 tok/s measured (Artificial Analysis, #3 fastest of 174 models) | $0.25 / $0.75 | 260K ctx, 65K out. AA Intelligence Index **12** — very fast and cheap but well below frontier models; ~40% smarter than Mercury 2 per Inception. On OpenRouter (`inception/mercury-2.5`) |
+| **Mercury 2** | Inception Labs | ~1,000 tok/s on Blackwell (vendor) | $0.25 / $0.75 | 128K ctx, tunable reasoning, tool use, JSON mode, OpenAI-compatible; still on OpenRouter |
 | **Open dLLMs** | Research labs | — | free weights | dLLM framework (arXiv 2602.22661), Open-dLLM, LLaDA line; list at github.com/VILA-Lab/Awesome-DLMs |
 
-Use them for autocomplete, fast edits, voice agents and anything latency-bound. For hard reasoning, stay on autoregressive frontier models.
+Use them for autocomplete, fast edits, voice agents and anything latency-bound. For hard reasoning, stay on autoregressive frontier models — Mercury 2.5 scores 12 on the AA Intelligence Index vs 58 for Opus 5.5.
 
 ---
 
@@ -119,7 +119,7 @@ Not chat models. They answer a typed question about a state with a calibrated pr
 
 | Model | By | Speed | Price / license | Use it for |
 |---|---|---|---|---|
-| **Jev** | TypeSafe AI (early access Sept 15) | 70–500 ms | $0.042/M input, output free. `pip install typesafe-sdk` · `npm i @typesafe-ai/sdk` · also on Vercel AI Gateway | Routing, classification, "should the agent do X?" guardrails. Question types: Choice (≤255 options), Score (2–10 levels), Noul (yes/no). Weak at arithmetic and dates |
+| **Jev** | TypeSafe AI (early access Sept 15) | 70–500 ms | $0.042/M input, output free. `pip install typesafe-sdk` · `npm i @typesafe-ai/sdk` · also on Vercel AI Gateway and **free on NaraRouter's free tier** (7M tokens/day) | Routing, classification, "should the agent do X?" guardrails. Question types: Choice (≤255 options), Score (2–10 levels), Noul (yes/no). Weak at arithmetic and dates |
 | **Laya** (via [laya-mlx](https://github.com/mizorewww/laya-mlx)) | Convai Innovations; community MLX port | 7–14 ms on M3 Max | Apache-2.0, local | Same job, fully on-device on Apple Silicon (`pip install laya-mlx`, macOS 14+). 6.6K★. Core ML sibling: laya-coreml (~5 ms) |
 
 ---
