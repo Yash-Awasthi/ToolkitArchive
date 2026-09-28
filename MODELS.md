@@ -331,6 +331,10 @@ API updates above, which add thinking-effort levels (low/high/max) and Responses
 |---|---|---|
 | **Gemini 4 Pro** | Google | In post-training; checkpoints tested as "Argon" since mid-Sept. Google (Sept 24): "as soon as possible", October expected. **Gemini 3.5 Pro was cancelled** and never shipped |
 | **Claude Haiku 5.5** | Anthropic | Announced with Opus/Sonnet 5.5 for "the coming weeks" |
+| **Claude Fable 5.2** (rumour) | Anthropic | New pretrain rumoured for end Sept / early Oct from one X account; no "Fable 5.5" exists. Polymarket 53% by Oct 31 |
+| **DeepSeek V5** (rumour) | DeepSeek | Nothing official; September "next week" posts didn't pan out |
+| **Grok 5** | SpaceXAI | Still training, no date |
+| **Kimi K3.1 · GLM-5.5** (leaks) | Moonshot · Z.ai | Unverified leaks, see [NEWS.md](./NEWS.md#leaks--whats-coming-verified-vs-rumour) |
 | **Qwen 4** | Alibaba | "Very soon" (Apsara, Sept). Qwen3.8-Flash-Next previews the architecture |
 | **MiniMax M3.1** | MiniMax | Flash-Preview live in MiniMax Code Sept 27; API not priced |
 | **Fable 5** | Anthropic | Mythos-class (95%), GA Jun 9 → **export-suspended Jun 12** (US controls). Now in Table 1. Only its context was re-confirmed this pass; the rest is a prior-pass claim |

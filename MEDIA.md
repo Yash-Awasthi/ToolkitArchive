@@ -54,6 +54,37 @@
 
 > OpenAI's Sora API shut down Sept 24, 2026. Closed video arena (Sept): Kling v3 > Happy Horse 1.0 (Alibaba) > Seedance 2.0 Fast.
 
+### Image & video leaderboards (29 Sep 2026)
+
+Interactive charts: [benchmarks.html](./benchmarks.html) → "Image generation" / "Video generation".
+
+| Rank | Text-to-image (Artificial Analysis Elo) | Text-to-image (LMArena) | Image editing (AA) |
+|---|---|---|---|
+| 1 | GPT Image 2.5 Sunburst — 1194 | GPT Image 2.5 Sunburst — 1424 | GPT Image 2.5 Sunburst — 1181 |
+| 2 | GPT Image 2.5 Flare — 1190 | GPT Image 2.5 Flare — 1401 | GPT Image 2.5 Flare — 1159 |
+| 3 | GPT Image 2 — 1170 | GPT Image 2 — 1383 | MAI-Image-2.6 — 1133 |
+| 4 | Grok Imagine Image 2.0 — 1153 | MAI-Image-2.6 — 1335 | MAI-Image-2.6-Flash — 1124 |
+| 5 | MAI-Image-2.6 — 1147 | Reve 2.1 — 1302 | GPT Image 2 — 1122 |
+| 6 | Nano Banana 2 — 1123 | Grok Imagine Image 2.0 — 1301 | Muse Image (Meta) — 1117 |
+| 7 | Muse Image (Meta) — 1111 | Muse Image — 1276 | MAI-Image-2.5 — 1113 |
+| Best open | Qwen-Image-2.1 — 1033 | Qwen-Image-2.1 — 1228 | Qwen-Image-2.1 — 1070 |
+
+- **Best quality:** GPT Image 2.5 (in ChatGPT free) — but ~$211 per 1,000 images on the API.
+- **Best value:** Muse Image ($10/1k), MAI-Image-2.6-Flash ($19.5/1k), MAI-Image-2.6 ($39/1k).
+- **Best open-weight:** Qwen-Image-2.1 (non-commercial licence).
+
+| Rank | Text-to-video with audio (AA Elo) | $/min |
+|---|---|---|
+| 1 | Gemini Omni Flash — 1233 | $6 |
+| 2 | Wan 3.0 (Alibaba) — 1229 | $12 |
+| 3 | MiniMax H3 Max — 1227 | $2.40 |
+| 4 | **MiniMax H3 — 1220 (open-weight)** | $7.80 |
+| 5 | Seedance 2.0 — 1210 | $9.07 |
+| 6 | MAGI-2 Preview (Sand.ai) — 1156 | soon |
+| … | Kling 3.0 Pro 1095 · Veo 3.1 1088 · Sora 2 1083 | |
+
+> Veo 3.1 and Kling 3.0 — the archive's old "best video" picks — have been overtaken by Gemini Omni Flash, Wan 3.0, MiniMax H3 and Seedance 2.0. MiniMax H3 is the best open-weight video model.
+
 ### Images
 
 | Tool | Why | Licence |

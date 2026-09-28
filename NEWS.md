@@ -6,7 +6,7 @@
 
 **Contents:** [⚠️ Security alert](#security-alert-do-not-use-zcode) · [Frontier models](#frontier-model-releases) ·
 [Open-weight models](#open-weight--cheap-models) · [Agents & tools](#coding-agents--tools) ·
-[Free access](#free-ai-access-news) · [Tools wave](#tools-skills--mcps-wave) · [New categories](#new-category-typed-decision-models) · [Corrections](#corrections-to-earlier-passes)
+[Free access](#free-ai-access-news) · [Leaks](#leaks--whats-coming-verified-vs-rumour) · [Tools wave](#tools-skills--mcps-wave) · [New categories](#new-category-typed-decision-models) · [Corrections](#corrections-to-earlier-passes)
 
 ---
 
@@ -119,6 +119,26 @@ Sources: api-docs.deepseek.com (changelog + pricing) · siliconangle.com (Sept 1
 ---
 
 > **Best way to use free models:** OpenCode with any OpenAI-compatible key (Token Harbor, TokenRa, OpenRouter, Groq) — see [FREE-ACCESS.md](./FREE-ACCESS.md#how-to-use-all-of-this-opencode--any-openai-compatible-key).
+
+## Leaks & what's coming (verified vs rumour)
+
+| Item | Status on 29 Sep 2026 | Evidence |
+|---|---|---|
+| **OpenAI DevDay — "20+ launches"** | **Happening today (Sept 29, San Francisco).** OpenAI's Tibo Sottiaux said GPT-6 Astra's productivity boost enabled 20 launches across 22 sessions. Confirmed so far: **Images 2.5** and **ChatGPT for Financial Services**. Already shipped this month: GPT-6 Astra (Sept 3), Agents API public beta (Sept 10), GPT-6 Sol/Luna (Sept 22) | cryptobriefing.com · openai.com/devday |
+| **OpenAI "o" always-on agent** (a.k.a. "Aeon", "Orbit", "dots") | ⚠️ Rumour. Cloud agent that runs continuously, has its own email address, for all Pro tiers incl. $100. Also rumoured: Cerebras-powered "Fast Mode" on a $500 plan, and a shared message board for agents. Only config strings seen — no product page, price or model id | orcarouter.ai · Reddit r/singularity |
+| **"Fable 5.5"** | ❌ No such leak. The rumour is **Fable 5.2** — a new pretrain, "end of Sept or early Oct", from one X account (@kimmonismus). Polymarket 53% by Oct 31; Manifold 25% before Oct 1 | cellcog.ai |
+| **Claude Haiku 5.5** | ✅ Confirmed by Anthropic for "the coming weeks" | anthropic.com |
+| **DeepSeek V5** | ⚠️ Rumour only. X posts said "next week" in early September; nothing shipped. DeepSeek has no announced V5, roadmap or date | deepseek.ai blog · news roundups |
+| **Gemini 4 Pro** | ✅ Coming ("as soon as possible", Google, Sept 24; tested as "Argon"). ⚠️ Leaked benchmark sheet (DeepSWE 88.7, TB 2.1 95.3) is unverified | 9to5google.com · Reddit |
+| **Qwen 4** | ✅ Announced at Apsara (in training, "very soon", Qwen 4.5/5 to reach 5–10T params). No date | Reddit r/LocalLLaMA · Yotta Labs |
+| **Kimi K3.1** | ⚠️ Leak: pruned chain-of-thought to cut token waste on the 2.8T base | towardsai.net |
+| **GLM-5.5** | ⚠️ Old leak (July) claiming Fable-5 level; Z.ai shipped GLM-5.3 instead | cellcog.ai |
+| **Grok 5** | Still training, no date (Musk: 6T params claimed). Grok got a new autoregressive image model ("Aurora" update) this month | x.ai/news |
+| **MiniMax M3.1** | ✅ Flash-Preview live in MiniMax Code; full API pending | pandaily.com |
+
+> Rule of thumb: a leak becomes a row in [MODELS.md](./MODELS.md) only once there's a model id, a price, or an official post.
+
+---
 
 ## Tools, skills & MCPs wave
 
