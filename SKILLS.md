@@ -1,5 +1,8 @@
 # Skills, Plugins & MCP — Directory and Reference (updated 29 September 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Skills extend Claude agents with reusable, callable capabilities. Each skill is a discrete unit of functionality — invoked by name, loaded lazily into context.
 > ✅ **Verified June 27, 2026** — repo star counts drift; confirm on GitHub.
 > 🔄 **29 Sep 2026:** added the skill/plugin directory list and install commands below, plus Claude's new plugin directory. The older sections are still June-era.
@@ -15,20 +18,20 @@
 
 ## New skills, plugins & MCPs — Sept 2026 wave
 
-> The tools people are actually installing right now, found by repeated searches across GitHub, Reddit,
-> YouTube and Instagram (29 Sep 2026). Star counts are approximate and move daily. Install commands
+> Star counts below are live from the GitHub API (29 Sep 2026). The tools people are actually installing right now, found by repeated searches across GitHub, Reddit,
+> YouTube and Instagram (29 Sep 2026). Install commands
 > are copied from each project's README — read the `SKILL.md` / source before you run it.
 
 ### Design & UI taste (stop the "AI slop" look)
 
 | Tool | What it does | Install |
 |---|---|---|
-| ★ **Impeccable** (pbakaus) | A full design language for agents: 23 commands, 7 design pillars, in-browser live mode. Built as the successor to Anthropic's `frontend-design` skill. ~63K★ | `git submodule add https://github.com/pbakaus/impeccable vendor/impeccable && npx impeccable link --source=vendor/impeccable --providers=claude,cursor` · impeccable.style |
-| ★ **Taste Skill** (Leonxlnx) | "Anti-slop" frontend rules — typography, spacing, colour, motion, components. v2 out. ~77K★ | `npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"` · tasteskill.dev |
+| ★ **Impeccable** (pbakaus) | A full design language for agents: 23 commands, 7 design pillars, in-browser live mode. Built as the successor to Anthropic's `frontend-design` skill. 72K★ | `git submodule add https://github.com/pbakaus/impeccable vendor/impeccable && npx impeccable link --source=vendor/impeccable --providers=claude,cursor` · impeccable.style |
+| ★ **Taste Skill** (Leonxlnx) | "Anti-slop" frontend rules — typography, spacing, colour, motion, components. v2 out. 91K★ | `npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"` · tasteskill.dev |
 | ★ **Emil Kowalski's skills** | From the maker of Sonner and Vaul: `animate` (picks curves, durations, properties), design-engineering polish, Apple-style design, animation vocabulary | `npx skills@latest add emilkowalski/skills` · emilkowal.ski/skill |
-| **UI UX Pro Max** | Searchable design-intelligence database: styles, palettes, font pairings, UX rules; generates a design system from a prompt | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` · uupm.cc |
+| **UI UX Pro Max** (131K★) | Searchable design-intelligence database: styles, palettes, font pairings, UX rules; generates a design system from a prompt | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` · uupm.cc |
 | **design-taste** (h3nryprod01) | One merged skill combining Emil Kowalski + Impeccable + Taste Skill | github.com/h3nryprod01/design-taste |
-| **awesome-design-md** (VoltAgent) | `DESIGN.md` files extracted from 59+ real sites (Stripe, Linear, Vercel…) — drop one in your repo and the agent copies that look | github.com/VoltAgent/awesome-design-md |
+| **awesome-design-md** (VoltAgent, 119K★) | `DESIGN.md` files extracted from 59+ real sites (Stripe, Linear, Vercel…) — drop one in your repo and the agent copies that look | github.com/VoltAgent/awesome-design-md |
 | **DESIGN.md** (Google Stitch) | Open format for design tokens + rules that agents read, like `AGENTS.md` for design. Stitch exports/imports it; Stitch MCP connects it to Antigravity | stitch.withgoogle.com |
 | **Figma MCP** | Official. Agents can now **write to the canvas** (frames, components, variables), read Figma Motion timing/easing, and edit generative plugins/shaders. Write access free during beta, paid seats only; free Starter plan = 6 MCP calls/month | help.figma.com (Figma MCP guide) |
 | **Paper** (paper.design) | Design tool built for agents; MCP with 24 read/write tools (sync tokens from Figma, fill UI with live data, export JSX/Tailwind) | `claude plugin marketplace add paper-design/agent-plugins && claude plugin install paper-desktop@paper-design` |
@@ -52,10 +55,10 @@
 
 | Tool | What it does | Install |
 |---|---|---|
-| ★ **Playwright MCP / CLI** | Microsoft's browser driver; most-starred MCP server (~37K★). Since Sept 2026 the MCP server and CLI ship **inside the main Playwright package**. CLI is faster for coding agents | `npx playwright` · github.com/microsoft/playwright-mcp |
-| ★ **Chrome DevTools MCP** | Google's official server: 29 tools for performance traces, network, console, emulation. Can now attach to your running Chrome (with approval) | github.com/ChromeDevTools/chrome-devtools-mcp |
-| ★ **Browser Harness** (browser-use) | ~600 lines connecting an LLM straight to your real browser over one CDP websocket; the agent writes missing helpers as it goes (self-healing). ~18K★ | github.com/browser-use/browser-harness |
-| ★ **Agent-Reach** | One CLI + SKILL.md that lets any agent read and search Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu with no API fees; multi-backend fallback, cookies stay local. ~85K★ | github.com/Panniantong/Agent-Reach |
+| ★ **Playwright MCP / CLI** | Microsoft's browser driver (38K★). Since Sept 2026 the MCP server and CLI ship **inside the main Playwright package**. CLI is faster for coding agents | `npx playwright` · github.com/microsoft/playwright-mcp |
+| ★ **Chrome DevTools MCP** (53K★) | Google's official server: 29 tools for performance traces, network, console, emulation. Can now attach to your running Chrome (with approval) | github.com/ChromeDevTools/chrome-devtools-mcp |
+| ★ **Browser Harness** (browser-use) | ~600 lines connecting an LLM straight to your real browser over one CDP websocket; the agent writes missing helpers as it goes (self-healing). 18K★ | github.com/browser-use/browser-harness |
+| ★ **Agent-Reach** | One CLI + SKILL.md that lets any agent read and search Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu with no API fees; multi-backend fallback, cookies stay local. 86K★ | github.com/Panniantong/Agent-Reach |
 | **agent-browser** (Vercel) | Rust CLI using snapshot refs instead of DOM selectors — cheap on tokens | `npm i -g agent-browser` · `npx skills add vercel-labs/agent-browser` |
 | **Stagehand v3** (Browserbase) | 44% faster, built on CDP (no Playwright), act/extract/observe/agent, now in Python/Go/Java/Rust | stagehand.dev |
 | **Kernel · Steel · Browserbase** | Hosted browsers for agents (Steel is open source) | kernel.sh · steel.dev · browserbase.com |
@@ -64,10 +67,10 @@
 
 | Tool | What it does | Install |
 |---|---|---|
-| ★ **Context7 MCP** | Up-to-date library docs so the agent stops hallucinating APIs — the single highest-impact MCP for coding | `claude mcp add context7 -- npx -y @upstash/context7-mcp` |
+| ★ **Context7 MCP** (63K★) | Up-to-date library docs so the agent stops hallucinating APIs — the single highest-impact MCP for coding | `claude mcp add context7 -- npx -y @upstash/context7-mcp` |
 | ★ **Serena MCP** | IDE-level symbol/reference understanding for agents (semantic code navigation) | github.com/oraios/serena |
-| **Everything Claude Code (ECC)** | 64 agents, 261 skills, 84 commands, 103 rules, hooks and MCPs in one harness; v2.2 also sets up Codex and Kimi Code. ~82K★ | `/plugin marketplace add affaan-m/everything-claude-code` |
-| **Get Shit Done (GSD)** | Spec-driven meta-prompting that fights context rot; works in Claude Code + 13 other runtimes. ~59K★ | github.com/gsd-build/get-shit-done |
+| **Everything Claude Code (ECC)** | 64 agents, 261 skills, 84 commands, 103 rules, hooks and MCPs in one harness; v2.2 also sets up Codex and Kimi Code. 269K★ | `/plugin marketplace add affaan-m/everything-claude-code` |
+| **Get Shit Done (GSD)** | Spec-driven meta-prompting that fights context rot; works in Claude Code + 13 other runtimes. 64K★ | github.com/gsd-build/get-shit-done |
 | **Ralph Wiggum loop** | Official Anthropic plugin (and snarktank/ralph) that keeps an agent looping until the PRD is done | Claude Code official plugins |
 | **Official Claude Code plugins** | typescript-lsp, security-guidance, context7, playwright, frontend-design, code-review, feature-dev and 50+ more | `/plugin` → anthropics/claude-code marketplace |
 
@@ -75,7 +78,7 @@
 
 | Tool | What it does | Link |
 |---|---|---|
-| ★ **claude-mem** | Captures each Claude Code session and feeds relevant context into later ones; local. ~46K★ | github.com/thedotmack/claude-mem |
+| ★ **claude-mem** | Captures each Claude Code session and feeds relevant context into later ones; local. 95K★ | github.com/thedotmack/claude-mem |
 | **Hindsight** (Vectorize) | Memory split into four networks (facts, experiences, entities, beliefs); 91% on its memory benchmark; plugin for Paperclip | github.com/vectorize-io/hindsight |
 | **OpenMemory MCP** (Mem0) | Local memory layer shared across Cursor, VS Code, Claude and any MCP client | mem0.ai/openmemory |
 | Claude Code auto-memory | Built in since 2.1 — preferences and patterns persist automatically | — |
@@ -84,7 +87,7 @@
 
 | Tool | What it does | Link |
 |---|---|---|
-| **Paperclip** | Node server + React UI that runs a "company" of AI agents: bring your own agents, assign goals, track work. ~84K★ | github.com/paperclipai/paperclip |
+| **Paperclip** | Node server + React UI that runs a "company" of AI agents: bring your own agents, assign goals, track work. 93K★ | github.com/paperclipai/paperclip |
 | **google/ax + Agent Executor** | Google's open agent orchestration runtime (Go, Kubernetes-style): durable, resumable agents, sandboxing, trajectory branching | github.com/google/ax |
 | **Sakana Fugu Ultra v2** (Sept 11) | Not a tool but an API: one endpoint that orchestrates a pool of frontier models. $5/$30, 1M ctx, DeepSWE 74.3 | openrouter.ai/sakana/fugu-ultra-v2 |
 | **AgentCrafters.ai** | No-code: build agents in plain English connected to 36 everyday tools (email, reports, reminders). Early-stage (India, 2026) | agentcrafters.ai |
@@ -437,8 +440,8 @@ instructions: |
 
 | Builder | GitHub | Claude skills / workflows | Other notable repos |
 |---|---|---|---|
-| **Garry Tan** (YC CEO) | [garrytan](https://github.com/garrytan) | **[gstack](https://github.com/garrytan/gstack)** (~117K★) — his exact Claude Code setup: 23 opinionated tools acting as CEO/Designer/Eng-Manager/Release-Manager/Doc-Engineer/QA · **[gbrain](https://github.com/garrytan/gbrain)** (~24K★) opinionated OpenClaw/Hermes brain · [alphaclaw](https://github.com/garrytan/alphaclaw) OpenClaw harness | gbrain-evals, openclaw |
-| **Ras Mic** (Michael Shimeles) | [michaelshimeles](https://github.com/michaelshimeles) | **[ralphy](https://github.com/michaelshimeles/ralphy)** (~2.9K★) — autonomous bash loop running Claude Code + Codex + OpenCode + Cursor + Qwen + Droid until your PRD is done · **[skills](https://github.com/michaelshimeles/skills)** (~220★) his personal skills | [nextjs-starter-kit](https://github.com/michaelshimeles/nextjs-starter-kit) (~3K★), react-starter-kit, hono-starter-kit, youpac-ai |
+| **Garry Tan** (YC CEO) | [garrytan](https://github.com/garrytan) | **[gstack](https://github.com/garrytan/gstack)** (134K★) — his exact Claude Code setup: 23 opinionated tools acting as CEO/Designer/Eng-Manager/Release-Manager/Doc-Engineer/QA · **[gbrain](https://github.com/garrytan/gbrain)** (30K★) opinionated OpenClaw/Hermes brain · [alphaclaw](https://github.com/garrytan/alphaclaw) OpenClaw harness | gbrain-evals, openclaw |
+| **Ras Mic** (Michael Shimeles) | [michaelshimeles](https://github.com/michaelshimeles) | **[ralphy](https://github.com/michaelshimeles/ralphy)** (3.0K★) — autonomous bash loop running Claude Code + Codex + OpenCode + Cursor + Qwen + Droid until your PRD is done · **[skills](https://github.com/michaelshimeles/skills)** (~220★) his personal skills | [nextjs-starter-kit](https://github.com/michaelshimeles/nextjs-starter-kit) (3.0K★), react-starter-kit, hono-starter-kit, youpac-ai |
 | **Matt Palmer** (ex-Replit DevRel) | [mattppal](https://github.com/mattppal) | **[formatting-notion-pages](https://github.com/mattppal/formatting-notion-pages)** — agent skill for rich Notion pages · **[shipping-szn](https://github.com/mattppal/shipping-szn)** — auto-changelog (Slack→Mintlify) via Claude Agent SDK · [claude-codes](https://github.com/mattppal/claude-codes), hermes-agent-template | security checklist for vibe-coded apps, fasthtml-guestbook |
 | **Andrej Karpathy** | [karpathy](https://github.com/karpathy) | No first-party skill, but his coding principles are packaged as a Claude Code plugin: **[andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)** (4 rules: Think-Before-Coding, Simplicity-First, Surgical-Changes, Goal-Driven) — `/plugin marketplace add` or append its `CLAUDE.md` | [nanoGPT](https://github.com/karpathy/nanoGPT), nanochat, llm.c, minGPT, [llm-council](https://github.com/karpathy/llm-council), nn-zero-to-hero |
 
@@ -473,7 +476,7 @@ git clone https://github.com/michaelshimeles/ralphy
 
 | Repo | Size | What | Link |
 |---|---|---|---|
-| **obra/superpowers** | ~41K★ | Full SDLC framework: brainstorm → worktree → plan → subagent execution → TDD (RED-GREEN-REFACTOR) → review→merge. Works on Claude Code/Codex/Cursor/Gemini/Copilot/OpenCode/Kimi/Pi. `/plugin install superpowers@claude-plugins-official` | [obra/superpowers](https://github.com/obra/superpowers) |
+| **obra/superpowers** | 292K★ | Full SDLC framework: brainstorm → worktree → plan → subagent execution → TDD (RED-GREEN-REFACTOR) → review→merge. Works on Claude Code/Codex/Cursor/Gemini/Copilot/OpenCode/Kimi/Pi. `/plugin install superpowers@claude-plugins-official` | [obra/superpowers](https://github.com/obra/superpowers) |
 | **antigravity-awesome-skills** | 1,689+ skills | Installer CLI + bundles across dev/test/security/infra/product/docs/QA/MCP | [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) |
 | **karanb192/awesome-claude-skills** | 50+ verified | TDD, debugging, git workflows, document processing | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) |
 | **great_cto** | 7 subagents | tech-lead, senior-dev, qa, security-officer, devops, l3-support, auditor — full SDLC pipeline | search "great_cto claude plugin" |

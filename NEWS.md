@@ -1,8 +1,11 @@
 # 📰 Latest News — re-checked 29 September 2026
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > What changed between 17 August and 29 September 2026, distilled. Vendor-reported numbers are
-> labelled as such. Full benchmark tables live in [benchmarks.html](./benchmarks.html) (open it in a
-> browser) and [MODELS.md](./MODELS.md).
+> labelled as such. Full benchmark tables live in [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html).
+> See also [MODELS.md](./MODELS.md).
 
 **Contents:** [⚠️ Security alert](#security-alert-do-not-use-zcode) · [Frontier models](#frontier-model-releases) ·
 [Open-weight models](#open-weight--cheap-models) · [Agents & tools](#coding-agents--tools) ·
@@ -38,7 +41,7 @@ uploaded them to an Alibaba Cloud bucket (`zcode-prod`). One report counted 564 
 | Sept 22 | **Claude Opus 5.5** (Anthropic) | **$4 / $20** (cache read $0.20) | Cut from Opus 5's $5/$25. 1M ctx, 128K output, always-on adaptive thinking. Anthropic: "performs at the level of Fable 5.1 on most work", ~40% cheaper than Opus 5 on typical workloads. Leads Terminal-Bench 4.0 (66.4%), FrontierCode 1.1 (54.4%), GDPval-AA v2.1 (1846). Default Opus on Pro/Max/Team/Enterprise |
 | Sept 22 | **GPT-6 Sol** + **GPT-6 Luna** (OpenAI) | Sol **$2 / $10** · Luna **$0.10 / $0.50** | Permanent 50%+ cut vs GPT-5.6 Sol/Luna. In API, ChatGPT Work, Codex. Luna reaches Free/Go users in the desktop app. **GPT-6 Luna Pro** also listed on OpenRouter Sept 22. Astra price unchanged |
 | Sept 21 | **Grok 4.7** (SpaceXAI) | $2 / $6 | Larger base model than 4.6, same price. 500K ctx. CursorBench 4.0 46.3% (4.6: 40.4%). In Cursor, Grok Build, Copilot, API |
-| Sept 3 | **GPT-6 Astra** (OpenAI) | $10 / $50 (cached $1) | Flagship, 1.1M ctx. Leads GPQA (96.0), FrontierMath T4 (97.6), BrowseComp (91.5), Terminal-Bench-Science. Also on Azure Foundry + Bedrock |
+| Sept 3 | **GPT-6 Astra** (OpenAI) | $10 / $50 (cached $1) | Flagship, 1.05M ctx. Leads GPQA (96.0), FrontierMath T4 (97.6), BrowseComp (91.5), Terminal-Bench-Science. Also on Azure Foundry + Bedrock |
 | Sept 2 | **Claude Fable 5.1 / Mythos 5.1** (Anthropic) | $10 / $50 (cache read $0.25, −75%) | Same model; Mythos 5.1 = fewer safeguards, trusted-access programs only. Fable 5.1 is on paid Claude plans |
 | Sept 2 | **Gemini 3.8 Flash** + 3.8 Flash Cyber (Google) | $0.75 / $3.75 intro to Dec 31, then $1.50 / $7.50 | 1M ctx, 64K out. **Free tier on AI Studio** (data used for training). Added to Antigravity free plan Sept 1 |
 | Sept 2 | **Muse Spark 1.3** (Meta) | $1.25 / $4.25 (private tier) | ~20% fewer tool calls, ~25% fewer tokens than 1.2. 1M ctx. Cheaper "contributor" tier lets Meta keep your data. In Muse Code + Meta Model API |
@@ -144,11 +147,11 @@ Sources: api-docs.deepseek.com (changelog + pricing) · siliconangle.com (Sept 1
 
 Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--mcps--sept-2026-wave).
 
-- **Design taste skills went mainstream:** Impeccable (~63K★), Taste Skill (~77K★), Emil Kowalski's skills, UI UX Pro Max, and `DESIGN.md` (Google Stitch's open format; VoltAgent's awesome-design-md has files from 59+ real sites).
+- **Design taste skills went mainstream:** Impeccable (72K★), Taste Skill (91K★), Emil Kowalski's skills, UI UX Pro Max, and `DESIGN.md` (Google Stitch's open format; VoltAgent's awesome-design-md has files from 59+ real sites).
 - **Design tools opened to agents:** Figma MCP can now write to the canvas (beta, paid seats); Paper and Pencil are agent-native design canvases; Claude Design (Anthropic Labs) makes prototypes and slides.
 - **Motion:** official Motion AI Kit (skill + MCP) and GSAP skills; Remotion skills for video-from-code; Anime.js and Three.js skills.
-- **Browsing:** Playwright MCP + CLI now ship inside Playwright itself; Chrome DevTools MCP attaches to your live Chrome; Browser Harness (self-healing CDP harness); Agent-Reach (~85K★, free Twitter/Reddit/YouTube/XiaoHongShu access); Vercel agent-browser; Stagehand v3.
-- **Dev & memory:** Context7 and Serena MCPs, ECC (~82K★), GSD (~59K★), claude-mem (~46K★), Hindsight, OpenMemory; Paperclip (~84K★) runs a company of agents; Google open-sourced `ax` / Agent Executor.
+- **Browsing:** Playwright MCP + CLI now ship inside Playwright itself; Chrome DevTools MCP attaches to your live Chrome; Browser Harness (self-healing CDP harness); Agent-Reach (86K★, free Twitter/Reddit/YouTube/XiaoHongShu access); Vercel agent-browser; Stagehand v3.
+- **Dev & memory:** Context7 and Serena MCPs, ECC (269K★), GSD (64K★), claude-mem (95K★), Hindsight, OpenMemory; Paperclip (93K★) runs a company of agents; Google open-sourced `ax` / Agent Executor.
 - **New model types:** Mercury 2.5 diffusion LLM (Sept 8, ~1,000 tok/s, $0.20/$0.75) and Jev typed decisions — see [MODELS.md](./MODELS.md#diffusion-llms-new-category).
 - **Local:** LM Studio **Bionic** — a free agent app for open models (code + documents + transcription).
 - **Media:** GPT Image 2.5 (Sept 8) in ChatGPT free; Sakana Fugu Ultra v2 (Sept 11) orchestrates many models behind one API.
@@ -162,7 +165,7 @@ Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--m
   a state and get back a calibrated probability in 70–500 ms. $0.042/M input, output free.
   `pip install typesafe-sdk` · `npm i @typesafe-ai/sdk`. Can't do arithmetic or dates; accuracy drops
   as the state fills with noise. Use it for routing, classification, and agent guardrails, not generation.
-- **laya-mlx** (github.com/mizorewww/laya-mlx, ~6.6K★, Apache-2.0) — an independent MLX port of
+- **laya-mlx** (github.com/mizorewww/laya-mlx, 6.6K★, Apache-2.0) — an independent MLX port of
   Convai Innovations' **Laya** typed-decision models: 7–14 ms per decision on an M3 Max, no PyTorch, no
   cloud. `pip install laya-mlx` (Apple Silicon, macOS 14+, Python 3.11+). Sibling: laya-coreml (~5 ms on the Neural Engine).
 
@@ -176,4 +179,4 @@ Full tables with install commands: [SKILLS.md](./SKILLS.md#new-skills-plugins--m
   working only with paid Gemini API keys and enterprise licences. Fixed across the archive.
 - **Claude Max 20x is $200/mo** — confirmed by multiple Sept pricing write-ups; the "unverified" hedge is gone.
 - **SWE-bench Verified is archived** — Vals froze its board Sept 1. The model charts in this repo still
-  plot SWE-bench Verified; treat them as history and use [benchmarks.html](./benchmarks.html) for current rankings.
+  plot SWE-bench Verified; treat them as history and use [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) for current rankings.

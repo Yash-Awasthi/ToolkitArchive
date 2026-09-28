@@ -1,5 +1,8 @@
 # 🛠️ Using AI Well — Chat App Features & Token Efficiency (29 September 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > How to get more out of the apps you already have, and how to make free limits and paid tokens
 > last. Plan availability changes often — each feature says which plans had it when checked.
 

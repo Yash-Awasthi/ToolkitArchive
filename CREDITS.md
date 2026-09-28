@@ -1,5 +1,8 @@
 # Credits, Freebies & Maximizing Free AI — (June-2026 content · re-checked 17 August 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Companion to [FREE-ACCESS.md](./FREE-ACCESS.md) (which lists the permanent free API tiers).
 > This file is about **stacking $$$ of credits**, student/startup programs, free GPU, and grey-area "subscription-as-API" tricks. Numbers shift constantly — verify on official pages.
 > ✅ **Re-checked Aug 17, 2026** (prior passes: June 27 and Aug 16, 2026). Fresh this pass: [Part 6](#part-6--provider-trust-status) trust status (Gemini 3.7 to Clean, oxaam upgraded to scam-flagged), Codex for Students, Anthropic AI-for-Science + Economic Futures grants, AMD GPU credits, Thunder Compute. **Parts 1–5 numbers remain June-2026-era** unless a row says otherwise.
@@ -31,6 +34,7 @@
 
 **Copilot pricing change (Jun 1 2026):** moved to usage-based **AI Credits**; new **Max tier $100**. Business gets $19 credits (promo **$30** Jun–Aug), Enterprise $39 (promo **$60**). Completions + Next-Edit don't consume credits. Not re-verified this pass — treat the promo figures as a prior-pass caveat, confirm on github.com/copilot before relying on them.
 
+> [!WARNING]
 > ⚠️ **No student program exists** for ChatGPT Plus, Claude Pro, Midjourney, Suno, ElevenLabs, Runway, HeyGen, Descript (OpenAI's 2025 student promo did not return). Avoid invite-code generators / cracked accounts / shared logins → permanent ban risk. Stick to official student/.gov/carrier verification.
 
 ---
@@ -103,7 +107,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 
 | Tool | Does what | Note | Link |
 |---|---|---|---|
-| **CLIProxyAPI** | Wraps Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 38.5K★, see [REFERENCES.md](./REFERENCES.md) | github.com/router-for-me/CLIProxyAPI |
+| **CLIProxyAPI** | Wraps Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 53K★, see [REFERENCES.md](./REFERENCES.md) | github.com/router-for-me/CLIProxyAPI |
 | **copilot-api** (ericc-ch) | GitHub Copilot → OpenAI + Anthropic API; works with Claude Code (`--claude-code`) | Reverse-engineered | github.com/ericc-ch/copilot-api |
 | **LiteLLM proxy** | Claude Code ↔ Copilot (disable Extended Thinking) | ~15-min setup | github.com/BerriAI/litellm |
 | **copilot-proxy-api** (voidsteed) | Copilot in Claude Code + Codex | Hard 2.6MB payload cliff | github.com/voidsteed/copilot-proxy-api |
@@ -111,6 +115,7 @@ Already paying for Claude Code / ChatGPT / Copilot? Route those models into your
 | **cc-compatible-models** | Configs + pricing to run Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun in Claude Code | Reference guide | github.com/Alorse/cc-compatible-models |
 | **Puter.js** | Keyless access to 400+ models (GPT, Claude, Gemini, Grok, DeepSeek) — **"user-pays"** | Free *for the developer*; end-users cover usage | developer.puter.com |
 
+> [!WARNING]
 > ⚠️ `iFlow` and `Qwen` free tiers were **discontinued in 2026** — use Kiro / OpenCode-Free / Vertex instead. `Gemini CLI`'s free tier **was** discontinued on June 18, 2026 (Google Developers Blog) — free and AI Pro/Ultra users moved to Antigravity CLI, which has its own free Individual plan. An Aug-pass line claiming otherwise was wrong.
 > ⚠️ **ToS warning:** the Copilot/Claude-Code proxies are **unofficial, reverse-engineered** — they may violate provider ToS and risk account suspension. Use on your own accounts at your own risk; not a sanctioned path. CLIProxyAPI and Puter.js are the lowest-risk options.
 

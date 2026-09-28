@@ -1,5 +1,8 @@
 # 🎓 Students — Free Alternatives to Everything (29 September 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > For people who spend **$0**. Every paid tool in this archive, with the best free way to get the
 > same job done. Paid picks are only mentioned so you know what you're replacing.
 > Free tiers change weekly — each row says where the details live so you can re-check.

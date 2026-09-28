@@ -1,5 +1,8 @@
 # Backend / Database / Deploy / Auth — Free-Tier Reference (June 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Everything to ship the backend of a vibe-coded app for **$0** — BaaS, databases, hosting, auth, vector stores, and the glue (email/payments/storage).
 > Re-checked Aug 16, 2026 (prior pass: ~June 2026). Free tiers change fast (PlanetScale killed its free tier in 2024; Fly.io dropped free for new users; Netlify went credit-based) — confirm before architecting. This pass added the sandbox/cloud-dev-environment section (Part 1A) and fixed a Northflank number; the rest of this file's numbers are carried from the prior pass, not independently re-fetched.
 
@@ -18,7 +21,7 @@
 |---|---|---|---|---|---|
 | **Supabase** | Postgres + RLS + pgvector | 2 projects, 500MB DB, 5GB egress, 50K MAU | Yes (Docker) | Default pick; relational + AI | supabase.com |
 | **Convex** | Reactive TS document store | Generous free, real-time built-in | No | Real-time TS apps, auto-sync | convex.dev |
-| **Appwrite** | TS/Go, multi-DB | 2 projects (pause after 7d idle), no card | Yes (Docker, 50K★) | Open-source ownership | appwrite.io |
+| **Appwrite** | TS/Go, multi-DB | 2 projects (pause after 7d idle), no card | Yes (Docker, 58K★) | Open-source ownership | appwrite.io |
 | **PocketBase** | Single Go binary + SQLite | Free — runs on $5 VPS | Yes (it's the binary) | Lightest backend, side projects | pocketbase.io |
 | **Nhost** | Postgres + Hasura GraphQL | Free tier | Yes | GraphQL-first / JAMstack | nhost.io |
 | **InstantDB** | Relational realtime ("Firebase + relations") | Generous free | No | Optimistic-UI realtime apps | instantdb.com |
@@ -98,8 +101,8 @@
 | **Supabase Auth** | Bundled w/ Supabase (50K MAU) | Free w/ the BaaS | Yes | supabase.com |
 | **Logto** | Free tier (OSS) | OIDC, multi-tenant | Yes | logto.io |
 | **SuperTokens** | Free self-host, 5K MAU cloud | OSS, full control | Yes | supertokens.com |
-| **ZITADEL** | 25K MAU free cloud | Enterprise CIAM, Go single-binary, event-sourced, first-class multi-tenant (B2B SaaS). OIDC/SAML/LDAP. ~13.5K★ | Yes | zitadel.com |
-| **Authentik** | Free (OSS) | **Proxy/forward-auth mode** — enforce MFA/SSO in front of ANY app (incl. legacy, no OIDC) with zero code changes. Also IdP + LDAP. ~21K★ | Yes | goauthentik.io |
+| **ZITADEL** | 25K MAU free cloud | Enterprise CIAM, Go single-binary, event-sourced, first-class multi-tenant (B2B SaaS). OIDC/SAML/LDAP. 15K★ | Yes | zitadel.com |
+| **Authentik** | Free (OSS) | **Proxy/forward-auth mode** — enforce MFA/SSO in front of ANY app (incl. legacy, no OIDC) with zero code changes. Also IdP + LDAP. 26K★ | Yes | goauthentik.io |
 | **Ory / Hanko / Stack Auth** | OSS free | Passkeys, modern | Yes | ory.sh · hanko.io · stack-auth.com |
 
 > **Most free MAU:** WorkOS (1M). **Best DX:** Clerk. **Zero-cost full control:** Better-Auth / SuperTokens.

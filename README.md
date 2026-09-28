@@ -1,231 +1,106 @@
-# 🧰 ToolkitArchive — The Vibe-Coding Archive (re-checked 29 September 2026)
+<div align="center">
 
-> One consolidated archive of **everything for vibe coding** — frontend builders, backends, databases, CLI agents, AI models, MCP, automation, media gen, and every way to get **free AI keys, credits, and freebies** on the internet.
+# 🧰 ToolkitArchive
 
-![verified](https://img.shields.io/badge/links%20%26%20figures-rechecked%20Sep%202026-2ecc71) ![updated](https://img.shields.io/badge/updated-2026--09--29-blue)
+**Every AI model, coding agent, free tier, skill and benchmark worth knowing — verified 29 September 2026.**
 
-> 🎓 **Students / zero budget:** start at [STUDENTS.md](./STUDENTS.md). ⛔ Avoid aerolink.lat and lumosel.vip — they bill for Claude but serve Qwen/DeepSeek.
->
-> 🔄 **29 Sep 2026 pass:** the September model wave (Claude Opus 5.5 / Sonnet 5.5 / Fable 5.1, GPT-6 Astra / Sol / Luna, Grok 4.7, Gemini 3.8 Flash, DeepSeek V4.1 Flash, MiMo-V2.6, Muse Spark 1.3), Terminal-Bench 4.0, the new free wave (Cline free models, Freebuff, OpenRouter free list, TokenRa stealth models), typed decision models (Jev, laya-mlx), a **ZCode security warning**, and a fix to the Gemini CLI retirement. Start with [NEWS.md](./NEWS.md); per-benchmark rankings are in [benchmarks.html](./benchmarks.html).
->
-> ✅ **Re-checked Aug 17, 2026** (prior passes: June 27 and Aug 16, 2026). This pass added the August free-AI wave surfaced on Reddit/Instagram and verified live (aerolink.lat, OmniRoute, NaraRouter, LongCat-2.0, GoRouter, Tokeness, OpenRouter Fusion), upgraded AgentRouter/Bluesminds from unverified to caveated, and refreshed models/benchmarks: DeepSeek V4 Pro GA + new peak/off-peak pricing (Aug 13/16), Qwen 3.8-Max (Aug 2), Gemini 3.7 Flash (Aug 13), Grok 4.6 + SpaceXAI rebrand (Aug 12), Claude Opus 5 / Sonnet 5 pricing, GPT-5.6 GA (Jul 9), Gemini 3.5 Pro still unreleased. Not every figure in every file was independently re-fetched this pass — where a number is carried over from an earlier pass, the file says so. Prices, free-tier limits, and star counts drift fast regardless — re-check vendor pages before relying on a number.
+[![Open the interactive explorer](https://img.shields.io/badge/🔎_Open_the_interactive_explorer-search_%26_filter_everything-d97757?style=for-the-badge)](https://yash-awasthi.github.io/ToolkitArchive/)
+[![Benchmarks](https://img.shields.io/badge/📊_Benchmarks-38_charts_·_99_models-4285f4?style=for-the-badge)](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html)
 
----
+![updated](https://img.shields.io/badge/updated-2026--09--29-10a37f) ![stars](https://img.shields.io/badge/GitHub_stars-live_from_API-8b5cf6) ![charts](https://img.shields.io/badge/charts-regenerated_from_data-ff6a00) ![free](https://img.shields.io/badge/built_for-%240_budgets-2ecc71)
 
-## Map
+</div>
 
-| Stage | File | Contents | Freshness |
+> [!TIP]
+> **Spending $0?** Start at [🎓 STUDENTS.md](./STUDENTS.md) — a free alternative to every paid tool, plus student programs.
+> **Just want the best model?** See the [head-to-head verdict](./MODELS.md#whos-actually-best--head-to-head-across-34-benchmarks): Claude Opus 5.5 wins 98% of matchups across 34 benchmarks.
+
+> [!CAUTION]
+> **Avoid:** **ZCode** silently uploaded users' repositories (Sept 18) · **aerolink.lat** and **lumosel.vip** bill for Claude but serve Qwen / DeepSeek. Details in [NEWS.md](./NEWS.md) and [FREE-ACCESS.md](./FREE-ACCESS.md#chinese-credit-routers--gateways-community-reported--all-unverified).
+
+## 🧭 Start here
+
+| | | |
+|:--:|:--:|:--:|
+| [**📰 News**](./NEWS.md)<br><sub>Sept releases, leaks, alerts</sub> | [**🧠 Models**](./MODELS.md)<br><sub>Lineup, prices, verdict</sub> | [**🤖 Agents**](./AGENTS.md)<br><sub>CLI agents, IDEs, MCP</sub> |
+| [**🎓 Students / $0**](./STUDENTS.md)<br><sub>Free alternative to everything</sub> | [**🆓 Free access**](./FREE-ACCESS.md)<br><sub>Free models & API keys</sub> | [**💰 Credits**](./CREDITS.md)<br><sub>Trials, programs, trust list</sub> |
+| [**⚡ Skills & MCP**](./SKILLS.md)<br><sub>Design, browsing, memory</sub> | [**🛠️ Use AI well**](./USAGE.md)<br><sub>App features, token tips</sub> | [**🎬 Media**](./MEDIA.md)<br><sub>Free TTS, image, video</sub> |
+| [**🎨 Frontend**](./FRONTEND.md)<br><sub>App & site builders</sub> | [**🗄️ Backend**](./BACKEND.md)<br><sub>DBs, hosting, auth</sub> | [**📚 References**](./REFERENCES.md)<br><sub>Runnable repos</sub> |
+
+```mermaid
+flowchart LR
+  A([🎯 What do you need?]) --> B[Best model]
+  A --> C[Free / $0]
+  A --> D[Coding agent]
+  A --> E[Skills & tools]
+  A --> F[Images, voice, video]
+  B --> B1[MODELS.md<br/>verdict + prices]
+  B --> B2[benchmarks.html<br/>38 charts]
+  C --> C1[STUDENTS.md]
+  C --> C2[FREE-ACCESS.md]
+  D --> D1[AGENTS.md]
+  E --> E1[SKILLS.md]
+  E --> E2[USAGE.md]
+  F --> F1[MEDIA.md]
+```
+
+## 🏆 Best picks right now
+
+| Need | Pick | Why | Price (in / out per 1M) |
 |---|---|---|---|
-| 🎓 **Students / $0** | [STUDENTS.md](./STUDENTS.md) | Free alternative to every paid tool, the $0 stack, student programs, scam list | ✅ 29 Sep 2026 |
-| 🛠️ **Use AI well** | [USAGE.md](./USAGE.md) | Claude / ChatGPT / Gemini power features (scheduled tasks, Projects, Gems, NotebookLM), skills/plugins/MCP how-to, token-efficiency guide | ✅ 29 Sep 2026 |
-| 🎨 **Build the frontend** | [FRONTEND.md](./FRONTEND.md) | AI app/UI builders, design-to-code, no-code sites, OSS self-hostable — free tiers | ⏳ June-era (Part 1 ✅ 17 Aug) |
-| 🗄️ **Build the backend** | [BACKEND.md](./BACKEND.md) | BaaS, serverless DBs, hosting/deploy, auth, vector DBs, glue — **free-tier limits** | ⏳ June-era (1A + a few rows Aug 16) |
-| 📰 **What changed** | [NEWS.md](./NEWS.md) · [benchmarks.html](./benchmarks.html) | Sept 2026 releases, security alerts, corrections · interactive per-benchmark rankings (open in a browser) | ✅ 29 Sep 2026 |
-| 🧠 **Pick the model** | [MODELS.md](./MODELS.md) | Current lineup (Sept 2026) + 32-model Aug reference table, typed decision models, pricing, context, proxy routes | ✅ 29 Sep 2026 (Table 1 = Aug snapshot) |
-| 🆓 **Get it free** | [FREE-ACCESS.md](./FREE-ACCESS.md) · [CREDITS.md](./CREDITS.md) ([provider trust status](./CREDITS.md#part-6--provider-trust-status)) | Sept free wave + 28 no-card tiers + hidden gems + aggregators · credit-stacking, student/startup, sub-as-API, free GPU | ✅ 29 Sep 2026 (CREDITS Parts 1–5 ⏳ June-era) |
-| 🤖 **Run agents** | [AGENTS.md](./AGENTS.md) | CLI agents (+emerging/proxy), IDEs, Terminal-Bench 4.0, **MCP** (72K+ servers), frameworks, browser agents, automation, deploy, code-quality | ✅ 29 Sep 2026 (Parts 6–14 ⏳ June-era) |
-| 🎬 **Media & ops** | [MEDIA.md](./MEDIA.md) | **Free/open TTS, music, video, image (Sept 2026)**, paid image/voice gen, LLMOps, docs | ✅ free-media section 29 Sep · rest ⏳ June-era |
-| ⚡ **Skills & MCP** | [SKILLS.md](./SKILLS.md) | **Sept 2026 wave (design, motion, browsing, memory, dev MCPs) + skill/plugin directories + 60-second install**, what MCP is, skills per IDE/CLI, skill repos | ✅ directory 29 Sep · rest ⏳ June-era |
-| 📚 **Source repos** | [REFERENCES.md](./REFERENCES.md) | Runnable tools + proxy/router projects + merged awesome-lists | ✅ 17 Aug 2026 |
+| 🥇 Best overall & coding | **Claude Opus 5.5** | Wins 98% of head-to-head matchups; #1 FrontierCode, CursorBench, GDPval, AA Intelligence Index | $4 / $20 |
+| ⚡ Near-best, half price | **Claude Sonnet 5.5** | Highest Terminal-Bench 4.0 (70.6 vendor, 63.6 independent) | $2 / $10 |
+| 🧪 Hardest math & science | **GPT-6 Astra** | GPQA 96.0, FrontierMath T4 97.6 | $10 / $50 |
+| 💸 Best value | **DeepSeek V4.1 Flash** | #1 Terminal-Bench 2.1 and DeepSWE at a fraction of the price; MIT | $0.15 / $0.60 off-peak |
+| 🔓 Best open weights | **Kimi K3** · GLM-5.3 · MiMo-V2.6 Pro | Download and self-host | $3 / $15 · $1.40 / $4.40 · $0.435 / $0.87 |
+| 🆓 Best free | **Gemini 3.8 Flash** (AI Studio) · free models in **Cline** / **Freebuff** / OpenRouter | No card | $0 |
+| 🖼️ Best image model | **GPT Image 2.5** (Sunburst) | #1 on both image arenas | in ChatGPT free |
+| 🎥 Best video model | **Gemini Omni Flash** · MiniMax H3 (open) | #1 video-with-audio arena | $6/min · $7.80/min |
 
-> **Freshness legend:** ✅ = re-checked 29 Sep 2026 (or 17 Aug where the row says so) · ⏳ = June-2026 content, treated as unverified until its own pass (reasons vary: never refreshed, or only link/count fixes). Every file carries a matching banner at its top. plan.md is the living status doc — it logs every pass and the still-open verify list.
+| Coding agent | Best for | ⭐ Stars (live) |
+|---|---|---|
+| **Claude Code** | Top Terminal-Bench models, plugins, skills | 148K |
+| **Codex CLI** | GPT-6, free Luna tier | 127K |
+| **OpenCode** | Any OpenAI-compatible key — best for free models | 211K |
+| **Cline** | Free rotating models, Cline Desktop | 69K |
+| **Freebuff** | Fully free, ad-supported | 13K |
+| **Hermes Agent** · **OpenClaw** | Self-hosted personal agents | 250K · 391K |
 
-> 📊 **All charts are generated** — model charts from [`data/models.json`](./data/models.json), agent/IDE/free-tier charts from [`data/extra_charts.json`](./data/extra_charts.json) → `python3 charts/gen_charts.py`. The "32 API models" count above is the length of the `models` array — update it whenever an entry is added or removed there, and keep `extra_charts.json` in sync with the AGENTS.md/FREE-ACCESS.md tables it mirrors.
+## 📊 Charts
 
----
-
-## 📊 Every API Model — Charts
-
-> These charts plot **SWE-bench Verified**, which Vals retired on Sept 1, 2026, so they stop at the August lineup. For September models use [benchmarks.html](./benchmarks.html) (Terminal-Bench 4.0, FrontierCode, CursorBench, GDPval and 20 more, sorted per benchmark).
+> [!NOTE]
+> Built from [`data/`](./data) with `python charts/gen_charts.py`. Star counts come live from the GitHub API (`python scripts/update_stars.py`); head-to-head ratings from [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) (`node scripts/headtohead.js`).
 
 | | |
 |:--:|:--:|
-| **Price vs Performance** | **SWE-bench Verified** |
-| ![scatter](./charts/all-models-scatter.png) | ![swe-bench](./charts/swe-bench.png) |
-| **Output Cost** | **Context Windows** |
-| ![cost](./charts/all-models-cost.png) | ![context](./charts/context-windows.png) |
-| **Input vs Output Pricing** | **Claude Reasoning Effort** |
-| ![io](./charts/cost-input-output.png) | ![effort](./charts/claude-effort.png) |
+| **Who's actually best (34 benchmarks)** | **Intelligence vs price** |
+| ![head-to-head](./charts/head-to-head.png) | ![intelligence vs price](./charts/intelligence-vs-price.png) |
+| **Artificial Analysis Intelligence Index** | **Terminal-Bench 4.0** |
+| ![AA index](./charts/aa-index.png) | ![Terminal-Bench 4.0](./charts/terminal-bench-4.png) |
+| **Output price** | **Context windows** |
+| ![output price](./charts/output-price.png) | ![context windows](./charts/context-windows.png) |
+| **Coding agents — GitHub stars** | **Skills & MCPs — GitHub stars** |
+| ![agents stars](./charts/github-stars-agents.png) | ![skills stars](./charts/github-stars-skills.png) |
+| **What coding plans cost** | **Text-to-image arena** |
+| ![coding plans](./charts/coding-plans.png) | ![image arena](./charts/image-arena.png) |
 
-> **Claude effort** (low → medium → high → xhigh → max): more extended-thinking tokens = better on hard tasks, slower + costlier. `low` for simple edits, `max` for the hardest reasoning (budgets illustrative).
-> **Sweet spot:** 80%+ SWE-bench at under $2/M output (MiniMax M3, Kimi K2.6, MiMo V2.5 Pro — DeepSeek V4 Pro moved out on its Aug 16 GA pricing).
+## 📰 What changed in September 2026
 
----
+- **Prices fell hard at the top.** Opus 5.5 is better than Opus 5 and 20% cheaper per token ($4/$20); Sonnet 5.5 and GPT-6 Sol both sit at $2/$10; GPT-6 Luna is $0.10/$0.50. A frontier-quality coding agent now costs roughly what a mid-tier model cost in June. [MODELS.md](./MODELS.md#current-lineup--29-september-2026)
+- **DeepSeek V4.1 Flash is the new default cheap model.** $0.60/M output off-peak, 1M context, vision, MIT weights, and it beats DeepSeek's own V4-Pro on most of their benches. Route most traffic here and escalate the hard 5% to Opus/Sonnet 5.5.
+- **Benchmarks moved.** SWE-bench Verified and Terminal-Bench 2.1 are saturated (everyone scores 88–97%). Read **Terminal-Bench 4.0**, SWE-bench Pro, FrontierCode and CursorBench instead — and never compare numbers across harnesses. [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html)
+- **Free coding got better, via agents rather than APIs.** Cline hands out DeepSeek V4.1 Flash, Kimi K3 (Desktop), GLM-5.3-Flash and Laguna S 2.1 for free; Freebuff gives 6 h/day of V4.1 Flash and 5 h of GPT-6 Luna, paid for by ads; OpenRouter's free list now includes 1M-context stealth models. [FREE-ACCESS.md](./FREE-ACCESS.md#september-2026-free-wave-start-here)
+- **Free tools can cost you your code.** ZCode quietly uploaded whole repositories (including Git history with old secrets) to its vendor's cloud. Stealth models on OpenRouter/TokenRa also log prompts. Keep secrets out of anything free, and rotate credentials if you used ZCode. [NEWS.md](./NEWS.md)
+- **A new kind of model.** Jev and Laya don't write text — they answer typed questions (pick one, score it, yes/no) with calibrated probabilities in milliseconds. Useful as a fast router or guardrail inside an agent. [MODELS.md](./MODELS.md#typed-decision-models-new-category)
+- **Watch:** Gemini 4 Pro (October), Claude Haiku 5.5, Qwen 4, MiniMax M3.1 API.
 
-## CLI Agent Rankings — Terminal-Bench 2.1
-
-![Terminal-Bench](./charts/terminal-bench.png)
-
----
-
-## CLI Agent Popularity — GitHub Stars
-
-![GitHub Stars](./charts/github-stars.png)
-
----
-
-## Agentic IDE Pricing
-
-![IDE Pricing](./charts/ide-pricing.png)
-
----
-
-## Free API Daily Budget
-
-![Free API](./charts/free-api-tiers.png)
-
-> Generated from [`data/extra_charts.json`](./data/extra_charts.json), which mirrors
-> [FREE-ACCESS.md](./FREE-ACCESS.md) Table 1 (17 Aug 2026). Units differ per provider — the labels
-> on the chart say which is which (tokens/day unless marked; SiliconFlow = tokens/min, Cloudflare =
-> neurons/day).
-
----
-
-## Quick Reference
-
-### 🆓 Zero-Dollar Vibe Stack
-| Layer | Pick | Free |
-|---|---|---|
-| Build | Bolt.new (1M tokens/mo) or Dyad/bolt.diy + free key | $0 |
-| Frontend host | Cloudflare Pages | unlimited bandwidth |
-| Backend | Supabase (Postgres+Auth, 50K MAU) / PocketBase | $0 |
-| DB extra | Neon / Turso / Xata (10GB) | $0 |
-| Auth | WorkOS (1M MAU) / Supabase Auth | $0 |
-| Edge fns | Cloudflare Workers (100K req/day) | $0 |
-| LLM key | Groq + Cerebras + Google AI Studio + OpenRouter `:free` | $0 |
-| Skills | anthropics/skills + obra/superpowers (→ [SKILLS.md](./SKILLS.md)) | $0 |
-| Email / pay | Resend (3K/mo) / Stripe (no monthly) | $0 |
-
-### 💰 Top Freebies (stack them)
-| Freebie | Value | Where |
-|---|---|---|
-| Cloud trials | GCP $300 + AWS $300 + Azure $200 + Oracle $300 = **~$1,100** | [CREDITS.md](./CREDITS.md) |
-| GitHub Student Pack | Copilot Pro + Azure $100 + DO $200 + Mongo $50 | education.github.com/pack |
-| Startup credits | Google AI-First **$350K** · AWS GenAI $300K · Azure $150K | [CREDITS.md](./CREDITS.md) |
-| Free GPU | Kaggle 30h/wk + Colab + Modal $30/mo | [CREDITS.md](./CREDITS.md) |
-| Sub-as-API | Reuse Copilot/Claude sub via CLIProxyAPI | [CREDITS.md](./CREDITS.md) |
-| Free frontier in Claude Code | Kiro OAuth → Claude 4.5 + GLM-5 + MiniMax (via 9router) | [REFERENCES.md](./REFERENCES.md) |
-| Free-AI routers | OmniRoute ~1.5B tokens/mo pooled · NaraRouter 5-7M/day (⛔ not aerolink/lumosel — they serve Qwen/DeepSeek instead of Claude) | [FREE-ACCESS.md](./FREE-ACCESS.md) |
-| Best free model | Qwen3-Coder 480B on OpenRouter `:free` (78% SWE-bench) | [FREE-ACCESS.md](./FREE-ACCESS.md) |
-
-### Best model for performance (Sept 2026)
-
-> Head-to-head across 36 benchmarks ([benchmarks.html](./benchmarks.html), method in [MODELS.md](./MODELS.md#whos-actually-best--head-to-head-across-36-benchmarks)): **Opus 5.5 wins 98% of matchups**, then Sonnet 5.5 (86%), GPT-6 Astra (76%), Fable 5.1 (75%). Best open-weight: Kimi K3. Best value: DeepSeek V4.1 Flash.
-
-| Model | Headline score (vendor) | In / Out $/1M | Context |
-|---|---|---|---|
-| Claude Opus 5.5 | TB 4.0 66.4 · FrontierCode 54.4 · GDPval 1846 | $4 / $20 | 1M |
-| Claude Sonnet 5.5 | TB 4.0 **70.6** · CursorBench 4.0 55.5 | $2 / $10 | 1M |
-| GPT-6 Astra | GPQA 96.0 · FrontierMath T4 97.6 · BrowseComp 91.5 | $10 / $50 | 1.1M |
-| Claude Fable 5.1 | SWE-bench Pro 81.2 | $10 / $50 | 1M |
-
-### Best value (sweet spot)
-| Model | Why | Out $/1M |
-|---|---|---|
-| DeepSeek V4.1 Flash | TB 2.1 90.6, DeepSWE 74.2 (vendor), vision, MIT | **$0.60** off-peak |
-| GPT-6 Luna | Frontier-lab model at near-free price | $0.50 |
-| MiMo-V2.6 Flash / Pro | MIT open weights, Pro ≈ Opus 5 on agent benches (vendor) | $0.28 / $0.87 |
-| GPT-6 Sol / Sonnet 5.5 | Mid-tier at the same $2/$10 | $10 |
-
-### Best free model
-**Gemini 3.8 Flash** on Google AI Studio (1M ctx, no card) · **DeepSeek V4.1 Flash / Kimi K3** free inside Cline · **Laguna S 2.1 / Inkling / Nemotron 3 Ultra** on OpenRouter `:free` — see [FREE-ACCESS.md](./FREE-ACCESS.md#september-2026-free-wave-start-here)
-
-### Best CLI agents
-| Need | Agent | Stars |
-|---|---|---|
-| Max performance | Claude Code + Opus 5.5 / Sonnet 5.5 (top TB 4.0) · Codex + GPT-6 | — / 93K |
-| Free, models included | Cline (free rotating models, Cline Desktop) · Freebuff (ad-supported) | 63K / 8K+ |
-| Best open-source | Hermes Agent (self-improving) | 200K |
-| Fastest growing | Claw Code (Claude Code rewrite) | 194K |
-| Privacy + offline | OpenCode (MIT, 75+ providers) | 177K |
-| SSH / remote | JCode (Rust, 14ms boot) | ~4K |
-| Free bundled model | MiMo Code (MiMo V2.5 Pro) | 5.6K |
-| Minimal / fast | Pi (< 1K token system prompt) | 65K |
-| AI-native terminal | Warp (open-source, MCP, cloud agents) | — |
-| Best autonomous | OpenHands (77.6% SWE-bench) | 78K |
-| Best new OSS harness | DeepSeek Harness (MIT, plugin-everything, Aug 14) | rising |
-
-### Best agentic IDEs
-| Need | IDE | Price |
-|---|---|---|
-| Best overall | Cursor Pro | $20/mo |
-| Spec-driven / AWS | Kiro | $10/mo |
-| Fully free | Trae / PearAI / Void | Free |
-| Open ecosystem | Zed (ACP protocol) | Free |
-| Unified GUI for all CLI agents | AionUI (28K★) | Free (Apache 2.0) |
-| Multi-agent workforce desktop | Eigent (14.4K★) | Free (OSS) |
-
-### Best autonomous agents (chat/web)
-| Need | Tool | Price |
-|---|---|---|
-| Full autonomous tasks | Manus AI | Free / $20/mo |
-| Enterprise multi-agent | Relevance AI | Free / $19/mo |
-| Free GLM-5 chat | chat.z.ai | Free |
-| Free frontier-ish coding | Cline free models (DeepSeek V4.1 Flash, Kimi K3, GLM-5.3-Flash) · Freebuff | Free |
-| ⛔ Avoid | **ZCode** — silently uploaded users' repos (Sept 18), see [NEWS.md](./NEWS.md) | — |
-| Code + UI + deploy | Bolt.new / Lovable | Free / $20/mo |
-
-### Best website builders
-| Use Case | Tool | Price |
-|---|---|---|
-| Full-stack SaaS (React + DB + auth) | Lovable | $20/mo |
-| React components + 1-click Vercel | V0 | Free / $20/mo |
-| Max framework flexibility | Bolt.new | Free / $20/mo |
-| Polished marketing site | Framer | $15/mo |
-| CMS + editorial content | Webflow | $18/mo |
-| 3D / cinematic portfolio | Draftly.space | Early access |
-| Internal tools no-code | Base44 | $16/mo |
-
-### Best deployment platforms
-| Use Case | Platform | API |
-|---|---|---|
-| Next.js + edge functions | Vercel | REST |
-| Fastest DX, any stack | Railway | REST + GraphQL |
-| Reliable managed backend | Render | REST |
-| Multi-region global | Fly.io | flyctl CLI |
-| Self-hosted on VPS | Coolify | REST (Bearer) |
-| Git-push minimal | Dokku | CLI |
-
-### Best code quality tools
-| Purpose | Tool | Free OSS |
-|---|---|---|
-| SAST + quality platform | SonarCloud | Yes |
-| AI PR review (every commit) | CodeRabbit | Yes |
-| Secrets scanning | Gitleaks / TruffleHog | Yes |
-| Container + IaC vuln scan | Trivy | Yes |
-| Python linting (fast) | Ruff | Yes |
-| JS/TS linting | ESLint + Prettier | Yes |
-| Multi-language SAST rules | Semgrep | Yes |
-
-### 🤖 Agentic systems stack (the 2026 recipe)
-
-> How the pieces of this archive assemble into a complete agentic setup — IDE, agent, skills,
-> tool access, routing, sandbox, and how to judge it. Each layer links to its full file.
-
-| Layer | Pick | Free? | File |
-|---|---|---|---|
-| IDE | Cursor Pro · Kiro · **Qoder (free)** · Codex IDE · Trae · Zed | Free–$20/mo | [AGENTS.md](./AGENTS.md) Part 2 |
-| CLI agent | Claude Code · Codex CLI · OpenCode · **DeepSeek Harness (OSS)** | Free BYOK + free tiers | [AGENTS.md](./AGENTS.md) Part 1 |
-| Skills | anthropics/skills + obra/superpowers (lazy-loaded, open standard) | $0 | [SKILLS.md](./SKILLS.md) |
-| Tool access (MCP) | GitHub/Playwright/Context7 servers + remote MCP (Vercel, Cloudflare) | $0 | [AGENTS.md](./AGENTS.md) Part 5A |
-| Model routing | OmniRoute (self-host) / free-llm-gateway pool 340+ providers; OpenRouter `:free` | $0 | [FREE-ACCESS.md](./FREE-ACCESS.md) |
-| Sandbox / eval | E2B · Daytona · Vercel Sandbox; Langfuse / AgentOps for tracing | $0–$30/mo credits | [BACKEND.md](./BACKEND.md) Part 1A · [MEDIA.md](./MEDIA.md) Part 3 |
-| Judge it | Terminal-Bench 4.0 (TB 2.1 is saturated) · SWE-bench Pro / FrontierCode / CursorBench — see [benchmarks.html](./benchmarks.html) | — | [AGENTS.md](./AGENTS.md) · [MODELS.md](./MODELS.md) |
-
-### Opus 5.5 access on a budget
-- **claude.ai** — free plan is **Sonnet 5, not Opus**; Opus 5.5 needs Pro/Max ($17+/mo)
-- **GitHub Copilot Pro+** ($39/mo) includes Opus 5.5
-- **Anthropic API trial** — $5 → console.anthropic.com; Opus 5.5 is $4/$20, 20% cheaper than Opus 5
-- **AWS Bedrock / Vertex / Azure** new-account credits ($200–$300)
-
----
-
-## Key Developments — September 2026
+<details>
+<summary><b>📅 September 2026 timeline</b></summary>
 
 | Date | Event |
 |---|---|
 | Sept 2 | Claude Fable 5.1 / Mythos 5.1 (cache reads −75%) · Gemini 3.8 Flash (free on AI Studio) · Muse Spark 1.3 |
-| Sept 3 | **GPT-6 Astra** — $10/$50, 1.1M ctx |
+| Sept 3 | **GPT-6 Astra** — $10/$50, 1.05M ctx |
 | Sept 10 | **DeepSeek V4.1 Flash** — $0.15/$0.60 off-peak, vision, MIT; V4 Flash retired, V4-Pro stays |
 | Sept 14 | **Cline Desktop** (open source) + ClinePass $9.99; Claude weekly limits +25% permanently |
 | Sept 15 | TypeSafe **Jev** early access — typed decision model, no text generation |
@@ -236,7 +111,10 @@
 | Sept 24 | OpenAI Sora API sunset · Google: Gemini 4 "as soon as possible" |
 | Sept 27–28 | MiniMax M3.1-Flash-Preview · **Claude Sonnet 5.5** ($2/$10, TB 4.0 70.6) |
 
-## Key Developments — July–August 2026
+</details>
+
+<details>
+<summary><b>📅 July–August 2026 timeline</b></summary>
 
 | Date | Event |
 |---|---|
@@ -250,10 +128,13 @@
 | Aug 13 | **DeepSeek V4 Pro GA** (TB 2.1 87.9, own harness); **Gemini 3.7 Flash** ($0.75/$3.75 thru 2026) |
 | Aug 14 | **GLM-5.3** (Z.AI) — same GLM-5.2 base, post-training only, ~750B; open weights Aug 28 · SpaceX closes $60B Cursor acquisition |
 | Aug 16 | DeepSeek peak/off-peak API pricing takes effect (off-peak = half) |
-| Aug 2026 | Free-AI wave: OmniRoute (29K★, ~1.5B tok/mo), NaraRouter (5-7M tok/day), LongCat-2.0 free quotas — see [FREE-ACCESS.md](./FREE-ACCESS.md) |
+| Aug 2026 | Free-AI wave: OmniRoute (71K★, ~1.5B tok/mo), NaraRouter (5-7M tok/day), LongCat-2.0 free quotas — see [FREE-ACCESS.md](./FREE-ACCESS.md) |
 | Aug 30 | OpenClaw 2.0 — shared cloud sessions, rebuilt Control UI |
 
-## Key Developments — June 2026
+</details>
+
+<details>
+<summary><b>📅 June 2026 timeline</b></summary>
 
 | Date | Event |
 |---|---|
@@ -274,34 +155,17 @@
 | Mar | Claude Code source leak → Claw Code fork created |
 | May 19 / Jun 18 | Gemini CLI → Antigravity CLI announced May 19; free and AI Pro/Ultra users cut off June 18 (confirmed on Google's Developers Blog — an Aug-pass "correction" that denied this was wrong) |
 
----
+</details>
 
-## In plain words — what changed in September 2026
+## 🗂️ Freshness
 
-- **Prices fell hard at the top.** Opus 5.5 is better than Opus 5 and 20% cheaper per token ($4/$20); Sonnet 5.5 and GPT-6 Sol both sit at $2/$10; GPT-6 Luna is $0.10/$0.50. A frontier-quality coding agent now costs roughly what a mid-tier model cost in June. [MODELS.md](./MODELS.md#current-lineup--29-september-2026)
-- **DeepSeek V4.1 Flash is the new default cheap model.** $0.60/M output off-peak, 1M context, vision, MIT weights, and it beats DeepSeek's own V4-Pro on most of their benches. Route most traffic here and escalate the hard 5% to Opus/Sonnet 5.5.
-- **Benchmarks moved.** SWE-bench Verified and Terminal-Bench 2.1 are saturated (everyone scores 88–97%). Read **Terminal-Bench 4.0**, SWE-bench Pro, FrontierCode and CursorBench instead — and never compare numbers across harnesses. [benchmarks.html](./benchmarks.html)
-- **Free coding got better, via agents rather than APIs.** Cline hands out DeepSeek V4.1 Flash, Kimi K3 (Desktop), GLM-5.3-Flash and Laguna S 2.1 for free; Freebuff gives 6 h/day of V4.1 Flash and 5 h of GPT-6 Luna, paid for by ads; OpenRouter's free list now includes 1M-context stealth models. [FREE-ACCESS.md](./FREE-ACCESS.md#september-2026-free-wave-start-here)
-- **Free tools can cost you your code.** ZCode quietly uploaded whole repositories (including Git history with old secrets) to its vendor's cloud. Stealth models on OpenRouter/TokenRa also log prompts. Keep secrets out of anything free, and rotate credentials if you used ZCode. [NEWS.md](./NEWS.md)
-- **A new kind of model.** Jev and Laya don't write text — they answer typed questions (pick one, score it, yes/no) with calibrated probabilities in milliseconds. Useful as a fast router or guardrail inside an agent. [MODELS.md](./MODELS.md#typed-decision-models-new-category)
-- **Watch:** Gemini 4 Pro (October), Claude Haiku 5.5, Qwen 4, MiniMax M3.1 API.
+| File | Status |
+|---|---|
+| NEWS · MODELS · STUDENTS · USAGE · FREE-ACCESS (Sept wave) · AGENTS Parts 1–5A · SKILLS (wave + directories) · MEDIA (free media + leaderboards) · benchmarks · charts | ✅ Verified 29 Sep 2026 |
+| AGENTS Parts 6–14 · FRONTEND · BACKEND · CREDITS Parts 1–5 · MEDIA Parts 1–4 · SKILLS older sections · REFERENCES | ⏳ Older passes (June–Aug 2026) — being re-verified; each file says which parts |
 
----
-
-## Benchmark Notes
-
-| Label | Meaning | Trust |
-|---|---|---|
-| `[open]` | Published on SWE-bench Verified / tbench.ai | High |
-| `[V]` | Vendor-reported own scaffold | Medium — 10-20pt above Scale SEAL |
-| `[C]` | Closed, no public leaderboard | Low — directional |
-| `[est]` | Community estimated | Low — directional |
-
-Scale SEAL standardized (June 2026): GPT-5.4 xHigh **59.1%** · Opus 4.6 **51.9%** · Haiku 4.5 **39.5%**
-
----
-
-## Keeping This Archive Honest
+<details>
+<summary><b>🛡️ Keeping this archive honest — trust tiers & link check</b></summary>
 
 ### Provider trust tiers
 
@@ -326,3 +190,5 @@ python3 scripts/link_check.py
 ```
 
 It prints dead links (4xx/5xx, timeout, or connection error) and redirected links, grouped by the file that references them, and exits with status 1 if anything is dead. Known placeholder URLs used as fill-in-the-blank examples (`your-coolify.com`, `localhost:PORT`, and similar) are ignored by pattern instead of being reported as dead. It only checks that a link resolves — it does not check whether the page behind it still says what this archive claims it says; that's still a manual re-check against the trust tiers above.
+
+</details>

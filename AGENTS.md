@@ -1,6 +1,9 @@
 # Agentic Coding Tools — Full Reference (re-checked 29 September 2026)
 
-> TB 2.1 = Terminal-Bench 2.1 from tbench.ai. `[est]` = estimated from SWE-bench + community data.
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
+> TB 2.1 = Terminal-Bench 2.1 from tbench.ai. Only measured scores are shown; the old community "[est]" estimates were removed on 29 Sep 2026.
 > **Benchmark rule:** TB rows measure an agent + model + effort configuration, not an agent in
 > isolation. The official TB 2.1 leaderboard was checked on 17 August; it uses five trials and
 > forbids submissions from changing timeouts or resources.
@@ -12,7 +15,7 @@
 > (builders, deploy, quality, no-code, local runners, video/music/UI) remain June-2026 content**
 > and were not re-verified this pass.
 
-**Contents:** [TB 2.1 rankings](#terminal-bench-21-rankings) · [GitHub stars](#github-stars--popularity) ·
+**Contents:** [TB 4.0 chart](#terminal-bench-40) · [GitHub stars](#github-stars--popularity) ·
 [Part 1 CLI agents](#part-1--cli--terminal-coding-agents) · [Part 2 IDEs](#part-2--agentic-ides) ·
 [Part 3 chat/web agents](#part-3--chat--web-autonomous-agents) · [Part 4 chat interfaces](#part-4--ai-chat-interfaces) ·
 [Part 5 infra](#part-5--infrastructure--orchestration) · [Part 5A MCP](#part-5a--mcp-model-context-protocol--full-reference) ·
@@ -24,15 +27,17 @@
 
 ---
 
-## Terminal-Bench 2.1 Rankings
+## Terminal-Bench 4.0
 
-![Terminal-Bench](./charts/terminal-bench.png)
+![Terminal-Bench 4.0](./charts/terminal-bench-4.png)
 
 ---
 
 ## GitHub Stars — Popularity
 
-![GitHub Stars](./charts/github-stars.png)
+![GitHub stars — coding agents](./charts/github-stars-agents.png)
+
+> Live from the GitHub API on 29 Sep 2026 (`python scripts/update_stars.py`).
 
 ---
 
@@ -45,10 +50,10 @@
 | **Claude Code** | Anthropic | **83.8%** | Proprietary | Pro $17/mo annual ($20 monthly) · Max 5x $100 · Max 20x $200 · API PAYG | Fable 5, xhigh (TB 2.1 run) · now defaults to **Opus 5.5** | API only | — |
 
 > **Skills:** Claude Code, OpenCode, Codex, Cursor, Gemini CLI/Antigravity, and Qoder all support the open Agent Skills standard (lazy-loaded `SKILL.md` folders). Full skill ecosystem, install paths, and security bundles → [SKILLS.md](./SKILLS.md).
-| **Codex CLI** | OpenAI | **83.1%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5, xhigh (TB 2.1 run) · now GPT-6 Sol / Astra | Yes | 93K |
-| **OpenHands** | All-Hands AI | **77.6%** | MIT | Free / cloud plans | Any (LiteLLM 100+ providers) | Yes | 78K |
+| **Codex CLI** | OpenAI | **83.1%** | Apache 2.0 | ChatGPT Plus $20/mo or API PAYG | GPT-5.5, xhigh (TB 2.1 run) · now GPT-6 Sol / Astra | Yes | 127K |
+| **OpenHands** | All-Hands AI | **77.6%** SWE-bench | MIT | Free / cloud plans | Any (LiteLLM 100+ providers) | Yes | 78K |
 | **MiMo Code** | Xiaomi | ~73% [V] | MIT | Free (bundled MiMo V2.5 Pro) | MiMo V2.5 Pro | Yes | 5.6K |
-| **Verdent AI** | Verdent | ~71% [est] | Proprietary | Credit-based PAYG | Any (Quality/Speed modes) | Yes | — |
+| **Verdent AI** | Verdent | — | Proprietary | Credit-based PAYG | Any (Quality/Speed modes) | Yes | — |
 | **Antigravity CLI** | Google | ~70.7% | Proprietary | Free preview · Pro $19.99 · Ultra $99.99/mo | Gemini 3.1 Pro | Yes | — |
 | **Grok Build** | xAI (SpaceXAI) | ~[V] | OSS harness (xai-org/grok-build) · proprietary models | **Free tier** (opened ~Jul 2026) · Heavy tier up to $299/mo per coverage | **Grok 4.7** (Sept 21) / 4.6 | No | — |
 
@@ -118,7 +123,7 @@ so two secondary sources are shown side by side (checked 29 Sep 2026).
 > ordering, different harness. Compare within a column, never across. GPT-6 Sol/Luna, Kimi K3 and
 > Qwen have no TB 4.0 entry on either board yet. Free stealth model **Union Alpha** is claimed at
 > ~50–60% by its fan site — unverified.
-> Full per-benchmark charts: [benchmarks.html](./benchmarks.html). Official board: tbench.ai/leaderboard/terminal-bench/4.0.
+> Full per-benchmark charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html). Official board: tbench.ai/leaderboard/terminal-bench/4.0.
 
 ---
 
@@ -126,31 +131,31 @@ so two secondary sources are shown side by side (checked 29 Sep 2026).
 
 | Agent | By | TB 2.1 | License | Price | Stars |
 |---|---|---|---|---|---|
-| **Hermes Agent** | Nous Research | ~70% [est] | MIT | Free BYOK | 200K |
-| **Claw Code** | Community | ~70% [est] | MIT | Free BYOK | 194K |
-| **OpenCode** | anomalyco (sst) | ~71.5% [est] | MIT | Free BYOK · a paid Go/Black tier is rumored ($10/mo, $200/mo) but only sourced from an aggregator, not OpenCode's own pricing page — unverified | 177K (also seen as 165K elsewhere in this archive, neither re-verified this pass) |
-| **Pi (OH-MY-PI)** | Community | ~68% [est] | MIT | Free BYOK | 65K |
-| **Open Interpreter** | OpenInterpreter | ~62% [est] | MIT | Free BYOK | 64K |
-| **Cline** | cline | ~65% [est] | Apache 2.0 | Free BYOK · **free rotating models** · ClinePass $9.99/mo (13 open-weight models) | 63K |
-| **Goose** | Block / Linux Fdn | ~55% [est] | Apache 2.0 | Free BYOK | 50K |
-| **Aider** | aider-AI | ~60% [est] | Apache 2.0 | Free BYOK | ~44K (Aug 2026) |
-| **Continue** | Continue.dev | ~58% [est] | Apache 2.0 | Free BYOK | 34K |
-| **Crush** | Charmbracelet | ~60% [est] | MIT | Free BYOK | 26K |
-| **Kilo Code** | kilo.ai | ~65% [est] | MIT | Free BYOK · Teams $15/user | 24K |
-| **Qwen Code** | Alibaba | ~65% [est] | Apache 2.0 | Free BYOK | 25.4K |
-| **Roo Code CLI** | RooCodeInc | ~62% [est] | MIT | Free BYOK | 24.3K |
-| **Plandex** | Plandex | ~58% [est] | AGPL 3.0 | Free BYOK | 15.5K |
-| **SWE-agent** | Princeton NLP | ~55% [est] | MIT | Free BYOK | 19.6K |
-| **Trae Agent** | ByteDance | ~60% [est] | MIT | Free BYOK | 11.7K |
-| **Kimi Code CLI** | Moonshot AI | ~65% [est] | Apache 2.0 | Free BYOK · v2.1.0 Sept 23, pairs with Kimi K3 | 9K |
-| **Free Code** | Community | ~70% [est] | MIT | Free BYOK | 8.5K |
-| **DeepSeek Harness** | DeepSeek AI | — [V] | MIT | Free BYOK | rising |
-| **Claurst** | Community | ~68% [est] | MIT | Free BYOK | 9.8K |
-| **gptme** | gptme | ~55% [est] | MIT | Free BYOK | 4.3K |
-| **JCode** | 1jehuang / cnjack | ~70% [est] | MIT | Free BYOK | ~4K |
-| **Mistral Vibe** | Mistral AI | ~58% [est] | Apache 2.0 | Free BYOK | 4.6K |
-| **Nanocoder** | Nano Collective | ~55% [est] | MIT | Free BYOK | 2.1K |
-| **Letta Code** | Letta AI | ~55% [est] | MIT | Free BYOK | 2.8K |
+| **Hermes Agent** | Nous Research | — | MIT | Free BYOK | 250K |
+| **Claw Code** | Community | — | MIT | Free BYOK | 195K |
+| **OpenCode** | anomalyco (sst) | — | MIT | Free BYOK · a paid Go/Black tier is rumored ($10/mo, $200/mo) but only sourced from an aggregator, not OpenCode's own pricing page — unverified | 211K |
+| **Pi (OH-MY-PI)** | Community | — | MIT | Free BYOK | 110K |
+| **Open Interpreter** | OpenInterpreter | — | MIT | Free BYOK | 68K |
+| **Cline** | cline | — | Apache 2.0 | Free BYOK · **free rotating models** · ClinePass $9.99/mo (13 open-weight models) | 69K |
+| **Goose** | Block / Linux Fdn | — | Apache 2.0 | Free BYOK | 55K |
+| **Aider** | aider-AI | — | Apache 2.0 | Free BYOK | 49K |
+| **Continue** | Continue.dev | — | Apache 2.0 | Free BYOK | 36K |
+| **Crush** | Charmbracelet | — | MIT | Free BYOK | 28K |
+| **Kilo Code** | kilo.ai | — | MIT | Free BYOK · Teams $15/user | 27K |
+| **Qwen Code** | Alibaba | — | Apache 2.0 | Free BYOK | 28K |
+| **Roo Code CLI** | RooCodeInc | — | MIT | Free BYOK | 24.3K |
+| **Plandex** | Plandex | — | AGPL 3.0 | Free BYOK | 15.5K |
+| **SWE-agent** | Princeton NLP | — | MIT | Free BYOK | 20K |
+| **Trae Agent** | ByteDance | — | MIT | Free BYOK | 11.7K |
+| **Kimi Code CLI** | Moonshot AI | — | Apache 2.0 | Free BYOK · v2.1.0 Sept 23, pairs with Kimi K3 | 11K |
+| **Free Code** | Community | — | MIT | Free BYOK | 8.5K |
+| **DeepSeek Harness** | DeepSeek AI | — [V] | MIT | Free BYOK | 239K |
+| **Claurst** | Community | — | MIT | Free BYOK | 9.8K |
+| **gptme** | gptme | — | MIT | Free BYOK | 4.3K |
+| **JCode** | 1jehuang / cnjack | — | MIT | Free BYOK | ~4K |
+| **Mistral Vibe** | Mistral AI | — | Apache 2.0 | Free BYOK | 4.6K |
+| **Nanocoder** | Nano Collective | — | MIT | Free BYOK | 2.1K |
+| **Letta Code** | Letta AI | — | MIT | Free BYOK | 2.8K |
 
 ---
 
@@ -169,27 +174,29 @@ so two secondary sources are shown side by side (checked 29 Sep 2026).
 
 > **DeepSeek Harness (`dsh`)** — open-source agent harness, **open-sourced Aug 14, 2026** (developer preview). "Everything is a plugin": models, tools, skills, and UI are all plugins, powered by the Cordis meta-framework (Node.js). It is the harness behind DeepSeek's own TB 2.1 runs (V4 Pro 0813 = 87.9, vendor-reported). MIT. [github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) — see also [REFERENCES.md](./REFERENCES.md).
 
+> [!WARNING]
 > ⚠️ **Popularity is volatile in 2026** — before adopting, check the license AND last-commit date. Recent churn: Roo Code **archived itself**, Goose handed to Linux Foundation, OpenCode feuded with Anthropic over subscription login, **Cursor was bought by SpaceX** (Aug 14), and **Gemini CLI stopped serving free and AI Pro/Ultra users on June 18, 2026** (Google Developers Blog, May 19) — those users moved to Antigravity CLI; Gemini CLI now only works with paid Gemini API keys or enterprise licences. The Aug pass wrongly called this unverified. Star count for OpenCode also has two conflicting figures in this archive (165K vs 177K elsewhere) — neither re-verified this pass, don't trust either to the digit.
 
 ### Proxy / Router Tools (free + cheaper model access in your existing agent)
 
 | Tool | What it does | Stars |
 |---|---|---|
-| **[CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** | Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 38.5K |
+| **[CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** | Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API | 53K |
 | **[9router](https://github.com/decolua/9router)** | Route Claude Code/Codex/Cursor/Cline/Copilot/Antigravity to free Claude/GPT/Gemini via 40+ providers; taps Kiro/OpenCode-Free/Vertex; auto-fallback | rising |
 | **[cc-compatible-models](https://github.com/Alorse/cc-compatible-models)** | Configs + pricing to run Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun in Claude Code | — |
 | **[jodavan/claude-code-proxy](https://github.com/jodavan/claude-code-proxy)** | Route each tier to a different provider (GLM for Haiku/Opus), keep Sonnet on your sub — dodges weekly limits | — |
 | **[free-claude-code](https://github.com/Rishurajgautam24/free-claude-code)** | Local FastAPI proxy → NIM/OpenRouter/DeepSeek/Ollama/LM Studio; saves quota on trivial requests | — |
 | **[TokenRouter](https://www.tokenrouter.com/)** | Hosted unified gateway for 300+ text/image/video/audio models, with OpenAI-, Claude-, and Gemini-compatible APIs. It is not a free-model provider; see the current pricing caveat in [FREE-ACCESS.md](./FREE-ACCESS.md). | — |
-| **[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** | MIT self-hosted gateway: one OpenAI-compatible endpoint in front of 340 providers (90+ free, ~1.5B free tokens/mo pooled). Quota-aware auto-fallback, 19 routing strategies, token compression (RTK+Caveman, 15-95%), MCP + A2A. Works with Claude Code, Codex, Cursor, OpenCode, Cline, Copilot. ⚠️ CVE-2026-49352 reported; you hand it your keys — vet before production use. See [FREE-ACCESS.md](./FREE-ACCESS.md). | ~29K |
+| **[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** | MIT self-hosted gateway: one OpenAI-compatible endpoint in front of 340 providers (90+ free, ~1.5B free tokens/mo pooled). Quota-aware auto-fallback, 19 routing strategies, token compression (RTK+Caveman, 15-95%), MCP + A2A. Works with Claude Code, Codex, Cursor, OpenCode, Cline, Copilot. ⚠️ CVE-2026-49352 reported; you hand it your keys — vet before production use. See [FREE-ACCESS.md](./FREE-ACCESS.md). | 71K |
 
+> [!WARNING]
 > ⚠️ Reverse-engineered — may violate ToS / risk bans. Genuine "free" = routing to other providers' free tiers, not bypassing the Opus paywall. Avoid "keygen/activator" repos (malware). Full detail → [CREDITS.md](./CREDITS.md) Part 4.
 
 ---
 
 ### Notable Agent Deep Dives
 
-#### Hermes Agent (Nous Research) — 200K stars
+#### Hermes Agent (Nous Research) — 250K stars
 Self-improving agent with a closed learning loop. Creates skills from experience, improves them during use, builds a persistent user model across sessions.
 
 - **300+ model support** — any provider via unified interface
@@ -200,14 +207,14 @@ Self-improving agent with a closed learning loop. Creates skills from experience
 - **Status:** Fastest-growing agent after Claude Code and Claw Code
 - **Sept 2026 (v0.21.x):** native desktop app, Bot Mode, group chats between agents, 27+ messaging integrations, A2A support
 
-#### Claw Code — 194K stars
+#### Claw Code — 195K stars
 Clean-room Python/Rust rewrite of Claude Code architecture. Born from the March 2026 Claude Code source leak (oh-my-codex). Fastest repo in GitHub history to 100K stars.
 
 - Drop-in replacement for Claude Code — same UX, any model
 - Supports all BYOK providers including local Ollama
 - Apache 2.0 → MIT licensed
 
-#### Pi (OH-MY-PI) — 65K stars
+#### Pi (OH-MY-PI) — 110K stars
 By the authors of Flask and Jinja2. Most minimal harness available.
 
 - **System prompt under 1,000 tokens** (vs 7,000–10,000 for most agents)
@@ -241,15 +248,15 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 | Agent | By | TB 2.1 | Price | BYOK |
 |---|---|---|---|---|
-| **Cursor** | Cursor (**SpaceX-owned** since Aug 14) | ~72% [est] | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom. Usage split into two pools: first-party (Grok 4.5–4.7, Composer 2.5, Auto) and third-party (Claude/GPT/Gemini) | Yes |
-| **FreeBuff** | Codebuff / YC | ~70% [est] | Free, ad-supported: 100 "Freebucks"/day — DeepSeek V4.1 Flash 6 h, GPT-6 Luna 5 h, GLM-5.3 Flash 20 h, MiMo 2.6 Pro 3 h, Space Bunny Alpha unlimited. CLI + desktop + web builder + cloud IDE | Partial |
-| **GitHub Copilot** | Microsoft | ~65% [est] | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo. Sept: Opus 5.5 + GPT-6 Sol (Pro+ and up), GPT-6 Luna + Grok 4.7 (Pro and up) | Partial |
+| **Cursor** | Cursor (**SpaceX-owned** since Aug 14) | — | Free hobby · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/seat · Enterprise custom. Usage split into two pools: first-party (Grok 4.5–4.7, Composer 2.5, Auto) and third-party (Claude/GPT/Gemini) | Yes |
+| **FreeBuff** | Codebuff / YC | — | Free, ad-supported: 100 "Freebucks"/day — DeepSeek V4.1 Flash 6 h, GPT-6 Luna 5 h, GLM-5.3 Flash 20 h, MiMo 2.6 Pro 3 h, Space Bunny Alpha unlimited. CLI + desktop + web builder + cloud IDE | Partial |
+| **GitHub Copilot** | Microsoft | — | Free 2K · Pro $10 · Pro+ $39 · Max $100/mo. Sept: Opus 5.5 + GPT-6 Sol (Pro+ and up), GPT-6 Luna + Grok 4.7 (Pro and up) | Partial |
 | **Kiro** | AWS | N/A | Free 50cr · Pro $10 · Pro+ $20/mo | Yes |
 | **Qwen Code** | Alibaba | N/A | Free BYOK | Yes |
-| **Amp** | Sourcegraph | ~68% [est] | Free tier is ad-supported, no hard token cap · Megawatt $20/mo · Gigawatt $200/mo · Unconstrained PAYG | Yes |
-| **Zencoder** | Zencoder | ~66% [est] | Free tier · Pro $19/mo | Yes |
-| **Augment Code** | Augment | ~70% [est] | Pro $50 · Max $200/mo | No |
-| **Sweep AI** | Sweep | ~60% [est] | Free OSS · Pro $19/mo | Yes |
+| **Amp** | Sourcegraph | — | Free tier is ad-supported, no hard token cap · Megawatt $20/mo · Gigawatt $200/mo · Unconstrained PAYG | Yes |
+| **Zencoder** | Zencoder | — | Free tier · Pro $19/mo | Yes |
+| **Augment Code** | Augment | — | Pro $50 · Max $200/mo | No |
+| **Sweep AI** | Sweep | — | Free OSS · Pro $19/mo | Yes |
 
 **Amp (Sourcegraph)** — zero hard token cap, broadest codebase indexing engine. Best for mono-repos. CLI + VS Code. Free tier is ad-supported, not plain free — paid tiers (Megawatt $20, Gigawatt $200, Unconstrained PAYG) drop the ads.
 
@@ -265,7 +272,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 
 ## Part 2 — Agentic IDEs
 
-![IDE Pricing](./charts/ide-pricing.png)
+![What coding plans cost](./charts/coding-plans.png)
 
 | IDE | By | Price | Agent Features | Privacy | Notes |
 |---|---|---|---|---|---|
@@ -276,7 +283,7 @@ AI-native terminal — not an agent, but agents run inside it. Open-sourced May 
 | **Devin Desktop** | Cognition | $20/mo + $2.25/ACU (official pricing page returned an error twice this pass — treat as unverified, not current) | Devin Local from Jul 1 | Cloud | Formerly Windsurf, rebranded Jun 2 (confirmed: windsurf.com redirects to devin.ai) |
 | **GitHub Copilot** | Microsoft | Free · Pro $10 · Pro+ $39 · Max $100/mo | Workspace, Coding Agent, BugBot, multi-provider, local agent sandboxing (preview) | Microsoft | Usage-based credits since Jun 1. Auto model selection has efficiency / balance / intelligence tiers (Sept) |
 | **Antigravity** | Google | Free (weekly agent limits) · Pro $19.99 · Ultra $99.99/mo | Parallel subagents, browser-use, Antigravity CLI | Google | Replaced Gemini CLI for free and Pro/Ultra users on June 18. Models: Gemini 3.8/3.7 Flash, 3.1 Pro, Claude Sonnet/Opus 4.6, gpt-oss-120b |
-| **Gemini CLI** | Google | Paid Gemini API key only | Terminal agent | Google | ~106K★, Apache 2.0. Free and Pro/Ultra access ended June 18, 2026 — use Antigravity CLI instead |
+| **Gemini CLI** | Google | Paid Gemini API key only | Terminal agent | Google | 107K★, Apache 2.0. Free and Pro/Ultra access ended June 18, 2026 — use Antigravity CLI instead |
 | **Trae** | ByteDance | Free · Lite $3 · Pro $10 · Ultra $100/mo | SOLO mode, MCP | **5-yr retention, no opt-out** | VS Code fork |
 | **Qoder** | Alibaba | **Free** (agent platform; ∞ model access per router dashboards) | Agent Autonomous Development platform, Quest mode, context-engineered editor, MCP | Cloud (Aliyun) | Launched Sep 2025 as free AI IDE; **Qoder 1.0 May 15, 2026** upgraded it to an agentic coding platform (Win/macOS/Linux). Pricing details on qoder.com |
 | ~~**ZCode**~~ ⛔ | Z.AI / Zhipu | Free | Desktop coding agent, GLM-5.x | **Uploaded your repo** | **Do not use.** Disclosed Sept 18: default-on codebase indexing packed whole repos incl. full Git history (old secrets too) and uploaded them, encrypted with a Z.ai-held key, to Alibaba Cloud — no opt-out, not in the privacy policy. Z.ai removed it in v3.14.0 (Sept 21) and open-sourced ZCode with history wiped. Rotate any secret that ever sat in a repo you opened with it. Details in [NEWS.md](./NEWS.md) |
@@ -361,7 +368,7 @@ brew install aionui
 
 | Agent | By | Type | Price | Capability |
 |---|---|---|---|---|
-| **OpenClaw** | OpenClaw Foundation | Self-hosted personal agent | Free (MIT, BYO LLM key) | **380K+ stars — most-starred self-hosted agent.** Long-running Node service routing 23+ chat channels (WhatsApp/Telegram/Discord/Signal/Slack) to an agent that reads files, runs commands, persists memory. ClawHub skill registry. Founder Peter Steinberger joined OpenAI; foundation now stewards it. ⚠️ Broad system access + untrusted 3rd-party skills = real RCE/malware risk |
+| **OpenClaw** | OpenClaw Foundation | Self-hosted personal agent | Free (MIT, BYO LLM key) | **391K stars — most-starred self-hosted agent.** Long-running Node service routing 23+ chat channels (WhatsApp/Telegram/Discord/Signal/Slack) to an agent that reads files, runs commands, persists memory. ClawHub skill registry. Founder Peter Steinberger joined OpenAI; foundation now stewards it. ⚠️ Broad system access + untrusted 3rd-party skills = real RCE/malware risk |
 | **Manus AI** | Manus (ex-Monica.im) | Autonomous VM agent | Free 300cr/day · Pro $20 · Extended $200/mo | Sandboxed VM. Web browse, code, files, slides. 20 concurrent tasks on Pro |
 | **Genspark** | Genspark | All-in-one "Super Agent" | Free ~100–200cr/day (no card) · Plus $24.99 ($19.99/yr, 10K cr) · Pro $249.99 (125K cr) | Orchestrates many frontier models + 80+ tools. AI Slides/Sheets, image+video gen, AI Developer, real phone calls. Chat+image = 0 credits on paid through Dec 31 2026 |
 | **Devin** | Cognition | Autonomous SWE | $20/mo + $2.25/ACU (unverified this pass — official pricing page unreachable) | Full tickets end-to-end, PR creation |
@@ -405,7 +412,7 @@ brew install aionui
 | **MCP** | Protocol | Model Context Protocol — standard for agent↔tool integration. 72,500+ servers (cross-registry, Jun 2026) |
 | **A2A (Agent2Agent)** | Protocol | Google's open spec for agent↔agent interop — the companion to MCP (tool access). Native in Google ADK, OpenAgents, VoltAgent |
 | **ACP (Zed)** | Protocol | Agent Client Protocol — run any agent natively in Zed editor |
-| **CLIProxyAPI** | Proxy | Wraps Claude Code / Codex / Antigravity / Grok Build OAuth sessions → OpenAI-compatible API. Multi-account round-robin load balancing. 38.5K stars. [github.com/router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) |
+| **CLIProxyAPI** | Proxy | Wraps Claude Code / Codex / Antigravity / Grok Build OAuth sessions → OpenAI-compatible API. Multi-account round-robin load balancing. 53K stars. [github.com/router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) |
 
 ---
 
@@ -417,12 +424,14 @@ brew install aionui
 
 **Origin:** Anthropic, November 2024. Adopted by OpenAI and Google DeepMind early 2025. Donated to Linux Foundation's Agentic AI Foundation December 2025.
 
+> [!NOTE]
 > 🔄 **MCP 2.0 — the 2026-07-28 specification (checked Aug 17, 2026):** a major step toward making agent infrastructure "work like the rest of the web" — **stateless, cacheable, routable, globally distributed** transports, with updated TypeScript/Python/Go SDKs (Cloudflare blog Aug 6, Simon Willison Jul 31). **Sampling is deprecated** (still works for now) in favor of the new architecture; governance/OAuth hardening included. If you're building new MCP integrations, target the 2026-07-28 spec — older 2025-era stateless-vs-stateful assumptions no longer hold.
 
 **Scale (June 2026):** A cross-registry aggregator counts **72,500+ servers** across the Official Registry, Glama, Smithery, mcp.so and PulseMCP. Glama alone tracks ~37K (split into Official / Claimed / crawled tiers).
 
-**Composite leaderboard (by GitHub stars):** Browser Use (#1, ~100K★) · n8n (~193K★) · Context7/upstash (~58K★ — the only server listed on *every* registry) · GitHub MCP (~28K★, 51 tools) · Toolbox for Databases (googleapis).
+**Composite leaderboard (by GitHub stars):** Browser Use (117K★) · n8n (206K★) · Context7/upstash (63K★ — the only server listed on *every* registry) · GitHub MCP (33K★, 51 tools) · Toolbox for Databases (googleapis).
 
+> [!WARNING]
 > ⚠️ **Vetting matters — registry inclusion ≠ safe.** A scan of 8,000+ public servers found 36.7% with SSRF holes, 43% with unsafe command execution, and 41% in the official registry with **zero auth**. Sandbox and review any community server before giving it production credentials.
 
 ### How MCP Works

@@ -1,5 +1,8 @@
 # Media Gen, Voice & LLMOps — June 2026
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Image / voice generation, plus the LLMOps stack (observability, eval, gateways) and docs tooling for vibe-coded apps.
 > **Video, music, and UI-design AI live in [AGENTS.md](./AGENTS.md) Parts 12–14.** Free tiers verified ~June 2026.
 > ℹ️ **17 Aug 2026:** **Part 1 (image-gen) was re-checked this pass** — all Google Imagen models shut down Aug 17 and were replaced by Gemini 3.1 Flash Image (see the ⛔/🆕 rows below). **Parts 2–4 (voice, LLMOps, docs) were not re-verified this pass** — treat their free tiers, prices, and arena scores as June-era until re-checked (the TTS arena rankings in particular move fast).
@@ -56,7 +59,11 @@
 
 ### Image & video leaderboards (29 Sep 2026)
 
-Interactive charts: [benchmarks.html](./benchmarks.html) → "Image generation" / "Video generation".
+Interactive charts: [benchmarks.html](https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html) → "Image generation" / "Video generation".
+
+| Text-to-image arena | Text-to-video arena |
+|:--:|:--:|
+| ![image arena](./charts/image-arena.png) | ![video arena](./charts/video-arena.png) |
 
 | Rank | Text-to-image (Artificial Analysis Elo) | Text-to-image (LMArena) | Image editing (AA) |
 |---|---|---|---|
@@ -160,7 +167,7 @@ Three camps: **tracing** (Langfuse, LangSmith), **gateways** (Helicone, Portkey 
 | **AgentOps** | Agent tracing — time-travel debugging, multi-agent viz | Apache 2.0 | Free tier; 400+ LLMs | agentops.ai |
 | **W&B Weave** | Tracing + eval inside existing W&B console (`@weave.op`) | Apache 2.0 | Free tier | wandb.ai/weave |
 | **Laminar** | Agent-first tracing, **OTel-native** (~5% overhead) | Apache 2.0 | Free 1GB; self-host free | laminar.sh |
-| **Confident AI** | Eval-first (cloud **DeepEval**) — every trace scored, alerts | OSS core (~12K★) | Free tier | confident-ai.com |
+| **Confident AI** | Eval-first (cloud **DeepEval**) — every trace scored, alerts | OSS core (18K★) | Free tier | confident-ai.com |
 | **Maxim AI** | Agent **simulation** pre-prod + real-time post-deploy | Closed | Free tier | getmaxim.ai |
 | **LangSmith** | Tracing (LangChain/Graph) | Closed | 5K traces/mo | smith.langchain.com |
 | **Helicone** | Gateway (1-line proxy) | Apache 2.0 | 10K req/mo, 7-day retention; self-host free | helicone.ai |

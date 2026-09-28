@@ -1,5 +1,8 @@
 # References — Runnable Repos & Source Tools (re-checked 29 September 2026)
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Actual runnable tools, libraries, SDKs, and the proxy/router projects this archive relies on.
 > (Replaces the old `references/` directory — clone any repo directly from its link.)
 > ✅ **Re-checked Aug 17, 2026** (dead-link pass + DeepSeek Harness / llamafile-org moves added).
@@ -18,9 +21,9 @@
 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 20K+ | Official MCP server for browser automation |
 | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) | 25K+ | AI orchestration SDK (C# / Python / Java) |
 | [browserbase/stagehand](https://github.com/browserbase/stagehand) | 12K+ | Natural-language browser control (act/extract/observe/agent) |
-| [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | rising | **DeepSeek Harness (`dsh`)** — MIT agent harness, open-sourced Aug 14 2026, "everything is a plugin" (models/tools/skills/UI), Cordis meta-framework. The harness behind DeepSeek's TB 2.1 runs |
-| [CodebuffAI/freebuff](https://github.com/CodebuffAI/freebuff) | 8K+ | **Freebuff** — free, ad-supported coding agent (CLI, desktop, web builder, cloud IDE) from the Codebuff team. Apache 2.0, `npm i -g freebuff`. Daily "Freebucks" pay for DeepSeek V4.1 Flash, GPT-6 Luna, GLM-5.3 Flash and more |
-| [cline.bot — Cline Desktop](https://cline.bot/blog/cline-desktop-an-open-source-app-for-open-weight-models) | 63K (cline) | Open-source desktop app (Sept 14, 2026 beta): imports Claude Code/Codex sessions, cron jobs, parallel sessions, free rotating models, ClinePass $9.99/mo |
+| [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | 239K | **DeepSeek Harness (`dsh`)** — MIT agent harness, open-sourced Aug 14 2026, "everything is a plugin" (models/tools/skills/UI), Cordis meta-framework. The harness behind DeepSeek's TB 2.1 runs |
+| [CodebuffAI/freebuff](https://github.com/CodebuffAI/freebuff) | 13K | **Freebuff** — free, ad-supported coding agent (CLI, desktop, web builder, cloud IDE) from the Codebuff team. Apache 2.0, `npm i -g freebuff`. Daily "Freebucks" pay for DeepSeek V4.1 Flash, GPT-6 Luna, GLM-5.3 Flash and more |
+| [cline.bot — Cline Desktop](https://cline.bot/blog/cline-desktop-an-open-source-app-for-open-weight-models) | 69K (cline) | Open-source desktop app (Sept 14, 2026 beta): imports Claude Code/Codex sessions, cron jobs, parallel sessions, free rotating models, ClinePass $9.99/mo |
 | [mizorewww/laya-mlx](https://github.com/mizorewww/laya-mlx) | ~6.6K | MLX runtime for Convai's **Laya** typed-decision models — 7–14 ms decisions on Apple Silicon, no PyTorch or cloud. Apache-2.0. Sibling: [laya-coreml](https://github.com/mizorewww/laya-coreml) |
 | [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | — | Source-backed guide to TypeSafe's **Jev** typed decision model (SDKs, demos, independent evals). SDKs: `pip install typesafe-sdk`, `npm i @typesafe-ai/sdk` |
 | [MoonshotAI/Kimi-K3](https://github.com/MoonshotAI/Kimi-K3) | — | Kimi K3 (2.8T) open weights + model card; modified-MIT licence with a $20M MaaS revenue clause |
@@ -34,16 +37,17 @@
 
 | Repo | What it does |
 |---|---|
-| [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) | 38.5K★ — wraps Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API |
+| [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) | 53K★ — wraps Claude Code / Codex / Gemini / Grok OAuth → OpenAI-compatible API |
 | [decolua/9router](https://github.com/decolua/9router) | Routes Claude Code/Codex/Cursor/Cline/Copilot/Antigravity to free Claude/GPT/Gemini via 40+ providers; auto-fallback, taps Kiro/OpenCode-Free/Vertex |
 | [Alorse/cc-compatible-models](https://github.com/Alorse/cc-compatible-models) | Reference: configs + pricing for Qwen/DeepSeek/MiniMax/Kimi/GLM/MiMo/StepFun with Claude Code |
 | [jodavan/claude-code-proxy](https://github.com/jodavan/claude-code-proxy) | Route each Claude Code tier to a different provider (e.g. GLM for Haiku/Opus via `api.z.ai/api/anthropic`), keep Sonnet on your sub |
 | [horselock/claude-code-proxy](https://github.com/horselock/claude-code-proxy) | Standalone OAuth — direct API calls using Claude Code credentials |
 | [Rishurajgautam24/free-claude-code](https://github.com/Rishurajgautam24/free-claude-code) | Local FastAPI proxy → NVIDIA NIM / OpenRouter / DeepSeek / Ollama / LM Studio; intercepts trivial requests to save quota |
-| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | ~9.8K★ — OpenAI-compatible BYOK proxy stacking 16 providers' free tiers (~1.7B tok/mo) behind one `/v1`; smart routing, failover, encrypted keys |
+| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 29K★ — OpenAI-compatible BYOK proxy stacking 16 providers' free tiers (~1.7B tok/mo) behind one `/v1`; smart routing, failover, encrypted keys |
 | [gacabartosz/gaca-core](https://github.com/gacabartosz/gaca-core) | "Universal AI Bus" — 87+ free models from 11 providers, OpenAI-compatible, auto-failover + ranking + rate limiting |
 | [TokenRouter](https://www.tokenrouter.com/docs/) | Hosted 300+ model gateway with OpenAI-, Claude-, and Gemini-compatible integration. This is a commercial routing service, not a way to obtain paid models free; model usage is billed from balance. |
 
+> [!WARNING]
 > ⚠️ Avoid any repo advertising "keygen / activator / unlimited Pro without payment" — classic malware/scam pattern.
 
 ---
@@ -81,4 +85,5 @@ Content from these awesome-lists has been folded into the topic files; originals
 
 **Free access** — [BazaarLink](https://bazaarlink.ai/free) · [freellm.net](https://freellm.net/) · [OpenCode Zen](https://opencode.ai/zen) · [xAI free credits](https://www.getaiperks.com/en/blogs/22-xai-grok-free-credits) · [Vercel AI Gateway](https://vercel.com/ai-gateway)
 
+> [!WARNING]
 > ⚠️ **Not added (research caught these):** *Kluster.ai* was shut down (acquired by MITO, sunset Jun 9 2026) — excluded as a dead free provider. *VoltAgent* star count listed as ~2K (sourced), not the 26K in the source notes (unverified).

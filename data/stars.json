@@ -1,0 +1,311 @@
+{
+ "checked": "2026-09-29",
+ "groups": {
+  "agents": [
+   {
+    "label": "OpenClaw",
+    "repo": "openclaw/openclaw",
+    "stars": 390729,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Hermes Agent",
+    "repo": "NousResearch/hermes-agent",
+    "stars": 249782,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "DeepSeek Harness",
+    "repo": "deepseek-ai/deepseek-harness",
+    "stars": 238709,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "OpenCode",
+    "repo": "anomalyco/opencode",
+    "stars": 210619,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Claw Code",
+    "repo": "ultraworkers/claw-code",
+    "stars": 195288,
+    "pushed": "2026-08-16"
+   },
+   {
+    "label": "Claude Code",
+    "repo": "anthropics/claude-code",
+    "stars": 148475,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Codex CLI",
+    "repo": "openai/codex",
+    "stars": 126969,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Pi",
+    "repo": "earendil-works/pi",
+    "stars": 110082,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Gemini CLI",
+    "repo": "google-gemini/gemini-cli",
+    "stars": 107175,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "OpenHands",
+    "repo": "OpenHands/OpenHands",
+    "stars": 89407,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Cline",
+    "repo": "cline/cline",
+    "stars": 69499,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Open Interpreter",
+    "repo": "openinterpreter/openinterpreter",
+    "stars": 68466,
+    "pushed": "2026-09-27"
+   },
+   {
+    "label": "Goose",
+    "repo": "aaif-goose/goose",
+    "stars": 54743,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Aider",
+    "repo": "Aider-AI/aider",
+    "stars": 49247,
+    "pushed": "2026-05-22"
+   },
+   {
+    "label": "Continue",
+    "repo": "continuedev/continue",
+    "stars": 36053,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Crush",
+    "repo": "charmbracelet/crush",
+    "stars": 28348,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Qwen Code",
+    "repo": "QwenLM/qwen-code",
+    "stars": 28199,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Kilo Code",
+    "repo": "Kilo-Org/kilocode",
+    "stars": 27431,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Grok Build",
+    "repo": "xai-org/grok-build",
+    "stars": 27139,
+    "pushed": "2026-09-23"
+   },
+   {
+    "label": "SWE-agent",
+    "repo": "SWE-agent/SWE-agent",
+    "stars": 20436,
+    "pushed": "2026-09-21"
+   },
+   {
+    "label": "Freebuff",
+    "repo": "CodebuffAI/freebuff",
+    "stars": 12899,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Kimi CLI",
+    "repo": "MoonshotAI/kimi-cli",
+    "stars": 11430,
+    "pushed": "2026-09-22"
+   },
+   {
+    "label": "Kimi Code",
+    "repo": "MoonshotAI/kimi-code",
+    "stars": 7722,
+    "pushed": "2026-09-28"
+   }
+  ],
+  "skills_mcp": [
+   {
+    "label": "superpowers",
+    "repo": "obra/superpowers",
+    "stars": 292492,
+    "pushed": "2026-09-27"
+   },
+   {
+    "label": "ECC",
+    "repo": "affaan-m/ECC",
+    "stars": 268950,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "anthropics/skills",
+    "repo": "anthropics/skills",
+    "stars": 178810,
+    "pushed": "2026-09-24"
+   },
+   {
+    "label": "UI UX Pro Max",
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "stars": 131260,
+    "pushed": "2026-09-27"
+   },
+   {
+    "label": "awesome-design-md",
+    "repo": "VoltAgent/awesome-design-md",
+    "stars": 118581,
+    "pushed": "2026-09-21"
+   },
+   {
+    "label": "browser-use",
+    "repo": "browser-use/browser-use",
+    "stars": 116625,
+    "pushed": "2026-09-26"
+   },
+   {
+    "label": "claude-mem",
+    "repo": "thedotmack/claude-mem",
+    "stars": 94845,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Paperclip",
+    "repo": "paperclipai/paperclip",
+    "stars": 92645,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Taste Skill",
+    "repo": "Leonxlnx/taste-skill",
+    "stars": 90909,
+    "pushed": "2026-09-26"
+   },
+   {
+    "label": "Agent-Reach",
+    "repo": "Panniantong/Agent-Reach",
+    "stars": 85987,
+    "pushed": "2026-09-15"
+   },
+   {
+    "label": "Impeccable",
+    "repo": "pbakaus/impeccable",
+    "stars": 72112,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "OmniRoute",
+    "repo": "diegosouzapw/OmniRoute",
+    "stars": 71067,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "GSD",
+    "repo": "gsd-build/get-shit-done",
+    "stars": 64442,
+    "pushed": "2026-05-31"
+   },
+   {
+    "label": "Context7",
+    "repo": "upstash/context7",
+    "stars": 62508,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "CLIProxyAPI",
+    "repo": "router-for-me/CLIProxyAPI",
+    "stars": 53424,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Chrome DevTools MCP",
+    "repo": "ChromeDevTools/chrome-devtools-mcp",
+    "stars": 52703,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "agent-browser",
+    "repo": "vercel-labs/agent-browser",
+    "stars": 43321,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "emilkowalski/skills",
+    "repo": "emilkowalski/skills",
+    "stars": 41651,
+    "pushed": "2026-09-23"
+   },
+   {
+    "label": "Hindsight",
+    "repo": "vectorize-io/hindsight",
+    "stars": 40874,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Playwright MCP",
+    "repo": "microsoft/playwright-mcp",
+    "stars": 37659,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "Serena",
+    "repo": "oraios/serena",
+    "stars": 29877,
+    "pushed": "2026-09-24"
+   },
+   {
+    "label": "Browser Harness",
+    "repo": "browser-use/browser-harness",
+    "stars": 18192,
+    "pushed": "2026-09-27"
+   },
+   {
+    "label": "GSAP skills",
+    "repo": "greensock/gsap-skills",
+    "stars": 15762,
+    "pushed": "2026-07-29"
+   },
+   {
+    "label": "google/ax",
+    "repo": "google/ax",
+    "stars": 12420,
+    "pushed": "2026-09-27"
+   },
+   {
+    "label": "laya-mlx",
+    "repo": "mizorewww/laya-mlx",
+    "stars": 6568,
+    "pushed": "2026-09-22"
+   }
+  ],
+  "local": [
+   {
+    "label": "Ollama",
+    "repo": "ollama/ollama",
+    "stars": 181868,
+    "pushed": "2026-09-28"
+   },
+   {
+    "label": "llama.cpp",
+    "repo": "ggml-org/llama.cpp",
+    "stars": 129802,
+    "pushed": "2026-09-28"
+   }
+  ]
+ }
+}

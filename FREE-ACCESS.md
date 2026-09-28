@@ -1,5 +1,8 @@
 # Free API Access & Model Access — re-checked 29 September 2026
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Permanent free API tiers below. For **trial-credit stacking, student/startup programs, free GPU, and subscription-as-API tricks** → [CREDITS.md](./CREDITS.md).
 > 🔄 **29 Sep 2026 pass:** added the [September free wave](#september-2026-free-wave-start-here) (Cline free models, Freebuff, OpenRouter's new free list, TokenRa stealth models, Token Harbor, TokenRouter free IDs, Gemini 3.8 Flash on AI Studio, Kimi K3 free), and **removed ZCode** — it silently uploaded users' repositories (see [NEWS.md](./NEWS.md)).
 >
@@ -7,7 +10,7 @@
 
 ---
 
-**Contents:** [Sept 2026 free wave](#september-2026-free-wave-start-here) · [Daily budget chart](#free-api-daily-token-budget) · [Table 1 no-card API tiers](#table-1--no-card-api-access-ongoing-free-tiers-and-clearly-labelled-trials) ·
+**Contents:** [Sept 2026 free wave](#september-2026-free-wave-start-here) · [Table 1 no-card API tiers](#table-1--no-card-api-access-ongoing-free-tiers-and-clearly-labelled-trials) ·
 [Table 1B hidden gems](#table-1b--hidden-gems--decentralized--obscure-free-providers) ·
 [Aggregators](#aggregators-route-across-many-free-tiers-with-one-key) · [Chinese routers](#chinese-credit-routers--gateways-community-reported--all-unverified) ·
 [Table 2 trial credits](#table-2--trial-credits-stack-these) · [Claude Opus 5 free](#how-to-access-claude-opus-5-for-free) ·
@@ -91,12 +94,6 @@ models. Put a free key from the tables below into OpenCode (or Cline / Kilo) and
 
 ---
 
-## Free API Daily Token Budget
-
-![Free API Tiers](./charts/free-api-tiers.png)
-
----
-
 ## Table 1 — No-card API access (ongoing free tiers and clearly labelled trials)
 
 All endpoints are OpenAI SDK-compatible unless noted.
@@ -171,8 +168,8 @@ All endpoints are OpenAI SDK-compatible unless noted.
 | Tool | What | Link |
 |---|---|---|
 | **MrFadiAi/free-llm-gateway** | OpenAI-compatible gateway aggregating **24+ providers, 260+ free models** auto-discovered, auto-fallback, rate-limit tracking, dashboard | github.com/MrFadiAi/free-llm-gateway |
-| **FreeLLMAPI** | OSS BYOK proxy (~9.8K★). Stacks the free tiers of **16 providers (~1.7B tokens/mo, 110+ models)** behind one `/v1`. Smart routing, auto-failover, per-key rate tracking (avoids 429s), AES-256 key encryption. Live catalog = $19/yr; router free forever | freellmapi.co · github.com/tashfeenahmed/freellmapi |
-| **OmniRoute** | OSS (MIT) self-hosted gateway, ~29K★. **340 providers, 90+ with free tiers, ~1.5B free tokens/month** pooled into one honest, deduped number (live dashboard). Quota-aware auto-fallback, 19 routing strategies, token compression (RTK + Caveman, 15-95%), MCP + A2A, works with Claude Code/Codex/Cursor/OpenCode/Cline/Copilot. ⚠️ Security caveat: CVE-2026-49352 reported; it proxies your keys and routes traffic through third-party free tiers — vet before pointing production keys at it | github.com/diegosouzapw/OmniRoute |
+| **FreeLLMAPI** | OSS BYOK proxy (29K★). Stacks the free tiers of **16 providers (~1.7B tokens/mo, 110+ models)** behind one `/v1`. Smart routing, auto-failover, per-key rate tracking (avoids 429s), AES-256 key encryption. Live catalog = $19/yr; router free forever | freellmapi.co · github.com/tashfeenahmed/freellmapi |
+| **OmniRoute** | OSS (MIT) self-hosted gateway, 71K★. **340 providers, 90+ with free tiers, ~1.5B free tokens/month** pooled into one honest, deduped number (live dashboard). Quota-aware auto-fallback, 19 routing strategies, token compression (RTK + Caveman, 15-95%), MCP + A2A, works with Claude Code/Codex/Cursor/OpenCode/Cline/Copilot. ⚠️ Security caveat: CVE-2026-49352 reported; it proxies your keys and routes traffic through third-party free tiers — vet before pointing production keys at it | github.com/diegosouzapw/OmniRoute |
 | **gaca-core** (G.A.C.A.) | OSS "Universal AI Bus" — **87+ free models from 11 providers**, OpenAI-compatible (`/v1/chat/completions`), auto-failover + ranking + rate limiting. Drop-in fallback for any OpenAI client | github.com/gacabartosz/gaca-core |
 | **freellm.net** | Directory of **224+ free models / 25 providers**, daily live-verified (real API calls). One-click config for Claude Code / Codex / Gemini CLI / OpenClaw | freellm.net |
 | **OrcaRouter** ⚠️ | OpenRouter alternative (MIT-licensed, zero-markup, 100+ models). **Free credits for devs, no card** (PRNewswire May 8, 2026); **free BYOK** (Jul 24); live **voucher drops, student credits, hackathon grants** on the offers page; monthly plans add bonus credits. Credit amounts are promo/voucher-based — check the offers page live before relying | orcarouter.ai/offers |
@@ -182,6 +179,7 @@ All endpoints are OpenAI SDK-compatible unless noted.
 
 ### Chinese credit-routers / gateways (community-reported, ⚠️ all unverified)
 
+> [!CAUTION]
 > ⛔ **Model substitution — read before using any credit gateway (user-tested, Sept 2026).**
 > Several "cheap Claude/GPT" gateways do not serve the model they bill for. Tested: **aerolink.lat**
 > answers "Opus/Sonnet" requests with **Qwen**; **lumosel.vip** answers with **DeepSeek**. Both show

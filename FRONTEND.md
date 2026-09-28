@@ -1,5 +1,8 @@
 # Frontend / UI Builders & Design-to-Code — June 2026
 
+<p align="center"><a href="./README.md">🏠 Home</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/">🔎 Explorer</a> · <a href="https://yash-awasthi.github.io/ToolkitArchive/benchmarks.html">📊 Benchmarks</a> · <a href="./NEWS.md">📰 News</a> · <a href="./STUDENTS.md">🎓 $0 guide</a> · <a href="./FREE-ACCESS.md">🆓 Free AI</a></p>
+
+
 > Vibe-coding tools that turn a prompt (or a screenshot, or a Figma file) into a running frontend.
 > Free tiers move fast — every major builder is now **credit/token metered**. Numbers verified ~June 2026; confirm on vendor pages before relying on them.
 > ℹ️ **17 Aug 2026:** **Part 1 (full-stack builders) re-verified this pass** — Bolt (1M tok/mo, 300K/day), Lovable (5/day → 30/mo + 20 Cloud/mo), v0 ($5/mo, 200 projects) confirmed against current vendor pricing docs. **Parts 1.5–5 (mobile, UI generators, design-to-code, no-code sites, OSS self-host) were NOT re-verified** — treat their free tiers and credit counts as June-era until re-checked.
